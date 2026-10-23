@@ -1,0 +1,15 @@
+---
+// Placeholder wordmark until the project has a logo. The mark is a breeder
+// ring (orange) around a neutron source (teal).
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+<span class={`inline-flex items-center gap-2.5 ${className}`}>
+  <svg viewBox="0 0 32 32" class="h-8 w-8" aria-hidden="true">
+    <circle cx="16" cy="16" r="11" fill="none" stroke="var(--color-accent)" stroke-width="3.5" />
+    <circle cx="16" cy="16" r="3.5" fill="var(--color-tritium)" />
+  </svg>
+  <span class="font-display text-xl font-bold tracking-wide text-ink-invert">LIBRA</span>
+</span>

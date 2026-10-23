@@ -1,0 +1,14 @@
+---
+interface Props {
+  status: 'completed' | 'active' | 'planned';
+}
+const { status } = Astro.props;
+const styles = {
+  active: 'bg-tritium/15 text-tritium ring-tritium/30',
+  completed: 'bg-ink-faint/15 text-ink-muted ring-ink-faint/30',
+  planned: 'bg-accent/15 text-accent-hover ring-accent/30',
+};
+---
+<span class={`inline-flex items-center rounded-full px-2.5 py-0.5 font-body text-xs font-medium capitalize ring-1 ${styles[status]}`}>
+  {status}
+</span>

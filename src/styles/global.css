@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/space-grotesk';
+
+/* LIBRA palette. Dark navy chrome (nav, hero, footer) around light content
+   sections, so long experiment guides stay comfortable to read. The accent
+   is a molten-salt orange; "tritium" is a secondary teal for status/data. */
+@theme {
+  --color-libra-navy: #0f1e2e;
+  --color-libra-deep: #0a1622;
+  --color-libra-steel: #1b2f44;
+
+  --color-paper: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-line: #e2e6eb;
+
+  --color-ink: #13202d;
+  --color-ink-muted: #4a5868;
+  --color-ink-faint: #7a8794;
+  --color-ink-invert: #f3f6f9;
+  --color-ink-invert-muted: #b6c2ce;
+
+  --color-accent: #e8742a;
+  --color-accent-hover: #cf5f18;
+  --color-tritium: #22a495;
+
+  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+}
+
+html {
+  background-color: var(--color-libra-deep);
+}
+
+/* Offset in-page anchors so headings are not hidden under the fixed nav. */
+:target,
+.prose :where(h2, h3) {
+  scroll-margin-top: 6rem;
+}
+
+/* Faint grid used behind hero and page headers. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* The typography plugin wraps blockquotes in quote marks and inline code in
+   backticks; our blockquotes are callouts, so drop both. */
+.prose :where(blockquote p)::before,
+.prose :where(blockquote p)::after,
+.prose :where(code)::before,
+.prose :where(code)::after {
+  content: none;
+}

@@ -1,0 +1,18 @@
+---
+// Dark banner at the top of every inner page.
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+}
+const { eyebrow, title, intro } = Astro.props;
+---
+<header class="bg-grid relative overflow-hidden bg-libra-navy pt-36 pb-16">
+  <div class="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-accent/20 blur-3xl"></div>
+  <div class="relative mx-auto max-w-6xl px-6">
+    {eyebrow && <p class="font-body text-sm uppercase tracking-widest text-accent">{eyebrow}</p>}
+    <h1 class="mt-3 font-display text-4xl font-bold text-ink-invert md:text-5xl">{title}</h1>
+    {intro && <p class="mt-5 max-w-2xl font-body text-lg text-ink-invert-muted">{intro}</p>}
+    <slot />
+  </div>
+</header>

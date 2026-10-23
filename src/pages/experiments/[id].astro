@@ -1,0 +1,121 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import Icon from '../../components/Icon.astro';
+import publications from '../../data/publications.json';
+import datasets from '../../data/datasets.json';
+
+export async function getStaticPaths() {
+  const experiments = await getCollection('experiments');
+  return experiments.map((experiment) => ({ params: { id: experiment.id }, props: { experiment } }));
+}
+
+interface Props {
+  experiment: CollectionEntry<'experiments'>;
+}
+const { experiment } = Astro.props;
+const { title, tagline, summary, status, facts, repos, needsReview } = experiment.data;
+const { Content, headings } = await render(experiment);
+const toc = headings.filter((h) => h.depth === 2);
+
+const relatedPubs = publications.items.filter((p) => p.experiments?.includes(experiment.id));
+const relatedData = datasets.items.filter((d) => d.experiment === experiment.id);
+---
+
+<Base title={title} description={summary}>
+  <PageHeader eyebrow="Experiment guide" title={title} intro={summary}>
+    <div class="mt-6 flex items-center gap-3">
+      <StatusBadge status={status} />
+      <span class="font-body text-sm text-ink-invert-muted">{tagline}</span>
+    </div>
+  </PageHeader>
+
+  {needsReview && (
+    <div class="border-b border-accent/30 bg-accent/10">
+      <p class="mx-auto max-w-6xl px-6 py-3 font-body text-sm text-accent-hover">
+        This guide is a draft and has not yet been reviewed by the {title} team.
+      </p>
+    </div>
+  )}
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1fr_18rem]">
+    <article class="prose prose-slate max-w-none prose-headings:font-display prose-a:text-accent-hover prose-blockquote:border-accent prose-blockquote:font-normal prose-blockquote:not-italic">
+      <Content />
+    </article>
+
+    <aside class="space-y-8 lg:sticky lg:top-28 lg:self-start">
+      {toc.length > 0 && (
+        <nav class="rounded-xl bg-surface p-5 ring-1 ring-line">
+          <h2 class="font-display text-sm font-semibold uppercase tracking-widest text-ink-faint">On this page</h2>
+          <ul class="mt-3 space-y-1.5">
+            {toc.map((h) => (
+              <li><a href={`#${h.slug}`} class="font-body text-sm text-ink-muted hover:text-accent">{h.text}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {facts.length > 0 && (
+        <dl class="rounded-xl bg-surface p-5 ring-1 ring-line">
+          <h2 class="font-display text-sm font-semibold uppercase tracking-widest text-ink-faint">Key facts</h2>
+          {facts.map((f) => (
+            <div class="mt-3">
+              <dt class="font-body text-xs text-ink-faint">{f.label}</dt>
+              <dd class="font-body text-sm font-medium">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </aside>
+  </div>
+
+  <!-- Repositories, datasets and publications linked to this experiment -->
+  <section class="border-t border-line bg-surface py-16">
+    <div class="mx-auto max-w-6xl space-y-14 px-6">
+      {repos.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl font-bold">Code repositories</h2>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {repos.map((r) => (
+              <a href={`https://github.com/LIBRA-project/${r.name}`} target="_blank" rel="noopener"
+                 class="flex items-start gap-3 rounded-xl p-4 ring-1 ring-line transition hover:ring-accent/40">
+                <Icon name="github" class="mt-0.5 h-5 w-5 shrink-0 text-ink-muted" />
+                <span>
+                  <span class="block font-mono text-sm font-medium">{r.name}</span>
+                  {r.description && <span class="block font-body text-xs text-ink-faint">{r.description}</span>}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {relatedData.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl font-bold">Datasets on Zenodo</h2>
+          <ul class="mt-6 divide-y divide-line rounded-xl ring-1 ring-line">
+            {relatedData.map((d) => (
+              <li class="flex flex-wrap items-center justify-between gap-2 px-5 py-3">
+                <span class="font-body text-sm">{d.title}</span>
+                <a href={`https://doi.org/${d.doi}`} target="_blank" rel="noopener" class="font-mono text-xs text-accent-hover hover:underline">{d.doi}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {relatedPubs.length > 0 && (
+        <div>
+          <h2 class="font-display text-2xl font-bold">Publications and talks</h2>
+          <div class="mt-6 space-y-4">
+            {relatedPubs.map((p) => <PublicationItem pub={p} />)}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import LibraLogo from './LibraLogo.astro';
+import { url } from '../lib/url';
+
+const links = [
+  { href: 'experiments', label: 'Experiments' },
+  { href: 'people', label: 'People' },
+  { href: 'publications', label: 'Publications' },
+  { href: 'data', label: 'Data & Code' },
+  { href: 'news', label: 'News' },
+];
+// Highlight the section the current page belongs to.
+const current = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), '').split('/')[1] ?? '';
+---
+
+<nav class="fixed top-0 z-50 w-full border-b border-white/5 bg-libra-deep/90 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <a href={url()} aria-label="LIBRA home"><LibraLogo /></a>
+
+    <div class="hidden items-center gap-8 md:flex">
+      {links.map((l) => (
+        <a href={url(l.href)}
+           class:list={['font-body text-sm transition hover:text-ink-invert',
+             current === l.href ? 'text-accent' : 'text-ink-invert-muted']}>
+          {l.label}
+        </a>
+      ))}
+      <a href="https://github.com/LIBRA-project" target="_blank" rel="noopener"
+         aria-label="LIBRA on GitHub" class="text-ink-invert-muted transition hover:text-ink-invert">
+        <Icon name="github" class="h-5 w-5" />
+      </a>
+    </div>
+
+    <button id="nav-toggle" type="button" class="text-ink-invert md:hidden" aria-label="Open menu" aria-expanded="false">
+      <Icon name="menu" class="h-6 w-6" />
+    </button>
+  </div>
+
+  <div id="nav-menu" class="hidden border-t border-white/5 px-6 pb-4 md:hidden">
+    {links.map((l) => (
+      <a href={url(l.href)} class="block py-2 font-body text-ink-invert-muted hover:text-ink-invert">{l.label}</a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>

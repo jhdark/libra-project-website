@@ -1,0 +1,10 @@
+# Conda environment for building and previewing the site locally.
+#   conda env create -f environment.yml
+#   conda activate libra-website
+#   npm install
+#   npm run dev
+name: libra-website
+channels:
+  - conda-forge
+dependencies:
+  - nodejs=24  # LTS, matches CI

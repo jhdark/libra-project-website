@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { url, formatDate } from '../../lib/url';
+
+const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Base title="News">
+  <PageHeader eyebrow="News" title="Updates from LIBRA" intro="Experiment milestones, software releases, talks and team news." />
+
+  <section class="py-16">
+    <ul class="mx-auto max-w-3xl space-y-4 px-6">
+      {news.map((n) => (
+        <li>
+          <a href={url(`news/${n.id}`)} class="block rounded-xl bg-surface p-6 ring-1 ring-line transition hover:ring-accent/40">
+            <time class="font-body text-xs uppercase tracking-wider text-ink-faint" datetime={n.data.date.toISOString()}>
+              {formatDate(n.data.date)}
+            </time>
+            <h2 class="mt-1 font-display text-xl font-semibold">{n.data.title}</h2>
+            <p class="mt-1 font-body text-sm text-ink-muted">{n.data.summary}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

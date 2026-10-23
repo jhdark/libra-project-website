@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ExperimentCard from '../components/ExperimentCard.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import publications from '../data/publications.json';
+import { url, formatDate } from '../lib/url';
+
+const experiments = (await getCollection('experiments')).sort((a, b) => a.data.order - b.data.order);
+const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const featured = publications.items.filter((p) => 'featured' in p && p.featured);
+
+const pillars = [
+  {
+    icon: 'atom',
+    title: 'Tritium breeding',
+    body: 'Fusion power plants must breed their own tritium. LIBRA irradiates lithium-bearing breeders with DT fusion neutrons to measure how much tritium they actually produce.',
+  },
+  {
+    icon: 'gauge',
+    title: 'Accountancy and diagnostics',
+    body: 'Neutron diagnostics and tritium measurements, from activation foils to liquid scintillation counting, close the loop between what is bred and what is recovered.',
+  },
+  {
+    icon: 'globe',
+    title: 'Open science',
+    body: 'Every run has a public repository with its data and analysis, archived on Zenodo with a DOI, and analysed with our open-source libra-toolbox.',
+  },
+];
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="bg-grid relative overflow-hidden bg-libra-navy pt-40 pb-28">
+    <div class="pointer-events-none absolute -top-32 -right-32 h-[32rem] w-[32rem] rounded-full bg-accent/25 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-tritium/20 blur-3xl"></div>
+    <div class="relative mx-auto max-w-6xl px-6">
+      <p class="font-body text-sm uppercase tracking-widest text-accent">MIT Plasma Science and Fusion Center</p>
+      <h1 class="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight text-ink-invert md:text-7xl">
+        Breeding tritium for fusion energy
+      </h1>
+      <p class="mt-6 max-w-2xl font-body text-xl text-ink-invert-muted">
+        LIBRA (Liquid Immersion Blanket: Robust Accountancy, TBC) is a series of experiments
+        demonstrating and measuring tritium breeding in molten salt blankets.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href={url('experiments')} class="rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
+          Explore the experiments
+        </a>
+        <a href={url('data')} class="rounded-full px-6 py-3 font-semibold text-ink-invert ring-1 ring-white/25 transition hover:ring-white/60">
+          Data and code
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="font-body text-sm uppercase tracking-widest text-accent">About the project</p>
+        <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Closing the fuel cycle</h2>
+        <p class="mt-6 font-body text-lg leading-relaxed text-ink-muted">
+          TODO: a short paragraph from the team on the mission of LIBRA, its funders and partners,
+          and how the experiments build on each other.
+        </p>
+      </div>
+      <div class="mt-16 grid gap-6 md:grid-cols-3">
+        {pillars.map((p) => (
+          <div class="rounded-2xl bg-surface p-8 ring-1 ring-line">
+            <Icon name={p.icon} class="h-8 w-8 text-accent" />
+            <h3 class="mt-4 font-display text-xl font-semibold">{p.title}</h3>
+            <p class="mt-3 font-body text-sm leading-relaxed text-ink-muted">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiments -->
+  <section class="border-y border-line bg-surface py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="font-body text-sm uppercase tracking-widest text-accent">Experiments</p>
+          <h2 class="mt-3 font-display text-4xl font-bold">Under the LIBRA umbrella</h2>
+        </div>
+        <a href={url('experiments')} class="inline-flex items-center gap-1.5 font-semibold text-accent">
+          All experiments <Icon name="arrowRight" class="h-4 w-4" />
+        </a>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {experiments.map((e) => <ExperimentCard experiment={e} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured publication + news -->
+  <section class="py-24">
+    <div class="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
+      <div>
+        <p class="font-body text-sm uppercase tracking-widest text-accent">Featured publication</p>
+        <div class="mt-6 space-y-4">
+          {featured.map((p) => <PublicationItem pub={p} />)}
+        </div>
+        <a href={url('publications')} class="mt-6 inline-flex items-center gap-1.5 font-semibold text-accent">
+          All publications and talks <Icon name="arrowRight" class="h-4 w-4" />
+        </a>
+      </div>
+      <div>
+        <p class="font-body text-sm uppercase tracking-widest text-accent">Latest news</p>
+        <ul class="mt-6 divide-y divide-line rounded-xl bg-surface ring-1 ring-line">
+          {news.map((n) => (
+            <li>
+              <a href={url(`news/${n.id}`)} class="block p-6 transition hover:bg-paper">
+                <time class="font-body text-xs uppercase tracking-wider text-ink-faint" datetime={n.data.date.toISOString()}>
+                  {formatDate(n.data.date)}
+                </time>
+                <h3 class="mt-1 font-display text-lg font-semibold">{n.data.title}</h3>
+                <p class="mt-1 font-body text-sm text-ink-muted">{n.data.summary}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href={url('news')} class="mt-6 inline-flex items-center gap-1.5 font-semibold text-accent">
+          All news <Icon name="arrowRight" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open science CTA -->
+  <section class="bg-libra-steel py-20">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-ink-invert">All our data is open</h2>
+        <p class="mt-3 max-w-xl font-body text-ink-invert-muted">
+          Raw measurements, analysis notebooks and simulation models for every run, with DOIs for citation.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://zenodo.org/communities/libra-project/records" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
+          <Icon name="database" class="h-5 w-5" /> Zenodo
+        </a>
+        <a href="https://github.com/LIBRA-project" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-ink-invert ring-1 ring-white/25 transition hover:ring-white/60">
+          <Icon name="github" class="h-5 w-5" /> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

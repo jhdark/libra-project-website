@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+
+export interface Publication {
+  type: string;
+  title: string;
+  authors: string;
+  venue: string;
+  year: number;
+  experiments?: string[];
+  links?: { label: string; href: string }[];
+  placeholder?: boolean;
+  featured?: boolean;
+}
+interface Props {
+  pub: Publication;
+}
+const { pub } = Astro.props;
+const icon = pub.type === 'talk' || pub.type === 'poster' ? 'presentation' : 'document';
+---
+<article class="flex gap-5 rounded-xl bg-surface p-6 ring-1 ring-line" data-type={pub.type}>
+  <Icon name={icon} class="mt-1 h-6 w-6 shrink-0 text-accent" />
+  <div class="min-w-0">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="font-body text-xs font-semibold uppercase tracking-wider text-ink-faint">{pub.type} · {pub.year}</span>
+      {pub.placeholder && <span class="rounded bg-accent/15 px-2 py-0.5 font-body text-xs text-accent-hover">Example entry</span>}
+    </div>
+    <h3 class="mt-1 font-display text-lg font-semibold leading-snug">{pub.title}</h3>
+    <p class="mt-1 font-body text-sm text-ink-muted">{pub.authors}</p>
+    <p class="font-body text-sm italic text-ink-faint">{pub.venue}</p>
+    {pub.links && pub.links.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-2">
+        {pub.links.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1 rounded-full px-3 py-1 font-body text-xs font-medium text-ink-muted ring-1 ring-line transition hover:text-accent hover:ring-accent/40">
+            {l.label} <Icon name="external" class="h-3 w-3" />
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

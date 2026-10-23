@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import LibraLogo from './LibraLogo.astro';
+import { url } from '../lib/url';
+
+const explore = [
+  { href: url('experiments'), label: 'Experiments' },
+  { href: url('people'), label: 'People' },
+  { href: url('publications'), label: 'Publications' },
+  { href: url('data'), label: 'Data & Code' },
+  { href: url('news'), label: 'News' },
+];
+const resources = [
+  { href: 'https://github.com/LIBRA-project', label: 'GitHub organisation' },
+  { href: 'https://zenodo.org/communities/libra-project/records', label: 'Zenodo community' },
+  { href: 'https://libra-toolbox.readthedocs.io/en/latest/', label: 'libra-toolbox docs' },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-libra-deep py-16">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <LibraLogo />
+        <p class="mt-4 max-w-xs font-body text-sm text-ink-invert-muted">
+          Advancing tritium breeding technologies for fusion energy.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm uppercase tracking-widest text-accent">Explore</h3>
+        <ul class="mt-4 space-y-2">
+          {explore.map((l) => (
+            <li><a href={l.href} class="font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm uppercase tracking-widest text-accent">Resources</h3>
+        <ul class="mt-4 space-y-2">
+          {resources.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener" class="font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">{l.label}</a></li>
+          ))}
+          <li>
+            <a href="mailto:remidm@mit.edu" class="inline-flex items-center gap-2 font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">
+              <Icon name="mail" class="h-4 w-4" /> remidm@mit.edu
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-white/10 pt-8">
+      <p class="font-body text-xs text-ink-faint">© {year} LIBRA project, MIT Plasma Science and Fusion Center.</p>
+    </div>
+  </div>
+</footer>

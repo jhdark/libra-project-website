@@ -1,0 +1,57 @@
+{
+  "_note": "type is one of: article, preprint, talk, poster, thesis, report. experiments lists experiment slugs (file names in src/content/experiments). Entries with placeholder: true are examples showing the format and should be replaced.",
+  "items": [
+    {
+      "type": "preprint",
+      "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
+      "authors": "R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller",
+      "venue": "arXiv:2412.02721 (journal version TBC)",
+      "year": 2024,
+      "experiments": ["baby"],
+      "featured": true,
+      "links": [
+        { "label": "arXiv", "href": "https://arxiv.org/abs/2412.02721" },
+        { "label": "Code and data", "href": "https://github.com/LIBRA-project/insights-from-BABY-experiment-paper" },
+        { "label": "Zenodo", "href": "https://doi.org/10.5281/zenodo.14455926" }
+      ]
+    },
+    {
+      "type": "report",
+      "title": "First FLiBe tritium breeding experiment (report in preparation)",
+      "authors": "LIBRA team",
+      "venue": "In preparation",
+      "year": 2026,
+      "experiments": ["baby"],
+      "links": [{ "label": "Code and data", "href": "https://github.com/LIBRA-project/FLiBe-1L-paper" }]
+    },
+    {
+      "type": "report",
+      "title": "BABY 1 L campaign paper (title TBC)",
+      "authors": "LIBRA team",
+      "venue": "In preparation",
+      "year": 2026,
+      "experiments": ["baby"],
+      "links": [{ "label": "Code and data", "href": "https://github.com/LIBRA-project/baby-1l-paper" }]
+    },
+    {
+      "type": "talk",
+      "placeholder": true,
+      "title": "Example talk: results from the BABY 1 L campaign",
+      "authors": "Speaker name",
+      "venue": "Conference name, City",
+      "year": 2026,
+      "experiments": ["baby"],
+      "links": [{ "label": "Slides", "href": "#" }]
+    },
+    {
+      "type": "poster",
+      "placeholder": true,
+      "title": "Example poster: tritium transport modelling of BABY 1 L",
+      "authors": "Presenter name",
+      "venue": "Conference name, City",
+      "year": 2026,
+      "experiments": ["baby"],
+      "links": [{ "label": "Poster PDF", "href": "#" }]
+    }
+  ]
+}

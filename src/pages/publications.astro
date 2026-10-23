@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import publications from '../data/publications.json';
+
+const items = [...publications.items].sort((a, b) => b.year - a.year);
+const filters = [
+  { key: 'all', label: 'All' },
+  { key: 'article', label: 'Articles' },
+  { key: 'preprint', label: 'Preprints' },
+  { key: 'report', label: 'Reports' },
+  { key: 'talk', label: 'Talks' },
+  { key: 'poster', label: 'Posters' },
+  { key: 'thesis', label: 'Theses' },
+];
+---
+
+<Base title="Publications">
+  <PageHeader
+    eyebrow="Publications"
+    title="Papers, talks and posters"
+    intro="Journal articles, preprints, conference presentations and theses from the LIBRA project."
+  />
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="flex flex-wrap gap-2" role="toolbar" aria-label="Filter by type">
+        {filters.map((f) => (
+          <button type="button" data-filter={f.key}
+                  class="pub-filter rounded-full px-4 py-1.5 font-body text-sm ring-1 ring-line transition hover:ring-accent/40 aria-pressed:bg-libra-navy aria-pressed:text-ink-invert aria-pressed:ring-libra-navy"
+                  aria-pressed={f.key === 'all' ? 'true' : 'false'}>
+            {f.label}
+          </button>
+        ))}
+      </div>
+      <div id="pub-list" class="mt-8 space-y-4">
+        {items.map((p) => <PublicationItem pub={p} />)}
+      </div>
+      <p id="pub-empty" class="mt-8 hidden font-body text-ink-faint">Nothing of this type yet.</p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.pub-filter');
+  const items = document.querySelectorAll<HTMLElement>('#pub-list [data-type]');
+  const empty = document.getElementById('pub-empty');
+  buttons.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let shown = 0;
+      items.forEach((el) => {
+        const match = key === 'all' || el.dataset.type === key;
+        el.hidden = !match;
+        if (match) shown++;
+      });
+      empty?.classList.toggle('hidden', shown > 0);
+    }),
+  );
+</script>

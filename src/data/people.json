@@ -1,0 +1,36 @@
+{
+  "_note": "Seeded from author lists on the BABY paper and LIBRA Zenodo records. Roles, affiliations, photos and groupings are TBC: each person should check their own entry. Photos go in public/images/people/ and are referenced as 'images/people/<file>'.",
+  "groups": [
+    {
+      "name": "Team",
+      "description": "Grouping (leadership, staff, students, alumni) to be agreed by the team.",
+      "members": [
+        { "name": "Rémi Delaporte-Mathurin", "role": "", "affiliation": "MIT PSFC", "github": "RemDelaporteMathurin", "email": "remidm@mit.edu" },
+        { "name": "Collin Dunn", "role": "", "affiliation": "" },
+        { "name": "Stefano Segantin", "role": "", "affiliation": "" },
+        { "name": "Davide Pettinari", "role": "", "affiliation": "" },
+        { "name": "Nikola Goles", "role": "", "affiliation": "" },
+        { "name": "Emily Edwards", "role": "", "affiliation": "" },
+        { "name": "Kevin Woller", "role": "", "affiliation": "" },
+        { "name": "Mike German", "role": "", "affiliation": "" },
+        { "name": "Jonathan Shimwell", "role": "", "affiliation": "" }
+      ]
+    },
+    {
+      "name": "Contributors and collaborators",
+      "description": "Co-authors on LIBRA publications. To be confirmed.",
+      "members": [
+        { "name": "Dennis Whyte", "role": "", "affiliation": "" },
+        { "name": "Ethan Peterson", "role": "", "affiliation": "" },
+        { "name": "Sara Ferry", "role": "", "affiliation": "" },
+        { "name": "Samuele Meschini", "role": "", "affiliation": "" },
+        { "name": "Weiyue Zhou", "role": "", "affiliation": "" },
+        { "name": "John Ball", "role": "", "affiliation": "" },
+        { "name": "Edward Lamere", "role": "", "affiliation": "" },
+        { "name": "Andrew Lanzrath", "role": "", "affiliation": "" },
+        { "name": "Rick Leccacorvi", "role": "", "affiliation": "" },
+        { "name": "Rui Vieira", "role": "", "affiliation": "" }
+      ]
+    }
+  ]
+}

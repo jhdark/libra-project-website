@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="Page not found">
+  <PageHeader eyebrow="404" title="Page not found" intro="That page does not exist, or it has moved.">
+    <a href={url()} class="mt-8 inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
+      Back to the homepage
+    </a>
+  </PageHeader>
+</Base>
