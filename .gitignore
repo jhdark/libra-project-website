@@ -16,3 +16,10 @@ npm-debug.log*
 # OS / editor
 .DS_Store
 .idea/
+
+# design scratch and hallmark records
+design/
+.hallmark/
+
+# PSFC brand source files (logos, fonts, templates); only what the site uses is copied into public/
+PSFC Branding Assets/

@@ -1,51 +1,185 @@
+/* Hallmark · shape: Index-First, set as a lab record · genre: editorial · theme: brand (PSFC, spec 2026-10-26; material lent by Almanac) · redesign: full
+ * paper: oklch(97% 0.007 89) · accent: oklch(35.5% 0.143 23) · display: Hanken Grotesk (stand-in for Neue Haas Grotesk) · body: Roboto Serif · hero: Stage (/) · nav: masthead · footer: colophon block · signature: the BABY campaigns sheet, the active run marked in Plasma Pink
+ * axes: light/grotesk-sans/chromatic-red · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · weakest: P, the claim is modest by design; the real campaigns table carries the argument */
+/* Hallmark · hero-review: fix · 5 findings · 3 resolved, 2 passed to the team (owner's copy) · finish-review: subagent · 7 findings · 7 resolved · gap: none */
+/* Hallmark · dismissed 19 · "Robust" is part of the project's own name, Liquid Immersion Blanket: Robust Accountancy (TBC), kept as the team wrote it */
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-@import '@fontsource-variable/inter';
-@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/hanken-grotesk';
+@import '@fontsource-variable/roboto-serif/opsz.css';
+@import '@fontsource-variable/roboto-serif/opsz-italic.css';
+@import '@fontsource-variable/roboto-mono';
 
-/* LIBRA palette. Dark navy chrome (nav, hero, footer) around light content
-   sections, so long experiment guides stay comfortable to read. The accent
-   is a molten-salt orange; "tritium" is a secondary teal for status/data. */
+/* LIBRA design tokens: a LIBRA sub-brand of the MIT PSFC identity.
+   Values come from the PSFC Branding and Visual Guidelines (see CLAUDE.md,
+   "Design system"). Plasma Pink is a mark on data, never small text. */
 @theme {
-  --color-libra-navy: #0f1e2e;
-  --color-libra-deep: #0a1622;
-  --color-libra-steel: #1b2f44;
+  --color-paper: oklch(97% 0.007 89);        /* PSFC off-white #F7F5F0 */
+  --color-paper-2: oklch(94.5% 0.009 85);
+  --color-paper-3: oklch(91.5% 0.010 80);
+  --color-sheet: oklch(98.9% 0.004 89);       /* the printed sheet a table sits on */
+  --color-ink: oklch(21% 0.010 25);
+  --color-ink-2: oklch(33% 0.010 30);
+  --color-muted: oklch(46% 0.010 45);
+  --color-rule: oklch(86% 0.010 75);
+  --color-rule-2: oklch(21% 0.010 25);
+  --color-accent: oklch(35.5% 0.143 23);      /* MIT red #750014 */
+  --color-accent-2: oklch(29% 0.120 23);
+  --color-accent-ink: oklch(97% 0.007 89);
+  --color-focus: oklch(39% 0.180 23);
+  --color-signal: oklch(63.2% 0.275 332);     /* PSFC Plasma Pink #DF1AD2 */
+  --color-signal-wash: oklch(94.5% 0.035 332);
+  --color-on-ink: oklch(97% 0.007 89);
+  --color-on-ink-2: oklch(85% 0.010 75);
+  --color-on-ink-rule: oklch(36% 0.010 25);
+  --color-on-ink-link: oklch(84% 0.100 332);
 
-  --color-paper: #f6f7f9;
-  --color-surface: #ffffff;
-  --color-line: #e2e6eb;
+  /* Experiment keys, from the PSFC accent palette, assigned by `order`
+     (src/lib/experiments.ts). Fills and marks only, always with an ink edge. */
+  --color-key-1: oklch(90.4% 0.186 138);      /* Aurora Green #9DFC7E */
+  --color-key-2: oklch(89.6% 0.085 214);      /* Electric Arc Aqua #98ECFF */
+  --color-key-3: oklch(79.6% 0.160 68);       /* Orange Edge #FFA630 */
+  --color-key-4: oklch(80.4% 0.107 291);      /* Hydrogen Periwinkle #BFB3FF */
+  --color-key-5: oklch(56.6% 0.239 262);      /* Industrial Blue #1966FF */
+  --color-key-6: oklch(67% 0.170 25);         /* Heated #F25757 */
 
-  --color-ink: #13202d;
-  --color-ink-muted: #4a5868;
-  --color-ink-faint: #7a8794;
-  --color-ink-invert: #f3f6f9;
-  --color-ink-invert-muted: #b6c2ce;
+  /* Legacy names, kept until every template is ported. */
+  --color-libra-navy: var(--color-ink);
+  --color-libra-deep: var(--color-ink);
+  --color-libra-steel: var(--color-ink-2);
+  --color-surface: var(--color-sheet);
+  --color-line: var(--color-rule);
+  --color-ink-muted: var(--color-ink-2);
+  --color-ink-faint: var(--color-muted);
+  --color-ink-invert: var(--color-on-ink);
+  --color-ink-invert-muted: var(--color-on-ink-2);
+  --color-accent-hover: var(--color-accent-2);
+  --color-tritium: var(--color-ink-2);
 
-  --color-accent: #e8742a;
-  --color-accent-hover: #cf5f18;
-  --color-tritium: #22a495;
+  /* Neue Haas Grotesk is the PSFC primary face (Adobe Fonts only); Hanken
+     Grotesk stands in until a web licence is available. */
+  --font-display: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Roboto Serif Variable', ui-serif, Georgia, serif;
+  --font-mono: 'Roboto Mono Variable', ui-monospace, monospace;
 
-  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
-  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.5rem);
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+  --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem);
+  --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --text-md: 1rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html {
-  background-color: var(--color-libra-deep);
+:root {
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+  --dur-micro: 120ms;
+  --container: 1440px;
+  --gutter: 64px;
+  --gap-columns: 32px;
+  --section-gap-s: 120px;
+  --section-gap: 144px;
+  --section-gap-l: 176px;
+  --rule-hair: 1px;
+  --rule-bar: 2px;
+  --radius-control: 2px;
+  --z-sticky: 200;
+}
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+
+@layer base {
+  html, body { overflow-x: clip; }
+  html { background: var(--color-paper); scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-xl); }
+  body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+  ::selection { background: var(--color-signal-wash); color: var(--color-ink); }
+  :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  a { text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+  a:hover { text-decoration-thickness: 2px; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; font-synthesis: none; letter-spacing: -0.02em; line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  table { border-collapse: collapse; }
 }
 
-/* Offset in-page anchors so headings are not hidden under the fixed nav. */
+@layer components {
+  .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+  .lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; color: var(--color-ink-2); }
+  .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .tbc { color: var(--color-muted); }
+
+  /* Links in running text: MIT red, underlined. */
+  .link { color: var(--color-accent); text-decoration: underline; }
+  .link:hover { color: var(--color-accent-2); }
+  .link-strong { font: 600 1rem/1.5 var(--font-display); color: var(--color-accent); text-decoration: underline; }
+  .link-strong:hover { color: var(--color-accent-2); }
+
+  /* One filled primary per page; everything else outlined. */
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding-inline: var(--space-lg); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-control); font: 600 1rem/1 var(--font-display); color: var(--color-ink); background: transparent; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out); }
+  .btn:hover { background: var(--color-paper-2); }
+  .btn:active { background: var(--color-paper-3); }
+  .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+  .btn-primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+  .btn-primary:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+  .btn-primary:active { background: var(--color-ink); border-color: var(--color-ink); }
+  .btn-on-ink { color: var(--color-on-ink); border-color: var(--color-on-ink); }
+  .btn-on-ink:hover { background: var(--color-on-ink); color: var(--color-ink); }
+  .btn-on-ink:active { background: var(--color-on-ink-2); color: var(--color-ink); }
+
+  /* The head block that opens most sections: head left, line or link right,
+     a firm rule beneath. */
+  .split-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: end; padding-bottom: var(--space-lg); margin-bottom: var(--space-2xl); border-bottom: var(--rule-bar) solid var(--color-rule-2); }
+  .split-head h2 { font-size: var(--text-section); max-width: 30ch; }
+  .split-head > :last-child:not(:first-child) { grid-column: 2; }
+  .split-head > .head-link { justify-self: end; }
+  @media (max-width: 60rem) {
+    .split-head { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
+    .split-head > :last-child:not(:first-child) { grid-column: 1; }
+    .split-head > .head-link { justify-self: start; }
+  }
+
+  /* Typeset Markdown (experiment guides, news posts). */
+  .prose-libra {
+    --tw-prose-body: var(--color-ink-2);
+    --tw-prose-headings: var(--color-ink);
+    --tw-prose-links: var(--color-accent);
+    --tw-prose-bold: var(--color-ink);
+    --tw-prose-counters: var(--color-muted);
+    --tw-prose-bullets: var(--color-muted);
+    --tw-prose-hr: var(--color-rule);
+    --tw-prose-quotes: var(--color-ink);
+    --tw-prose-quote-borders: var(--color-signal);
+    --tw-prose-captions: var(--color-muted);
+    --tw-prose-code: var(--color-ink);
+    --tw-prose-th-borders: var(--color-rule-2);
+    --tw-prose-td-borders: var(--color-rule);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+  .prose-libra :where(h2, h3) { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+  .prose-libra :where(h2) { font-size: 2rem; margin-top: 2.5em; padding-top: var(--space-md); border-top: var(--rule-bar) solid var(--color-rule-2); }
+  .prose-libra :where(h2):first-child { margin-top: 0; }
+  .prose-libra :where(thead th) { font-family: var(--font-body); font-weight: 400; font-size: 0.875rem; color: var(--color-muted); }
+  .prose-libra :where(code) { font-family: var(--font-mono); font-weight: 400; font-size: 0.9em; }
+  .prose-libra :where(blockquote) { font-style: normal; font-weight: 400; background: var(--color-signal-wash); padding: var(--space-md) var(--space-lg); border-left-width: 4px; }
+  .prose-libra :where(blockquote p) { margin: 0; }
+}
+
+/* Offset in-page anchors so headings are not tight to the top edge. */
 :target,
 .prose :where(h2, h3) {
-  scroll-margin-top: 6rem;
-}
-
-/* Faint grid used behind hero and page headers. */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+  scroll-margin-top: var(--space-xl);
 }
 
 /* The typography plugin wraps blockquotes in quote marks and inline code in
@@ -55,4 +189,8 @@ html {
 .prose :where(code)::before,
 .prose :where(code)::after {
   content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
