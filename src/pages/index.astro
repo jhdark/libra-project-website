@@ -1,29 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Icon from '../components/Icon.astro';
-import ExperimentCard from '../components/ExperimentCard.astro';
-import PublicationItem from '../components/PublicationItem.astro';
+import CampaignSheet from '../components/CampaignSheet.astro';
+import ExperimentLedger from '../components/ExperimentLedger.astro';
+import NewsList from '../components/NewsList.astro';
 import publications from '../data/publications.json';
-import { url, formatDate } from '../lib/url';
+import datasets from '../data/datasets.json';
+import { url } from '../lib/url';
+import { campaignsOf } from '../lib/experiments';
 
 const experiments = (await getCollection('experiments')).sort((a, b) => a.data.order - b.data.order);
 const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const featured = publications.items.filter((p) => 'featured' in p && p.featured);
+const latestRecords = [...datasets.items].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+
+// The hero sheet shows the first active experiment whose guide has a
+// Campaigns table (BABY today).
+const lead = experiments.find((e) => e.data.status === 'active' && campaignsOf(e)) ?? null;
+const leadCampaigns = lead ? campaignsOf(lead) : null;
 
 const pillars = [
   {
-    icon: 'atom',
     title: 'Tritium breeding',
     body: 'Fusion power plants must breed their own tritium. LIBRA irradiates lithium-bearing breeders with DT fusion neutrons to measure how much tritium they actually produce.',
   },
   {
-    icon: 'gauge',
     title: 'Accountancy and diagnostics',
     body: 'Neutron diagnostics and tritium measurements, from activation foils to liquid scintillation counting, close the loop between what is bred and what is recovered.',
   },
   {
-    icon: 'globe',
     title: 'Open science',
     body: 'Every run has a public repository with its data and analysis, archived on Zenodo with a DOI, and analysed with our open-source libra-toolbox.',
   },
@@ -31,124 +36,181 @@ const pillars = [
 ---
 
 <Base>
-  <!-- Hero -->
-  <section class="bg-grid relative overflow-hidden bg-libra-navy pt-40 pb-28">
-    <div class="pointer-events-none absolute -top-32 -right-32 h-[32rem] w-[32rem] rounded-full bg-accent/25 blur-3xl"></div>
-    <div class="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-tritium/20 blur-3xl"></div>
-    <div class="relative mx-auto max-w-6xl px-6">
-      <p class="font-body text-sm uppercase tracking-widest text-accent">MIT Plasma Science and Fusion Center</p>
-      <h1 class="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight text-ink-invert md:text-7xl">
-        Breeding tritium for fusion energy
-      </h1>
-      <p class="mt-6 max-w-2xl font-body text-xl text-ink-invert-muted">
-        LIBRA (Liquid Immersion Blanket: Robust Accountancy, TBC) is a series of experiments
-        demonstrating and measuring tritium breeding in molten salt blankets.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href={url('experiments')} class="rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
-          Explore the experiments
-        </a>
-        <a href={url('data')} class="rounded-full px-6 py-3 font-semibold text-ink-invert ring-1 ring-white/25 transition hover:ring-white/60">
-          Data and code
-        </a>
+  <!-- Hero: the headline beside the lead experiment's campaigns -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Breeding tritium for fusion energy</h1>
+        <p class="lead">Experiments measuring tritium breeding in molten salt blankets.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href={url('experiments')}>Explore the experiments</a>
+          <a class="btn" href={url('data')}>Data and code</a>
+        </div>
       </div>
+      {lead && leadCampaigns && <CampaignSheet experiment={lead} campaigns={leadCampaigns} />}
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-24">
-    <div class="mx-auto max-w-6xl px-6">
-      <div class="mx-auto max-w-3xl text-center">
-        <p class="font-body text-sm uppercase tracking-widest text-accent">About the project</p>
-        <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Closing the fuel cycle</h2>
-        <p class="mt-6 font-body text-lg leading-relaxed text-ink-muted">
+  <section id="about" class="about">
+    <div class="wrap">
+      <div>
+        <h2>Closing the fuel cycle</h2>
+        <p class="lead">
+          LIBRA (Liquid Immersion Blanket: Robust Accountancy, TBC) is a series of experiments
+          demonstrating and measuring tritium breeding in molten salt blankets.
+        </p>
+        <p class="todo">
           TODO: a short paragraph from the team on the mission of LIBRA, its funders and partners,
           and how the experiments build on each other.
         </p>
       </div>
-      <div class="mt-16 grid gap-6 md:grid-cols-3">
+      <ol class="pillars">
         {pillars.map((p) => (
-          <div class="rounded-2xl bg-surface p-8 ring-1 ring-line">
-            <Icon name={p.icon} class="h-8 w-8 text-accent" />
-            <h3 class="mt-4 font-display text-xl font-semibold">{p.title}</h3>
-            <p class="mt-3 font-body text-sm leading-relaxed text-ink-muted">{p.body}</p>
-          </div>
+          <li><h3>{p.title}</h3><p>{p.body}</p></li>
         ))}
-      </div>
+      </ol>
     </div>
   </section>
 
   <!-- Experiments -->
-  <section class="border-y border-line bg-surface py-24">
-    <div class="mx-auto max-w-6xl px-6">
-      <div class="flex flex-wrap items-end justify-between gap-4">
+  <section class="experiments">
+    <div class="wrap">
+      <div class="split-head">
+        <h2>Under the LIBRA umbrella</h2>
+        <p class="head-link"><a class="link-strong" href={url('experiments')}>All experiments</a></p>
+      </div>
+      <ExperimentLedger experiments={experiments} />
+    </div>
+  </section>
+
+  <!-- Featured publication, set as a statement -->
+  {featured.map((p) => (
+    <section class="paper" aria-labelledby="featured-paper">
+      <div class="wrap">
+        <p class="paper-label">Featured publication: {p.type}, <span class="num">{p.year}</span></p>
+        <h2 id="featured-paper" class="statement">{p.title}</h2>
+        <div class="paper-meta">
+          <div>
+            <p class="authors">{p.authors}</p>
+            <p class="venue">{p.venue}</p>
+          </div>
+          <ul class="paper-links">
+            {p.links?.map((l) => <li><a class="link-strong" href={l.href} target="_blank" rel="noopener">{l.label}</a></li>)}
+            <li><a class="link-strong" href={url('publications')}>All publications and talks</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Open data -->
+  <section class="data">
+    <div class="wrap">
+      <div class="split-head">
+        <h2>All our data is open</h2>
         <div>
-          <p class="font-body text-sm uppercase tracking-widest text-accent">Experiments</p>
-          <h2 class="mt-3 font-display text-4xl font-bold">Under the LIBRA umbrella</h2>
+          <p class="lead">Raw measurements, analysis notebooks and simulation models for every run, with DOIs for citation.</p>
+          <div class="actions">
+            <a class="btn btn-on-ink" href={datasets.zenodoCommunity} target="_blank" rel="noopener">Zenodo</a>
+            <a class="btn btn-on-ink" href="https://github.com/LIBRA-project" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
-        <a href={url('experiments')} class="inline-flex items-center gap-1.5 font-semibold text-accent">
-          All experiments <Icon name="arrowRight" class="h-4 w-4" />
-        </a>
       </div>
-      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {experiments.map((e) => <ExperimentCard experiment={e} />)}
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured publication + news -->
-  <section class="py-24">
-    <div class="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
-      <div>
-        <p class="font-body text-sm uppercase tracking-widest text-accent">Featured publication</p>
-        <div class="mt-6 space-y-4">
-          {featured.map((p) => <PublicationItem pub={p} />)}
-        </div>
-        <a href={url('publications')} class="mt-6 inline-flex items-center gap-1.5 font-semibold text-accent">
-          All publications and talks <Icon name="arrowRight" class="h-4 w-4" />
-        </a>
-      </div>
-      <div>
-        <p class="font-body text-sm uppercase tracking-widest text-accent">Latest news</p>
-        <ul class="mt-6 divide-y divide-line rounded-xl bg-surface ring-1 ring-line">
-          {news.map((n) => (
-            <li>
-              <a href={url(`news/${n.id}`)} class="block p-6 transition hover:bg-paper">
-                <time class="font-body text-xs uppercase tracking-wider text-ink-faint" datetime={n.data.date.toISOString()}>
-                  {formatDate(n.data.date)}
-                </time>
-                <h3 class="mt-1 font-display text-lg font-semibold">{n.data.title}</h3>
-                <p class="mt-1 font-body text-sm text-ink-muted">{n.data.summary}</p>
-              </a>
-            </li>
+      <table class="records">
+        <caption>The latest {latestRecords.length} of {datasets.items.length} records in the LIBRA Zenodo community</caption>
+        <thead><tr><th scope="col">Record</th><th scope="col">Published</th><th scope="col">DOI</th></tr></thead>
+        <tbody>
+          {latestRecords.map((d) => (
+            <tr>
+              <th scope="row">{d.title}</th>
+              <td class="num">{d.date}</td>
+              <td class="num"><a href={`https://doi.org/${d.doi}`} target="_blank" rel="noopener">{d.doi}</a></td>
+            </tr>
           ))}
-        </ul>
-        <a href={url('news')} class="mt-6 inline-flex items-center gap-1.5 font-semibold text-accent">
-          All news <Icon name="arrowRight" class="h-4 w-4" />
-        </a>
-      </div>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- Open science CTA -->
-  <section class="bg-libra-steel py-20">
-    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
+  <!-- News -->
+  <section class="news">
+    <div class="wrap">
       <div>
-        <h2 class="font-display text-3xl font-bold text-ink-invert">All our data is open</h2>
-        <p class="mt-3 max-w-xl font-body text-ink-invert-muted">
-          Raw measurements, analysis notebooks and simulation models for every run, with DOIs for citation.
-        </p>
+        <h2>Latest news</h2>
+        <p class="news-link"><a class="link-strong" href={url('news')}>All news</a></p>
       </div>
-      <div class="flex flex-wrap gap-4">
-        <a href="https://zenodo.org/communities/libra-project/records" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
-          <Icon name="database" class="h-5 w-5" /> Zenodo
-        </a>
-        <a href="https://github.com/LIBRA-project" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-ink-invert ring-1 ring-white/25 transition hover:ring-white/60">
-          <Icon name="github" class="h-5 w-5" /> GitHub
-        </a>
-      </div>
+      <NewsList posts={news} />
     </div>
   </section>
 </Base>
+
+<style>
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; }
+
+  /* Hero: Stage posture, the text on five columns and the sheet on seven,
+     filling the screen under the masthead. */
+  .hero { min-height: calc(100svh - 176px); display: grid; align-items: center; padding-block: var(--space-xl); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
+  h1 { font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.035em; }
+  .hero .lead { margin-top: var(--space-lg); max-width: 30ch; }
+  .hero .actions { margin-top: var(--space-xl); }
+  @media (max-width: 60rem) {
+    .hero { min-height: 0; padding-block: var(--space-2xl); }
+    .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  }
+
+  /* About: head beside numbered rows. */
+  .about { padding-block: var(--section-gap-l) var(--section-gap); }
+  .about .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: start; }
+  .about h2 { font-size: var(--text-section); }
+  .about .lead { margin-top: var(--space-lg); }
+  .todo { margin-top: var(--space-md); color: var(--color-muted); max-width: 52ch; }
+  .pillars { list-style: none; margin: 0; padding: 0; counter-reset: pillar; border-top: var(--rule-bar) solid var(--color-rule-2); }
+  .pillars li { counter-increment: pillar; display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: var(--space-md); padding-block: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .pillars li::before { content: counter(pillar); grid-row: span 2; font: 400 var(--text-title)/1.2 var(--font-mono); color: var(--color-muted); }
+  .pillars h3 { font-size: var(--text-title); line-height: 1.2; }
+  .pillars p { margin-top: var(--space-xs); color: var(--color-ink-2); }
+  @media (max-width: 60rem) { .about .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); } }
+
+  /* Experiments: a band of the second paper. */
+  .experiments { background: var(--color-paper-2); padding-block: var(--section-gap-s); }
+
+  /* Featured paper: the title as a statement. */
+  .paper { padding-block: var(--section-gap) var(--section-gap-s); }
+  .paper-label { margin-bottom: var(--space-md); font-size: 0.875rem; color: var(--color-muted); }
+  .paper-label .num { font-size: 0.875rem; }
+  .statement { font-size: var(--text-display-s); line-height: 1.08; max-width: 34ch; }
+  .paper-meta { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+  .authors { color: var(--color-ink-2); max-width: 70ch; }
+  .venue { margin-top: var(--space-sm); font-size: 0.875rem; font-style: italic; color: var(--color-muted); }
+  .paper-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); align-content: start; }
+  @media (max-width: 60rem) { .paper-meta { grid-template-columns: minmax(0, 1fr); } }
+
+  /* Open data: the ink band. */
+  .data { background: var(--color-ink); color: var(--color-on-ink); padding-block: var(--section-gap-s); --color-focus: var(--color-on-ink-link); }
+  .data .split-head { border-bottom-color: var(--color-on-ink); }
+  .data .lead { color: var(--color-on-ink-2); }
+  .data .actions { margin-top: var(--space-lg); }
+  .records { width: 100%; }
+  .records caption { caption-side: bottom; text-align: left; padding-top: var(--space-md); font-size: 0.875rem; color: var(--color-on-ink-2); }
+  .records thead th { text-align: left; font-size: 0.875rem; font-weight: 400; color: var(--color-on-ink-2); padding: 0 var(--space-md) var(--space-xs) 0; border-bottom: var(--rule-bar) solid var(--color-on-ink); }
+  .records tbody th, .records td { text-align: left; font-weight: 400; padding: var(--space-md) var(--space-md) var(--space-md) 0; border-bottom: var(--rule-hair) solid var(--color-on-ink-rule); vertical-align: baseline; }
+  .records .num { font-size: 0.9375rem; white-space: nowrap; }
+  .records a { color: var(--color-on-ink-link); }
+  @media (max-width: 40rem) {
+    .records thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .records, .records tbody, .records tr, .records tbody th, .records td { display: block; }
+    .records caption { display: block; caption-side: top; padding: 0 0 var(--space-sm); }
+    .records tr { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-on-ink-rule); }
+    .records tbody th, .records td { padding: 0; border: 0; }
+    .records td { margin-top: var(--space-2xs); }
+  }
+
+  /* News: head beside dated rows. */
+  .news { padding-block: var(--section-gap) var(--section-gap-l); }
+  .news .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); align-items: start; }
+  .news h2 { font-size: var(--text-section); }
+  .news-link { margin-top: var(--space-md); }
+  @media (max-width: 60rem) { .news .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
+</style>

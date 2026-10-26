@@ -114,7 +114,9 @@
 }
 
 @layer components {
-  .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+  /* Not ".container": Tailwind 4 ships its own container utility with
+     breakpoint widths that would override this one. */
+  .wrap { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
   .lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; color: var(--color-ink-2); }
   .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
   .tbc { color: var(--color-muted); }

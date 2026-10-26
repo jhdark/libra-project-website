@@ -11,7 +11,7 @@ interface Props {
 const { title, intro } = Astro.props;
 ---
 <header class="page-header">
-  <div class="container">
+  <div class="wrap">
     <h1>{title}</h1>
     {intro && <p class="lead">{intro}</p>}
     <slot />

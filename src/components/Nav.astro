@@ -15,12 +15,12 @@ const current = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$
 
 <!-- Masthead: the wordmark centred over a rule, the sections beneath. -->
 <header class="masthead">
-  <div class="container top">
+  <div class="wrap top">
     <a href={url()} class="home" aria-label="LIBRA home"><LibraLogo /></a>
     <button id="nav-toggle" type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">Menu</button>
   </div>
   <nav id="nav-menu" aria-label="Main">
-    <ul class="container">
+    <ul class="wrap">
       {links.map((l) => (
         <li><a href={url(l.href)} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a></li>
       ))}
