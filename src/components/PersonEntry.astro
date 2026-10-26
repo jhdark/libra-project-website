@@ -10,7 +10,7 @@ interface Props {
 const { person: p } = Astro.props;
 ---
 <li class="person">
-  {p.photo && <img src={url(p.photo)} alt="" width="96" height="96" loading="lazy" />}
+  {p.photo && <img src={url(p.photo)} alt="" width="96" height="96" />}
   <div>
     <h3>{p.name}</h3>
     <p class="role">{p.role || 'Role TBC'}</p>

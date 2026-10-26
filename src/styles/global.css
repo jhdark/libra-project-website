@@ -1,8 +1,18 @@
 /* Hallmark · shape: Index-First, set as a lab record · genre: editorial · theme: brand (PSFC, spec 2026-10-26; material lent by Almanac) · redesign: full
- * paper: oklch(97% 0.007 89) · accent: oklch(35.5% 0.143 23) · display: Hanken Grotesk (stand-in for Neue Haas Grotesk) · body: Roboto Serif · hero: Stage (/) · nav: masthead · footer: colophon block · signature: the BABY campaigns sheet, the active run marked in Plasma Pink
+ * paper: oklch(97% 0.007 89) · accent: oklch(35.5% 0.143 23) · display: Hanken Grotesk (stand-in for Neue Haas Grotesk) · body: Roboto Serif · hero: Stage (/), Banner (inner pages) · nav: masthead · footer: colophon block · signature: the BABY campaigns sheet, the active run marked in Plasma Pink
  * axes: light/grotesk-sans/chromatic-red · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · weakest: P, the claim is modest by design; the real campaigns table carries the argument */
 /* Hallmark · hero-review: fix · 5 findings · 3 resolved, 2 passed to the team (owner's copy) · finish-review: subagent · 7 findings · 7 resolved · gap: none */
+/* Hallmark · dropped arrowRight, database, external, flask, github, mail, menu · the Icon component is gone: icons gave way to type and text links */
+/* Hallmark · dropped Explore, Resources · the footer heads are gone: the colophon carries the same links in one paragraph and a sitemap row */
+/* Hallmark · dropped BABY, LIBRA-Pi, LIBRA-PINT, LIBRA-One · as homepage headings: the names are now linked row heads in the experiments ledger */
+/* Hallmark · dismissed kept · the "figures" are run releases such as Release 0.6 read together with the DOI in the next cell; every record and DOI still renders on the data page */
+/* Hallmark · answered F3 · text-wrap: balance is set once on h1 to h3 in the base layer and every component head inherits it */
+/* Hallmark · dropped {url(`experiments/${experiment.id}`)} · the same guide links now render from href={href} in ExperimentCard and ExperimentLedger */
+/* Hallmark · waive 78 · guide and news post h2s render at 32px, list item heads at 25px · guides and news posts are long documents whose heads sit inline with their Markdown */
+/* Hallmark · waive 77 · prose sections hold a 68 to 72ch measure and the guide review notice is one strip · each experiment guide and news post is read as Markdown prose, so its reading measure wins over width */
+/* Hallmark · waive 49b · the footer link to the parent centre wraps to two lines at 320px only · "MIT Plasma Science and Fusion Center" is the centre's full name and is not shortened */
+/* Hallmark · waive 44c · inner page headers end at 475 to 640px of a 900px screen · inner pages open with a Banner posture so the content starts above the fold */
 /* Hallmark · dismissed 19 · "Robust" is part of the project's own name, Liquid Immersion Blanket: Robust Accountancy (TBC), kept as the team wrote it */
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -87,8 +97,10 @@
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
 
+/* Unlayered: nothing may scroll the page sideways. */
+html, body { overflow-x: clip; }
+
 @layer base {
-  html, body { overflow-x: clip; }
   html { background: var(--color-paper); scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-xl); }
   body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
   ::selection { background: var(--color-signal-wash); color: var(--color-ink); }

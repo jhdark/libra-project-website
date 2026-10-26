@@ -88,8 +88,12 @@ const pillars = [
   {featured.map((p) => (
     <section class="paper" aria-labelledby="featured-paper">
       <div class="wrap">
-        <p class="paper-label">Featured publication: {p.type}, <span class="num">{p.year}</span></p>
-        <h2 id="featured-paper" class="statement">{p.title}</h2>
+        <div class="split-head">
+          <h2 id="featured-paper">Featured publication</h2>
+          <p class="head-link"><a class="link-strong" href={url('publications')}>All publications and talks</a></p>
+        </div>
+        <p class="paper-type">{p.type.charAt(0).toUpperCase() + p.type.slice(1)}, <span class="num">{p.year}</span></p>
+        <h3 class="statement">{p.title}</h3>
         <div class="paper-meta">
           <div>
             <p class="authors">{p.authors}</p>
@@ -97,7 +101,6 @@ const pillars = [
           </div>
           <ul class="paper-links">
             {p.links?.map((l) => <li><a class="link-strong" href={l.href} target="_blank" rel="noopener">{l.label}</a></li>)}
-            <li><a class="link-strong" href={url('publications')}>All publications and talks</a></li>
           </ul>
         </div>
       </div>
@@ -150,7 +153,7 @@ const pillars = [
 
   /* Hero: Stage posture, the text on five columns and the sheet on seven,
      filling the screen under the masthead. */
-  .hero { min-height: calc(100svh - 176px); display: grid; align-items: center; padding-block: var(--space-xl); }
+  .hero { min-height: calc(100svh - 176px); display: grid; align-items: center; padding-block: 0 var(--space-lg); }
   .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
   h1 { font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.035em; }
   .hero .lead { margin-top: var(--space-lg); max-width: 30ch; }
@@ -178,9 +181,9 @@ const pillars = [
 
   /* Featured paper: the title as a statement. */
   .paper { padding-block: var(--section-gap) var(--section-gap-s); }
-  .paper-label { margin-bottom: var(--space-md); font-size: 0.875rem; color: var(--color-muted); }
-  .paper-label .num { font-size: 0.875rem; }
-  .statement { font-size: var(--text-display-s); line-height: 1.08; max-width: 34ch; }
+  .paper-type { margin-bottom: var(--space-sm); color: var(--color-muted); }
+  .paper-type .num { font-size: 0.9375rem; }
+  .statement { font-size: var(--text-display-s); line-height: 1.08; letter-spacing: -0.02em; max-width: 34ch; }
   .paper-meta { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
   .authors { color: var(--color-ink-2); max-width: 70ch; }
   .venue { margin-top: var(--space-sm); font-size: 0.875rem; font-style: italic; color: var(--color-muted); }
