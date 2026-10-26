@@ -12,7 +12,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 
   <section class="news">
     <div class="wrap">
-      <NewsList posts={news} headingLevel="h2" />
+      <NewsList posts={news} headingLevel="h2" wide />
     </div>
   </section>
 </Base>
