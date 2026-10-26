@@ -12,6 +12,8 @@ export type PersonLinks = {
   scholar?: string;
   orcid?: string;
   psfc?: string;
+  // Another institution's profile page (a university, UKAEA).
+  profile?: string;
   website?: string;
 };
 export type Person = {
@@ -38,6 +40,7 @@ const photo = p.photo ? photos[`../assets/people/${p.photo}`]?.default : undefin
 const l: PersonLinks = { ...p.links, github: p.links?.github ?? p.github, email: p.links?.email ?? p.email };
 const links = [
   l.psfc && { label: 'MIT PSFC', href: l.psfc },
+  l.profile && { label: 'Profile', href: l.profile },
   l.website && { label: 'Website', href: l.website },
   l.scholar && { label: 'Google Scholar', href: l.scholar },
   l.orcid && { label: 'ORCID', href: `https://orcid.org/${l.orcid}` },
