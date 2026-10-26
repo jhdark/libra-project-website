@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIBRA, direction B: Lab record</title>
+<meta name="description" content="Design direction B for the LIBRA website: a LIBRA sub-brand set like a lab record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&family=Roboto+Mono:wght@400;500&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · direction B, Lab record · theme: almanac, re-anchored on PSFC off-white and MIT red (brand spec 2026-10-26) · shape: Long Document with a ledger · hero: Stage, the campaigns sheet · nav: wordmark and links · footer: PSFC lockup over the links · comparison mock */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: P, the claim is modest; the real campaigns table carries it */
+:root {
+  --color-paper: #f7f5f0;        /* PSFC Offwhite template */
+  --color-paper-2: #efece4;
+  --color-sheet: #fffdf8;
+  --color-ink: #1b1718;
+  --color-ink-2: #3a3434;
+  --color-muted: #6b6460;
+  --color-rule: #d9d4ca;
+  --color-rule-2: #1b1718;
+  --color-accent: #750014;       /* MIT red, 10.9:1 on paper */
+  --color-accent-2: #5a0010;
+  --color-accent-ink: #f7f5f0;
+  --color-signal: #df1ad2;       /* PSFC Plasma Pink: marks and fills only, never text */
+  --color-signal-wash: #fbe3f8;
+  --color-focus: #750014;
+  --color-on-ink: #f7f5f0; --color-on-ink-2: #d8d2c8; --color-on-ink-muted: #b9b1a6; --color-ink-rule: #3d3637; --color-on-ink-link: #f3b8ee;
+  --key-baby: #9dfc7e; --key-pi: #98ecff; --key-pint: #ffa630; --key-one: #bfb3ff;
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Roboto Serif", ui-serif, Georgia, serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 48px; --space-6: 72px; --space-7: 128px;
+  --container: 1360px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font: 400 17px/1.6 var(--font-body); font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--color-signal-wash); color: var(--color-ink); }
+html { scrollbar-color: var(--color-rule) var(--color-paper); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+a:hover { color: var(--color-accent-2); }
+a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; letter-spacing: -0.02em; line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-5); }
+@media (max-width: 720px) { .wrap { padding: 0 var(--space-2); } }
+
+.nav { border-bottom: 2px solid var(--color-rule-2); }
+.nav .wrap { display: flex; align-items: baseline; justify-content: space-between; padding-top: 22px; padding-bottom: 18px; gap: var(--space-3); }
+.wordmark { font: 600 24px/1 var(--font-display); letter-spacing: 0.01em; color: var(--color-ink); text-decoration: none; }
+.wordmark span { font: 400 14px var(--font-body); color: var(--color-muted); margin-left: var(--space-2); letter-spacing: 0; }
+.nav ul { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; font: 500 15px var(--font-display); }
+.nav ul a { color: var(--color-ink); text-decoration: none; }
+.nav ul a:hover { color: var(--color-accent); }
+@media (max-width: 960px) { .nav ul { display: none; } .wordmark span { display: none; } }
+
+.hero { min-height: calc(100svh - 66px); display: grid; align-items: center; padding: var(--space-5) 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-6); align-items: center; }
+.hero h1 { font-size: clamp(48px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.035em; }
+.hero p { margin-top: var(--space-3); font-size: 20px; color: var(--color-ink-2); max-width: 30ch; }
+.actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-3); background: var(--color-accent); color: var(--color-accent-ink); border-radius: 2px; font: 600 16px var(--font-display); text-decoration: none; transition: background-color 150ms ease-out; }
+.btn:hover { background: var(--color-accent-2); color: var(--color-accent-ink); }
+.btn:active { transform: translateY(1px); }
+.hero .link { font: 500 16px var(--font-display); }
+
+.sr { position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; overflow: hidden; }
+figure { margin: 0; }
+.sheet { background: var(--color-sheet); border-top: 2px solid var(--color-rule-2); padding: var(--space-3) var(--space-4) var(--space-2); }
+.sheet .cap { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); margin-bottom: var(--space-2); }
+.sheet .cap h2 { font-size: 26px; }
+.sheet .cap span { font-size: 14px; color: var(--color-muted); }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font: 400 14px var(--font-body); color: var(--color-muted); padding: 0 var(--space-2) var(--space-1) 0; border-bottom: 2px solid var(--color-rule-2); }
+td { padding: 14px var(--space-2) 14px 0; border-bottom: 1px solid var(--color-rule); vertical-align: top; }
+td.fig { font: 400 15px var(--font-mono); font-variant-numeric: tabular-nums; }
+tr.now td { background: var(--color-signal-wash); }
+tr.now td:first-child { box-shadow: inset 4px 0 0 var(--color-signal); padding-left: var(--space-2); }
+.sheet figcaption { margin-top: var(--space-2); font-size: 14px; font-style: italic; color: var(--color-muted); }
+@media (max-width: 960px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .sheet { padding: var(--space-2); } }
+
+section { padding: var(--space-7) 0; }
+.band { background: var(--color-paper-2); }
+.head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-6); margin-bottom: var(--space-5); padding-bottom: var(--space-3); border-bottom: 2px solid var(--color-rule-2); align-items: end; }
+.head h2 { font-size: clamp(36px, 4vw, 56px); }
+.head p { color: var(--color-ink-2); max-width: 56ch; }
+@media (max-width: 860px) { .head { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); } }
+
+.ledger td:first-child { width: 3rem; }
+.ledger .key { display: block; width: 28px; height: 28px; background: var(--k); border: 1px solid var(--color-rule-2); }
+.ledger h3 { font-size: 30px; }
+.ledger h3 a { color: var(--color-ink); text-decoration: none; }
+.ledger h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.ledger td { padding-top: var(--space-3); padding-bottom: var(--space-3); vertical-align: middle; }
+.ledger .tl { color: var(--color-ink-2); }
+.ledger .st { font-size: 15px; white-space: nowrap; }
+@media (max-width: 860px) { .ledger .tl { display: none; } }
+
+.cite { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--space-6); }
+.cite blockquote { margin: 0; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.3; font-weight: 500; }
+.cite .authors { margin-top: var(--space-3); font-size: 15px; color: var(--color-ink-2); max-width: 75ch; }
+.cite .venue { margin-top: var(--space-1); font-size: 15px; font-style: italic; color: var(--color-muted); }
+.cite ul { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--color-rule-2); font-family: var(--font-display); font-weight: 500; }
+.cite li { border-bottom: 1px solid var(--color-rule); }
+.cite li a { display: block; padding: var(--space-2) 0; text-decoration: none; }
+.cite li a:hover { text-decoration: underline; }
+@media (max-width: 860px) { .cite { grid-template-columns: minmax(0, 1fr); } }
+
+.ink { background: var(--color-ink); color: var(--color-on-ink); }
+.ink .head { border-bottom-color: var(--color-paper); }
+.ink .head p { color: var(--color-on-ink-2); }
+.ink a { color: var(--color-paper); }
+.ink a:focus-visible { outline-color: var(--color-paper); }
+.ink th { color: var(--color-on-ink-muted); border-bottom-color: var(--color-paper); }
+.ink td { border-bottom-color: var(--color-ink-rule); }
+.ink td.fig a { color: var(--color-on-ink-link); }
+@media (max-width: 860px) { .ink td.fig { word-break: break-all; } }
+
+.news { list-style: none; margin: 0; padding: 0; }
+.news li { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-rule); }
+.news time { font: 400 15px var(--font-mono); color: var(--color-muted); }
+.news h3 { font-size: 26px; }
+.news h3 a { color: var(--color-ink); text-decoration: none; }
+.news h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.news p { margin-top: var(--space-1); color: var(--color-ink-2); }
+@media (max-width: 720px) { .news li { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); } }
+
+footer { border-top: 2px solid var(--color-rule-2); padding: var(--space-6) 0 var(--space-5); }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); gap: var(--space-5); }
+footer img { width: 300px; max-width: 100%; height: auto; }
+footer p { margin-top: var(--space-3); color: var(--color-muted); font-size: 15px; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); font: 500 15px var(--font-display); }
+footer ul a { color: var(--color-ink); text-decoration: none; }
+footer ul a:hover { color: var(--color-accent); text-decoration: underline; }
+@media (max-width: 860px) { footer .wrap { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn:active { transform: none; } }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="wordmark" href="#">LIBRA<span>MIT Plasma Science and Fusion Center</span></a>
+    <ul>
+      <li><a href="#">Experiments</a></li>
+      <li><a href="#">People</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Data &amp; Code</a></li>
+      <li><a href="#">News</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Breeding tritium for fusion energy</h1>
+        <p>Experiments measuring tritium breeding in molten salt blankets.</p>
+        <div class="actions">
+          <a class="btn" href="#">Explore the experiments</a>
+          <a class="link" href="#">Data and code</a>
+        </div>
+      </div>
+      <figure class="sheet">
+        <div class="cap"><h2>BABY campaigns</h2><span>14 MeV DT neutrons</span></div>
+        <table>
+          <thead><tr><th scope="col">Campaign</th><th scope="col">Breeder</th><th scope="col">Runs</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><td>BABY 100 mL</td><td>Molten salt (TBC)</td><td class="fig">3 to 8</td><td>Completed</td></tr>
+            <tr><td>BABY 1 L</td><td>Molten salt (TBC)</td><td class="fig">1 to 12</td><td>Completed</td></tr>
+            <tr class="now"><td>FLiBe 1 L</td><td>FLiBe</td><td class="fig">1 to 4</td><td>Active</td></tr>
+            <tr><td>LiPb</td><td>Lead-lithium</td><td class="fig">TBC</td><td>TBC</td></tr>
+            <tr><td>LiOx</td><td>Lithium oxide (TBC)</td><td class="fig">TBC</td><td>TBC</td></tr>
+          </tbody>
+        </table>
+        <figcaption>From the BABY experiment guide. The active campaign is marked.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head">
+        <h2>The experiments</h2>
+        <p>Four experiments under one programme. Each has a guide covering setup, diagnostics, procedure, and data.</p>
+      </div>
+      <table class="ledger">
+        <thead><tr><th scope="col"><span class="sr">Key</span></th><th scope="col">Experiment</th><th scope="col">Focus</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td><span class="key" style="--k:var(--key-baby)"></span></td><td><h3><a href="#">BABY</a></h3></td><td class="tl">Bench-scale molten salt tritium breeding</td><td class="st">Active</td></tr>
+          <tr><td><span class="key" style="--k:var(--key-pi)"></span></td><td><h3><a href="#">LIBRA-Pi</a></h3></td><td class="tl">Description TBC</td><td class="st">Planned</td></tr>
+          <tr><td><span class="key" style="--k:var(--key-pint)"></span></td><td><h3><a href="#">LIBRA-PINT</a></h3></td><td class="tl">Sparging in molten salts for tritium extraction</td><td class="st">Active</td></tr>
+          <tr><td><span class="key" style="--k:var(--key-one)"></span></td><td><h3><a href="#">LIBRA-One</a></h3></td><td class="tl">Description TBC</td><td class="st">Planned</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><h2>Featured paper</h2><p><a href="#">All publications and talks</a></p></div>
+      <div class="cite">
+        <div>
+          <blockquote>Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment</blockquote>
+          <p class="authors">R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller</p>
+          <p class="venue">arXiv:2412.02721 (journal version TBC), 2024</p>
+        </div>
+        <ul aria-label="Paper links">
+          <li><a href="https://arxiv.org/abs/2412.02721">Read the preprint on arXiv</a></li>
+          <li><a href="https://github.com/LIBRA-project/insights-from-BABY-experiment-paper">Code and data on GitHub</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.14455926">Archived release on Zenodo</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ink">
+    <div class="wrap">
+      <div class="head">
+        <h2>Open data</h2>
+        <p>21 records on Zenodo, each with a DOI: raw measurements, analysis and the libra-toolbox software. <a href="https://zenodo.org/communities/libra-project/records">Browse the community</a></p>
+      </div>
+      <table>
+        <thead><tr><th scope="col">Record</th><th scope="col">Published</th><th scope="col">DOI</th></tr></thead>
+        <tbody>
+          <tr><td>libra-toolbox v0.10</td><td class="fig">2026-10-15</td><td class="fig"><a href="https://doi.org/10.5281/zenodo.23390926">10.5281/zenodo.23390926</a></td></tr>
+          <tr><td>1L BABY FLiBe Run 1 Activation Foil Measurement (HPGe)</td><td class="fig">2025-12-16</td><td class="fig"><a href="https://doi.org/10.5281/zenodo.17955510">10.5281/zenodo.17955510</a></td></tr>
+          <tr><td>1L BABY FLiBe Run 1 NaI Activation Foil Measurement</td><td class="fig">2025-11-26</td><td class="fig"><a href="https://doi.org/10.5281/zenodo.17725532">10.5281/zenodo.17725532</a></td></tr>
+          <tr><td>1L BABY FLiBe Run 1 PRT Detector Data</td><td class="fig">2025-11-25</td><td class="fig"><a href="https://doi.org/10.5281/zenodo.17715864">10.5281/zenodo.17715864</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><h2>News</h2><p><a href="#">All news</a></p></div>
+      <ul class="news">
+        <li><time datetime="2026-10-23">23 Oct 2026</time><div><h3><a href="#">A first look at the LIBRA website</a></h3><p>A skeleton of the new LIBRA project website is ready for team feedback.</p></div></li>
+        <li><time datetime="2026-10-15">15 Oct 2026</time><div><h3><a href="#">libra-toolbox v0.10 released</a></h3><p>A new release of the shared Python package for neutron detection and tritium analysis.</p></div></li>
+        <li><time datetime="2026-06-21">21 Jun 2026</time><div><h3><a href="#">Hot FLiBe irradiated with DT fusion neutrons</a></h3><p>The third FLiBe 1 L run irradiated molten FLiBe to measure tritium breeding.</p></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="assets/psfc-mit-red.svg" alt="MIT Plasma Science and Fusion Center">
+      <p>LIBRA is a project of the MIT Plasma Science and Fusion Center.</p>
+    </div>
+    <ul>
+      <li><a href="#">Experiments</a></li><li><a href="#">People</a></li><li><a href="#">Publications</a></li><li><a href="#">Data &amp; Code</a></li><li><a href="#">News</a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/LIBRA-project">GitHub organisation</a></li>
+      <li><a href="https://zenodo.org/communities/libra-project/records">Zenodo community</a></li>
+      <li><a href="https://libra-toolbox.readthedocs.io/en/latest/">libra-toolbox docs</a></li>
+      <li><a href="mailto:remidm@mit.edu">remidm@mit.edu</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

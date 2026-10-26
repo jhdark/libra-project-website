@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIBRA, direction C: Apparatus</title>
+<meta name="description" content="Design direction C for the LIBRA website: a LIBRA sub-brand led by the hardware.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+<style>
+/* Hallmark · direction C, Apparatus · theme: blueprint, anchored on PSFC Industrial Blue (brand spec 2026-10-26) · shape: Map / Diagram · hero: Stage, the LIBRA-PINT CAD model · nav: wordmark and links · footer: PSFC lockup over the links · comparison mock */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: H, the programme line competes with the model; the model owns the first screen */
+:root {
+  --color-paper: #f3f5f9;
+  --color-paper-2: #e7ebf3;
+  --color-panel: #ffffff;
+  --color-ink: #0d1b2e;
+  --color-ink-2: #33415a;
+  --color-muted: #5e6a75;
+  --color-rule: #cdd5e3;
+  --color-rule-2: #0d1b2e;
+  --color-accent: #1966ff;       /* PSFC Industrial Blue: fills, white text 4.77:1 */
+  --color-accent-2: #1457d9;     /* links on paper, 5.67:1 */
+  --color-accent-ink: #ffffff;
+  --color-tag: #bfb3ff;          /* Hydrogen Periwinkle */
+  --color-focus: #1457d9;
+  --color-viewer: #e2e7f0;
+  --key-baby: #9dfc7e; --key-pi: #98ecff; --key-pint: #ffa630; --key-one: #bfb3ff;
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 48px; --space-6: 72px; --space-7: 128px;
+  --radius: 6px;
+  --container: 1360px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font: 400 17px/1.6 var(--font-body); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--color-tag); color: var(--color-ink); }
+html { scrollbar-color: var(--color-rule) var(--color-paper); }
+a { color: var(--color-accent-2); text-underline-offset: 3px; }
+a:focus-visible, model-viewer:focus-visible, model-viewer:focus-within { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; letter-spacing: -0.02em; line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-5); }
+@media (max-width: 720px) { .wrap { padding: 0 var(--space-2); } }
+
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: var(--space-3); border-bottom: 1px solid var(--color-rule); }
+.wordmark { font: 600 22px/1 var(--font-display); letter-spacing: 0.02em; color: var(--color-ink); text-decoration: none; }
+.nav ul { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; font-size: 15px; font-weight: 500; }
+.nav ul a { color: var(--color-ink); text-decoration: none; }
+.nav ul a:hover { color: var(--color-accent-2); }
+@media (max-width: 860px) { .nav ul { display: none; } }
+
+.hero { min-height: calc(100svh - 72px); display: grid; align-items: center; padding: var(--space-4) 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-5); align-items: center; }
+.hero h1 { font-size: clamp(44px, 5.6vw, 84px); line-height: 0.98; letter-spacing: -0.035em; }
+.hero p { margin-top: var(--space-3); font-size: 20px; color: var(--color-ink-2); max-width: 30ch; }
+.actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-3); background: var(--color-accent); color: var(--color-accent-ink); border-radius: var(--radius); font-weight: 600; text-decoration: none; transition: background-color 150ms ease-out; }
+.btn:hover { background: var(--color-accent-2); }
+.btn:active { transform: translateY(1px); }
+.hero .link { font-weight: 500; }
+figure { margin: 0; }
+.viewer { background: var(--color-viewer); border-radius: var(--radius); border: 1px solid var(--color-rule); overflow: hidden; }
+model-viewer { display: block; width: 100%; height: min(62svh, 580px); background: var(--color-viewer); --poster-color: var(--color-viewer); }
+.viewer figcaption { display: flex; justify-content: space-between; gap: var(--space-2); padding: 12px var(--space-2); font-size: 14px; color: var(--color-muted); border-top: 1px solid var(--color-rule); background: var(--color-panel); }
+.viewer figcaption strong { color: var(--color-ink); font-weight: 600; }
+@media (max-width: 960px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } model-viewer { height: 380px; } }
+
+section { padding: var(--space-7) 0; }
+.band { background: var(--color-paper-2); }
+.head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-6); margin-bottom: var(--space-6); align-items: end; }
+.head h2 { font-size: clamp(36px, 4vw, 56px); }
+.head p { color: var(--color-ink-2); max-width: 56ch; }
+@media (max-width: 860px) { .head { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); } }
+
+.line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative; }
+.line::before { content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 2px; background: var(--color-rule-2); }
+.line li { position: relative; padding-right: var(--space-4); }
+.line .node { display: block; width: 28px; height: 28px; border-radius: 50%; background: var(--k); border: 2px solid var(--color-rule-2); position: relative; }
+.line .node.planned { background: var(--color-paper-2); box-shadow: inset 0 0 0 5px var(--color-paper-2), inset 0 0 0 14px var(--k); }
+.line .n { display: block; margin-top: var(--space-3); font: 400 14px var(--font-mono); color: var(--color-muted); }
+.line h3 { margin-top: var(--space-1); font-size: clamp(28px, 2.6vw, 38px); }
+.line h3 a { color: var(--color-ink); text-decoration: none; }
+.line h3 a:hover { color: var(--color-accent-2); text-decoration: underline; }
+.line .tl { margin-top: var(--space-1); color: var(--color-ink-2); }
+.line .st { margin-top: var(--space-2); display: inline-block; font-size: 14px; padding: 2px 10px; border-radius: var(--radius); background: var(--color-panel); border: 1px solid var(--color-rule); }
+@media (max-width: 860px) {
+  .line { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-left: var(--space-5); }
+  .line::before { left: 13px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .line .node { position: absolute; left: calc(-1 * var(--space-5)); top: 0; }
+  .line .n { margin-top: 0; }
+}
+
+.facts { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-6); align-items: start; }
+.facts h2 { font-size: clamp(36px, 4vw, 56px); }
+.facts .lede { margin-top: var(--space-3); color: var(--color-ink-2); max-width: 44ch; }
+.facts dl { margin: 0; background: var(--color-panel); border: 1px solid var(--color-rule); border-radius: var(--radius); }
+.facts dl div { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: var(--space-2); padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-rule); }
+.facts dl div:last-child { border-bottom: 0; }
+.facts dt { color: var(--color-muted); font-size: 15px; }
+.facts dd { margin: 0; font: 400 15px/1.5 var(--font-mono); }
+@media (max-width: 860px) { .facts { grid-template-columns: minmax(0, 1fr); } .facts dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); }
+.split h2 { font-size: clamp(32px, 3.2vw, 44px); margin-bottom: var(--space-4); }
+.split h3 { font-size: 26px; line-height: 1.2; }
+.split .authors { margin-top: var(--space-2); font-size: 15px; color: var(--color-ink-2); }
+.split .venue { margin-top: var(--space-1); font: 400 14px var(--font-mono); color: var(--color-muted); }
+.links { margin-top: var(--space-3); display: flex; gap: var(--space-3); flex-wrap: wrap; font-weight: 500; }
+.records { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--color-rule-2); }
+.records li { padding: 14px 0; border-bottom: 1px solid var(--color-rule); }
+.records a { font: 400 14px var(--font-mono); }
+.records span { display: block; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+
+.news { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.news li { border-top: 2px solid var(--color-rule-2); padding-top: var(--space-2); }
+.news time { font: 400 14px var(--font-mono); color: var(--color-muted); }
+.news h3 { margin-top: var(--space-1); font-size: 24px; line-height: 1.2; }
+.news h3 a { color: var(--color-ink); text-decoration: none; }
+.news h3 a:hover { color: var(--color-accent-2); text-decoration: underline; }
+.news p { margin-top: var(--space-1); color: var(--color-ink-2); font-size: 15px; }
+@media (max-width: 860px) { .news { grid-template-columns: minmax(0, 1fr); } }
+
+footer { background: var(--color-ink); color: var(--color-paper); padding: var(--space-6) 0 var(--space-5); }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); gap: var(--space-5); }
+footer img { width: 300px; max-width: 100%; height: auto; }
+footer p { margin-top: var(--space-3); color: var(--color-rule); font-size: 15px; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); font-size: 15px; }
+footer a { color: var(--color-paper); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer a:focus-visible { outline-color: var(--color-paper); }
+@media (max-width: 860px) { footer .wrap { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn:active { transform: none; } }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="wordmark" href="#">LIBRA</a>
+    <ul>
+      <li><a href="#">Experiments</a></li>
+      <li><a href="#">People</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Data &amp; Code</a></li>
+      <li><a href="#">News</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Breeding tritium for fusion energy</h1>
+        <p>Experiments measuring tritium breeding in molten salt blankets.</p>
+        <div class="actions">
+          <a class="btn" href="#">Explore the experiments</a>
+          <a class="link" href="#">Data and code</a>
+        </div>
+      </div>
+      <figure class="viewer">
+        <model-viewer src="../../public/models/libra_pint_model.glb" alt="CAD model of the LIBRA-PINT experiment assembly" camera-controls shadow-intensity="1" interaction-prompt="none"></model-viewer>
+        <figcaption><span><strong>LIBRA-PINT</strong> assembly, CAD model</span><span>Drag to rotate</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head">
+        <h2>The programme</h2>
+        <p>Four experiments in order. Filled markers are running; open markers are planned.</p>
+      </div>
+      <ol class="line">
+        <li><span class="node" style="--k:var(--key-baby)"></span><span class="n">01</span><h3><a href="#">BABY</a></h3><p class="tl">Bench-scale molten salt tritium breeding</p><span class="st">Active</span></li>
+        <li><span class="node planned" style="--k:var(--key-pi)"></span><span class="n">02</span><h3><a href="#">LIBRA-Pi</a></h3><p class="tl">Description TBC</p><span class="st">Planned</span></li>
+        <li><span class="node" style="--k:var(--key-pint)"></span><span class="n">03</span><h3><a href="#">LIBRA-PINT</a></h3><p class="tl">Sparging in molten salts for tritium extraction</p><span class="st">Active</span></li>
+        <li><span class="node planned" style="--k:var(--key-one)"></span><span class="n">04</span><h3><a href="#">LIBRA-One</a></h3><p class="tl">Description TBC</p><span class="st">Planned</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap facts">
+      <div>
+        <h2>BABY, the bench-scale stage</h2>
+        <p class="lede">Molten salt irradiated by 14 MeV neutrons from a DT generator. Bred tritium is carried out by a sweep gas and counted by liquid scintillation.</p>
+        <div class="actions"><a href="#">Read the BABY guide</a></div>
+      </div>
+      <dl>
+        <div><dt>Breeder volume</dt><dd>100 mL and 1 L</dd></div>
+        <div><dt>Breeders tested</dt><dd>Molten salt, FLiBe, LiPb, Li oxide (TBC)</dd></div>
+        <div><dt>Neutron source</dt><dd>DT neutron generator (14 MeV)</dd></div>
+        <div><dt>Tritium measurement</dt><dd>Liquid scintillation counting</dd></div>
+        <div><dt>Neutron diagnostics</dt><dd>Activation foils, proton recoil, diamond detector</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h2>Featured paper</h2>
+        <h3>Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment</h3>
+        <p class="authors">R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller</p>
+        <p class="venue">arXiv:2412.02721 (journal version TBC), 2024</p>
+        <p class="links"><a href="https://arxiv.org/abs/2412.02721">arXiv</a><a href="https://github.com/LIBRA-project/insights-from-BABY-experiment-paper">Code and data</a><a href="https://doi.org/10.5281/zenodo.14455926">Zenodo</a><a href="#">All publications</a></p>
+      </div>
+      <div>
+        <h2>Open data, 21 records</h2>
+        <ul class="records">
+          <li><span>libra-toolbox v0.10</span><a href="https://doi.org/10.5281/zenodo.23390926">10.5281/zenodo.23390926</a></li>
+          <li><span>1L BABY FLiBe Run 1 Activation Foil Measurement (HPGe)</span><a href="https://doi.org/10.5281/zenodo.17955510">10.5281/zenodo.17955510</a></li>
+          <li><span>1L BABY FLiBe Run 1 NaI Activation Foil Measurement</span><a href="https://doi.org/10.5281/zenodo.17725532">10.5281/zenodo.17725532</a></li>
+        </ul>
+        <p class="links"><a href="https://zenodo.org/communities/libra-project/records">Browse the Zenodo community</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><h2>News</h2><p><a href="#">All news</a></p></div>
+      <ul class="news">
+        <li><time datetime="2026-10-23">23 October 2026</time><h3><a href="#">A first look at the LIBRA website</a></h3><p>A skeleton of the new LIBRA project website is ready for team feedback.</p></li>
+        <li><time datetime="2026-10-15">15 October 2026</time><h3><a href="#">libra-toolbox v0.10 released</a></h3><p>A new release of the shared Python package for neutron detection and tritium analysis.</p></li>
+        <li><time datetime="2026-06-21">21 June 2026</time><h3><a href="#">Hot FLiBe irradiated with DT fusion neutrons</a></h3><p>The third FLiBe 1 L run irradiated molten FLiBe to measure tritium breeding.</p></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="assets/psfc-white.svg" alt="MIT Plasma Science and Fusion Center">
+      <p>LIBRA is a project of the MIT Plasma Science and Fusion Center.</p>
+    </div>
+    <ul>
+      <li><a href="#">Experiments</a></li><li><a href="#">People</a></li><li><a href="#">Publications</a></li><li><a href="#">Data &amp; Code</a></li><li><a href="#">News</a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/LIBRA-project">GitHub organisation</a></li>
+      <li><a href="https://zenodo.org/communities/libra-project/records">Zenodo community</a></li>
+      <li><a href="https://libra-toolbox.readthedocs.io/en/latest/">libra-toolbox docs</a></li>
+      <li><a href="mailto:remidm@mit.edu">remidm@mit.edu</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
