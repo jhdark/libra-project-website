@@ -94,6 +94,12 @@
         "baby",
         "libra-pi",
         "libra-one"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2026-arpa-e-summit-poster.pdf"
+        }
       ]
     },
     {
@@ -118,6 +124,12 @@
         "baby",
         "libra-pi",
         "libra-one"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2025-arpa-e-fusion-meeting-poster.pdf"
+        }
       ]
     },
     {
@@ -128,6 +140,12 @@
       "year": 2025,
       "experiments": [
         "baby"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2025-sofe-goles-tritium-measurement-poster.pdf"
+        }
       ]
     },
     {
@@ -138,6 +156,12 @@
       "year": 2025,
       "experiments": [
         "baby"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2025-sofe-dunn-clilf-poster.pdf"
+        }
       ]
     },
     {
@@ -148,6 +172,12 @@
       "year": 2025,
       "experiments": [
         "baby"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2025-sofe-edwards-neutron-detection-poster.pdf"
+        }
       ]
     },
     {
@@ -179,6 +209,20 @@
       "experiments": [
         "baby",
         "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Poster, part 1 (PDF)",
+          "href": "media/talks/2025-arpa-e-summit-poster-1.pdf"
+        },
+        {
+          "label": "Part 2 (PDF)",
+          "href": "media/talks/2025-arpa-e-summit-poster-2.pdf"
+        },
+        {
+          "label": "Part 3 (PDF)",
+          "href": "media/talks/2025-arpa-e-summit-poster-3.pdf"
+        }
       ]
     },
     {
@@ -269,6 +313,12 @@
       "experiments": [
         "baby",
         "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Slides (PDF)",
+          "href": "media/talks/2024-tofe-segantin-neutronics.pdf"
+        }
       ]
     },
     {
@@ -311,6 +361,20 @@
       "experiments": [
         "baby",
         "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "LIBRA poster (PDF)",
+          "href": "media/talks/2024-arpa-e-summit-libra-poster.pdf"
+        },
+        {
+          "label": "BABY poster (PDF)",
+          "href": "media/talks/2024-arpa-e-summit-baby-poster.pdf"
+        },
+        {
+          "label": "Liquid immersion blanket poster (PDF)",
+          "href": "media/talks/2024-arpa-e-summit-lib-poster.pdf"
+        }
       ]
     },
     {
@@ -331,6 +395,12 @@
       "year": 2024,
       "experiments": [
         "baby"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2024-iap-showcase-poster.pdf"
+        }
       ]
     },
     {
@@ -399,6 +469,23 @@
       ]
     },
     {
+      "type": "poster",
+      "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA)",
+      "authors": "R. Delaporte-Mathurin, C. Dunn, E. Edwards, S. Ferry, N. Goleš, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, L. Zhou, W. Zhou; PI K. Woller",
+      "venue": "ARPA-E Fusion Program Review, June 2024",
+      "year": 2024,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2024-arpa-e-fusion-review-poster.pdf"
+        }
+      ]
+    },
+    {
       "type": "talk",
       "title": "Prototype verification of tritium breeding with Liquid Immersion Blanket technology using FLiBe",
       "authors": "K. B. Woller, on behalf of the LIBRA team",
@@ -414,7 +501,13 @@
       "authors": "C. S. Dunn, E. E. Peterson, K. B. Woller, S. E. Ferry, S. Segantin, R. Delaporte-Mathurin, Z. Hartwig, D. G. Whyte",
       "venue": "Symposium on Fusion Engineering (SOFE 2023)",
       "year": 2023,
-      "experiments": []
+      "experiments": [],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2023-sofe-dunn-neutronics-poster.pdf"
+        }
+      ]
     },
     {
       "type": "poster",
@@ -424,6 +517,12 @@
       "year": 2023,
       "experiments": [
         "baby"
+      ],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2023-sofe-sakabe-diamond-detector-poster.pdf"
+        }
       ]
     },
     {
@@ -459,6 +558,30 @@
       ]
     },
     {
+      "type": "poster",
+      "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA) and Build A Better Yield (BABY)",
+      "authors": "R. Delaporte-Mathurin, A. T. Lanzrath, S. Segantin, N. Goleš, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
+      "venue": "ARPA-E Energy Innovation Summit, March 2023",
+      "year": 2023,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "LIBRA poster (PDF)",
+          "href": "media/talks/2023-arpa-e-summit-libra-poster.pdf"
+        },
+        {
+          "label": "BABY poster (PDF)",
+          "href": "media/talks/2023-arpa-e-summit-baby-poster.pdf"
+        },
+        {
+          "label": "Liquid immersion blanket poster (PDF)",
+          "href": "media/talks/2023-arpa-e-summit-arc-lib-poster.pdf"
+        }
+      ]
+    },
+    {
       "type": "talk",
       "title": "LIBRA: Liquid immersion blanket robust accountancy",
       "authors": "S. E. Ferry, on behalf of the LIBRA team",
@@ -472,7 +595,13 @@
       "authors": "K. Woller, S. Ferry",
       "venue": "ORNL Molten Salt Reactor Workshop, October 2022",
       "year": 2022,
-      "experiments": []
+      "experiments": [],
+      "links": [
+        {
+          "label": "Slides (PDF)",
+          "href": "media/talks/2022-ornl-msr-workshop-woller-ferry.pdf"
+        }
+      ]
     },
     {
       "type": "poster",
@@ -480,7 +609,13 @@
       "authors": "S. E. Ferry, E. E. Peterson, K. B. Woller, D. G. Whyte (PI)",
       "venue": "ARPA-E Fusion Programs Annual Meeting, May 2022",
       "year": 2022,
-      "experiments": []
+      "experiments": [],
+      "links": [
+        {
+          "label": "Poster (PDF)",
+          "href": "media/talks/2022-arpa-e-fusion-libra-poster.pdf"
+        }
+      ]
     }
   ]
 }
