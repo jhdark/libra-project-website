@@ -54,10 +54,16 @@ the measurement differ by about 25%, which the team attributes mainly to
 tritium permeating through the crucible walls. The results are published in
 [Nuclear Fusion 65, 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab).
 
-The 1 L experiments add a double-walled vessel so that tritium permeating
-through the walls can be collected, test permeation barriers, and speed up
-tritium release by sparging the salt with helium and hydrogen, which cut a
-release measurement from about two months to about a day. BABY leads to
+The 1 L experiments, running since autumn 2024, hold ClLiF at about 650 °C
+in a double-walled vessel so that tritium permeating through the walls can
+be collected. They measured a tritium breeding ratio about six times higher
+than at 100 mL, mostly because the larger volume of salt intercepts more of
+the neutrons (about 7% rather than 2%), in good agreement with the
+neutronics models. Adding about 1000 ppm of hydrogen to the gas sped up
+tritium release roughly tenfold (from about 60 days to 4 days in one
+comparison) and let the team see tritium permeating through the vessel walls
+for the first time. The first campaign is described in a
+[preprint on arXiv](https://arxiv.org/abs/2509.26174). BABY leads to
 [LIBRA-Pi](../libra-pi) (about 100 L) and then
 [LIBRA-One](../libra-one) (700 L).
 
