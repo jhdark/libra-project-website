@@ -1,10 +1,10 @@
 {
-  "_note": "Photos and drawings shown on the site. To add one: put the image in src/assets/photos/ (JPEG or PNG, long edge about 2400 px, metadata stripped) and add an entry here. experiment is an experiment slug, or empty for project-wide images; kind is photo or drawing (drawings are shown whole, not cropped). Videos live in public/media/video/. Credits and captions marked TBC need checking by the team.",
+  "_note": "Photos and drawings shown on the site. To add one: put the image in src/assets/photos/ (JPEG or PNG, long edge about 2400 px, metadata stripped) and add an entry here. experiments lists experiment slugs, or is empty for project-wide images; kind is photo or drawing (drawings are shown whole, not cropped). Videos live in public/media/video/. Credits and captions marked TBC need checking by the team.",
   "photos": [
     {
       "file": "baby-100ml-principle.png",
       "kind": "drawing",
-      "experiment": "",
+      "experiments": [],
       "alt": "Diagram of BABY 100 mL: helium flows from a cylinder over a 100 mL crucible of ClLiF salt set between two neutron sources, then on to tritium collection and a liquid scintillation counter.",
       "caption": "How BABY works: (1) DT generators produce 14 MeV neutrons; (2) neutrons breed tritium from lithium in the salt; (3) the tritium moves through the salt; (4) it is released into the helium sweep gas or permeates the walls; (5) it is collected and counted by liquid scintillation. Used in the BABY guide.",
       "date": "",
@@ -13,7 +13,9 @@
     {
       "file": "baby-100ml-setup.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml"
+      ],
       "alt": "A bench-top rig of steel tubing, gauges and two horizontal cylindrical neutron generators on green supports.",
       "caption": "The BABY 100 mL test stand in the Vault lab: the salt crucible sits between two DT neutron generators, with the sweep gas lines and bubblers around it.",
       "date": "",
@@ -22,7 +24,9 @@
     {
       "file": "baby-100ml-gas-panel.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml"
+      ],
       "alt": "The BABY test stand seen from the front, with its gas handling panel of flow meters and valves below the generators.",
       "caption": "The same stand from the front, with the gas handling panel below.",
       "date": "2023-09",
@@ -31,7 +35,9 @@
     {
       "file": "lsc-sample-vials.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml"
+      ],
       "alt": "A rack of white-capped sample vials labelled BABY 3.",
       "caption": "Liquid scintillation vials from BABY run 3, ready for counting.",
       "date": "2023-10",
@@ -40,7 +46,10 @@
     {
       "file": "tritium-bubbler.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml",
+        "baby-1l"
+      ],
       "alt": "A beige tritium bubbler unit with a temperature display and six small vials on its front panel.",
       "caption": "A tritium water bubbler: the sweep gas bubbles through the vials, which capture the tritium; a furnace between the two sets converts insoluble forms so both are caught.",
       "date": "",
@@ -49,7 +58,10 @@
     {
       "file": "hpge-detector-shield.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml",
+        "baby-1l"
+      ],
       "alt": "A gamma detector inside an open, copper-lined cylindrical shield on a lab bench.",
       "caption": "The HPGe gamma detector in its shield, used to read the activation foils that measure the neutron flux.",
       "date": "",
@@ -58,7 +70,10 @@
     {
       "file": "diamond-detector-amplifier.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-100ml",
+        "baby-1l"
+      ],
       "alt": "A hand holding a small gold circuit board connected to a Cividec diamond spectroscopic amplifier.",
       "caption": "Diamond detector electronics, used to monitor the DT neutron source during runs.",
       "date": "",
@@ -67,7 +82,7 @@
     {
       "file": "vault-lab.jpg",
       "kind": "photo",
-      "experiment": "",
+      "experiments": [],
       "alt": "A shielded lab room with a bench-top test stand on the left and a fume hood and equipment rack on the right.",
       "caption": "The Vault lab at MIT PSFC, home of the BABY experiments.",
       "date": "2024-03",
@@ -76,7 +91,9 @@
     {
       "file": "baby-1l-cad.jpg",
       "kind": "drawing",
-      "experiment": "baby",
+      "experiments": [
+        "baby-1l"
+      ],
       "alt": "A cut-away CAD drawing of a cylindrical vessel with a flanged lid, an inner salt crucible and tubes entering from the top.",
       "caption": "Cut-away of the BABY 1 L vessel: a double wall lets the team collect tritium that permeates through the crucible walls.",
       "date": "",
@@ -85,7 +102,9 @@
     {
       "file": "baby-1l-fume-hood.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-1l"
+      ],
       "alt": "A wrapped cylindrical vessel inside a fume hood, connected by cables and tubing to control units on a rack.",
       "caption": "BABY 1 L in its fume hood in the Vault lab.",
       "date": "2024-11",
@@ -94,7 +113,9 @@
     {
       "file": "baby-1l-station.jpg",
       "kind": "photo",
-      "experiment": "baby",
+      "experiments": [
+        "baby-1l"
+      ],
       "alt": "A fume hood and cart marked with Caution Hot signs, inside a taped-off area on the lab floor.",
       "caption": "The BABY 1 L station.",
       "date": "2024-11",
@@ -103,7 +124,7 @@
     {
       "file": "baby-1l-vessel.jpg",
       "kind": "photo",
-      "experiment": "",
+      "experiments": [],
       "alt": "A cylindrical steel vessel with tubes rising from its lid, inside a fume hood.",
       "caption": "A BABY 1 L vessel (caption TBC).",
       "date": "2024-05",
@@ -112,7 +133,7 @@
     {
       "file": "eleven-stream-bubbler-cad.jpg",
       "kind": "drawing",
-      "experiment": "",
+      "experiments": [],
       "alt": "CAD drawing of a wheeled frame holding rows of bubbler vials, with a human figure for scale.",
       "caption": "The 11-stream tritium bubbler, with a figure for scale.",
       "date": "",
@@ -121,7 +142,9 @@
     {
       "file": "libra-pi-cad.jpg",
       "kind": "drawing",
-      "experiment": "libra-pi",
+      "experiments": [
+        "libra-pi"
+      ],
       "alt": "CAD drawing of a tall, curved-sided tank with ports on its lid.",
       "caption": "The LIBRA-Pi tank, a sector that covers π steradians around the neutron source.",
       "date": "",
@@ -130,7 +153,9 @@
     {
       "file": "libra-pi-section-cad.jpg",
       "kind": "drawing",
-      "experiment": "libra-pi",
+      "experiments": [
+        "libra-pi"
+      ],
       "alt": "Cut-away CAD drawing of the tall LIBRA-Pi tank showing its interior and wall.",
       "caption": "Cut-away of LIBRA-Pi.",
       "date": "",

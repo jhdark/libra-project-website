@@ -8,7 +8,7 @@ const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.{
 export interface Photo {
   file: string;
   kind: 'photo' | 'drawing';
-  experiment: string;
+  experiments: string[];
   alt: string;
   caption: string;
   date: string;
@@ -25,7 +25,7 @@ export const photos: Photo[] = media.photos.flatMap((p) => {
   return [{ ...p, kind: p.kind as Photo['kind'], image }];
 });
 
-export const photosFor = (experiment: string) => photos.filter((p) => p.experiment === experiment);
+export const photosFor = (experiment: string) => photos.filter((p) => p.experiments.includes(experiment));
 export const photo = (file: string) => photos.find((p) => p.file === file);
 
 // "2023-10" -> "October 2023"
