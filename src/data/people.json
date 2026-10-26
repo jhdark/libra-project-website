@@ -72,7 +72,8 @@
             "orcid": "0000-0002-2675-368X",
             "github": "gabriele-ferrero",
             "linkedin": "https://www.linkedin.com/in/gabriele-ferrero-695bb4133/"
-          }
+          },
+          "photo": "gabriele-ferrero.jpg"
         },
         {
           "name": "Huihua Yang",
@@ -133,7 +134,8 @@
           "links": {
             "orcid": "0000-0001-9638-2127",
             "github": "jlball"
-          }
+          },
+          "photo": "john-ball.jpg"
         },
         {
           "name": "Collin Dunn",
@@ -227,7 +229,8 @@
             "orcid": "0009-0007-5101-9894",
             "github": "davidepettinari",
             "linkedin": "https://www.linkedin.com/in/davide-pettinari-208481282/"
-          }
+          },
+          "photo": "davide-pettinari.jpg"
         },
         {
           "name": "Jonathan Shimwell",
@@ -237,7 +240,8 @@
             "orcid": "0000-0001-6909-0946",
             "github": "shimwell",
             "linkedin": "https://www.linkedin.com/in/jonathan-shimwell-610b09252/"
-          }
+          },
+          "photo": "jonathan-shimwell.jpg"
         },
         {
           "name": "Toshiro Sakabe",
