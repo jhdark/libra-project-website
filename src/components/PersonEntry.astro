@@ -52,7 +52,7 @@ const links = [
   )}
   <div>
     <h3>{p.name}</h3>
-    <p class="role">{p.role || 'Role TBC'}</p>
+    {(p.role || !p.formerly) && <p class="role">{p.role || 'Role TBC'}</p>}
     {p.affiliation && <p class="aff">{p.affiliation}</p>}
     {p.formerly && <p class="formerly">Formerly {p.formerly}</p>}
     {links.length > 0 && (
