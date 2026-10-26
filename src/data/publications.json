@@ -1,6 +1,34 @@
 {
-  "_note": "type is one of: article, preprint, talk, poster, thesis, report. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
+  "_note": "type is one of: article, preprint, talk, poster, thesis. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
   "items": [
+    {
+      "type": "article",
+      "title": "BABY 1L: First Tritium Breeding Campaign Results",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
+      "venue": "Nuclear Fusion 66, 076046 (2026)",
+      "year": 2026,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1088/1741-4326/ae6f31"
+        },
+        {
+          "label": "PDF (open access)",
+          "href": "media/papers/2026-delaporte-mathurin-baby-1l-nucl-fusion.pdf"
+        },
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2509.26174"
+        },
+        {
+          "label": "Code and data",
+          "href": "https://github.com/LIBRA-project/baby-1l-paper"
+        }
+      ]
+    },
     {
       "type": "article",
       "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
@@ -36,6 +64,39 @@
     },
     {
       "type": "article",
+      "title": "Neutronics Analysis of ClLiF: An Alternative Molten-Salt Tritium Breeder",
+      "authors": "C. Dunn, B. Ebiwonjumi, S. Segantin, K. Woller, W. Zhou, E. Peterson",
+      "venue": "Fusion Science and Technology 82, 881-900 (2025), open access",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1080/15361055.2025.2504844"
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "title": "Neutron Energy Distribution and Energy-Corrected Spatial Distribution Around a Sealed-Tube DT Fusion Neutron Generator",
+      "authors": "T. Sakabe, E. Edwards, A. Lanzrath, N. Goleš, J. Ball, S. Mackie, S. Segantin, K. Mukai, J. Yagi, R. Tinguely, K. Woller",
+      "venue": "IEEE Transactions on Plasma Science 52, 3871-3877 (2024)",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1109/TPS.2024.3384234"
+        }
+      ]
+    },
+    {
+      "type": "article",
       "title": "The LIBRA Experiment: Investigating Robust Tritium Accountancy in Molten FLiBe Exposed to a D-T Fusion Neutron Spectrum",
       "authors": "S. E. Ferry, K. B. Woller, E. E. Peterson, C. Sorensen, D. G. Whyte",
       "venue": "Fusion Science and Technology 79 (1), 13-35",
@@ -45,42 +106,6 @@
         {
           "label": "DOI",
           "href": "https://doi.org/10.1080/15361055.2022.2078136"
-        }
-      ]
-    },
-    {
-      "type": "report",
-      "title": "First FLiBe tritium breeding experiment (report in preparation)",
-      "authors": "LIBRA team",
-      "venue": "In preparation",
-      "year": 2026,
-      "experiments": [
-        "baby"
-      ],
-      "links": [
-        {
-          "label": "Code and data",
-          "href": "https://github.com/LIBRA-project/FLiBe-1L-paper"
-        }
-      ]
-    },
-    {
-      "type": "preprint",
-      "title": "BABY 1L: First Tritium Breeding Campaign Results",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
-      "venue": "arXiv:2509.26174",
-      "year": 2025,
-      "experiments": [
-        "baby"
-      ],
-      "links": [
-        {
-          "label": "arXiv",
-          "href": "https://arxiv.org/abs/2509.26174"
-        },
-        {
-          "label": "Code and data",
-          "href": "https://github.com/LIBRA-project/baby-1l-paper"
         }
       ]
     },

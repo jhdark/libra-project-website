@@ -62,8 +62,8 @@ the neutrons (about 7% rather than 2%), in good agreement with the
 neutronics models. Adding about 1000 ppm of hydrogen to the gas sped up
 tritium release roughly tenfold (from about 60 days to 4 days in one
 comparison) and let the team see tritium permeating through the vessel walls
-for the first time. The first campaign is described in a
-[preprint on arXiv](https://arxiv.org/abs/2509.26174). BABY leads to
+for the first time. The first campaign is published in
+[Nuclear Fusion 66, 076046 (2026)](https://doi.org/10.1088/1741-4326/ae6f31). BABY leads to
 [LIBRA-Pi](../libra-pi) (about 100 L) and then
 [LIBRA-One](../libra-one) (700 L).
 
