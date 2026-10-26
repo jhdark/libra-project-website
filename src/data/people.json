@@ -7,7 +7,7 @@
       "members": [
         {
           "name": "Kevin Woller",
-          "role": "Principal research scientist, LIBRA principal investigator",
+          "role": "Principal research scientist, LIBRA principal investigator, and group leader for the accelerator and molten salt laboratories",
           "affiliation": "MIT PSFC",
           "photo": "kevin-woller.jpg",
           "links": {
@@ -55,7 +55,7 @@
         },
         {
           "name": "James Dark",
-          "role": "Researcher",
+          "role": "Postdoctoral associate",
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/james-dark/",
@@ -66,7 +66,7 @@
         },
         {
           "name": "Gabriele Ferrero",
-          "role": "Researcher",
+          "role": "Postdoctoral associate",
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/gabriele-ferrero/",
@@ -77,7 +77,7 @@
         },
         {
           "name": "Huihua Yang",
-          "role": "Researcher",
+          "role": "Postdoctoral associate",
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/huihua-yang/",
@@ -87,7 +87,7 @@
         },
         {
           "name": "Rui Vieira",
-          "role": "Engineering lead",
+          "role": "Deputy head, MFE engineering",
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/rui-vieira/"
@@ -95,7 +95,7 @@
         },
         {
           "name": "Rick Leccacorvi",
-          "role": "Engineering lead",
+          "role": "Mechanical design and fabrication specialist",
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/rick-leccacorvi/"
@@ -107,16 +107,6 @@
           "affiliation": "MIT",
           "links": {
             "profile": "https://ehs.mit.edu/team-members/edward-lamere-phd/"
-          }
-        },
-        {
-          "name": "Jonathan Shimwell",
-          "role": "",
-          "affiliation": "",
-          "links": {
-            "orcid": "0000-0001-6909-0946",
-            "github": "shimwell",
-            "linkedin": "https://www.linkedin.com/in/jonathan-shimwell-610b09252/"
           }
         }
       ]
@@ -180,8 +170,8 @@
       "members": [
         {
           "name": "Dennis Whyte",
-          "role": "Chief Executive Officer",
-          "affiliation": "UKAEA",
+          "role": "Group chief executive officer",
+          "affiliation": "UK Atomic Energy Authority",
           "formerly": "LIBRA principal investigator and MIT PSFC faculty",
           "links": {
             "profile": "https://www.gov.uk/government/people/dennis-whyte"
@@ -189,8 +179,8 @@
         },
         {
           "name": "Ethan Peterson",
-          "role": "",
-          "affiliation": "",
+          "role": "Assistant professor of nuclear science and engineering",
+          "affiliation": "MIT",
           "formerly": "research scientist and neutronics group leader, MIT PSFC",
           "photo": "ethan-peterson.jpg",
           "links": {
@@ -213,7 +203,7 @@
         },
         {
           "name": "Samuele Meschini",
-          "role": "Professor",
+          "role": "Assistant professor",
           "affiliation": "Politecnico di Torino",
           "formerly": "postdoc and fuel cycle modelling lead, MIT PSFC",
           "photo": "samuele-meschini.jpg",
@@ -238,6 +228,16 @@
           }
         },
         {
+          "name": "Jonathan Shimwell",
+          "role": "Principal engineer",
+          "affiliation": "Proxima Fusion",
+          "links": {
+            "orcid": "0000-0001-6909-0946",
+            "github": "shimwell",
+            "linkedin": "https://www.linkedin.com/in/jonathan-shimwell-610b09252/"
+          }
+        },
+        {
           "name": "Toshiro Sakabe",
           "role": "Neutron diagnostics",
           "affiliation": "Kyoto University",
@@ -247,8 +247,8 @@
         },
         {
           "name": "Lihua Zhou",
-          "role": "",
-          "affiliation": "",
+          "role": "Mechanical engineer",
+          "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/lihua-zhou/"
           }
