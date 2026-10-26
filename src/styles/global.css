@@ -55,6 +55,12 @@
   --color-key-5: oklch(56.6% 0.239 262);      /* Industrial Blue #1966FF */
   --color-key-6: oklch(67% 0.170 25);         /* Heated #F25757 */
 
+  /* Profile link hover colours: each service's own brand colour. */
+  --color-brand-github: #181717;
+  --color-brand-linkedin: #0A66C2;
+  --color-brand-orcid: #A6CE39;
+  --color-brand-scholar: #4285F4;
+
   /* Neue Haas Grotesk is the PSFC primary face (Adobe Fonts only); Hanken
      Grotesk stands in until a web licence is available. */
   --font-display: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
