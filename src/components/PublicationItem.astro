@@ -1,4 +1,5 @@
 ---
+import { linkHref } from '../lib/url';
 // One publication or talk as a citation: type and year, title, authors,
 // venue, then its links. Example entries are flagged as such.
 export interface Publication {
@@ -30,7 +31,7 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
     {pub.links && pub.links.length > 0 && (
       <ul>
         {pub.links.map((l) => (
-          <li><a class="link-strong" href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
+          <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>
         ))}
       </ul>
     )}

@@ -2,6 +2,15 @@
   "_note": "Photos and drawings shown on the site. To add one: put the image in src/assets/photos/ (JPEG or PNG, long edge about 2400 px, metadata stripped) and add an entry here. experiment is an experiment slug, or empty for project-wide images; kind is photo or drawing (drawings are shown whole, not cropped). Videos live in public/media/video/. Credits and captions marked TBC need checking by the team.",
   "photos": [
     {
+      "file": "baby-100ml-principle.png",
+      "kind": "drawing",
+      "experiment": "",
+      "alt": "Diagram of BABY 100 mL: helium flows from a cylinder over a 100 mL crucible of ClLiF salt set between two neutron sources, then on to tritium collection and a liquid scintillation counter.",
+      "caption": "How BABY works: (1) DT generators produce 14 MeV neutrons; (2) neutrons breed tritium from lithium in the salt; (3) the tritium moves through the salt; (4) it is released into the helium sweep gas or permeates the walls; (5) it is collected and counted by liquid scintillation. Used in the BABY guide.",
+      "date": "",
+      "credit": "Delaporte-Mathurin et al., Nucl. Fusion 65 026037 (2025), CC BY 4.0"
+    },
+    {
       "file": "baby-100ml-setup.jpg",
       "kind": "photo",
       "experiment": "baby",
