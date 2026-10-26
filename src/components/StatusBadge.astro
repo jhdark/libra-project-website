@@ -1,14 +1,17 @@
 ---
+// Status as type, not a pill: active in the display face, completed in ink,
+// planned muted.
 interface Props {
   status: 'completed' | 'active' | 'planned';
 }
 const { status } = Astro.props;
-const styles = {
-  active: 'bg-tritium/15 text-tritium ring-tritium/30',
-  completed: 'bg-ink-faint/15 text-ink-muted ring-ink-faint/30',
-  planned: 'bg-accent/15 text-accent-hover ring-accent/30',
-};
+const label = { active: 'Active', completed: 'Completed', planned: 'Planned' }[status];
 ---
-<span class={`inline-flex items-center rounded-full px-2.5 py-0.5 font-body text-xs font-medium capitalize ring-1 ${styles[status]}`}>
-  {status}
-</span>
+<span class:list={['status', status]}>{label}</span>
+
+<style>
+  .status { white-space: nowrap; }
+  .active { font: 600 1rem/1.5 var(--font-display); color: var(--color-ink); }
+  .completed { color: var(--color-ink-2); }
+  .planned { color: var(--color-muted); }
+</style>

@@ -1,6 +1,6 @@
 ---
-import Icon from './Icon.astro';
-
+// One publication or talk as a citation: type and year, title, authors,
+// venue, then its links. Example entries are flagged as such.
 export interface Publication {
   type: string;
   title: string;
@@ -16,27 +16,39 @@ interface Props {
   pub: Publication;
 }
 const { pub } = Astro.props;
-const icon = pub.type === 'talk' || pub.type === 'poster' ? 'presentation' : 'document';
+const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
 ---
-<article class="flex gap-5 rounded-xl bg-surface p-6 ring-1 ring-line" data-type={pub.type}>
-  <Icon name={icon} class="mt-1 h-6 w-6 shrink-0 text-accent" />
-  <div class="min-w-0">
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="font-body text-xs font-semibold uppercase tracking-wider text-ink-faint">{pub.type} · {pub.year}</span>
-      {pub.placeholder && <span class="rounded bg-accent/15 px-2 py-0.5 font-body text-xs text-accent-hover">Example entry</span>}
-    </div>
-    <h3 class="mt-1 font-display text-lg font-semibold leading-snug">{pub.title}</h3>
-    <p class="mt-1 font-body text-sm text-ink-muted">{pub.authors}</p>
-    <p class="font-body text-sm italic text-ink-faint">{pub.venue}</p>
+<article class="pub" data-type={pub.type}>
+  <p class="meta">
+    <span>{typeLabel}, <span class="num">{pub.year}</span></span>
+    {pub.placeholder && <span class="example">Example entry</span>}
+  </p>
+  <div>
+    <h3>{pub.title}</h3>
+    <p class="authors">{pub.authors}</p>
+    <p class="venue">{pub.venue}</p>
     {pub.links && pub.links.length > 0 && (
-      <div class="mt-3 flex flex-wrap gap-2">
+      <ul>
         {pub.links.map((l) => (
-          <a href={l.href} target="_blank" rel="noopener"
-             class="inline-flex items-center gap-1 rounded-full px-3 py-1 font-body text-xs font-medium text-ink-muted ring-1 ring-line transition hover:text-accent hover:ring-accent/40">
-            {l.label} <Icon name="external" class="h-3 w-3" />
-          </a>
+          <li><a class="link-strong" href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
         ))}
-      </div>
+      </ul>
     )}
   </div>
 </article>
+
+<style>
+  .pub { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: var(--gap-columns); padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .meta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); font-size: 0.875rem; color: var(--color-muted); }
+  .meta .num { font-size: 0.875rem; }
+  /* A dashed outline marks a placeholder the team will replace. */
+  .example { padding: 0 var(--space-xs); border: var(--rule-hair) dashed var(--color-muted); color: var(--color-ink-2); }
+  h3 { font-size: var(--text-title); line-height: 1.2; max-width: 40ch; }
+  .authors { margin-top: var(--space-xs); color: var(--color-ink-2); max-width: 75ch; }
+  .venue { margin-top: var(--space-2xs); font-size: 0.875rem; font-style: italic; color: var(--color-muted); }
+  ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); }
+  @media (max-width: 40rem) {
+    .pub { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
+    .meta { flex-direction: row; gap: var(--space-md); }
+  }
+</style>

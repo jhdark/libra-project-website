@@ -1,0 +1,56 @@
+---
+// The experiments as one ruled table: key, name and tagline, summary, status.
+// Each row is a link to the experiment's guide.
+import type { CollectionEntry } from 'astro:content';
+import ExperimentKey from './ExperimentKey.astro';
+import StatusBadge from './StatusBadge.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  experiments: CollectionEntry<'experiments'>[];
+}
+const { experiments } = Astro.props;
+---
+<table class="ledger">
+  <thead>
+    <tr><th scope="col">Experiment</th><th scope="col">Summary</th><th scope="col">Status</th></tr>
+  </thead>
+  <tbody>
+    {experiments.map((e) => (
+      <tr>
+        <th scope="row">
+          <a href={url(`experiments/${e.id}`)}><ExperimentKey order={e.data.order} />{e.data.title}</a>
+          <small>{e.data.tagline}</small>
+        </th>
+        <td class="summary">{e.data.summary}</td>
+        <td class="state"><StatusBadge status={e.data.status} /></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<style>
+  .ledger { width: 100%; }
+  thead th { text-align: left; font-size: 0.875rem; font-weight: 400; color: var(--color-muted); padding: 0 var(--space-xl) var(--space-xs) 0; border-bottom: var(--rule-bar) solid var(--color-rule-2); }
+  tbody tr { position: relative; transition: background-color var(--dur-micro) var(--ease-out); }
+  tbody tr:has(a:hover) { background: var(--color-paper-3); }
+  tbody tr:has(a:focus-visible) { outline: 2px solid var(--color-focus); outline-offset: -2px; }
+  tbody th, td { text-align: left; font-weight: 400; padding: var(--space-lg) var(--space-xl) var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: top; }
+  tbody th { width: 34%; }
+  a { display: inline-flex; align-items: center; gap: var(--space-sm); font: 600 var(--text-title)/1.2 var(--font-display); color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+  /* The whole row is the link's hit area. */
+  a::after { content: ''; position: absolute; inset: 0; }
+  a:hover { color: var(--color-accent); }
+  a:focus-visible { outline: none; }
+  small { display: block; margin-top: var(--space-2xs); padding-left: calc(1.25rem + var(--space-sm)); font-size: 0.875rem; color: var(--color-muted); }
+  .summary { color: var(--color-ink-2); }
+  .state { width: 8rem; padding-right: 0; }
+  @media (max-width: 40rem) {
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .ledger, tbody { display: block; }
+    tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-md); align-items: baseline; padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+    tbody th, td { width: auto; padding: 0; border: 0; }
+    .summary { grid-column: 1 / -1; grid-row: 2; margin-top: var(--space-sm); }
+    .state { grid-column: 2; grid-row: 1; width: auto; }
+  }
+</style>

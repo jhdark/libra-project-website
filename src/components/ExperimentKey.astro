@@ -1,0 +1,17 @@
+---
+// The square colour key that identifies an experiment across the site.
+import { keyColour } from '../lib/experiments';
+
+interface Props {
+  order: number;
+  size?: 'sm' | 'lg';
+}
+const { order, size = 'sm' } = Astro.props;
+---
+<span class:list={['key', size]} style={`--k: ${keyColour(order)}`} aria-hidden="true"></span>
+
+<style>
+  .key { display: inline-block; flex-shrink: 0; background: var(--k); outline: var(--rule-hair) solid var(--color-ink); outline-offset: -1px; }
+  .sm { width: 1.25rem; height: 1.25rem; }
+  .lg { width: 2rem; height: 2rem; }
+</style>

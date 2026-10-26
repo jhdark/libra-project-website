@@ -1,0 +1,11 @@
+---
+// Renders a value with any "TBC" set in the muted colour, so unknowns read
+// as blanks for the team to fill rather than as facts.
+import { tbcParts } from '../lib/experiments';
+
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+{tbcParts(text).map((p) => (p.tbc ? <span class="tbc">{p.text}</span> : p.text))}

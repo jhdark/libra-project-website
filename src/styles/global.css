@@ -15,7 +15,7 @@
 /* LIBRA design tokens: a LIBRA sub-brand of the MIT PSFC identity.
    Values come from the PSFC Branding and Visual Guidelines (see CLAUDE.md,
    "Design system"). Plasma Pink is a mark on data, never small text. */
-@theme {
+@theme static {
   --color-paper: oklch(97% 0.007 89);        /* PSFC off-white #F7F5F0 */
   --color-paper-2: oklch(94.5% 0.009 85);
   --color-paper-3: oklch(91.5% 0.010 80);
