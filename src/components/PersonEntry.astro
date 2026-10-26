@@ -1,34 +1,87 @@
 ---
-// One person, set in type: name, role, affiliation and links. A photo shows
-// only when people.json gives one; there are no stand-in avatars.
-import { url } from '../lib/url';
+// One person: photo (when we have one), name, role, affiliation, what they
+// did on LIBRA if they have moved on, and their public profile links. A
+// featured person is set larger, across the full width of their group.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
-export type Person = { name: string; role: string; affiliation: string; photo?: string; github?: string; email?: string };
+export type PersonLinks = {
+  email?: string;
+  github?: string;
+  linkedin?: string;
+  scholar?: string;
+  orcid?: string;
+  psfc?: string;
+  website?: string;
+};
+export type Person = {
+  name: string;
+  role: string;
+  affiliation: string;
+  formerly?: string;
+  photo?: string;
+  featured?: boolean;
+  links?: PersonLinks;
+  // Older entries kept these at the top level.
+  github?: string;
+  email?: string;
+};
 interface Props {
   person: Person;
 }
 const { person: p } = Astro.props;
+
+// Photos live in src/assets/people/ so Astro can resize them.
+const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/people/*.{jpg,jpeg,png,webp}', { eager: true });
+const photo = p.photo ? photos[`../assets/people/${p.photo}`]?.default : undefined;
+
+const l: PersonLinks = { ...p.links, github: p.links?.github ?? p.github, email: p.links?.email ?? p.email };
+const links = [
+  l.psfc && { label: 'MIT PSFC', href: l.psfc },
+  l.website && { label: 'Website', href: l.website },
+  l.scholar && { label: 'Google Scholar', href: l.scholar },
+  l.orcid && { label: 'ORCID', href: `https://orcid.org/${l.orcid}` },
+  l.github && { label: 'GitHub', href: `https://github.com/${l.github}` },
+  l.linkedin && { label: 'LinkedIn', href: l.linkedin },
+  l.email && { label: 'Email', href: `mailto:${l.email}` },
+].filter(Boolean) as { label: string; href: string }[];
 ---
-<li class="person">
-  {p.photo && <img src={url(p.photo)} alt="" width="96" height="96" />}
+<li class:list={['person', { featured: p.featured }]}>
+  {photo && (
+    <Image src={photo} alt="" widths={p.featured ? [240, 480] : [96, 192]} sizes={p.featured ? '240px' : '96px'} class="photo" />
+  )}
   <div>
     <h3>{p.name}</h3>
     <p class="role">{p.role || 'Role TBC'}</p>
     {p.affiliation && <p class="aff">{p.affiliation}</p>}
-    {(p.github || p.email) && (
-      <p class="links">
-        {p.github && <a class="link" href={`https://github.com/${p.github}`} target="_blank" rel="noopener" aria-label={`${p.name} on GitHub`}>GitHub</a>}
-        {p.email && <a class="link" href={`mailto:${p.email}`} aria-label={`Email ${p.name}`}>Email</a>}
-      </p>
+    {p.formerly && <p class="formerly">Formerly {p.formerly}</p>}
+    {links.length > 0 && (
+      <ul class="links">
+        {links.map((k) => (
+          <li><a class="link" href={k.href} target={k.href.startsWith('mailto:') ? undefined : '_blank'} rel="noopener" aria-label={`${p.name}: ${k.label}`}>{k.label}</a></li>
+        ))}
+      </ul>
     )}
   </div>
 </li>
 
 <style>
-  .person { display: flex; gap: var(--space-md); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
-  img { width: 4rem; height: 4rem; object-fit: cover; flex-shrink: 0; outline: var(--rule-hair) solid var(--color-rule-2); outline-offset: -1px; }
+  .person { display: flex; gap: var(--space-md); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); break-inside: avoid; }
+  .photo { width: 6rem; height: 6rem; object-fit: cover; flex-shrink: 0; background: var(--color-paper-2); outline: var(--rule-hair) solid var(--color-rule-2); outline-offset: -1px; }
   h3 { font-size: 1.25rem; line-height: 1.25; }
   .role { margin-top: var(--space-2xs); color: var(--color-ink-2); }
   .aff { font-size: 0.875rem; color: var(--color-muted); }
-  .links { margin-top: var(--space-xs); display: flex; gap: var(--space-md); font-size: 0.875rem; }
+  .formerly { margin-top: var(--space-2xs); font-size: 0.875rem; color: var(--color-muted); }
+  .links { list-style: none; margin: var(--space-xs) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); font-size: 0.875rem; }
+
+  /* Featured: set across the group, photo and name larger. */
+  .featured { column-span: all; gap: var(--space-xl); align-items: center; padding-block: var(--space-xl); }
+  .featured .photo { width: 15rem; height: 15rem; }
+  .featured h3 { font-size: var(--text-section); line-height: 1.05; }
+  .featured .role { margin-top: var(--space-sm); font-size: var(--text-lead); }
+  .featured .links { margin-top: var(--space-md); font-size: 1rem; }
+  @media (max-width: 40rem) {
+    .featured { flex-direction: column; align-items: flex-start; }
+    .featured .photo { width: 10rem; height: 10rem; }
+  }
 </style>
