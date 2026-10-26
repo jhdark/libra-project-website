@@ -3,7 +3,6 @@ import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
-import Icon from '../../components/Icon.astro';
 import { url, formatDate } from '../../lib/url';
 
 export async function getStaticPaths() {
@@ -20,15 +19,22 @@ const date = formatDate(post.data.date);
 ---
 
 <Base title={post.data.title} description={post.data.summary}>
-  <PageHeader eyebrow={date} title={post.data.title} intro={post.data.summary} />
-  <section class="py-16">
-    <div class="mx-auto max-w-3xl px-6">
-      <article class="prose prose-slate max-w-none prose-headings:font-display prose-a:text-accent-hover">
+  <PageHeader title={post.data.title} intro={post.data.summary}>
+    <p class="byline">Published <time datetime={post.data.date.toISOString()}>{date}</time></p>
+  </PageHeader>
+  <section class="post">
+    <div class="wrap">
+      <article class="prose prose-libra max-w-none">
         <Content />
       </article>
-      <a href={url('news')} class="mt-12 inline-flex items-center gap-1.5 font-semibold text-accent">
-        <Icon name="arrowRight" class="h-4 w-4 rotate-180" /> All news
-      </a>
+      <p class="back"><a class="link-strong" href={url('news')}>All news</a></p>
     </div>
   </section>
 </Base>
+
+<style>
+  .byline { margin-top: var(--space-lg); font-size: 0.9375rem; color: var(--color-muted); }
+  .post { padding-block: var(--space-2xl) var(--section-gap); }
+  article { max-width: 68ch; }
+  .back { margin-top: var(--space-2xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); max-width: 68ch; }
+</style>
