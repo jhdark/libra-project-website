@@ -1,5 +1,5 @@
 {
-  "_note": "type is one of: article, preprint, talk, poster, thesis, report. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
+  "_note": "type is one of: article, preprint, talk, poster, thesis. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
   "items": [
     {
       "type": "article",
@@ -45,22 +45,6 @@
         {
           "label": "DOI",
           "href": "https://doi.org/10.1080/15361055.2022.2078136"
-        }
-      ]
-    },
-    {
-      "type": "report",
-      "title": "First FLiBe tritium breeding experiment (report in preparation)",
-      "authors": "LIBRA team",
-      "venue": "In preparation",
-      "year": 2026,
-      "experiments": [
-        "baby"
-      ],
-      "links": [
-        {
-          "label": "Code and data",
-          "href": "https://github.com/LIBRA-project/FLiBe-1L-paper"
         }
       ]
     },
