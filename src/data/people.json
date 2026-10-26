@@ -1,50 +1,273 @@
 {
-  "_note": "Roles are as listed on the team slide of the May 2024 JPP colloquium (Ferry et al.) and on 2023 to 2026 poster author lists. Everyone should check their own entry: roles may have changed since, and empty roles show as Role TBC. Photos go in public/images/people/ and are referenced as 'images/people/<file>'.",
+  "_note": "Team list as of October 2026. Each entry: name, role, affiliation (only for people outside MIT; leave empty for MIT and MIT PSFC); formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
   "groups": [
     {
       "name": "Leadership",
-      "description": "Roles as of May 2024; to be confirmed.",
+      "description": "",
       "members": [
-        { "name": "Kevin Woller", "role": "Principal research scientist, LIBRA principal investigator", "affiliation": "MIT PSFC" },
-        { "name": "Dennis Whyte", "role": "Faculty", "affiliation": "MIT PSFC" },
-        { "name": "Sara Ferry", "role": "Research scientist, group leader for fusion materials and components", "affiliation": "MIT PSFC" },
-        { "name": "Ethan Peterson", "role": "Research scientist, group leader for neutronics", "affiliation": "MIT PSFC" }
+        {
+          "name": "Kevin Woller",
+          "role": "Principal research scientist, LIBRA principal investigator, and group leader for the accelerator and molten salt laboratories",
+          "affiliation": "",
+          "photo": "kevin-woller.jpg",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/kevin-woller/",
+            "orcid": "0000-0002-0450-9731"
+          }
+        },
+        {
+          "name": "Sara Ferry",
+          "role": "Research scientist, group leader for fusion materials and components",
+          "affiliation": "",
+          "photo": "sara-ferry.jpg",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/sara-ferry/",
+            "orcid": "0000-0002-7505-9571"
+          }
+        }
       ]
     },
     {
       "name": "Researchers and engineers",
-      "description": "Roles as of May 2024 where stated; others to be confirmed.",
+      "description": "",
       "members": [
-        { "name": "Rémi Delaporte-Mathurin", "role": "Postdoc, BABY experiment lead and tritium modelling", "affiliation": "MIT PSFC", "github": "RemDelaporteMathurin", "email": "remidm@mit.edu" },
-        { "name": "Weiyue Zhou", "role": "Research scientist, molten salt experiments", "affiliation": "MIT PSFC" },
-        { "name": "Samuele Meschini", "role": "Postdoc, fuel cycle modelling lead", "affiliation": "MIT PSFC" },
-        { "name": "Stefano Segantin", "role": "Postdoctoral associate, neutronics and BABY experiment", "affiliation": "MIT PSFC" },
-        { "name": "Rui Vieira", "role": "Engineering lead", "affiliation": "MIT PSFC" },
-        { "name": "Rick Leccacorvi", "role": "Engineering lead", "affiliation": "MIT PSFC" },
-        { "name": "Lihua Zhou", "role": "", "affiliation": "MIT PSFC" },
-        { "name": "Edward Lamere", "role": "MIT EHS liaison", "affiliation": "MIT" },
-        { "name": "Davide Pettinari", "role": "", "affiliation": "MIT PSFC and Politecnico di Torino" },
-        { "name": "Ryan Berkshire", "role": "", "affiliation": "" },
-        { "name": "Mike German", "role": "", "affiliation": "" },
-        { "name": "Jonathan Shimwell", "role": "", "affiliation": "" }
+        {
+          "name": "Weiyue Zhou",
+          "role": "Research scientist, molten salt experiments",
+          "affiliation": "",
+          "photo": "weiyue-zhou.jpg",
+          "links": {
+            "orcid": "0000-0002-8567-0999"
+          }
+        },
+        {
+          "name": "Stefano Segantin",
+          "role": "Research scientist",
+          "affiliation": "",
+          "photo": "stefano-segantin.jpg",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/stefano-segantin/",
+            "orcid": "0000-0002-5745-7293",
+            "github": "SteSeg"
+          }
+        },
+        {
+          "name": "James Dark",
+          "role": "Postdoctoral associate",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/james-dark/",
+            "orcid": "0000-0002-0456-7210",
+            "github": "jhdark",
+            "linkedin": "https://www.linkedin.com/in/james-dark-00678611b/"
+          },
+          "photo": "james-dark.jpg"
+        },
+        {
+          "name": "Gabriele Ferrero",
+          "role": "Postdoctoral associate",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/gabriele-ferrero/",
+            "orcid": "0000-0002-2675-368X",
+            "github": "gabriele-ferrero",
+            "linkedin": "https://www.linkedin.com/in/gabriele-ferrero-695bb4133/"
+          },
+          "photo": "gabriele-ferrero.jpg"
+        },
+        {
+          "name": "Huihua Yang",
+          "role": "Postdoctoral associate",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/huihua-yang/",
+            "orcid": "0009-0008-5970-3073",
+            "github": "hhy2022"
+          },
+          "photo": "huihua-yang.jpg"
+        },
+        {
+          "name": "Rui Vieira",
+          "role": "Deputy head, MFE engineering",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/rui-vieira/"
+          }
+        },
+        {
+          "name": "Rick Leccacorvi",
+          "role": "Mechanical design and fabrication specialist",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/rick-leccacorvi/"
+          }
+        },
+        {
+          "name": "Edward Lamere",
+          "role": "MIT EHS liaison",
+          "affiliation": "",
+          "links": {
+            "profile": "https://ehs.mit.edu/team-members/edward-lamere-phd/"
+          }
+        }
       ]
     },
     {
       "name": "Graduate students",
-      "description": "As of May 2024; to be confirmed.",
+      "description": "",
       "members": [
-        { "name": "John Ball", "role": "Graduate student", "affiliation": "MIT PSFC" },
-        { "name": "Collin Dunn", "role": "Graduate student, neutronics", "affiliation": "MIT PSFC" },
-        { "name": "Emily Edwards", "role": "Graduate student, neutron detection", "affiliation": "MIT PSFC" },
-        { "name": "Nikola Goleš", "role": "Graduate student, tritium speciation and transport", "affiliation": "MIT PSFC" },
-        { "name": "Andrew Lanzrath", "role": "Graduate student", "affiliation": "MIT PSFC" }
+        {
+          "name": "Nikola Goleš",
+          "role": "PhD student, tritium speciation and release in the BABY experiments",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/students/nikola-goles/",
+            "orcid": "0000-0001-8581-3964",
+            "github": "veliki-filozof"
+          },
+          "photo": "nikola-goles.jpg"
+        },
+        {
+          "name": "John Ball",
+          "role": "PhD student",
+          "affiliation": "",
+          "links": {
+            "orcid": "0000-0001-9638-2127",
+            "github": "jlball"
+          },
+          "photo": "john-ball.jpg"
+        },
+        {
+          "name": "Collin Dunn",
+          "role": "PhD student, neutronics",
+          "affiliation": "",
+          "photo": "collin-dunn.jpg",
+          "links": {
+            "orcid": "0000-0001-7434-6395",
+            "github": "cdunn314"
+          }
+        },
+        {
+          "name": "Emily Edwards",
+          "role": "PhD student, neutron detection",
+          "affiliation": "",
+          "photo": "emily-edwards.jpg",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/students/emily-edwards/"
+          }
+        },
+        {
+          "name": "Andrew Lanzrath",
+          "role": "PhD student",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/students/andrew-lanzrath/"
+          },
+          "photo": "andrew-lanzrath.jpg"
+        }
       ]
     },
     {
-      "name": "Collaborators",
-      "description": "Collaborators named on LIBRA papers and posters. To be confirmed.",
+      "name": "Collaborators and former members",
+      "description": "People who have contributed to LIBRA, including former members of the team.",
       "members": [
-        { "name": "Toshiro Sakabe", "role": "Neutron diagnostics", "affiliation": "Kyoto University" }
+        {
+          "name": "Dennis Whyte",
+          "role": "Group chief executive officer",
+          "affiliation": "UK Atomic Energy Authority",
+          "formerly": "LIBRA principal investigator and MIT PSFC faculty",
+          "links": {
+            "profile": "https://www.gov.uk/government/people/dennis-whyte"
+          },
+          "photo": "dennis-whyte.jpg"
+        },
+        {
+          "name": "Ethan Peterson",
+          "role": "MIT PSFC",
+          "affiliation": "",
+          "photo": "ethan-peterson.jpg",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/faculty/ethan-peterson/",
+            "orcid": "0000-0002-5694-7194",
+            "github": "eepeterson"
+          }
+        },
+        {
+          "name": "Rémi Delaporte-Mathurin",
+          "role": "",
+          "affiliation": "Neutrogen Technologies",
+          "formerly": "research scientist, MIT PSFC",
+          "photo": "remi-delaporte-mathurin.jpg",
+          "links": {
+            "orcid": "0000-0003-1064-8882",
+            "github": "RemDelaporteMathurin",
+            "linkedin": "https://www.linkedin.com/in/remidelaportemathurin/"
+          }
+        },
+        {
+          "name": "Samuele Meschini",
+          "role": "Assistant professor",
+          "affiliation": "Politecnico di Torino",
+          "formerly": "postdoc and fuel cycle modelling lead, MIT PSFC",
+          "photo": "samuele-meschini.jpg",
+          "links": {
+            "profile": "https://www.polito.it/en/staff?p=033350",
+            "scholar": "https://scholar.google.it/citations?user=ow6nJhkAAAAJ",
+            "orcid": "0000-0001-8014-903X",
+            "github": "SamueleMeschini",
+            "linkedin": "https://www.linkedin.com/in/samuele-meschini"
+          }
+        },
+        {
+          "name": "Davide Pettinari",
+          "role": "",
+          "affiliation": "Politecnico di Torino",
+          "links": {
+            "profile": "https://www.polito.it/en/staff?p=055521",
+            "scholar": "https://scholar.google.com/citations?user=JuQhdQsAAAAJ",
+            "orcid": "0009-0007-5101-9894",
+            "github": "davidepettinari",
+            "linkedin": "https://www.linkedin.com/in/davide-pettinari-208481282/"
+          },
+          "photo": "davide-pettinari.jpg"
+        },
+        {
+          "name": "Jonathan Shimwell",
+          "role": "Principal engineer",
+          "affiliation": "Proxima Fusion",
+          "links": {
+            "orcid": "0000-0001-6909-0946",
+            "github": "shimwell",
+            "linkedin": "https://www.linkedin.com/in/jonathan-shimwell-610b09252/"
+          },
+          "photo": "jonathan-shimwell.jpg"
+        },
+        {
+          "name": "Toshiro Sakabe",
+          "role": "Neutron diagnostics",
+          "affiliation": "Kyoto University",
+          "links": {
+            "orcid": "0000-0001-8403-0845"
+          }
+        },
+        {
+          "name": "Lihua Zhou",
+          "role": "Mechanical engineer",
+          "affiliation": "",
+          "links": {
+            "psfc": "https://www.psfc.mit.edu/about/people/researchers/lihua-zhou/"
+          }
+        },
+        {
+          "name": "Mike German",
+          "role": "",
+          "affiliation": ""
+        },
+        {
+          "name": "Ryan Berkshire",
+          "role": "",
+          "affiliation": ""
+        }
       ]
     }
   ]

@@ -21,8 +21,10 @@ and MIT identities, not a separate brand.
   coloured background. Never altered or recoloured.
 - Do not build a combined MIT or PSFC logo with LIBRA. Custom lockups only
   come from PSFC communications.
-- The PSFC logo files are not kept in this repository. Ask PSFC
-  communications for them when a document needs the logo.
+- The full PSFC branding folder is not kept in this repository; copy in
+  only the files a page or document uses (the site uses the PSFC site icon,
+  `public/images/brand/psfc-icon-32.png`). Ask PSFC communications for
+  anything else.
 - Where the centre needs naming without its logo, set "MIT Plasma Science and
   Fusion Center" in type, as in the lockup below.
 
