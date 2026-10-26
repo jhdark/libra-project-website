@@ -7,7 +7,7 @@ import ExperimentLedger from '../components/ExperimentLedger.astro';
 import NewsList from '../components/NewsList.astro';
 import publications from '../data/publications.json';
 import datasets from '../data/datasets.json';
-import { url } from '../lib/url';
+import { url, linkHref } from '../lib/url';
 import { campaignsOf } from '../lib/experiments';
 
 const experiments = (await getCollection('experiments')).sort((a, b) => a.data.order - b.data.order);
@@ -109,7 +109,7 @@ const pillars = [
             <p class="venue">{p.venue}</p>
           </div>
           <ul class="paper-links">
-            {p.links?.map((l) => <li><a class="link-strong" href={l.href} target="_blank" rel="noopener">{l.label}</a></li>)}
+            {p.links?.map((l) => <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>)}
           </ul>
         </div>
       </div>
