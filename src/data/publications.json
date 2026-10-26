@@ -3,6 +3,34 @@
   "items": [
     {
       "type": "article",
+      "title": "BABY 1L: First Tritium Breeding Campaign Results",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
+      "venue": "Nuclear Fusion 66, 076046 (2026)",
+      "year": 2026,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1088/1741-4326/ae6f31"
+        },
+        {
+          "label": "PDF (open access)",
+          "href": "media/papers/2026-delaporte-mathurin-baby-1l-nucl-fusion.pdf"
+        },
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2509.26174"
+        },
+        {
+          "label": "Code and data",
+          "href": "https://github.com/LIBRA-project/baby-1l-paper"
+        }
+      ]
+    },
+    {
+      "type": "article",
       "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
       "authors": "R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller",
       "venue": "Nuclear Fusion 65, 026037 (2025)",
@@ -45,26 +73,6 @@
         {
           "label": "DOI",
           "href": "https://doi.org/10.1080/15361055.2022.2078136"
-        }
-      ]
-    },
-    {
-      "type": "preprint",
-      "title": "BABY 1L: First Tritium Breeding Campaign Results",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
-      "venue": "arXiv:2509.26174",
-      "year": 2025,
-      "experiments": [
-        "baby"
-      ],
-      "links": [
-        {
-          "label": "arXiv",
-          "href": "https://arxiv.org/abs/2509.26174"
-        },
-        {
-          "label": "Code and data",
-          "href": "https://github.com/LIBRA-project/baby-1l-paper"
         }
       ]
     },
