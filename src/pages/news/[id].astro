@@ -19,22 +19,30 @@ const date = formatDate(post.data.date);
 ---
 
 <Base title={post.data.title} description={post.data.summary}>
-  <PageHeader title={post.data.title} intro={post.data.summary}>
-    <p class="byline">Published <time datetime={post.data.date.toISOString()}>{date}</time></p>
-  </PageHeader>
+  <PageHeader title={post.data.title} intro={post.data.summary} />
   <section class="post">
     <div class="wrap">
+      <aside>
+        <p class="byline">Published <time datetime={post.data.date.toISOString()}>{date}</time></p>
+        <p class="back"><a class="link-strong" href={url('news')}>All news</a></p>
+      </aside>
       <article class="prose prose-libra max-w-none">
         <Content />
       </article>
-      <p class="back"><a class="link-strong" href={url('news')}>All news</a></p>
     </div>
   </section>
 </Base>
 
 <style>
-  .byline { margin-top: var(--space-lg); font-size: 0.9375rem; color: var(--color-muted); }
+  /* The date and the way back sit in a column beside the text, so the post
+     uses the page rather than one narrow column on the left. */
   .post { padding-block: var(--space-2xl) var(--section-gap); }
+  .post .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); align-items: start; }
+  aside { border-top: var(--rule-bar) solid var(--color-rule-2); padding-top: var(--space-md); }
+  .byline { font-size: 0.9375rem; color: var(--color-muted); }
+  .back { margin-top: var(--space-sm); }
   article { max-width: 68ch; }
-  .back { margin-top: var(--space-2xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); max-width: 68ch; }
+  @media (max-width: 60rem) {
+    .post .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  }
 </style>
