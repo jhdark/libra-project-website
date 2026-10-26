@@ -5,7 +5,7 @@ import { z } from 'astro/zod';
 // Experiment guides: one Markdown file per experiment. The frontmatter drives
 // cards and fact boxes; the body is the long-form guide.
 const experiments = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/experiments' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/experiments' }),
   schema: z.object({
     title: z.string(),
     tagline: z.string(),
@@ -21,7 +21,7 @@ const experiments = defineCollection({
 });
 
 const news = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/news' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),

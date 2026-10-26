@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+import mdx from '@astrojs/mdx';
+
 // Where the site is served from. Defaults to GitHub Pages under the repo
 // name; override at build time for another host, e.g. an MIT domain:
 //   SITE_URL=https://libra.mit.edu BASE_PATH=/ npm run build
@@ -11,4 +13,5 @@ export default defineConfig({
   site,
   base,
   vite: { plugins: [tailwindcss()] },
+  integrations: [mdx()],
 });
