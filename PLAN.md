@@ -73,5 +73,3 @@ the page templates.
 - Pull repository lists from the GitHub API instead of listing them by hand.
 - Photos and diagrams for the experiment guides.
 - Search across experiment guides (for example Pagefind).
-- Remove the "Draft for team feedback" badge in `src/layouts/Base.astro`
-  once content is signed off.
