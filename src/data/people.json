@@ -183,9 +183,8 @@
         },
         {
           "name": "Ethan Peterson",
-          "role": "Assistant professor of nuclear science and engineering, and group leader for neutronics",
+          "role": "MIT PSFC",
           "affiliation": "",
-          "formerly": "research scientist and neutronics group leader, MIT PSFC",
           "photo": "ethan-peterson.jpg",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/faculty/ethan-peterson/",
@@ -197,7 +196,7 @@
           "name": "Rémi Delaporte-Mathurin",
           "role": "",
           "affiliation": "Neutrogen Technologies",
-          "formerly": "postdoc and BABY experiment lead, MIT PSFC",
+          "formerly": "research scientist, MIT PSFC",
           "photo": "remi-delaporte-mathurin.jpg",
           "links": {
             "orcid": "0000-0003-1064-8882",
