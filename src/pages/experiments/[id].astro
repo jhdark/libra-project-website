@@ -11,6 +11,8 @@ import publications from '../../data/publications.json';
 import datasets from '../../data/datasets.json';
 import CadViewer from '../../components/CadViewer.astro'
 import { keyColour } from '../../lib/experiments';
+import Figure from '../../components/Figure.astro';
+import { photosFor } from '../../lib/media';
 
 export async function getStaticPaths() {
   const experiments = await getCollection('experiments');
@@ -27,6 +29,7 @@ const toc = headings.filter((h) => h.depth === 2);
 
 const relatedPubs = publications.items.filter((p) => p.experiments?.includes(experiment.id));
 const relatedData = datasets.items.filter((d) => d.experiment === experiment.id);
+const gallery = photosFor(experiment.id);
 ---
 
 <Base title={title} description={summary}>
@@ -78,6 +81,18 @@ const relatedData = datasets.items.filter((d) => d.experiment === experiment.id)
       )}
     </aside>
   </div>
+
+  <!-- Photos and drawings tagged with this experiment in src/data/media.json -->
+  {gallery.length > 0 && (
+    <section class="lab" aria-labelledby="lab-title">
+      <div class="wrap">
+        <div class="split-head"><h2 id="lab-title">In the lab</h2></div>
+        <div class="gallery">
+          {gallery.map((p) => <Figure photo={p} />)}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Repositories, datasets and publications linked to this experiment -->
   {(repos.length > 0 || relatedData.length > 0 || relatedPubs.length > 0) && (
@@ -149,6 +164,12 @@ const relatedData = datasets.items.filter((d) => d.experiment === experiment.id)
   aside dd { margin-top: var(--space-2xs); color: var(--color-ink); }
   @media (min-width: 64rem) { aside { position: sticky; top: var(--space-lg); align-self: start; } }
   @media (max-width: 64rem) { .guide { grid-template-columns: minmax(0, 1fr); } aside { order: -1; } }
+
+  .lab { padding-block: var(--section-gap-s); border-top: var(--rule-hair) solid var(--color-rule); }
+  .lab .split-head h2 { font-size: var(--text-section); }
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl) var(--gap-columns); }
+  @media (max-width: 60rem) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 40rem) { .gallery { grid-template-columns: minmax(0, 1fr); } }
 
   .related { background: var(--color-paper-2); padding-block: var(--section-gap-s); }
   .block + .block { margin-top: var(--space-3xl); }

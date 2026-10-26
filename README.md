@@ -61,7 +61,28 @@ Most content is Markdown or JSON, so editing it doesn't involve touching any pag
 | People                | `src/data/people.json`                  |
 | Publications, talks   | `src/data/publications.json`            |
 | Datasets and software | `src/data/datasets.json`                |
-| Images                | `public/images/...`                     |
+| Photos and drawings   | `src/assets/photos/` + `src/data/media.json` |
+| Videos                | `public/media/video/`                   |
+
+### Photos and videos
+
+Photos and drawings live in `src/assets/photos/` and are listed in
+`src/data/media.json` with their alt text, caption, date, credit and the
+experiment they belong to. A photo tagged with an experiment's slug appears
+in the "In the lab" section of that experiment's guide. To add one:
+
+1. Export the image as JPEG (or PNG for drawings) with the long edge about
+   2400 px and the metadata stripped (phone photos carry GPS location).
+2. Put it in `src/assets/photos/` with a short descriptive file name.
+3. Add an entry to `photos` in `src/data/media.json`. Use `"kind": "drawing"`
+   for CAD and diagrams so they are shown whole rather than cropped.
+
+Astro resizes and converts the images at build time. Avoid photos where
+people can be identified unless they have agreed.
+
+Videos go in `public/media/video/`, compressed for the web (H.264 MP4 and
+WebM, a few MB at most, with a poster frame), and are listed under `videos`.
+The homepage background is `lab-loop`.
 
 To add a new experiment, copy one of the files in `src/content/experiments/`,
 rename it (the file name becomes the URL), and edit its frontmatter and body.
