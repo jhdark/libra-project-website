@@ -1,6 +1,4 @@
 ---
-import Icon from './Icon.astro';
-import LibraLogo from './LibraLogo.astro';
 import { url } from '../lib/url';
 
 const explore = [
@@ -10,50 +8,36 @@ const explore = [
   { href: url('data'), label: 'Data & Code' },
   { href: url('news'), label: 'News' },
 ];
-const resources = [
-  { href: 'https://github.com/LIBRA-project', label: 'GitHub organisation' },
-  { href: 'https://zenodo.org/communities/libra-project/records', label: 'Zenodo community' },
-  { href: 'https://libra-toolbox.readthedocs.io/en/latest/', label: 'libra-toolbox docs' },
-];
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-libra-deep py-16">
-  <div class="mx-auto max-w-6xl px-6">
-    <div class="grid gap-10 md:grid-cols-3">
-      <div>
-        <LibraLogo />
-        <p class="mt-4 max-w-xs font-body text-sm text-ink-invert-muted">
-          Advancing tritium breeding technologies for fusion energy.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-display text-sm uppercase tracking-widest text-accent">Explore</h3>
-        <ul class="mt-4 space-y-2">
-          {explore.map((l) => (
-            <li><a href={l.href} class="font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">{l.label}</a></li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-display text-sm uppercase tracking-widest text-accent">Resources</h3>
-        <ul class="mt-4 space-y-2">
-          {resources.map((l) => (
-            <li><a href={l.href} target="_blank" rel="noopener" class="font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">{l.label}</a></li>
-          ))}
-          <li>
-            <a href="mailto:remidm@mit.edu" class="inline-flex items-center gap-2 font-body text-sm text-ink-invert-muted transition hover:text-ink-invert">
-              <Icon name="mail" class="h-4 w-4" /> remidm@mit.edu
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-12 border-t border-white/10 pt-8">
-      <p class="font-body text-xs text-ink-faint">© {year} LIBRA project, MIT Plasma Science and Fusion Center.</p>
-    </div>
+<!-- Colophon: the PSFC lockup, one paragraph of credits and links, the sitemap, the legal line. -->
+<footer class="colophon">
+  <div class="container">
+    <img src={url('images/brand/psfc-lockup-one-line-mit-red.svg')} width="320" height="31" alt="MIT Plasma Science and Fusion Center" />
+    <p class="credits">
+      LIBRA is a project of the MIT Plasma Science and Fusion Center, advancing tritium breeding technologies for fusion energy.
+      Data lives in the <a class="link" href="https://zenodo.org/communities/libra-project/records" target="_blank" rel="noopener">Zenodo community</a>,
+      code in the <a class="link" href="https://github.com/LIBRA-project" target="_blank" rel="noopener">GitHub organisation</a>,
+      and analysis in the <a class="link" href="https://libra-toolbox.readthedocs.io/en/latest/" target="_blank" rel="noopener">libra-toolbox docs</a>.
+      Write to <a class="link" href="mailto:remidm@mit.edu">remidm@mit.edu</a>.
+    </p>
+    <nav aria-label="Footer">
+      <ul>
+        {explore.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+    <p class="legal">© {year} LIBRA project, MIT Plasma Science and Fusion Center.</p>
   </div>
 </footer>
+
+<style>
+  .colophon { border-top: var(--rule-bar) solid var(--color-rule-2); padding-block: var(--space-2xl) var(--space-xl); }
+  /* The lockup keeps clear space on every side and is never recoloured. */
+  img { width: 320px; max-width: 100%; height: auto; }
+  .credits { margin-top: var(--space-xl); max-width: 68ch; color: var(--color-ink-2); }
+  ul { list-style: none; margin: var(--space-xl) 0 0; padding: var(--space-md) 0 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); font: 600 0.9375rem/1.5 var(--font-display); }
+  nav a { color: var(--color-ink); text-decoration: none; }
+  nav a:hover { text-decoration: underline; text-decoration-color: var(--color-accent); }
+  .legal { margin-top: var(--space-lg); font-size: 0.875rem; color: var(--color-muted); }
+</style>

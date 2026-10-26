@@ -15,7 +15,7 @@ const {
 const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for fusion energy';
 ---
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,12 +23,13 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
     <meta name="description" content={description} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#f7f5f0" />
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
   </head>
-  <body class="flex min-h-screen flex-col bg-paper font-body text-ink antialiased">
+  <body class="flex min-h-screen flex-col">
     <!-- Remove once the team has signed off on the content. -->
-    <div class="fixed bottom-4 left-4 z-50 rounded-full bg-accent px-4 py-1.5 font-body text-xs font-semibold text-white shadow-lg">
-      Draft for team feedback
+    <div class="draft">
+      <p class="container">Draft for team feedback</p>
     </div>
     <Nav />
     <main class="flex-1">
@@ -37,3 +38,8 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
     <Footer />
   </body>
 </html>
+
+<style>
+  .draft { background: var(--color-paper-3); color: var(--color-ink); font-size: 0.875rem; }
+  .draft p { padding-block: var(--space-xs); }
+</style>

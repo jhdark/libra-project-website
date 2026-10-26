@@ -1,5 +1,4 @@
 ---
-import Icon from './Icon.astro';
 import LibraLogo from './LibraLogo.astro';
 import { url } from '../lib/url';
 
@@ -14,41 +13,50 @@ const links = [
 const current = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), '').split('/')[1] ?? '';
 ---
 
-<nav class="fixed top-0 z-50 w-full border-b border-white/5 bg-libra-deep/90 backdrop-blur">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-    <a href={url()} aria-label="LIBRA home"><LibraLogo /></a>
-
-    <div class="hidden items-center gap-8 md:flex">
+<!-- Masthead: the wordmark centred over a rule, the sections beneath. -->
+<header class="masthead">
+  <div class="container top">
+    <a href={url()} class="home" aria-label="LIBRA home"><LibraLogo /></a>
+    <button id="nav-toggle" type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+  </div>
+  <nav id="nav-menu" aria-label="Main">
+    <ul class="container">
       {links.map((l) => (
-        <a href={url(l.href)}
-           class:list={['font-body text-sm transition hover:text-ink-invert',
-             current === l.href ? 'text-accent' : 'text-ink-invert-muted']}>
-          {l.label}
-        </a>
+        <li><a href={url(l.href)} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a></li>
       ))}
-      <a href="https://github.com/LIBRA-project" target="_blank" rel="noopener"
-         aria-label="LIBRA on GitHub" class="text-ink-invert-muted transition hover:text-ink-invert">
-        <Icon name="github" class="h-5 w-5" />
-      </a>
-    </div>
-
-    <button id="nav-toggle" type="button" class="text-ink-invert md:hidden" aria-label="Open menu" aria-expanded="false">
-      <Icon name="menu" class="h-6 w-6" />
-    </button>
-  </div>
-
-  <div id="nav-menu" class="hidden border-t border-white/5 px-6 pb-4 md:hidden">
-    {links.map((l) => (
-      <a href={url(l.href)} class="block py-2 font-body text-ink-invert-muted hover:text-ink-invert">{l.label}</a>
-    ))}
-  </div>
-</nav>
+      <li><a href="https://github.com/LIBRA-project" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
 
 <script>
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('nav-menu');
   toggle?.addEventListener('click', () => {
-    const open = menu?.classList.toggle('hidden') === false;
+    const open = menu?.classList.toggle('open') === true;
     toggle.setAttribute('aria-expanded', String(open));
   });
 </script>
+
+<style>
+  .masthead { border-bottom: var(--rule-bar) solid var(--color-rule-2); }
+  .top { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding-block: var(--space-md) var(--space-sm); }
+  .home { grid-column: 2; text-decoration: none; }
+  .menu-btn { grid-column: 3; justify-self: end; display: none; min-height: 44px; padding-inline: var(--space-md); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-control); background: transparent; color: var(--color-ink); font: 600 0.875rem/1 var(--font-display); cursor: pointer; }
+  .menu-btn:hover { background: var(--color-paper-2); }
+  .menu-btn:active { background: var(--color-paper-3); }
+  nav { border-top: var(--rule-hair) solid var(--color-rule); }
+  ul { display: flex; justify-content: center; gap: var(--space-xl); list-style: none; margin: 0; }
+  nav a { display: block; padding-block: var(--space-sm); font: 600 0.9375rem/1.2 var(--font-display); color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+  nav a:hover { text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; }
+  nav a[aria-current='page'] { color: var(--color-accent); text-decoration: underline; text-decoration-thickness: 2px; }
+  @media (max-width: 60rem) {
+    .top { grid-template-columns: minmax(0, 1fr) auto; }
+    .home { grid-column: 1; }
+    .menu-btn { grid-column: 2; display: inline-flex; align-items: center; }
+    nav { display: none; }
+    nav:global(.open) { display: block; }
+    ul { flex-direction: column; gap: 0; }
+    li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+  }
+</style>
