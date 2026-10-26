@@ -1,0 +1,127 @@
+{
+  "Paper and ink": [
+    {
+      "name": "Paper",
+      "token": "--color-paper",
+      "oklch": "oklch(97% 0.007 89)",
+      "hex": "#F7F5F0",
+      "use": "Page background (PSFC off-white #F7F5F0)"
+    },
+    {
+      "name": "Paper 2",
+      "token": "--color-paper-2",
+      "oklch": "oklch(94.5% 0.009 85)",
+      "hex": "#EFECE6",
+      "use": "Bands, wells"
+    },
+    {
+      "name": "Paper 3",
+      "token": "--color-paper-3",
+      "oklch": "oklch(91.5% 0.01 80)",
+      "hex": "#E6E2DC",
+      "use": "Hover, pressed"
+    },
+    {
+      "name": "Sheet",
+      "token": "--color-sheet",
+      "oklch": "oklch(98.9% 0.004 89)",
+      "hex": "#FCFBF8",
+      "use": "A table set as a printed page"
+    },
+    {
+      "name": "Ink",
+      "token": "--color-ink",
+      "oklch": "oklch(21% 0.01 25)",
+      "hex": "#1D1716",
+      "use": "Text, firm rules, dark bands"
+    },
+    {
+      "name": "Ink 2",
+      "token": "--color-ink-2",
+      "oklch": "oklch(33% 0.01 30)",
+      "hex": "#3A3432",
+      "use": "Secondary text"
+    },
+    {
+      "name": "Muted",
+      "token": "--color-muted",
+      "oklch": "oklch(46% 0.01 45)",
+      "hex": "#5D5653",
+      "use": "Labels, captions, TBC"
+    },
+    {
+      "name": "Rule",
+      "token": "--color-rule",
+      "oklch": "oklch(86% 0.01 75)",
+      "hex": "#D5D0CA",
+      "use": "Hairlines"
+    }
+  ],
+  "Signal": [
+    {
+      "name": "MIT red",
+      "token": "--color-accent",
+      "oklch": "oklch(35.5% 0.143 23)",
+      "hex": "#750014",
+      "use": "The one filled button, links (MIT core #750014)"
+    },
+    {
+      "name": "Plasma Pink",
+      "token": "--color-signal",
+      "oklch": "oklch(63.2% 0.275 332)",
+      "hex": "#DF1AD2",
+      "use": "Marks on data only, never text (PSFC #DF1AD2)"
+    },
+    {
+      "name": "Pink wash",
+      "token": "--color-signal-wash",
+      "oklch": "oklch(94.5% 0.035 332)",
+      "hex": "#FCE5F7",
+      "use": "Behind a marked row or callout"
+    }
+  ],
+  "Experiment keys": [
+    {
+      "name": "Key 1, Aurora Green",
+      "token": "--color-key-1",
+      "oklch": "oklch(90.4% 0.186 138)",
+      "hex": "#9DFC7E",
+      "use": "BABY (order 1)"
+    },
+    {
+      "name": "Key 2, Electric Arc Aqua",
+      "token": "--color-key-2",
+      "oklch": "oklch(89.6% 0.085 214)",
+      "hex": "#98ECFF",
+      "use": "LIBRA-Pi (order 2)"
+    },
+    {
+      "name": "Key 3, Orange Edge",
+      "token": "--color-key-3",
+      "oklch": "oklch(79.6% 0.16 68)",
+      "hex": "#FFA630",
+      "use": "LIBRA-PINT (order 3)"
+    },
+    {
+      "name": "Key 4, Hydrogen Periwinkle",
+      "token": "--color-key-4",
+      "oklch": "oklch(80.4% 0.107 291)",
+      "hex": "#BFB3FF",
+      "use": "LIBRA-One (order 4)"
+    },
+    {
+      "name": "Key 5, Industrial Blue",
+      "token": "--color-key-5",
+      "oklch": "oklch(56.6% 0.239 262)",
+      "hex": "#1966FF",
+      "use": "Order 5"
+    },
+    {
+      "name": "Key 6, Heated",
+      "token": "--color-key-6",
+      "oklch": "oklch(67% 0.17 25)",
+      "hex": "#F25757",
+      "use": "Order 6"
+    }
+  ]
+}

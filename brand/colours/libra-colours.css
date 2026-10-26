@@ -1,0 +1,23 @@
+/* LIBRA colours. Generated from src/styles/global.css; the site tokens are the source of truth. */
+:root {
+  /* Paper and ink */
+  --color-paper: oklch(97% 0.007 89); /* #F7F5F0, Page background (PSFC off-white #F7F5F0) */
+  --color-paper-2: oklch(94.5% 0.009 85); /* #EFECE6, Bands, wells */
+  --color-paper-3: oklch(91.5% 0.01 80); /* #E6E2DC, Hover, pressed */
+  --color-sheet: oklch(98.9% 0.004 89); /* #FCFBF8, A table set as a printed page */
+  --color-ink: oklch(21% 0.01 25); /* #1D1716, Text, firm rules, dark bands */
+  --color-ink-2: oklch(33% 0.01 30); /* #3A3432, Secondary text */
+  --color-muted: oklch(46% 0.01 45); /* #5D5653, Labels, captions, TBC */
+  --color-rule: oklch(86% 0.01 75); /* #D5D0CA, Hairlines */
+  /* Signal */
+  --color-accent: oklch(35.5% 0.143 23); /* #750014, The one filled button, links (MIT core #750014) */
+  --color-signal: oklch(63.2% 0.275 332); /* #DF1AD2, Marks on data only, never text (PSFC #DF1AD2) */
+  --color-signal-wash: oklch(94.5% 0.035 332); /* #FCE5F7, Behind a marked row or callout */
+  /* Experiment keys */
+  --color-key-1: oklch(90.4% 0.186 138); /* #9DFC7E, BABY (order 1) */
+  --color-key-2: oklch(89.6% 0.085 214); /* #98ECFF, LIBRA-Pi (order 2) */
+  --color-key-3: oklch(79.6% 0.16 68); /* #FFA630, LIBRA-PINT (order 3) */
+  --color-key-4: oklch(80.4% 0.107 291); /* #BFB3FF, LIBRA-One (order 4) */
+  --color-key-5: oklch(56.6% 0.239 262); /* #1966FF, Order 5 */
+  --color-key-6: oklch(67% 0.17 25); /* #F25757, Order 6 */
+}
