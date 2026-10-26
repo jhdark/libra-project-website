@@ -62,7 +62,8 @@
             "orcid": "0000-0002-0456-7210",
             "github": "jhdark",
             "linkedin": "https://www.linkedin.com/in/james-dark-00678611b/"
-          }
+          },
+          "photo": "james-dark.jpg"
         },
         {
           "name": "Gabriele Ferrero",
@@ -83,7 +84,8 @@
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/huihua-yang/",
             "orcid": "0009-0008-5970-3073",
             "github": "hhy2022"
-          }
+          },
+          "photo": "huihua-yang.jpg"
         },
         {
           "name": "Rui Vieira",
@@ -160,7 +162,8 @@
           "affiliation": "MIT PSFC",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/andrew-lanzrath/"
-          }
+          },
+          "photo": "andrew-lanzrath.jpg"
         }
       ]
     },
@@ -175,7 +178,8 @@
           "formerly": "LIBRA principal investigator and MIT PSFC faculty",
           "links": {
             "profile": "https://www.gov.uk/government/people/dennis-whyte"
-          }
+          },
+          "photo": "dennis-whyte.jpg"
         },
         {
           "name": "Ethan Peterson",
