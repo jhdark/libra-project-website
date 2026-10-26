@@ -1,52 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Icon from '../components/Icon.astro';
+import PersonEntry from '../components/PersonEntry.astro';
+import type { Person } from '../components/PersonEntry.astro';
 import people from '../data/people.json';
-import { url } from '../lib/url';
-
-type Person = { name: string; role: string; affiliation: string; photo?: string; github?: string; email?: string };
-
-const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).slice(0, 2).join('');
 ---
 
 <Base title="People">
   <PageHeader
-    eyebrow="People"
     title="The LIBRA team"
     intro="The scientists, engineers and students behind the LIBRA experiments, and the collaborators we work with."
   />
 
-  <section class="py-20">
-    <div class="mx-auto max-w-6xl space-y-16 px-6">
+  <section class="groups">
+    <div class="wrap">
       {people.groups.map((group) => (
-        <div>
-          <h2 class="font-display text-2xl font-bold">{group.name}</h2>
-          {group.description && <p class="mt-1 font-body text-sm text-ink-faint">{group.description}</p>}
-          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {(group.members as Person[]).map((p) => (
-              <div class="flex flex-col items-center rounded-2xl bg-surface p-6 text-center ring-1 ring-line">
-                {p.photo ? (
-                  <img src={url(p.photo)} alt={p.name} class="h-24 w-24 rounded-full object-cover" />
-                ) : (
-                  <div class="flex h-24 w-24 items-center justify-center rounded-full bg-libra-navy font-display text-2xl font-semibold text-ink-invert">
-                    {initials(p.name)}
-                  </div>
-                )}
-                <h3 class="mt-4 font-display text-lg font-semibold">{p.name}</h3>
-                <p class="font-body text-sm text-ink-muted">{p.role || 'Role TBC'}</p>
-                {p.affiliation && <p class="font-body text-xs text-ink-faint">{p.affiliation}</p>}
-                {(p.github || p.email) && (
-                  <div class="mt-3 flex gap-3 text-ink-faint">
-                    {p.github && <a href={`https://github.com/${p.github}`} target="_blank" rel="noopener" aria-label={`${p.name} on GitHub`} class="hover:text-accent"><Icon name="github" class="h-4 w-4" /></a>}
-                    {p.email && <a href={`mailto:${p.email}`} aria-label={`Email ${p.name}`} class="hover:text-accent"><Icon name="mail" class="h-4 w-4" /></a>}
-                  </div>
-                )}
-              </div>
-            ))}
+        <div class="group">
+          <div class="split-head">
+            <h2>{group.name}</h2>
+            {group.description && <p class="desc">{group.description}</p>}
           </div>
+          <ul class="members">
+            {(group.members as Person[]).map((p) => <PersonEntry person={p} />)}
+          </ul>
         </div>
       ))}
     </div>
   </section>
 </Base>
+
+<style>
+  .groups { padding-block: var(--space-2xl) var(--section-gap); }
+  .group + .group { margin-top: var(--section-gap-s); }
+  .split-head { margin-bottom: var(--space-md); }
+  .desc { color: var(--color-muted); }
+  /* Flowing columns, so a group of any size fills without an orphan row. */
+  .members { list-style: none; margin: 0; padding: 0; columns: 3; column-gap: var(--gap-columns); }
+  .members :global(li) { break-inside: avoid; }
+  @media (max-width: 60rem) { .members { columns: 2; } }
+  @media (max-width: 40rem) { .members { columns: 1; } }
+</style>
