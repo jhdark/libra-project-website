@@ -24,9 +24,11 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
     <span>{typeLabel}, <span class="num">{pub.year}</span></span>
     {pub.placeholder && <span class="example">Example entry</span>}
   </p>
-  <div>
+  <div class="main">
     <h3>{pub.title}</h3>
     <p class="authors">{pub.authors}</p>
+  </div>
+  <div class="side">
     <p class="venue">{pub.venue}</p>
     {pub.links && pub.links.length > 0 && (
       <ul>
@@ -39,17 +41,24 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
 </article>
 
 <style>
-  .pub { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: var(--gap-columns); padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  /* Three columns across the page: type and year, title and authors, where
+     it appeared and its links. */
+  .pub { display: grid; grid-template-columns: 9rem minmax(0, 7fr) minmax(0, 4fr); gap: var(--gap-columns); padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
   .meta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); font-size: 0.875rem; color: var(--color-muted); }
   .meta .num { font-size: 0.875rem; }
   /* A dashed outline marks a placeholder the team will replace. */
   .example { padding: 0 var(--space-xs); border: var(--rule-hair) dashed var(--color-muted); color: var(--color-ink-2); }
-  h3 { font-size: var(--text-title); line-height: 1.2; max-width: 40ch; }
+  h3 { font-size: var(--text-title); line-height: 1.2; max-width: 60ch; }
   .authors { margin-top: var(--space-xs); color: var(--color-ink-2); max-width: 75ch; }
-  .venue { margin-top: var(--space-2xs); font-size: 0.875rem; font-style: italic; color: var(--color-muted); }
-  ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); }
+  .venue { font-size: 0.9375rem; font-style: italic; color: var(--color-ink-2); }
+  ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-lg); }
+  @media (max-width: 60rem) {
+    .pub { grid-template-columns: 9rem minmax(0, 1fr); }
+    .side { grid-column: 2; }
+  }
   @media (max-width: 40rem) {
     .pub { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
+    .side { grid-column: 1; }
     .meta { flex-direction: row; gap: var(--space-md); }
   }
 </style>
