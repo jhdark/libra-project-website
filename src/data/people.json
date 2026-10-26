@@ -5,49 +5,164 @@
       "name": "Leadership",
       "description": "",
       "members": [
-        { "name": "Kevin Woller", "role": "Principal research scientist, LIBRA principal investigator", "affiliation": "MIT PSFC" },
-        { "name": "Sara Ferry", "role": "Research scientist, group leader for fusion materials and components", "affiliation": "MIT PSFC" }
+        {
+          "name": "Kevin Woller",
+          "role": "Principal research scientist, LIBRA principal investigator",
+          "affiliation": "MIT PSFC",
+          "photo": "kevin-woller.jpg"
+        },
+        {
+          "name": "Sara Ferry",
+          "role": "Research scientist, group leader for fusion materials and components",
+          "affiliation": "MIT PSFC",
+          "photo": "sara-ferry.jpg"
+        }
       ]
     },
     {
       "name": "Researchers and engineers",
       "description": "",
       "members": [
-        { "name": "Weiyue Zhou", "role": "Research scientist, molten salt experiments", "affiliation": "MIT PSFC" },
-        { "name": "Stefano Segantin", "role": "Postdoctoral associate, neutronics and BABY experiment", "affiliation": "MIT PSFC" },
-        { "name": "James Dark", "role": "Researcher", "affiliation": "MIT PSFC" },
-        { "name": "Gabriele Ferrero", "role": "Researcher", "affiliation": "MIT PSFC" },
-        { "name": "Huihua Yang", "role": "Researcher", "affiliation": "MIT PSFC" },
-        { "name": "Rui Vieira", "role": "Engineering lead", "affiliation": "MIT PSFC" },
-        { "name": "Rick Leccacorvi", "role": "Engineering lead", "affiliation": "MIT PSFC" },
-        { "name": "Edward Lamere", "role": "MIT EHS liaison", "affiliation": "MIT" },
-        { "name": "Jonathan Shimwell", "role": "", "affiliation": "" }
+        {
+          "name": "Weiyue Zhou",
+          "role": "Research scientist, molten salt experiments",
+          "affiliation": "MIT PSFC",
+          "photo": "weiyue-zhou.jpg"
+        },
+        {
+          "name": "Stefano Segantin",
+          "role": "Postdoctoral associate, neutronics and BABY experiment",
+          "affiliation": "MIT PSFC",
+          "photo": "stefano-segantin.jpg"
+        },
+        {
+          "name": "James Dark",
+          "role": "Researcher",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Gabriele Ferrero",
+          "role": "Researcher",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Huihua Yang",
+          "role": "Researcher",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Rui Vieira",
+          "role": "Engineering lead",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Rick Leccacorvi",
+          "role": "Engineering lead",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Edward Lamere",
+          "role": "MIT EHS liaison",
+          "affiliation": "MIT"
+        },
+        {
+          "name": "Jonathan Shimwell",
+          "role": "",
+          "affiliation": ""
+        }
       ]
     },
     {
       "name": "Graduate students",
       "description": "",
       "members": [
-        { "name": "Nikola Goleš", "role": "PhD student, tritium speciation and release in the BABY experiments", "affiliation": "MIT PSFC", "featured": true },
-        { "name": "John Ball", "role": "PhD student", "affiliation": "MIT PSFC" },
-        { "name": "Collin Dunn", "role": "PhD student, neutronics", "affiliation": "MIT PSFC" },
-        { "name": "Emily Edwards", "role": "PhD student, neutron detection", "affiliation": "MIT PSFC" },
-        { "name": "Andrew Lanzrath", "role": "PhD student", "affiliation": "MIT PSFC" }
+        {
+          "name": "Nikola Goleš",
+          "role": "PhD student, tritium speciation and release in the BABY experiments",
+          "affiliation": "MIT PSFC",
+          "featured": true
+        },
+        {
+          "name": "John Ball",
+          "role": "PhD student",
+          "affiliation": "MIT PSFC"
+        },
+        {
+          "name": "Collin Dunn",
+          "role": "PhD student, neutronics",
+          "affiliation": "MIT PSFC",
+          "photo": "collin-dunn.jpg"
+        },
+        {
+          "name": "Emily Edwards",
+          "role": "PhD student, neutron detection",
+          "affiliation": "MIT PSFC",
+          "photo": "emily-edwards.jpg"
+        },
+        {
+          "name": "Andrew Lanzrath",
+          "role": "PhD student",
+          "affiliation": "MIT PSFC"
+        }
       ]
     },
     {
       "name": "Collaborators and former members",
       "description": "People who have contributed to LIBRA, including former members of the team.",
       "members": [
-        { "name": "Dennis Whyte", "role": "Chief Executive Officer", "affiliation": "UKAEA", "formerly": "LIBRA principal investigator and MIT PSFC faculty" },
-        { "name": "Ethan Peterson", "role": "", "affiliation": "", "formerly": "research scientist and neutronics group leader, MIT PSFC" },
-        { "name": "Rémi Delaporte-Mathurin", "role": "", "affiliation": "Neutrogen Technologies", "formerly": "postdoc and BABY experiment lead, MIT PSFC", "github": "RemDelaporteMathurin" },
-        { "name": "Samuele Meschini", "role": "Professor", "affiliation": "Politecnico di Torino", "formerly": "postdoc and fuel cycle modelling lead, MIT PSFC" },
-        { "name": "Davide Pettinari", "role": "", "affiliation": "Politecnico di Torino" },
-        { "name": "Toshiro Sakabe", "role": "Neutron diagnostics", "affiliation": "Kyoto University" },
-        { "name": "Lihua Zhou", "role": "", "affiliation": "" },
-        { "name": "Mike German", "role": "", "affiliation": "" },
-        { "name": "Ryan Berkshire", "role": "", "affiliation": "" }
+        {
+          "name": "Dennis Whyte",
+          "role": "Chief Executive Officer",
+          "affiliation": "UKAEA",
+          "formerly": "LIBRA principal investigator and MIT PSFC faculty"
+        },
+        {
+          "name": "Ethan Peterson",
+          "role": "",
+          "affiliation": "",
+          "formerly": "research scientist and neutronics group leader, MIT PSFC",
+          "photo": "ethan-peterson.jpg"
+        },
+        {
+          "name": "Rémi Delaporte-Mathurin",
+          "role": "",
+          "affiliation": "Neutrogen Technologies",
+          "formerly": "postdoc and BABY experiment lead, MIT PSFC",
+          "github": "RemDelaporteMathurin",
+          "photo": "remi-delaporte-mathurin.jpg"
+        },
+        {
+          "name": "Samuele Meschini",
+          "role": "Professor",
+          "affiliation": "Politecnico di Torino",
+          "formerly": "postdoc and fuel cycle modelling lead, MIT PSFC",
+          "photo": "samuele-meschini.jpg"
+        },
+        {
+          "name": "Davide Pettinari",
+          "role": "",
+          "affiliation": "Politecnico di Torino"
+        },
+        {
+          "name": "Toshiro Sakabe",
+          "role": "Neutron diagnostics",
+          "affiliation": "Kyoto University"
+        },
+        {
+          "name": "Lihua Zhou",
+          "role": "",
+          "affiliation": ""
+        },
+        {
+          "name": "Mike German",
+          "role": "",
+          "affiliation": ""
+        },
+        {
+          "name": "Ryan Berkshire",
+          "role": "",
+          "affiliation": ""
+        }
       ]
     }
   ]
