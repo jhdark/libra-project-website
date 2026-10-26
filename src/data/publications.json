@@ -118,8 +118,8 @@
     },
     {
       "type": "poster",
-      "title": "Breeding tritium in your lab? Here is how to measure it",
-      "authors": "N. Goleš, on behalf of the LIBRA group at MIT PSFC",
+      "title": "Tritium Collection and Measurement in Small-Scale Molten Salt Breeding Experiments",
+      "authors": "N. Goleš et al. (LIBRA team)",
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
@@ -175,6 +175,85 @@
       "experiments": [
         "baby",
         "libra-pi"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Recent progress of LIBRA project and new TBR measurements",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, D. Pettinari, J. Dark, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, S. Segantin, W. Zhou, K. Woller",
+      "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi",
+        "libra-one"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/sofe2025"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Radiological and thermal management for large-scale tritium breeding experiments with molten salts",
+      "authors": "K. Woller",
+      "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
+      "year": 2025,
+      "experiments": [
+        "libra-pi",
+        "libra-one"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Overview and progress updates on the LIBRA tritium breeding project",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, D. Pettinari, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, S. Segantin, W. Zhou, K. Woller",
+      "venue": "Tritium Focus Group, May 2025",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi",
+        "libra-one"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/tfg-2025"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Overview of the LIBRA project",
+      "authors": "R. Delaporte-Mathurin",
+      "venue": "University of Edinburgh visit, April 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-overview"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Tritium Fuel Cycle: Challenges and Advances for Fusion Power Plants",
+      "authors": "R. Delaporte-Mathurin",
+      "venue": "Seminar, University of California San Diego, January 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/tritium-fuel-cycle-seminar"
+        }
       ]
     },
     {
@@ -252,6 +331,71 @@
     },
     {
       "type": "talk",
+      "title": "Tritium Breeding and transport in Molten Salts under 14 MeV neutron Irradiation: Insights from the LIBRA Experiment",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
+      "venue": "International Conference on Nuclear Materials (NuMat 2024), October 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-numat-2024"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Advancements in Tritium Breeding: towards achieving self-sufficiency in Fusion Power Plants through Liquid Immersion Blanket Concept",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
+      "venue": "Symposium on Fusion Technology (SOFT 2024), Dublin, September 2024",
+      "year": 2024,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-soft-2024"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
+      "venue": "Hydrogen Workshop (HWS 2024), Chamonix",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-project-first-tritium-breeding-results-hws-talk"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "LIBRA project: derisking the path to tritium self-sufficiency",
+      "authors": "R. Delaporte-Mathurin",
+      "venue": "Event TBC, early 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-project-presentation"
+        }
+      ]
+    },
+    {
+      "type": "talk",
       "title": "Prototype verification of tritium breeding with Liquid Immersion Blanket technology using FLiBe",
       "authors": "K. B. Woller, on behalf of the LIBRA team",
       "venue": "16th International Workshop on Beryllium Technology (Be-WS 16), October 2023",
@@ -276,6 +420,38 @@
       "year": 2023,
       "experiments": [
         "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "LIBRA project: first tritium breeding results",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller and LIBRA collaborators",
+      "venue": "Tritium Focus Group, November 2023",
+      "year": 2023,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/libra-project-first-tritium-breeding-results"
+        }
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Tritium Transport in Breeding Blankets",
+      "authors": "R. Delaporte-Mathurin",
+      "venue": "MIT PSFC seminar, November 2023",
+      "year": 2023,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Slides",
+          "href": "https://slides.com/remdelaportemathurin/tritium-transport-in-breeding-blankets-psfc-seminar"
+        }
       ]
     },
     {
