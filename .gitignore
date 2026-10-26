@@ -23,3 +23,6 @@ design/
 
 # PSFC brand source files (logos, fonts, templates); only what the site uses is copied into public/
 PSFC Branding Assets/
+
+# Team presentations supplied for reference only; never commit
+1 Team Presentations/

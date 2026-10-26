@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import HeroVideo from '../components/HeroVideo.astro';
 import CampaignSheet from '../components/CampaignSheet.astro';
 import ExperimentLedger from '../components/ExperimentLedger.astro';
 import NewsList from '../components/NewsList.astro';
@@ -36,16 +37,18 @@ const pillars = [
 ---
 
 <Base>
-  <!-- Hero: the headline beside the lead experiment's campaigns -->
-  <section class="hero">
+  <HeroVideo
+    title="Breeding tritium for fusion energy"
+    lead="Experiments measuring tritium breeding in molten salt blankets."
+    caption="In the lab: the tritium bubbler, a sweep gas panel, bubbler sample vials, FLiNaK salt being dispensed and salt being poured."
+  />
+
+  <!-- The lead experiment's campaigns -->
+  <section class="record">
     <div class="wrap">
       <div>
-        <h1>Breeding tritium for fusion energy</h1>
-        <p class="lead">Experiments measuring tritium breeding in molten salt blankets.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href={url('experiments')}>Explore the experiments</a>
-          <a class="btn" href={url('data')}>Data and code</a>
-        </div>
+        <h2>The latest campaigns</h2>
+        <p class="lead">Each BABY run irradiates a breeder salt with DT fusion neutrons and counts the tritium it releases.</p>
       </div>
       {lead && leadCampaigns && <CampaignSheet experiment={lead} campaigns={leadCampaigns} />}
     </div>
@@ -149,19 +152,12 @@ const pillars = [
 </Base>
 
 <style>
+  .record { padding-block: var(--section-gap-s); }
+  .record .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
+  .record h2 { font-size: var(--text-section); }
+  .record .lead { margin-top: var(--space-lg); }
+  @media (max-width: 60rem) { .record .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
   .actions { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; }
-
-  /* Hero: Stage posture, the text on five columns and the sheet on seven,
-     filling the screen under the 88px header. */
-  .hero { min-height: calc(100svh - 88px); display: grid; align-items: center; padding-block: 0 var(--space-lg); }
-  .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
-  h1 { font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.035em; }
-  .hero .lead { margin-top: var(--space-lg); max-width: 30ch; }
-  .hero .actions { margin-top: var(--space-xl); }
-  @media (max-width: 60rem) {
-    .hero { min-height: 0; padding-block: var(--space-2xl); }
-    .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
-  }
 
   /* About: head beside numbered rows. */
   .about { padding-block: var(--section-gap-l) var(--section-gap); }

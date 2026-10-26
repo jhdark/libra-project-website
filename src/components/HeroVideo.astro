@@ -1,0 +1,72 @@
+---
+// Homepage hero over a muted loop of lab footage. The loop pauses on request
+// and never plays under reduced motion; the poster frame stands in.
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  lead: string;
+  caption: string;
+}
+const { title, lead, caption } = Astro.props;
+---
+<section class="hero-video">
+  <video class="bg" autoplay muted loop playsinline preload="auto" poster={url('media/video/lab-loop-poster.jpg')} aria-hidden="true" tabindex="-1">
+    <source src={url('media/video/lab-loop.webm')} type="video/webm" />
+    <source src={url('media/video/lab-loop.mp4')} type="video/mp4" />
+  </video>
+  <div class="wash" aria-hidden="true"></div>
+  <div class="wrap content">
+    <div class="text">
+      <h1>{title}</h1>
+      <p class="lead">{lead}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={url('experiments')}>Explore the experiments</a>
+        <a class="btn btn-on-ink" href={url('data')}>Data and code</a>
+      </div>
+    </div>
+    <div class="foot">
+      <p class="caption">{caption}</p>
+      <button type="button" class="pause" aria-pressed="false">Pause video</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const video = document.querySelector<HTMLVideoElement>('.hero-video video');
+  const button = document.querySelector<HTMLButtonElement>('.hero-video .pause');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const set = (paused: boolean) => {
+    if (!video || !button) return;
+    if (paused) video.pause(); else video.play().catch(() => {});
+    button.setAttribute('aria-pressed', String(paused));
+    button.textContent = paused ? 'Play video' : 'Pause video';
+  };
+  if (reduce.matches) set(true);
+  button?.addEventListener('click', () => set(!video?.paused));
+</script>
+
+<style>
+  .hero-video { position: relative; isolation: isolate; min-height: calc(100svh - 88px); display: grid; background: var(--color-ink); color: var(--color-on-ink); overflow: hidden; }
+  .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+  /* A flat ink wash keeps the type legible; heavier at the foot where the text sits. */
+  .wash { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, color-mix(in oklch, var(--color-ink) 88%, transparent), color-mix(in oklch, var(--color-ink) 55%, transparent) 60%, color-mix(in oklch, var(--color-ink) 45%, transparent)); }
+  .content { display: grid; grid-template-rows: 1fr auto; padding-block: var(--space-3xl) var(--space-lg); }
+  .text { align-self: end; max-width: 46rem; animation: settle 700ms var(--ease-out) both; }
+  /* One load-in: the footage fades up from ink and the headline settles. Both
+     start from a visible state, so nothing depends on script. */
+  .bg { animation: fade-up 1200ms var(--ease-out) both; }
+  @keyframes settle { from { opacity: 0; transform: translateY(12px); } }
+  @keyframes fade-up { from { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .text, .bg { animation: none; } }
+  h1 { font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.035em; color: var(--color-on-ink); }
+  .lead { margin-top: var(--space-lg); color: var(--color-on-ink-2); max-width: 34ch; }
+  .actions { margin-top: var(--space-xl); display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .hero-video { --color-focus: var(--color-on-ink-link); }
+  .foot { margin-top: var(--space-2xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-on-ink-rule); display: flex; justify-content: space-between; align-items: center; gap: var(--space-lg); }
+  .caption { font-size: 0.875rem; color: var(--color-on-ink-2); max-width: 70ch; }
+  .pause { min-height: 44px; padding-inline: var(--space-md); border: var(--rule-hair) solid var(--color-on-ink-2); border-radius: var(--radius-control); background: transparent; color: var(--color-on-ink); font: 600 0.875rem/1 var(--font-display); cursor: pointer; white-space: nowrap; }
+  .pause:hover { background: var(--color-on-ink); color: var(--color-ink); }
+  .pause:active { background: var(--color-on-ink-2); color: var(--color-ink); }
+  @media (max-width: 40rem) { .foot { flex-direction: column; align-items: flex-start; } }
+</style>
