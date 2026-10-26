@@ -64,6 +64,39 @@
     },
     {
       "type": "article",
+      "title": "Neutronics Analysis of ClLiF: An Alternative Molten-Salt Tritium Breeder",
+      "authors": "C. Dunn, B. Ebiwonjumi, S. Segantin, K. Woller, W. Zhou, E. Peterson",
+      "venue": "Fusion Science and Technology 82, 881-900 (2025), open access",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1080/15361055.2025.2504844"
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "title": "Neutron Energy Distribution and Energy-Corrected Spatial Distribution Around a Sealed-Tube DT Fusion Neutron Generator",
+      "authors": "T. Sakabe, E. Edwards, A. Lanzrath, N. Goleš, J. Ball, S. Mackie, S. Segantin, K. Mukai, J. Yagi, R. Tinguely, K. Woller",
+      "venue": "IEEE Transactions on Plasma Science 52, 3871-3877 (2024)",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1109/TPS.2024.3384234"
+        }
+      ]
+    },
+    {
+      "type": "article",
       "title": "The LIBRA Experiment: Investigating Robust Tritium Accountancy in Molten FLiBe Exposed to a D-T Fusion Neutron Spectrum",
       "authors": "S. E. Ferry, K. B. Woller, E. E. Peterson, C. Sorensen, D. G. Whyte",
       "venue": "Fusion Science and Technology 79 (1), 13-35",
