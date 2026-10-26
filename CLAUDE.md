@@ -21,16 +21,18 @@ absolute paths.
 ## PSFC brand
 
 LIBRA is a group within the MIT Plasma Science and Fusion Center, and the site
-is a LIBRA sub-brand of the PSFC identity. The PSFC branding files (logos,
-fonts, templates, guidelines) were supplied for reference only and **must not
-be committed**; the rules that matter are here.
+is a LIBRA sub-brand of the PSFC identity. The PSFC branding folder (logos,
+fonts, templates, guidelines) was supplied for reference and is not
+committed as a whole; individual assets the site actually uses can be
+(for example `public/images/brand/psfc-icon-32.png`). The rules that matter
+are here.
 
 - **Logo:** the PSFC logo is the MIT logotype with "Plasma Science & Fusion
   Center" (one-line or two-line lockup), used as supplied in one MIT core
   colour (MIT red, silver gray, bright red, black, white), and only black or
   white on a coloured background. Never altered or recoloured. Custom lockups
   (for example MIT with LIBRA) only come from PSFC communications. The site
-  names the centre in type instead of using the logo file.
+  currently names the centre in type in the footer.
 - **MIT core colours:** MIT red `#750014`, silver gray `#8B959E` (fails as text
   on light paper), bright red `#FF1423`, black, white.
 - **PSFC palette:** Plasma Pink `#DF1AD2` and Hydrogen Periwinkle `#BFB3FF`
@@ -46,8 +48,8 @@ be committed**; the rules that matter are here.
 ## Reference material that must not be committed
 
 - `PSFC Branding Assets/` (if present) and `1 Team Presentations/` were
-  supplied for reference and are git-ignored. Never commit them or copy
-  their files wholesale. Use only what is public (posters, conference talks,
+  supplied for reference and are git-ignored. Never commit the folders;
+  copy in only the individual files the site uses. Use only what is public (posters, conference talks,
   published papers) for site copy; ARPA-E quarterly reviews and memos,
   safety and beryllium committee decks, budgets, unpublished results and
   personal data stay off the site.
