@@ -50,36 +50,34 @@ const gallery = photosFor(experiment.id);
   )}
 
   <div class="wrap guide">
+    {toc.length > 0 && (
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ul>
+          {toc.map((h) => (
+            <li><a href={`#${h.slug}`}>{h.text}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
     <article class="prose prose-libra max-w-none">
       <Content components={{ CadViewer }} />
     </article>
 
-    <aside>
-      {toc.length > 0 && (
-        <nav aria-labelledby="toc-title">
-          <h2 id="toc-title">On this page</h2>
-          <ul>
-            {toc.map((h) => (
-              <li><a href={`#${h.slug}`}>{h.text}</a></li>
-            ))}
-          </ul>
-        </nav>
-      )}
-
-      {facts.length > 0 && (
-        <section aria-labelledby="facts-title">
-          <h2 id="facts-title">Key facts</h2>
-          <dl>
-            {facts.map((f) => (
-              <div>
-                <dt>{f.label}</dt>
-                <dd><Tbc text={f.value} /></dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      )}
-    </aside>
+    {facts.length > 0 && (
+      <aside class="facts" aria-labelledby="facts-title">
+        <h2 id="facts-title">Key facts</h2>
+        <dl>
+          {facts.map((f) => (
+            <div>
+              <dt>{f.label}</dt>
+              <dd><Tbc text={f.value} /></dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+    )}
   </div>
 
   <!-- Photos and drawings tagged with this experiment in src/data/media.json -->
@@ -152,18 +150,29 @@ const gallery = photosFor(experiment.id);
   .review { background: var(--color-signal-wash); border-bottom: var(--rule-hair) solid var(--color-rule); }
   .review p { padding-block: var(--space-sm); font-size: 0.9375rem; color: var(--color-ink); }
 
-  .guide { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: var(--space-2xl); padding-block: var(--space-2xl) var(--section-gap-s); }
-  .guide article { max-width: 72ch; }
-  aside { display: grid; gap: var(--space-xl); align-content: start; }
-  aside h2 { font-size: 1.125rem; line-height: 1.3; padding-bottom: var(--space-xs); border-bottom: var(--rule-bar) solid var(--color-rule-2); }
-  aside ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; }
-  aside li a { display: block; padding-block: var(--space-2xs); color: var(--color-ink-2); text-decoration: none; }
-  aside li a:hover { color: var(--color-accent); text-decoration: underline; }
-  aside dl div { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
-  aside dt { font-size: 0.875rem; color: var(--color-muted); }
-  aside dd { margin-top: var(--space-2xs); color: var(--color-ink); }
-  @media (min-width: 64rem) { aside { position: sticky; top: var(--space-lg); align-self: start; } }
-  @media (max-width: 64rem) { .guide { grid-template-columns: minmax(0, 1fr); } aside { order: -1; } }
+  /* Three columns: contents, the guide, key facts. The side columns stay in
+     view while the guide scrolls. */
+  .guide { display: grid; grid-template-columns: 13rem minmax(0, 1fr) 17rem; gap: var(--space-2xl); padding-block: var(--space-2xl) var(--section-gap-s); align-items: start; }
+  .guide article { max-width: 75ch; justify-self: center; width: 100%; }
+  .toc, .facts { position: sticky; top: var(--space-lg); }
+  .toc h2, .facts h2 { font-size: 1.125rem; line-height: 1.3; padding-bottom: var(--space-xs); border-bottom: var(--rule-bar) solid var(--color-rule-2); }
+  .toc ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; }
+  .toc li a { display: block; padding-block: var(--space-2xs); color: var(--color-ink-2); text-decoration: none; }
+  .toc li a:hover { color: var(--color-accent); text-decoration: underline; }
+  .facts dl div { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .facts dt { font-size: 0.875rem; color: var(--color-muted); }
+  .facts dd { margin-top: var(--space-2xs); color: var(--color-ink); }
+  @media (max-width: 80rem) {
+    .guide { grid-template-columns: minmax(0, 1fr) 17rem; }
+    .toc { grid-column: 2; grid-row: 1; position: static; }
+    .facts { grid-column: 2; grid-row: 2; position: static; }
+    .guide article { grid-column: 1; grid-row: 1 / span 3; }
+  }
+  @media (max-width: 64rem) {
+    .guide { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+    .toc, .facts, .guide article { grid-column: 1; grid-row: auto; }
+    .guide article { order: 3; }
+  }
 
   .lab { padding-block: var(--section-gap-s); border-top: var(--rule-hair) solid var(--color-rule); }
   .lab .split-head h2 { font-size: var(--text-section); }
