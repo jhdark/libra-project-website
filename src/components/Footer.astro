@@ -11,10 +11,10 @@ const explore = [
 const year = new Date().getFullYear();
 ---
 
-<!-- Colophon: the PSFC lockup, one paragraph of credits and links, the sitemap, the legal line. -->
+<!-- Colophon: the parent centre, one paragraph of credits and links, the sitemap, the legal line. -->
 <footer class="colophon">
   <div class="container">
-    <img src={url('images/brand/psfc-lockup-one-line-mit-red.svg')} width="320" height="31" alt="MIT Plasma Science and Fusion Center" />
+    <p class="parent"><a href="https://www.psfc.mit.edu/" target="_blank" rel="noopener">MIT Plasma Science and Fusion Center</a></p>
     <p class="credits">
       LIBRA is a project of the MIT Plasma Science and Fusion Center, advancing tritium breeding technologies for fusion energy.
       Data lives in the <a class="link" href="https://zenodo.org/communities/libra-project/records" target="_blank" rel="noopener">Zenodo community</a>,
@@ -33,8 +33,11 @@ const year = new Date().getFullYear();
 
 <style>
   .colophon { border-top: var(--rule-bar) solid var(--color-rule-2); padding-block: var(--space-2xl) var(--space-xl); }
-  /* The lockup keeps clear space on every side and is never recoloured. */
-  img { width: 320px; max-width: 100%; height: auto; }
+  /* The parent centre is named in type: PSFC logo files are not kept in this
+     repository (see CLAUDE.md, "Design system"). */
+  .parent { font: 600 1.25rem/1.2 var(--font-display); }
+  .parent a { color: var(--color-ink); text-decoration: none; }
+  .parent a:hover { color: var(--color-accent); text-decoration: underline; }
   .credits { margin-top: var(--space-xl); max-width: 68ch; color: var(--color-ink-2); }
   ul { list-style: none; margin: var(--space-xl) 0 0; padding: var(--space-md) 0 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); font: 600 0.9375rem/1.5 var(--font-display); }
   nav a { color: var(--color-ink); text-decoration: none; }

@@ -128,6 +128,7 @@ section { padding: var(--space-7) 0; }
 
 footer { background: var(--color-ink); color: var(--color-paper); padding: var(--space-6) 0 var(--space-5); }
 footer .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); gap: var(--space-5); }
+footer .parent { font: 600 20px/1.2 var(--font-display); margin: 0; }
 footer img { width: 300px; max-width: 100%; height: auto; }
 footer p { margin-top: var(--space-3); color: var(--color-rule); font-size: 15px; }
 footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); font-size: 15px; }
@@ -238,7 +239,7 @@ footer a:focus-visible { outline-color: var(--color-paper); }
 <footer>
   <div class="wrap">
     <div>
-      <img src="assets/psfc-white.svg" alt="MIT Plasma Science and Fusion Center">
+      <p class="parent">MIT Plasma Science and Fusion Center</p>
       <p>LIBRA is a project of the MIT Plasma Science and Fusion Center.</p>
     </div>
     <ul>
