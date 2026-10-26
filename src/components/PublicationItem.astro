@@ -1,5 +1,5 @@
 ---
-import { linkHref } from '../lib/url';
+import { linkHref, titleLink } from '../lib/url';
 // One publication or talk as a citation: type and year, title, authors,
 // venue, then its links. Example entries are flagged as such.
 export interface Publication {
@@ -17,6 +17,7 @@ interface Props {
   pub: Publication;
 }
 const { pub } = Astro.props;
+const { titleHref, others } = titleLink(pub.links);
 const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
 ---
 <article class="pub" data-type={pub.type}>
@@ -25,14 +26,14 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
     {pub.placeholder && <span class="example">Example entry</span>}
   </p>
   <div class="main">
-    <h3>{pub.title}</h3>
+    <h3>{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener">{pub.title}</a> : pub.title}</h3>
     <p class="authors">{pub.authors}</p>
   </div>
   <div class="side">
     <p class="venue">{pub.venue}</p>
-    {pub.links && pub.links.length > 0 && (
+    {others.length > 0 && (
       <ul>
-        {pub.links.map((l) => (
+        {others.map((l) => (
           <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>
         ))}
       </ul>
@@ -49,6 +50,8 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
   /* A dashed outline marks a placeholder the team will replace. */
   .example { padding: 0 var(--space-xs); border: var(--rule-hair) dashed var(--color-muted); color: var(--color-ink-2); }
   h3 { font-size: var(--text-title); line-height: 1.2; max-width: 60ch; }
+  .title-link { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+  .title-link:hover { color: var(--color-accent); }
   .authors { margin-top: var(--space-xs); color: var(--color-ink-2); max-width: 75ch; }
   .venue { font-size: 0.9375rem; font-style: italic; color: var(--color-ink-2); }
   ul { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-lg); }
