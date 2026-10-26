@@ -1,7 +1,7 @@
 ---
 // Typographic wordmark until the project has a logo (TBC). A combined
 // MIT/PSFC lockup for LIBRA can only come from PSFC communications, so the
-// PSFC lockup appears separately, unaltered, in the footer.
+// centre is named beneath the wordmark in type.
 interface Props {
   class?: string;
 }
@@ -13,11 +13,7 @@ const { class: className = '' } = Astro.props;
 </span>
 
 <style>
-  .wordmark { display: grid; justify-items: center; gap: var(--space-2xs); color: var(--color-ink); }
-  b { font: 600 2.25rem/1 var(--font-display); letter-spacing: 0.06em; }
+  .wordmark { display: grid; justify-items: start; gap: var(--space-2xs); color: var(--color-ink); }
+  b { font: 600 1.75rem/1 var(--font-display); letter-spacing: 0.06em; }
   span span { font-size: 0.875rem; color: var(--color-muted); }
-  @media (max-width: 60rem) {
-    .wordmark { justify-items: start; }
-    b { font-size: 1.75rem; }
-  }
 </style>

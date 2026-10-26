@@ -27,10 +27,6 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
   </head>
   <body class="flex min-h-screen flex-col overflow-x-clip">
-    <!-- Remove once the team has signed off on the content. -->
-    <div class="draft">
-      <p class="wrap">Draft for team feedback</p>
-    </div>
     <Nav />
     <main class="flex-1">
       <slot />
@@ -39,7 +35,3 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
   </body>
 </html>
 
-<style>
-  .draft { background: var(--color-paper-3); color: var(--color-ink); font-size: 0.875rem; }
-  .draft p { padding-block: var(--space-xs); }
-</style>

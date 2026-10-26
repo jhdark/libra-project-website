@@ -57,7 +57,7 @@ Node comes from the conda env: `conda activate libra-website`. Then
 - `src/data/*.json` holds people, publications and Zenodo records.
   Publications (`experiments: [slug]`) and datasets (`experiment: slug`) link
   to experiments by file slug and are shown on that experiment's page.
-- `src/layouts/Base.astro` is the shared shell (draft strip, Nav, Footer).
+- `src/layouts/Base.astro` is the shared shell (Nav, Footer).
   Inner pages start with `PageHeader`.
 - Colours, fonts and sizes are tokens in `src/styles/global.css`; see
   "Design system" below. Use these, not raw Tailwind colours.
