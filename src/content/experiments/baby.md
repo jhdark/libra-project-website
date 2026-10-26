@@ -79,8 +79,16 @@ for the first time. The first campaign is described in a
 
 ## Experimental setup
 
+![Diagram of BABY 100 mL: helium flows from a cylinder over a 100 mL crucible of ClLiF salt set between two neutron sources, then on to tritium collection and a liquid scintillation counter.](../../assets/photos/baby-100ml-principle.png)
+
+*How BABY works: (1) DT generators produce 14 MeV neutrons; (2) neutrons
+breed tritium from lithium in the salt; (3) the tritium moves through the
+salt; (4) it is released into the helium sweep gas or permeates the walls;
+(5) it is collected and counted by liquid scintillation. Figure from
+Delaporte-Mathurin et al., [Nucl. Fusion 65 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab),
+CC BY 4.0.*
+
 Photos and drawings of the set-up are in the "In the lab" section below.
-TODO: a labelled diagram of the crucible, furnace, gas lines and bubblers.
 
 ### Breeder and containment
 
