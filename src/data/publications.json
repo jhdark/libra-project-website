@@ -1,18 +1,43 @@
 {
-  "_note": "type is one of: article, preprint, talk, poster, thesis, report. experiments lists experiment slugs (file names in src/content/experiments). Entries with placeholder: true are examples showing the format and should be replaced.",
+  "_note": "type is one of: article, preprint, talk, poster, thesis, report. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
   "items": [
     {
-      "type": "preprint",
+      "type": "article",
       "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
       "authors": "R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller",
-      "venue": "arXiv:2412.02721 (journal version TBC)",
-      "year": 2024,
-      "experiments": ["baby"],
+      "venue": "Nuclear Fusion (2025); preprint arXiv:2412.02721 (journal link TBC)",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ],
       "featured": true,
       "links": [
-        { "label": "arXiv", "href": "https://arxiv.org/abs/2412.02721" },
-        { "label": "Code and data", "href": "https://github.com/LIBRA-project/insights-from-BABY-experiment-paper" },
-        { "label": "Zenodo", "href": "https://doi.org/10.5281/zenodo.14455926" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2412.02721"
+        },
+        {
+          "label": "Code and data",
+          "href": "https://github.com/LIBRA-project/insights-from-BABY-experiment-paper"
+        },
+        {
+          "label": "Zenodo",
+          "href": "https://doi.org/10.5281/zenodo.14455926"
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "title": "The LIBRA Experiment: Investigating Robust Tritium Accountancy in Molten FLiBe Exposed to a D-T Fusion Neutron Spectrum",
+      "authors": "S. E. Ferry, K. B. Woller, E. E. Peterson, C. Sorensen, D. G. Whyte",
+      "venue": "Fusion Science and Technology 79 (1), 13-35",
+      "year": 2023,
+      "experiments": [],
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1080/15361055.2022.2078136"
+        }
       ]
     },
     {
@@ -21,8 +46,15 @@
       "authors": "LIBRA team",
       "venue": "In preparation",
       "year": 2026,
-      "experiments": ["baby"],
-      "links": [{ "label": "Code and data", "href": "https://github.com/LIBRA-project/FLiBe-1L-paper" }]
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Code and data",
+          "href": "https://github.com/LIBRA-project/FLiBe-1L-paper"
+        }
+      ]
     },
     {
       "type": "report",
@@ -30,28 +62,237 @@
       "authors": "LIBRA team",
       "venue": "In preparation",
       "year": 2026,
-      "experiments": ["baby"],
-      "links": [{ "label": "Code and data", "href": "https://github.com/LIBRA-project/baby-1l-paper" }]
-    },
-    {
-      "type": "talk",
-      "placeholder": true,
-      "title": "Example talk: results from the BABY 1 L campaign",
-      "authors": "Speaker name",
-      "venue": "Conference name, City",
-      "year": 2026,
-      "experiments": ["baby"],
-      "links": [{ "label": "Slides", "href": "#" }]
+      "experiments": [
+        "baby"
+      ],
+      "links": [
+        {
+          "label": "Code and data",
+          "href": "https://github.com/LIBRA-project/baby-1l-paper"
+        }
+      ]
     },
     {
       "type": "poster",
-      "placeholder": true,
-      "title": "Example poster: tritium transport modelling of BABY 1 L",
-      "authors": "Presenter name",
-      "venue": "Conference name, City",
+      "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA)",
+      "authors": "N. Goleš, R. Delaporte-Mathurin, D. Pettinari, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
+      "venue": "ARPA-E Energy Innovation Summit, 7 April 2026",
       "year": 2026,
-      "experiments": ["baby"],
-      "links": [{ "label": "Poster PDF", "href": "#" }]
+      "experiments": [
+        "baby",
+        "libra-pi",
+        "libra-one"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "LIBRA: Liquid Immersion Blanket Robust (tritium) Accountancy update",
+      "authors": "K. B. Woller, on behalf of the LIBRA team",
+      "venue": "ARPA-E Fusion Programs Annual Review Meeting, Aurora, Colorado, 9 July 2025",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi",
+        "libra-one"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Fueling the Fusion Future",
+      "authors": "N. Goleš et al. (LIBRA team)",
+      "venue": "ARPA-E Fusion Programs Annual Review Meeting, Aurora, Colorado, July 2025",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi",
+        "libra-one"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Breeding tritium in your lab? Here is how to measure it",
+      "authors": "N. Goleš, on behalf of the LIBRA group at MIT PSFC",
+      "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Density measurement and tritium breeding analysis of ClLiF",
+      "authors": "C. Dunn, W. Zhou, K. Woller, E. Peterson",
+      "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Neutron Detector and Generator Characterization for the BABY Experiment",
+      "authors": "E. Edwards et al.",
+      "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Tritium Speciation and Release Dynamics in Molten Salts: Insights from BABY",
+      "authors": "N. Goleš",
+      "venue": "Tritium Focus Group, May 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "A high-fidelity open-source neutronics model for the BABY experiment",
+      "authors": "D. Pettinari, S. Segantin, C. Dunn, R. Delaporte-Mathurin, N. Goleš, E. Peterson, K. Woller, M. Zucchetti, R. Testoni",
+      "venue": "Open Source Software for Fusion Energy (OSSFE 2025), 18 March 2025",
+      "year": 2025,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA)",
+      "authors": "N. Goleš, R. Delaporte-Mathurin, D. Pettinari, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
+      "venue": "ARPA-E Energy Innovation Summit, 17 March 2025",
+      "year": 2025,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Neutronics of the LIBRA Project",
+      "authors": "S. Segantin and the LIBRA team",
+      "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
+      "year": 2024,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Neutronics Analysis and Uncertainty Quantification of LiCl-LiF Molten Salt as a Liquid Tritium Breeding Blanket",
+      "authors": "C. Dunn",
+      "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Tritium Speciation and Transport in Molten Salts: Insights from the BABY Experiment",
+      "authors": "N. Goleš",
+      "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "LIBRA and the Liquid Immersion Blanket",
+      "authors": "K. B. Woller, on behalf of the LIBRA team",
+      "venue": "ARPA-E Fusion Program Review, June 2024",
+      "year": 2024,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA) and Build A Better Yield (BABY)",
+      "authors": "N. Goleš, R. Delaporte-Mathurin, A. T. Lanzrath, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
+      "venue": "ARPA-E Energy Innovation Summit, May 2024",
+      "year": 2024,
+      "experiments": [
+        "baby",
+        "libra-pi"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Fueling the emerging fusion industry: Fusion fuel cycle modeling and tritium breeder blanket technology development at the MIT PSFC",
+      "authors": "S. E. Ferry, with R. Delaporte-Mathurin, S. Meschini, E. Peterson, W. Zhou, K. Woller and the MIT LIBRA team",
+      "venue": "JPP Colloquium, MIT, 2 May 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Investigating Tritium Breeding on Molten Salts",
+      "authors": "K. B. Woller, D. G. Whyte, S. E. Ferry, E. E. Peterson, R. Delaporte-Mathurin, S. Segantin, W. Zhou, S. Meschini, R. Vieira, L. Zhou, R. Leccacorvi, E. Lamere, C. S. Dunn, E. Edwards, N. Goleš, A. T. Lanzrath",
+      "venue": "MIT IAP PSFC Showcase, January 2024",
+      "year": 2024,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "Prototype verification of tritium breeding with Liquid Immersion Blanket technology using FLiBe",
+      "authors": "K. B. Woller, on behalf of the LIBRA team",
+      "venue": "16th International Workshop on Beryllium Technology (Be-WS 16), October 2023",
+      "year": 2023,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "poster",
+      "title": "Neutronics Modeling of the Tritium Breeding LIBRA Experiment",
+      "authors": "C. S. Dunn, E. E. Peterson, K. B. Woller, S. E. Ferry, S. Segantin, R. Delaporte-Mathurin, Z. Hartwig, D. G. Whyte",
+      "venue": "Symposium on Fusion Engineering (SOFE 2023)",
+      "year": 2023,
+      "experiments": []
+    },
+    {
+      "type": "poster",
+      "title": "Feasibility Study of Real-time Neutron Measurement using a Diamond detector for the LIBRA experiment",
+      "authors": "T. Sakabe, E. Edwards, A. Lanzrath, J. Ball, S. Mackie, S. Segantin, R. A. Tinguely, K. Woller",
+      "venue": "Symposium on Fusion Engineering (SOFE 2023)",
+      "year": 2023,
+      "experiments": [
+        "baby"
+      ]
+    },
+    {
+      "type": "talk",
+      "title": "LIBRA: Liquid immersion blanket robust accountancy",
+      "authors": "S. E. Ferry, on behalf of the LIBRA team",
+      "venue": "Tritium 2022, Bucharest, Romania, October 2022",
+      "year": 2022,
+      "experiments": []
+    },
+    {
+      "type": "talk",
+      "title": "Tritium breeding for fusion power and the LIBRA project",
+      "authors": "K. Woller, S. Ferry",
+      "venue": "ORNL Molten Salt Reactor Workshop, October 2022",
+      "year": 2022,
+      "experiments": []
+    },
+    {
+      "type": "poster",
+      "title": "LIBRA: Liquid Immersion Blanket - Robust Accountancy",
+      "authors": "S. E. Ferry, E. E. Peterson, K. B. Woller, D. G. Whyte (PI)",
+      "venue": "ARPA-E Fusion Programs Annual Meeting, May 2022",
+      "year": 2022,
+      "experiments": []
     }
   ]
 }
