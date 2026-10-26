@@ -61,15 +61,19 @@
       ]
     },
     {
-      "type": "report",
-      "title": "BABY 1 L campaign paper (title TBC)",
-      "authors": "LIBRA team",
-      "venue": "In preparation",
-      "year": 2026,
+      "type": "preprint",
+      "title": "BABY 1L: First Tritium Breeding Campaign Results",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
+      "venue": "arXiv:2509.26174",
+      "year": 2025,
       "experiments": [
         "baby"
       ],
       "links": [
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2509.26174"
+        },
         {
           "label": "Code and data",
           "href": "https://github.com/LIBRA-project/baby-1l-paper"
