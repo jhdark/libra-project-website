@@ -5,13 +5,17 @@
       "type": "article",
       "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
       "authors": "R. Delaporte-Mathurin, N. Goles, J. Ball, C. Dunn, E. Edwards, S. Ferry, E. Lamere, A. Lanzrath, R. Leccacorvi, S. Meschini, E. Peterson, S. Segantin, R. Vieira, D. Whyte, W. Zhou, K. Woller",
-      "venue": "Nuclear Fusion (2025); preprint arXiv:2412.02721 (journal link TBC)",
+      "venue": "Nuclear Fusion 65, 026037 (2025)",
       "year": 2025,
       "experiments": [
         "baby"
       ],
       "featured": true,
       "links": [
+        {
+          "label": "Journal",
+          "href": "https://doi.org/10.1088/1741-4326/ada2ab"
+        },
         {
           "label": "arXiv",
           "href": "https://arxiv.org/abs/2412.02721"

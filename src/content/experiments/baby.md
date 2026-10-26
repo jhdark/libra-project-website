@@ -52,8 +52,7 @@ tritons bred for 3.35 × 10¹³ neutrons produced. The value is small because
 only about 2% of the neutrons reach the salt at this scale. The model and
 the measurement differ by about 25%, which the team attributes mainly to
 tritium permeating through the crucible walls. The results are published in
-Nuclear Fusion (2025; journal link TBC) and as a
-[preprint on arXiv](https://arxiv.org/abs/2412.02721).
+[Nuclear Fusion 65, 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab).
 
 The 1 L experiments add a double-walled vessel so that tritium permeating
 through the walls can be collected, test permeation barriers, and speed up
