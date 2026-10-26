@@ -151,32 +151,34 @@
     .split-head > .head-link { justify-self: start; }
   }
 
-  /* Typeset Markdown (experiment guides, news posts). */
-  .prose-libra {
-    --tw-prose-body: var(--color-ink-2);
-    --tw-prose-headings: var(--color-ink);
-    --tw-prose-links: var(--color-accent);
-    --tw-prose-bold: var(--color-ink);
-    --tw-prose-counters: var(--color-muted);
-    --tw-prose-bullets: var(--color-muted);
-    --tw-prose-hr: var(--color-rule);
-    --tw-prose-quotes: var(--color-ink);
-    --tw-prose-quote-borders: var(--color-signal);
-    --tw-prose-captions: var(--color-muted);
-    --tw-prose-code: var(--color-ink);
-    --tw-prose-th-borders: var(--color-rule-2);
-    --tw-prose-td-borders: var(--color-rule);
-    font-size: 1.0625rem;
-    line-height: 1.7;
-  }
-  .prose-libra :where(h2, h3) { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
-  .prose-libra :where(h2) { font-size: 2rem; margin-top: 2.5em; padding-top: var(--space-md); border-top: var(--rule-bar) solid var(--color-rule-2); }
-  .prose-libra :where(h2):first-child { margin-top: 0; }
-  .prose-libra :where(thead th) { font-family: var(--font-body); font-weight: 400; font-size: 0.875rem; color: var(--color-muted); }
-  .prose-libra :where(code) { font-family: var(--font-mono); font-weight: 400; font-size: 0.9em; }
-  .prose-libra :where(blockquote) { font-style: normal; font-weight: 400; background: var(--color-signal-wash); padding: var(--space-md) var(--space-lg); border-left-width: 4px; }
-  .prose-libra :where(blockquote p) { margin: 0; }
 }
+
+/* Typeset Markdown (experiment guides, news posts). Unlayered so it wins
+   over the typography plugin's utilities. */
+.prose-libra {
+  --tw-prose-body: var(--color-ink-2);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-muted);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-signal);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-th-borders: var(--color-rule-2);
+  --tw-prose-td-borders: var(--color-rule);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.prose-libra :where(h2, h3) { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+.prose-libra :where(h2) { font-size: 2rem; margin-top: 2.5em; padding-top: var(--space-md); border-top: var(--rule-bar) solid var(--color-rule-2); }
+.prose-libra :where(h2):first-child { margin-top: 0; }
+.prose-libra :where(thead th) { font-family: var(--font-body); font-weight: 400; font-size: 0.875rem; color: var(--color-muted); }
+.prose-libra :where(code) { font-family: var(--font-mono); font-weight: 400; font-size: 0.9em; }
+.prose-libra :where(blockquote) { font-style: normal; font-weight: 400; background: var(--color-signal-wash); padding: var(--space-md) var(--space-lg); border-left-width: 4px; }
+.prose-libra :where(blockquote p) { margin: 0; }
 
 /* Offset in-page anchors so headings are not tight to the top edge. */
 :target,

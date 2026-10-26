@@ -9,13 +9,16 @@ const experiments = (await getCollection('experiments')).sort((a, b) => a.data.o
 
 <Base title="Experiments">
   <PageHeader
-    eyebrow="Experiments"
     title="The LIBRA experiments"
     intro="Each experiment has a detailed guide covering its setup, diagnostics, how to run it, and where to find its data and analysis."
   />
-  <section class="py-20">
-    <div class="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-2">
+  <section class="list">
+    <div class="wrap">
       {experiments.map((e) => <ExperimentCard experiment={e} />)}
     </div>
   </section>
 </Base>
+
+<style>
+  .list { padding-block: var(--space-xl) var(--section-gap); }
+</style>
