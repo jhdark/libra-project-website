@@ -1,5 +1,5 @@
 {
-  "_note": "Team list as of October 2026. Each entry: name, role, affiliation; formerly (for people who have moved on: what they did on LIBRA); featured (sets the person larger across their group); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
+  "_note": "Team list as of October 2026. Each entry: name, role, affiliation; formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
   "groups": [
     {
       "name": "Leadership",
@@ -121,7 +121,6 @@
           "name": "Nikola Goleš",
           "role": "PhD student, tritium speciation and release in the BABY experiments",
           "affiliation": "MIT PSFC",
-          "featured": true,
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/nikola-goles/",
             "orcid": "0000-0001-8581-3964",
