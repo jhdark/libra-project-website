@@ -6,11 +6,13 @@ import { url, formatDate } from '../lib/url';
 interface Props {
   posts: CollectionEntry<'news'>[];
   headingLevel?: 'h2' | 'h3';
+  // Full page width: date, title and summary side by side.
+  wide?: boolean;
 }
-const { posts, headingLevel = 'h3' } = Astro.props;
+const { posts, headingLevel = 'h3', wide = false } = Astro.props;
 const Heading = headingLevel;
 ---
-<ol class="news-list">
+<ol class:list={['news-list', { wide }]}>
   {posts.map((n) => (
     <li>
       <time datetime={n.data.date.toISOString()}>{formatDate(n.data.date)}</time>
@@ -30,5 +32,13 @@ const Heading = headingLevel;
   a { color: var(--color-ink); text-decoration: none; }
   a:hover { color: var(--color-accent); text-decoration: underline; }
   p { margin-top: var(--space-xs); color: var(--color-ink-2); max-width: 65ch; }
-  @media (max-width: 40rem) { li { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); } }
+  .wide li { grid-template-columns: 11rem minmax(0, 5fr) minmax(0, 6fr); align-items: baseline; }
+  .wide li > div { display: contents; }
+  .wide p { margin-top: 0; }
+  @media (max-width: 60rem) {
+    .wide li { grid-template-columns: 11rem minmax(0, 1fr); }
+    .wide li > div { display: block; }
+    .wide p { margin-top: var(--space-xs); }
+  }
+  @media (max-width: 40rem) { li, .wide li { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); } }
 </style>

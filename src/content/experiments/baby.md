@@ -9,10 +9,10 @@ facts:
   - { label: Breeder volume, value: "100 mL and 1 L" }
   - { label: Breeders tested, value: "ClLiF (LiCl-LiF surrogate salt), FLiBe; LiPb and Li oxide planned (TBC)" }
   - { label: Salt temperature, value: "500 to 700 °C" }
-  - { label: Neutron source, value: "DT neutron generators (14 MeV), 10^8 to 10^9 n/s" }
+  - { label: Neutron source, value: "DT neutron generators (14 MeV), 10⁸ to 10⁹ n/s" }
   - { label: Tritium measurement, value: "Water bubblers and liquid scintillation counting" }
   - { label: Neutron diagnostics, value: "Activation foils, proton recoil, diamond detector" }
-  - { label: Measured TBR (100 mL), value: "3.57 × 10^-4" }
+  - { label: Measured TBR (100 mL), value: "3.57 × 10⁻⁴" }
 repos:
   - { name: BABY-100-mL-runs, description: "Data for 100 mL runs 3 to 8" }
   - { name: BABY-1L-run-1, description: "1 L run 1 data and analysis" }

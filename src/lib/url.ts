@@ -11,3 +11,11 @@ export const linkHref = (href: string) => (/^([a-z]+:|#)/i.test(href) ? href : u
 // Frontmatter dates are midnight UTC; format in UTC so they don't shift a day.
 export const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+// A publication's journal or DOI link becomes the link on its title; the
+// rest stay as separate links.
+type Link = { label: string; href: string };
+export const titleLink = (links: Link[] = []) => {
+  const main = links.find((l) => /^(journal|doi)$/i.test(l.label));
+  return { titleHref: main ? linkHref(main.href) : undefined, others: links.filter((l) => l !== main) };
+};

@@ -7,7 +7,7 @@ import ExperimentLedger from '../components/ExperimentLedger.astro';
 import NewsList from '../components/NewsList.astro';
 import publications from '../data/publications.json';
 import datasets from '../data/datasets.json';
-import { url, linkHref } from '../lib/url';
+import { url, linkHref, titleLink } from '../lib/url';
 import { campaignsOf } from '../lib/experiments';
 
 const experiments = (await getCollection('experiments')).sort((a, b) => a.data.order - b.data.order);
@@ -94,7 +94,7 @@ const pillars = [
   </section>
 
   <!-- Featured publication, set as a statement -->
-  {featured.map((p) => (
+  {featured.map((p) => { const { titleHref, others } = titleLink(p.links); return (
     <section class="paper" aria-labelledby="featured-paper">
       <div class="wrap">
         <div class="split-head">
@@ -102,19 +102,19 @@ const pillars = [
           <p class="head-link"><a class="link-strong" href={url('publications')}>All publications and talks</a></p>
         </div>
         <p class="paper-type">{p.type.charAt(0).toUpperCase() + p.type.slice(1)}, <span class="num">{p.year}</span></p>
-        <h3 class="statement">{p.title}</h3>
+        <h3 class="statement">{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener">{p.title}</a> : p.title}</h3>
         <div class="paper-meta">
           <div>
             <p class="authors">{p.authors}</p>
             <p class="venue">{p.venue}</p>
           </div>
           <ul class="paper-links">
-            {p.links?.map((l) => <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>)}
+            {others.map((l) => <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>)}
           </ul>
         </div>
       </div>
     </section>
-  ))}
+  ); })}
 
   <!-- Open data -->
   <section class="data">
@@ -185,6 +185,8 @@ const pillars = [
   .paper { padding-block: var(--section-gap) var(--section-gap-s); }
   .paper-type { margin-bottom: var(--space-sm); color: var(--color-muted); }
   .paper-type .num { font-size: 0.9375rem; }
+  .title-link { color: inherit; text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 3px; text-underline-offset: 0.15em; }
+  .title-link:hover { color: var(--color-accent); }
   .statement { font-size: var(--text-display-s); line-height: 1.08; letter-spacing: -0.02em; max-width: 34ch; }
   .paper-meta { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
   .authors { color: var(--color-ink-2); max-width: 70ch; }
