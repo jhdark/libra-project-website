@@ -57,10 +57,92 @@ Node comes from the conda env: `conda activate libra-website`. Then
 - `src/data/*.json` holds people, publications and Zenodo records.
   Publications (`experiments: [slug]`) and datasets (`experiment: slug`) link
   to experiments by file slug and are shown on that experiment's page.
-- `src/layouts/Base.astro` is the shared shell (Nav, Footer, draft badge).
+- `src/layouts/Base.astro` is the shared shell (draft strip, Nav, Footer).
   Inner pages start with `PageHeader`.
-- Colours and fonts are `@theme` tokens in `src/styles/global.css`
-  (`libra-navy/deep/steel`, `paper`, `surface`, `line`, `ink*`, `accent`,
-  `tritium`). Use these, not raw Tailwind colours.
+- Colours, fonts and sizes are tokens in `src/styles/global.css`; see
+  "Design system" below. Use these, not raw Tailwind colours.
 - Keep content in Markdown/JSON and out of templates: this keeps a later
   move to WordPress possible (see PLAN.md).
+
+## Design system
+
+The "Lab record" direction (see `docs/design-directions/` for the
+alternatives): a LIBRA sub-brand of the PSFC identity, set like a printed lab
+record. Paper, rules and type carry the design; there are no cards, shadows,
+gradients, pills or icons. It was designed with the hallmark skill
+(`.agents/skills/hallmark`, not committed); the stamp at the top of
+`global.css` records its decisions and waivers, but day-to-day edits only need
+the rules below.
+
+### Tokens (`src/styles/global.css`)
+
+- **Paper:** `paper` (PSFC off-white `#F7F5F0`), `paper-2` and `paper-3` for
+  bands and hover, `sheet` for a table set as a printed page. Tinted, never
+  pure white.
+- **Ink:** `ink` (text and firm rules), `ink-2` (secondary text), `muted`
+  (labels, captions, TBC), `rule` (hairlines), `rule-2` (the 2px firm rule).
+- **Accent:** `accent` is MIT red: the one filled button per page, links and
+  the current nav item; `accent-2` on hover. `signal` is Plasma Pink and
+  `signal-wash` its tint: they mark data (the active campaign, a callout),
+  never carry text.
+- **Dark band:** `on-ink`, `on-ink-2`, `on-ink-rule`, `on-ink-link` for text
+  on an `ink` background (the homepage open data band). Any rule that paints
+  a dark surface also sets its text colour.
+- **Experiment keys:** `key-1` to `key-6` from the PSFC accent palette.
+- **Type:** `font-display` Hanken Grotesk 600 for heads, nav and buttons
+  (standing in for Neue Haas Grotesk); `font-body` Roboto Serif for reading;
+  `font-mono` Roboto Mono only for figures, dates in tables, DOIs and code.
+  Sizes: `text-display` (h1), `text-display-s` (a statement), `text-section`
+  (h2), `text-title` (item heads), `text-lead` (the line under a head).
+- **Spacing and layout:** `--space-*` (2 to 144px), `--section-gap*`,
+  `--gap-columns`; `.wrap` is the centred 1440px container with
+  `--gutter` padding. Do not use Tailwind's `container`: its breakpoint widths
+  override ours.
+- Tokens live in `@theme static` so component `<style>` blocks can read any of
+  them with `var(--color-...)`.
+
+### Shared classes
+
+`.btn`, `.btn-primary` (one per page), `.btn-on-ink`; `.link` (running text)
+and `.link-strong` (standalone links); `.lead`; `.split-head` (a section head
+left, its line or link right, a firm rule beneath); `.num` and `.tbc`;
+`.prose-libra` for Markdown (guides and news posts).
+
+### Components
+
+- `PageHeader`: title, intro and an optional slot for page facts (status, a
+  date). Never a label above the title.
+- `ExperimentLedger`: the experiments as one ruled table, each row a link.
+- `ExperimentCard`: a full-width entry on the experiments index.
+- `ExperimentKey`: an experiment's square colour key.
+- `CampaignSheet`: an experiment's Campaigns table, read from its guide's
+  Markdown by `campaignsOf()` in `src/lib/experiments.ts`, with the active
+  campaign marked in pink. The homepage shows the first active experiment
+  that has one.
+- `PublicationItem`, `NewsList`, `PersonEntry`, `StatusBadge`, `Tbc` (sets
+  "TBC" in `muted`), `CadViewer`.
+
+### How experiments get their identity
+
+Each experiment gets a key colour from its `order` in frontmatter
+(`keyColour()` in `src/lib/experiments.ts`: order 1 is `key-1`, and so on,
+wrapping after 6). A new experiment needs no code change. The key appears as
+a square beside the name in the ledger, the experiments index, the data
+table, and as a band under the guide's header. Keys are fills with a 1px ink
+edge, never text colour (the pastel keys fail contrast as text).
+
+### Rules that keep it from looking generated
+
+- No small uppercase or letter-spaced labels, and no label line above a
+  heading: let the heading say it, or use a caption below.
+- No middle dots joining meta (`Preprint · 2024`), no arrows glued to links,
+  no icon tiles, no pill badges, no glow or blur, no cards inside cards.
+- One filled button per page; everything else outlined or a text link.
+- Status is type: Active in the display face, Completed in ink, Planned in
+  muted.
+- Tables restack into labelled rows on phones rather than scrolling sideways.
+- Every interactive element keeps the focus ring (`focus` token, 2px). Motion
+  is limited to colour changes on hover, and the CAD viewer stops rotating
+  under reduced motion.
+- Copy: British English, no em dashes, no buzzwords; TBC and TODO stay
+  visible.
