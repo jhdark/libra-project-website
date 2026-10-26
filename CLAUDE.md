@@ -43,6 +43,15 @@ be committed**; the rules that matter are here.
   Display above), Adobe Fonts only. Roboto Serif and Roboto Mono are the
   sanctioned secondary faces for subheads and captions on the web.
 
+## Reference material that must not be committed
+
+- `PSFC Branding Assets/` (if present) and `1 Team Presentations/` were
+  supplied for reference and are git-ignored. Never commit them or copy
+  their files wholesale. Use only what is public (posters, conference talks,
+  published papers) for site copy; ARPA-E quarterly reviews and memos,
+  safety and beryllium committee decks, budgets, unpublished results and
+  personal data stay off the site.
+
 ## Development
 
 Node comes from the conda env: `conda activate libra-website`. Then
@@ -108,8 +117,21 @@ and `.link-strong` (standalone links); `.lead`; `.split-head` (a section head
 left, its line or link right, a firm rule beneath); `.num` and `.tbc`;
 `.prose-libra` for Markdown (guides and news posts).
 
+### Media and brand
+
+- Photos and drawings: `src/assets/photos/`, listed with alt text, caption,
+  date, credit and experiment in `src/data/media.json` (`src/lib/media.ts`,
+  `Figure`). A photo tagged with an experiment slug appears in that guide's
+  "In the lab" section. Strip metadata and avoid identifiable faces.
+- Videos: `public/media/video/`, web-compressed MP4 and WebM with a poster.
+  The homepage hero (`HeroVideo`) plays `lab-loop` muted, with a pause
+  button, and not at all under reduced motion.
+- `brand/` is the LIBRA brand kit (wordmark, colours, guide). It is not
+  published on the site.
+
 ### Components
 
+- `HeroVideo`: the homepage hero over the lab footage loop.
 - `PageHeader`: title, intro and an optional slot for page facts (status, a
   date). Never a label above the title.
 - `ExperimentLedger`: the experiments as one ruled table, each row a link.
