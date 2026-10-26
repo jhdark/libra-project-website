@@ -3,7 +3,7 @@ title: LIBRA-Pi
 tagline: A π-steradian sector of the LIBRA blanket
 summary: LIBRA-Pi is a tank of about 100 L of molten salt that covers π steradians around a DT neutron source, scaling the BABY experiments up to blanket-relevant salt thicknesses.
 status: planned
-order: 2
+order: 3
 needsReview: true
 facts:
   - { label: Breeder volume, value: "About 100 L (125 L in earlier designs)" }
@@ -20,7 +20,7 @@ repos:
 
 ## Overview
 
-LIBRA-Pi is the step between the litre-scale [BABY](../baby) experiments and
+LIBRA-Pi is the step between the litre-scale [BABY 1 L](../baby-1l) experiments and
 [LIBRA-One](../libra-one). In the team's words, "the Pi tank is designed to
 cover π steradians around the point neutron source, while also resembling a
 slice of pie". It is a full-scale sector of the original four-quadrant LIBRA

@@ -8,7 +8,7 @@
       "venue": "Nuclear Fusion 66, 076046 (2026)",
       "year": 2026,
       "experiments": [
-        "baby"
+        "baby-1l"
       ],
       "links": [
         {
@@ -36,7 +36,7 @@
       "venue": "Nuclear Fusion 65, 026037 (2025)",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "featured": true,
       "links": [
@@ -69,7 +69,8 @@
       "venue": "Fusion Science and Technology 82, 881-900 (2025), open access",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi"
       ],
       "links": [
@@ -86,7 +87,8 @@
       "venue": "IEEE Transactions on Plasma Science 52, 3871-3877 (2024)",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -116,7 +118,8 @@
       "venue": "ARPA-E Energy Innovation Summit, 7 April 2026",
       "year": 2026,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi",
         "libra-one"
       ],
@@ -134,7 +137,8 @@
       "venue": "ARPA-E Fusion Programs Annual Review Meeting, Aurora, Colorado, 9 July 2025",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi",
         "libra-one"
       ]
@@ -146,7 +150,8 @@
       "venue": "ARPA-E Fusion Programs Annual Review Meeting, Aurora, Colorado, July 2025",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi",
         "libra-one"
       ],
@@ -164,7 +169,8 @@
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -180,7 +186,8 @@
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -196,7 +203,8 @@
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -212,7 +220,8 @@
       "venue": "Tritium Focus Group, May 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ]
     },
     {
@@ -222,7 +231,8 @@
       "venue": "Open Source Software for Fusion Energy (OSSFE 2025), 18 March 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ]
     },
     {
@@ -232,7 +242,8 @@
       "venue": "ARPA-E Energy Innovation Summit, 17 March 2025",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi"
       ],
       "links": [
@@ -257,7 +268,8 @@
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi",
         "libra-one"
       ],
@@ -286,7 +298,8 @@
       "venue": "Tritium Focus Group, May 2025",
       "year": 2025,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi",
         "libra-one"
       ],
@@ -304,7 +317,8 @@
       "venue": "University of Edinburgh visit, April 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -320,7 +334,8 @@
       "venue": "Seminar, University of California San Diego, January 2025",
       "year": 2025,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -336,7 +351,7 @@
       "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
       "year": 2024,
       "experiments": [
-        "baby",
+        "baby-100ml",
         "libra-pi"
       ],
       "links": [
@@ -353,7 +368,7 @@
       "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ]
     },
     {
@@ -363,7 +378,7 @@
       "venue": "Technology of Fusion Energy (TOFE 2024), July 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ]
     },
     {
@@ -373,7 +388,7 @@
       "venue": "ARPA-E Fusion Program Review, June 2024",
       "year": 2024,
       "experiments": [
-        "baby",
+        "baby-100ml",
         "libra-pi"
       ]
     },
@@ -384,7 +399,7 @@
       "venue": "ARPA-E Energy Innovation Summit, May 2024",
       "year": 2024,
       "experiments": [
-        "baby",
+        "baby-100ml",
         "libra-pi"
       ],
       "links": [
@@ -409,7 +424,7 @@
       "venue": "JPP Colloquium, MIT, 2 May 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ]
     },
     {
@@ -419,7 +434,7 @@
       "venue": "MIT IAP PSFC Showcase, January 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {
@@ -435,7 +450,8 @@
       "venue": "International Conference on Nuclear Materials (NuMat 2024), October 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -451,7 +467,8 @@
       "venue": "Symposium on Fusion Technology (SOFT 2024), Dublin, September 2024",
       "year": 2024,
       "experiments": [
-        "baby",
+        "baby-100ml",
+        "baby-1l",
         "libra-pi"
       ],
       "links": [
@@ -468,7 +485,8 @@
       "venue": "HWS 2024, Chamonix",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml",
+        "baby-1l"
       ],
       "links": [
         {
@@ -484,7 +502,7 @@
       "venue": "Event TBC, early 2024",
       "year": 2024,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {
@@ -500,7 +518,7 @@
       "venue": "ARPA-E Fusion Program Review, June 2024",
       "year": 2024,
       "experiments": [
-        "baby",
+        "baby-100ml",
         "libra-pi"
       ],
       "links": [
@@ -517,7 +535,7 @@
       "venue": "16th International Workshop on Beryllium Technology (Be-WS 16), October 2023",
       "year": 2023,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ]
     },
     {
@@ -541,7 +559,7 @@
       "venue": "Symposium on Fusion Engineering (SOFE 2023)",
       "year": 2023,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {
@@ -557,7 +575,7 @@
       "venue": "Tritium Focus Group, November 2023",
       "year": 2023,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {
@@ -573,7 +591,7 @@
       "venue": "MIT PSFC seminar, November 2023",
       "year": 2023,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {
@@ -589,7 +607,7 @@
       "venue": "ARPA-E Energy Innovation Summit, March 2023",
       "year": 2023,
       "experiments": [
-        "baby"
+        "baby-100ml"
       ],
       "links": [
         {

@@ -3,7 +3,7 @@ title: LIBRA-One
 tagline: Designed for a tritium breeding ratio above one
 summary: LIBRA-One is the largest planned stage, about 700 L of FLiBe around a 14 MeV DT neutron source with a beryllium neutron multiplier, designed to breed more tritium than its source consumes.
 status: planned
-order: 4
+order: 5
 needsReview: true
 facts:
   - { label: Breeder volume, value: "700 L" }
@@ -27,7 +27,7 @@ the neutron source consumes, which any self-sustaining fusion power plant
 will need. The team describes a global TBR of 1 as a world first for a
 fusion blanket experiment.
 
-LIBRA-One builds on the [BABY](../baby) and [LIBRA-Pi](../libra-pi)
+LIBRA-One builds on the [BABY 100 mL](../baby-100ml), [BABY 1 L](../baby-1l) and [LIBRA-Pi](../libra-pi)
 experiments. It replaces the earlier plan for a 500 L LIBRA in four
 independent quadrants.
 

@@ -2,7 +2,7 @@
 
 The central website for the [LIBRA project](https://github.com/LIBRA-project):
 the team, publications and presentations, links to data and code, and
-detailed guides for each experiment (BABY, LIBRA-Pi, LIBRA-Pint, LIBRA-One).
+detailed guides for each experiment (BABY 100 mL, BABY 1 L, LIBRA-Pi, LIBRA-Pint, LIBRA-One).
 
 Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
 The output is a plain static site in `dist/` that can be hosted anywhere.
@@ -68,7 +68,7 @@ Most content is Markdown or JSON, so editing it doesn't involve touching any pag
 
 Photos and drawings live in `src/assets/photos/` and are listed in
 `src/data/media.json` with their alt text, caption, date, credit and the
-experiment they belong to. A photo tagged with an experiment's slug appears
+experiments they belong to. A photo tagged with an experiment's slug appears
 in the "In the lab" section of that experiment's guide. To add one:
 
 1. Export the image as JPEG (or PNG for drawings) with the long edge about
@@ -89,7 +89,7 @@ rename it (the file name becomes the URL), and edit its frontmatter and body.
 It appears on the homepage and the experiments page automatically.
 
 Publications and datasets are linked to experiments by slug (for example
-`"experiments": ["baby"]`), so they also show up on that experiment's guide.
+`"experiments": ["baby-1l"]`), so they also show up on that experiment's guide.
 
 ## Deployment
 
