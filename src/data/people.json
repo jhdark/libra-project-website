@@ -1,5 +1,5 @@
 {
-  "_note": "Team list as of October 2026. Each entry: name, role, affiliation; formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
+  "_note": "Team list as of October 2026. Each entry: name, role, affiliation (only for people outside MIT; leave empty for MIT and MIT PSFC); formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
   "groups": [
     {
       "name": "Leadership",
@@ -8,7 +8,7 @@
         {
           "name": "Kevin Woller",
           "role": "Principal research scientist, LIBRA principal investigator, and group leader for the accelerator and molten salt laboratories",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "kevin-woller.jpg",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/kevin-woller/",
@@ -19,7 +19,7 @@
         {
           "name": "Sara Ferry",
           "role": "Research scientist, group leader for fusion materials and components",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "sara-ferry.jpg",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/sara-ferry/",
@@ -35,7 +35,7 @@
         {
           "name": "Weiyue Zhou",
           "role": "Research scientist, molten salt experiments",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "weiyue-zhou.jpg",
           "links": {
             "orcid": "0000-0002-8567-0999",
@@ -45,7 +45,7 @@
         {
           "name": "Stefano Segantin",
           "role": "Research scientist",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "stefano-segantin.jpg",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/stefano-segantin/",
@@ -56,7 +56,7 @@
         {
           "name": "James Dark",
           "role": "Postdoctoral associate",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/james-dark/",
             "orcid": "0000-0002-0456-7210",
@@ -68,7 +68,7 @@
         {
           "name": "Gabriele Ferrero",
           "role": "Postdoctoral associate",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/gabriele-ferrero/",
             "orcid": "0000-0002-2675-368X",
@@ -79,7 +79,7 @@
         {
           "name": "Huihua Yang",
           "role": "Postdoctoral associate",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/huihua-yang/",
             "orcid": "0009-0008-5970-3073",
@@ -90,7 +90,7 @@
         {
           "name": "Rui Vieira",
           "role": "Deputy head, MFE engineering",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/rui-vieira/"
           }
@@ -98,7 +98,7 @@
         {
           "name": "Rick Leccacorvi",
           "role": "Mechanical design and fabrication specialist",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/rick-leccacorvi/"
           }
@@ -106,7 +106,7 @@
         {
           "name": "Edward Lamere",
           "role": "MIT EHS liaison",
-          "affiliation": "MIT",
+          "affiliation": "",
           "links": {
             "profile": "https://ehs.mit.edu/team-members/edward-lamere-phd/"
           }
@@ -120,7 +120,7 @@
         {
           "name": "Nikola Goleš",
           "role": "PhD student, tritium speciation and release in the BABY experiments",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/nikola-goles/",
             "orcid": "0000-0001-8581-3964",
@@ -131,7 +131,7 @@
         {
           "name": "John Ball",
           "role": "PhD student",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "orcid": "0000-0001-9638-2127",
             "github": "jlball"
@@ -140,7 +140,7 @@
         {
           "name": "Collin Dunn",
           "role": "PhD student, neutronics",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "collin-dunn.jpg",
           "links": {
             "orcid": "0000-0001-7434-6395",
@@ -150,7 +150,7 @@
         {
           "name": "Emily Edwards",
           "role": "PhD student, neutron detection",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "photo": "emily-edwards.jpg",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/emily-edwards/"
@@ -159,7 +159,7 @@
         {
           "name": "Andrew Lanzrath",
           "role": "PhD student",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/andrew-lanzrath/"
           },
@@ -184,7 +184,7 @@
         {
           "name": "Ethan Peterson",
           "role": "Assistant professor of nuclear science and engineering, and group leader for neutronics",
-          "affiliation": "MIT",
+          "affiliation": "",
           "formerly": "research scientist and neutronics group leader, MIT PSFC",
           "photo": "ethan-peterson.jpg",
           "links": {
@@ -252,7 +252,7 @@
         {
           "name": "Lihua Zhou",
           "role": "Mechanical engineer",
-          "affiliation": "MIT PSFC",
+          "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/researchers/lihua-zhou/"
           }
