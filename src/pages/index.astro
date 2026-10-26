@@ -60,12 +60,18 @@ const pillars = [
       <div>
         <h2>Closing the fuel cycle</h2>
         <p class="lead">
-          LIBRA (Liquid Immersion Blanket: Robust Accountancy, TBC) is a series of experiments
+          LIBRA (Liquid Immersion Blanket: Robust Accountancy) is a series of experiments
           demonstrating and measuring tritium breeding in molten salt blankets.
         </p>
-        <p class="todo">
-          TODO: a short paragraph from the team on the mission of LIBRA, its funders and partners,
-          and how the experiments build on each other.
+        <p class="mission">
+          The project aims to de-risk the liquid immersion blanket, a tank of molten salt around a
+          fusion plasma that breeds tritium, extracts heat and shields neutrons in one. The
+          experiments grow in stages, from 0.1 L of salt in BABY to 700 L in LIBRA-One, which is
+          designed to breed more tritium than its neutron source consumes.
+        </p>
+        <p class="mission">
+          LIBRA is funded by ARPA-E (OPEN 2021, award DE-AR0001542) and works with partners
+          including Commonwealth Fusion Systems and Idaho National Laboratory.
         </p>
       </div>
       <ol class="pillars">
@@ -164,7 +170,7 @@ const pillars = [
   .about .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: start; }
   .about h2 { font-size: var(--text-section); }
   .about .lead { margin-top: var(--space-lg); }
-  .todo { margin-top: var(--space-md); color: var(--color-muted); max-width: 52ch; }
+  .mission { margin-top: var(--space-md); color: var(--color-ink-2); max-width: 56ch; }
   .pillars { list-style: none; margin: 0; padding: 0; counter-reset: pillar; border-top: var(--rule-bar) solid var(--color-rule-2); }
   .pillars li { counter-increment: pillar; display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: var(--space-md); padding-block: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
   .pillars li::before { content: counter(pillar); grid-row: span 2; font: 400 var(--text-title)/1.2 var(--font-mono); color: var(--color-muted); }
