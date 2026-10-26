@@ -45,19 +45,6 @@
   --color-key-5: oklch(56.6% 0.239 262);      /* Industrial Blue #1966FF */
   --color-key-6: oklch(67% 0.170 25);         /* Heated #F25757 */
 
-  /* Legacy names, kept until every template is ported. */
-  --color-libra-navy: var(--color-ink);
-  --color-libra-deep: var(--color-ink);
-  --color-libra-steel: var(--color-ink-2);
-  --color-surface: var(--color-sheet);
-  --color-line: var(--color-rule);
-  --color-ink-muted: var(--color-ink-2);
-  --color-ink-faint: var(--color-muted);
-  --color-ink-invert: var(--color-on-ink);
-  --color-ink-invert-muted: var(--color-on-ink-2);
-  --color-accent-hover: var(--color-accent-2);
-  --color-tritium: var(--color-ink-2);
-
   /* Neue Haas Grotesk is the PSFC primary face (Adobe Fonts only); Hanken
      Grotesk stands in until a web licence is available. */
   --font-display: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;

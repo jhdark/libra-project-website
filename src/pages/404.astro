@@ -5,9 +5,11 @@ import { url } from '../lib/url';
 ---
 
 <Base title="Page not found">
-  <PageHeader eyebrow="404" title="Page not found" intro="That page does not exist, or it has moved.">
-    <a href={url()} class="mt-8 inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-hover">
-      Back to the homepage
-    </a>
+  <PageHeader title="Page not found" intro="That page does not exist, or it has moved.">
+    <p class="back"><a href={url()} class="btn btn-primary">Back to the homepage</a></p>
   </PageHeader>
 </Base>
+
+<style>
+  .back { margin-top: var(--space-xl); }
+</style>
