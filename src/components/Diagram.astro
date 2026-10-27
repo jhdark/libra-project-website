@@ -1,6 +1,8 @@
 ---
 // A line diagram from src/assets/diagrams/, set inline so it takes the site's
 // type and colour tokens. The SVGs draw with the dg-* classes styled below.
+import Tbc from './Tbc.astro';
+
 interface Props {
   name: string;
   alt: string;
@@ -13,7 +15,7 @@ if (!svg) throw new Error(`Diagram ${name}.svg is not in src/assets/diagrams/`);
 ---
 <figure class="diagram">
   <div class="sheet" role="img" aria-label={alt} set:html={svg} />
-  {caption && <figcaption>{caption}</figcaption>}
+  {caption && <figcaption><Tbc text={caption} /></figcaption>}
 </figure>
 
 <style>

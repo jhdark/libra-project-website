@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import { url, formatDate } from '../../lib/url';
+import { plainText } from '../../lib/experiments';
 
 export async function getStaticPaths() {
   const news = await getCollection('news');
@@ -18,7 +19,7 @@ const { Content } = await render(post);
 const date = formatDate(post.data.date);
 ---
 
-<Base title={post.data.title} description={post.data.summary}>
+<Base title={post.data.title} description={plainText(post.data.summary)}>
   <PageHeader title={post.data.title} intro={post.data.summary} />
   <section class="post">
     <div class="wrap">

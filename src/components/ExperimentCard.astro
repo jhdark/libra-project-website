@@ -22,7 +22,7 @@ const href = url(`experiments/${experiment.id}`);
     <p class="state"><StatusBadge status={status} /></p>
   </div>
   <div class="body">
-    <p class="summary">{summary}</p>
+    <p class="summary"><Tbc text={summary} /></p>
     {facts.length > 0 && (
       <dl>
         {facts.slice(0, 3).map((f) => <div><dt>{f.label}</dt><dd><Tbc text={f.value} /></dd></div>)}

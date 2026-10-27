@@ -2,6 +2,8 @@
 // Opening of every inner page: the title, one line beneath, and an optional
 // slot for facts that belong to the page (a status, a date). The optional
 // "figure" slot sets an image on the right, such as an experiment's render.
+import Tbc from './Tbc.astro';
+
 interface Props {
   title: string;
   intro?: string;
@@ -13,7 +15,7 @@ const hasFigure = Astro.slots.has('figure');
   <div class:list={['wrap', { 'with-figure': hasFigure }]}>
     <div class="text">
       <h1>{title}</h1>
-      {intro && <p class="lead">{intro}</p>}
+      {intro && <p class="lead"><Tbc text={intro} /></p>}
       <slot />
     </div>
     {hasFigure && <div class="figure"><slot name="figure" /></div>}

@@ -25,7 +25,14 @@ export function campaignsOf(entry: CollectionEntry<'experiments'>): CampaignTabl
   return { headers: cells(head), rows: rest.map(cells) };
 }
 
-// Split a value into plain text and "TBC" markers, so templates can set the
-// markers in the muted colour.
+// Split a value into plain text, "TBC" markers and <mark>…</mark> spans, so
+// templates can set TBC in the muted colour and mark text that has not been
+// verified against a published source (see "Fact-checking" in CLAUDE.md).
+const MARK = /<mark>([\s\S]*?)<\/mark>/;
 export const tbcParts = (text: string) =>
-  text.split(/(\(TBC\)|\bTBC\b)/).filter(Boolean).map((part) => ({ text: part, tbc: /TBC/.test(part) }));
+  text.split(new RegExp(MARK.source)).flatMap((chunk, i) =>
+    chunk.split(/(\(TBC\)|\bTBC\b)/).filter(Boolean).map((part) => ({ text: part, tbc: /TBC/.test(part), mark: i % 2 === 1 })),
+  );
+
+// The same value as plain text, for attributes and meta tags.
+export const plainText = (text: string) => text.replace(new RegExp(MARK.source, 'g'), '$1');

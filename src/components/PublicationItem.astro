@@ -1,5 +1,6 @@
 ---
 import { linkHref, titleLink } from '../lib/url';
+import Tbc from './Tbc.astro';
 // One publication or talk as a citation: type and year, title, authors,
 // venue, then its links. Example entries are flagged as such.
 export interface Publication {
@@ -26,11 +27,11 @@ const typeLabel = pub.type.charAt(0).toUpperCase() + pub.type.slice(1);
     {pub.placeholder && <span class="example">Example entry</span>}
   </p>
   <div class="main">
-    <h3>{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener">{pub.title}</a> : pub.title}</h3>
-    <p class="authors">{pub.authors}</p>
+    <h3>{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener"><Tbc text={pub.title} /></a> : <Tbc text={pub.title} />}</h3>
+    <p class="authors"><Tbc text={pub.authors} /></p>
   </div>
   <div class="side">
-    <p class="venue">{pub.venue}</p>
+    <p class="venue"><Tbc text={pub.venue} /></p>
     {others.length > 0 && (
       <ul>
         {others.map((l) => (

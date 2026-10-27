@@ -5,7 +5,7 @@
 /* Hallmark · hero-review: fix · 5 findings · 3 resolved, 2 passed to the team (owner's copy) · finish-review: subagent · 7 findings · 7 resolved · gap: none */
 /* Hallmark · dropped arrowRight, database, external, flask, github, mail, menu · the Icon component is gone: icons gave way to type and text links */
 /* Hallmark · dropped Explore, Resources · the footer heads are gone: the colophon carries the same links in one paragraph and a sitemap row */
-/* Hallmark · dropped BABY, LIBRA-Pi, LIBRA-PINT, LIBRA-One · as homepage headings: the names are now linked row heads in the experiments ledger */
+/* Hallmark · dropped BABY, LIBRA-Pi, LIBRA-Pint, LIBRA-One · as homepage headings: the names are now linked row heads in the experiments ledger */
 /* Hallmark · dismissed kept · the "figures" are run releases such as Release 0.6 read together with the DOI in the next cell; every record and DOI still renders on the data page */
 /* Hallmark · answered F3 · text-wrap: balance is set once on h1 to h3 in the base layer and every component head inherits it */
 /* Hallmark · dropped {url(`experiments/${experiment.id}`)} · the same guide links now render from href={href} in ExperimentCard and ExperimentLedger */
@@ -150,6 +150,15 @@ html, body { overflow-x: clip; }
   .lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; color: var(--color-ink-2); }
   .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
   .tbc { color: var(--color-muted); }
+
+  /* Not yet verified against a published source: the review wash, the same
+     pink as the draft guide note. Ink text, so it reads on the dark band and
+     over the hero video too. Remove the <mark> once a fact is checked. */
+  mark { background: var(--color-signal-wash); color: var(--color-ink); padding-inline: 0.15em; margin-inline: -0.15em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  mark .tbc { color: var(--color-ink-2); }
+  .review-note { background: var(--color-signal-wash); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .review-note p { padding-block: var(--space-sm); font-size: 0.9375rem; color: var(--color-ink); }
+  .review-note mark { outline: var(--rule-hair) solid var(--color-signal); outline-offset: -1px; }
 
   /* Links in running text: MIT red, underlined. */
   .link { color: var(--color-accent); text-decoration: underline; }

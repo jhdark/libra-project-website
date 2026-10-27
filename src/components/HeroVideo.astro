@@ -2,6 +2,7 @@
 // Homepage hero over a muted loop of lab footage. The loop pauses on request
 // and never plays under reduced motion; the poster frame stands in.
 import { url } from '../lib/url';
+import Tbc from './Tbc.astro';
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const { title, lead, caption } = Astro.props;
       </div>
     </div>
     <div class="foot">
-      <p class="caption">{caption}</p>
+      <p class="caption"><Tbc text={caption} /></p>
       <button type="button" class="pause" aria-pressed="false">Pause video</button>
     </div>
   </div>
