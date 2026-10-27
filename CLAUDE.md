@@ -69,7 +69,8 @@ are here.
   copy in only the individual files the site uses. Use only what is public (posters, conference talks,
   published papers) for site copy; ARPA-E quarterly reviews and memos,
   safety and beryllium committee decks, budgets, unpublished results and
-  personal data stay off the site.
+  personal data stay off the site. Results already public in a LIBRA-project
+  GitHub repository may be shown, labelled as not yet published.
 
 ## Development
 

@@ -41,6 +41,16 @@ highlighted fact, remove its tags and tick it off here.
   vials changed every 12 hours, and LSC details.
 - Added results the guide was missing: all tritium collected as insoluble
   HT or T₂, and run-to-run reproducibility.
+- Run dates from the run scripts, the diamond detector files and the
+  activation foil records: runs 4 (7 November 2023) and 8 (29 July 2024)
+  confirmed; run 5 is 5 December 2023 (not 4 December), run 6 25 January
+  2024 (not 23 January), run 7 3 April 2024 (not 1 April).
+- The CAD model was a different vessel. It is now `geometry.step` from
+  insights-from-BABY-experiment-paper (Zenodo 10.5281/zenodo.14455926), the
+  set-up the paper models, converted with `scripts/cad/step2glb.py --z-up
+  --max-size 1000` to leave out the lab walls and table.
+- The salt dispensing system is removed: it is in neither paper and was not
+  used in the runs.
 
 ### BABY 1 L
 
@@ -106,9 +116,7 @@ highlighted fact, remove its tags and tick it off here.
 ## Still to confirm (highlighted on the site)
 
 **BABY 100 mL**
-- Run dates for runs 1 to 7. Run 8 (29 July 2024) is confirmed.
-- The CAD model, which may show a 1 L vessel lid.
-- The salt dispensing system.
+- Run dates for runs 1 to 3 (no record in the repositories).
 
 **BABY 1 L**
 - Which vessel iteration the CAD shows.
@@ -151,12 +159,11 @@ highlighted fact, remove its tags and tick it off here.
 **Photos**
 - Every photo caption.
 
-## Decisions for the team
+## Decisions taken
 
-- **Unpublished results.** The run repositories hold measured TBRs for later
-  runs and for FLiBe runs 1 and 2. These are left off the site until
-  published, as CLAUDE.md asks.
-- **Figure rights.** The LIBRA schematic is from a Taylor & Francis paper;
-  check the licence before keeping it.
-- **Tagging.** The LIBRA FS&T paper could be tagged `libra-one`, and the
-  2024 TOFE and ARPA-E items `baby-1l`.
+- Results already public in a LIBRA-project repository (such as the later
+  BABY 1 L and FLiBe TBRs) are shown, labelled as not yet published.
+- The LIBRA schematic (Fig. 3 of Ferry et al.) is kept; the team holds a
+  near-identical original.
+- Still open: tagging the LIBRA FS&T paper `libra-one`, and the 2024 TOFE
+  and ARPA-E items `baby-1l`.

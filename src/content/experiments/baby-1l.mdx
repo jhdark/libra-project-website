@@ -8,14 +8,14 @@ stage: { volume: 1, image: ../../assets/stages/baby-1l.png }
 needsReview: true
 facts:
   - { label: Breeder volume, value: "1 L (1.88 kg of ClLiF, 1.95 kg of FLiBe)" }
-  - { label: Breeders, value: "ClLiF (12 runs), FLiBe (from November 2025); lead-lithium and lithium oxide in preparation" }
+  - { label: Breeders, value: "ClLiF (12 runs), FLiBe (from November 2025); lead-lithium and lithium oxide (Li₂O) in preparation" }
   - { label: Salt temperature, value: "ClLiF: a minimum of 627 °C to 685 °C, depending on the run<mark>; FLiBe TBC</mark>" }
   - { label: Vessel, value: "Inconel 625 crucible inside a 304L stainless steel outer vessel, which collects tritium that permeates the crucible wall" }
   - { label: Neutron source, value: "Sealed-tube DT generators (Thermo Fisher A-325 and P-383, about 10⁸ n/s) and an nGen-400 (over 10⁹ n/s) from run 6" }
   - { label: Sweep gas, value: "Helium, or helium with 1000 ppm to 3.65% H₂" }
   - { label: Tritium measurement, value: "Water bubblers and liquid scintillation counting" }
   - { label: Neutron diagnostics, value: "Niobium and zirconium activation foils (NaI counting) and a proton recoil telescope" }
-  - { label: Measured TBR, value: "2.45 × 10⁻³ (ClLiF runs 1 to 4, weighted by fluence); modelled 2.08 × 10⁻³" }
+  - { label: Measured TBR, value: "ClLiF 2.45 × 10⁻³ (runs 1 to 4, published; modelled 2.08 × 10⁻³); FLiBe 3.3 × 10⁻³ and 2.5 × 10⁻³ (runs 1 and 2)" }
 repos:
   - { name: BABY-1L-run-1, description: "Data and analysis of BABY-1L run 1" }
   - { name: BABY-1L-run-2, description: "Data and analysis of BABY-1L run 2" }
@@ -69,7 +69,7 @@ and then [LIBRA-One](/experiments/libra-one) <mark>(700 L)</mark>.
 | BABY 1 L | ClLiF (LiCl-LiF) | 1 to 12 | Completed |
 | FLiBe 1 L | FLiBe | 1 to 4 | Active |
 | LiPb | Lead-lithium | TBC | In preparation |
-| LiOx | Lithium oxide | TBC | In preparation |
+| LiOx | Lithium oxide (Li₂O) | TBC | In preparation |
 
 The published paper covers ClLiF runs 1 to 4; the later runs are in their
 repositories.
@@ -96,16 +96,19 @@ T₂), whatever the gas, so the faster release is not explained by a change of
 speciation alone. The results are published in
 [Nuclear Fusion 66, 076046 (2026)](https://doi.org/10.1088/1741-4326/ae6f31).
 
-The first two FLiBe runs irradiated the salt while solid; run 3, on
-22 July 2026, was the first irradiation of molten FLiBe. TODO: FLiBe results,
-once published. The analysis for a
+The first two FLiBe runs irradiated the salt while solid. Their repositories
+give measured TBRs of (3.33 ± 0.25) × 10⁻³ for run 1 and (2.48 ± 0.21) × 10⁻³
+for run 2, not yet published. Run 3, on 22 July 2026, was the first
+irradiation of molten FLiBe. The analysis for a
 report on the first FLiBe experiment is in
 [FLiBe-1L-paper](https://github.com/LIBRA-project/FLiBe-1L-paper).
 
 ## Runs
 
 Each run's `data/general.json` records its salt, gas, generator and purpose.
-Measured TBRs are given for the published runs, 1 to 4.
+Measured TBRs for runs 1 to 4 are as published; the run 1 repository's latest
+analysis gives 2.53 × 10⁻³. Later values are from the run repositories and
+are not yet published.
 
 | Run | Irradiated | Generator | Gas and purpose | Measured TBR |
 | --- | --- | --- | --- | --- |
@@ -114,20 +117,20 @@ Measured TBRs are given for the published runs, 1 to 4.
 | 3 | 17 March 2025 | A-325 | Helium, sparged; 1000 ppm H₂ from 4 April | 4.03 × 10⁻³ |
 | 4 | 1 and 6 May 2025 | A-325 | 1000 ppm H₂, sparged; 3.5% H₂ from 18 May | 2.58 × 10⁻³ |
 | 5 | <mark>TBC</mark> | <mark>TBC</mark> | <mark>No run repository</mark> | <mark>TBC</mark> |
-| 6 | 30 May 2025 | nGen-400 | 3.5% H₂; first run with the nGen-400 | Not yet published |
-| 7 | 3 June 2025 | nGen-400 | Back to helium after months of hydrogen | Not yet published |
-| 8 | 9 June 2025 | nGen-400 | Helium with moisture in the outer vessel; 3.5% H₂ from 12 June | Not yet published |
-| 9 | 16 June 2025 | nGen-400 | 3.5% H₂; control run for the shielding tests | Not yet published |
-| 10 | 18 June 2025 | nGen-400 | 3.5% H₂; borated phenyl laminate shielding test | Not yet published |
-| 11 | 20 June 2025 | nGen-400 | 3.5% H₂; Ricorad and 5% borated polyethylene shielding test | Not yet published |
-| 12 | 4 August 2025 | nGen-400 | 3.65% H₂; high source term in a tritium-free system | Not yet published |
+| 6 | 30 May 2025 | nGen-400 | 3.5% H₂; first run with the nGen-400 | 2.25 × 10⁻³ |
+| 7 | 3 June 2025 | nGen-400 | Back to helium after months of hydrogen | Not yet in the repository |
+| 8 | 9 June 2025 | nGen-400 | Helium with moisture in the outer vessel; 3.5% H₂ from 12 June | Not yet in the repository |
+| 9 | 16 June 2025 | nGen-400 | 3.5% H₂; control run for the shielding tests | Not yet in the repository |
+| 10 | 18 June 2025 | nGen-400 | 3.5% H₂; borated phenyl laminate shielding test | Not yet in the repository |
+| 11 | 20 June 2025 | nGen-400 | 3.5% H₂; Ricorad and 5% borated polyethylene shielding test | Not yet in the repository |
+| 12 | 4 August 2025 | nGen-400 | 3.65% H₂; high source term in a tritium-free system | 2.28 × 10⁻³ |
 
 | FLiBe run | Irradiated | Generator | Gas and purpose | Measured TBR |
 | --- | --- | --- | --- | --- |
-| 1 | 19 November 2025 | P-383 | Helium; first, cold irradiation of FLiBe | Not yet published |
-| 2 | 10 March 2026 | nGen | Helium; cold irradiation, a replication of run 1 | Not yet published |
-| 3 | 22 July 2026 | nGen | Helium, then 3.65% H₂; first molten irradiation | Not yet published |
-| 4 | <mark>TBC</mark> | <mark>TBC</mark> | Repeat of the molten FLiBe run | Not yet published |
+| 1 | 19 November 2025 | P-383 | Helium; first, cold irradiation of FLiBe | (3.33 ± 0.25) × 10⁻³ |
+| 2 | 10 March 2026 | nGen | Helium; cold irradiation, a replication of run 1 | (2.48 ± 0.21) × 10⁻³ |
+| 3 | 22 July 2026 | nGen | Helium, then 3.65% H₂; first molten irradiation | Not yet in the repository |
+| 4 | <mark>TBC</mark> | <mark>TBC</mark> | Repeat of the molten FLiBe run | Not yet in the repository |
 
 Run 2 had a higher neutron fluence. Its heater failed mid-run and the salt
 froze before it was re-melted, which may explain its slower release. The
