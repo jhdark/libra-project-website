@@ -47,7 +47,7 @@ and MIT identities, not a separate brand.
   the text face instead.
 - Do not stretch, rotate, outline, add effects, or set it in Plasma Pink or
   an experiment key colour (they fail contrast).
-- The experiment names (BABY, LIBRA-Pi, LIBRA-PINT, LIBRA-One) are written
+- The experiment names (BABY, LIBRA-Pi, LIBRA-Pint, LIBRA-One) are written
   in type, not as logos.
 
 ## Colour
@@ -74,7 +74,7 @@ experiment's `order`:
 | --- | --- | --- |
 | 1 | BABY | Aurora Green `#9DFC7E` |
 | 2 | LIBRA-Pi | Electric Arc Aqua `#98ECFF` |
-| 3 | LIBRA-PINT | Orange Edge `#FFA630` |
+| 3 | LIBRA-Pint | Orange Edge `#FFA630` |
 | 4 | LIBRA-One | Hydrogen Periwinkle `#BFB3FF` |
 | 5 | next | Industrial Blue `#1966FF` |
 | 6 | next | Heated `#F25757` |

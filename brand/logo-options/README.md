@@ -30,7 +30,7 @@ plasma colour map stops the site uses for experiment keys.
    with a tritium dot leaving through a gap in the ring. Reads well at
    every size; the closest to a classic symbol.
 4. **Bubbles.** A vessel of molten salt with gas sparged through it,
-   carrying tritium up and out: the BABY and LIBRA-PINT experiments. The
+   carrying tritium up and out: the BABY and LIBRA-Pint experiments. The
    most literal, and busy at 16 px.
 5. **Scale-up.** Five bars rising in the plasma colours of the five
    experiments, from BABY 100 mL to LIBRA-One. Ties straight to the site's
