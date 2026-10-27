@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370">
   <!-- BABY 100 mL gas system, after Delaporte-Mathurin et al., Nucl. Fusion 65 026037 (2025), sections 2 and 2.1. Not to scale. -->
   <defs>
-    <marker id="b0-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1966FF"/></marker>
+    <marker id="b0-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="dg-fill-a"/></marker>
     <marker id="b0-arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="dg-solid" d="M0 0 L10 5 L0 10 z"/></marker>
     <pattern id="b0-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="dg-thin"/></pattern>
   </defs>
