@@ -160,6 +160,186 @@
       "caption": "Cut-away of LIBRA-Pi.",
       "date": "",
       "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-ngen-shielding.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "A lab bench with a long grey cylinder on green supports in front of a vessel boxed in by dark stacked blocks, beside an equipment rack with radiation warning signs.",
+      "caption": "BABY 1 L in the Vault lab in June 2025, during the runs with the nGen neutron generator: the generator lies on the bench in front, and the vessel behind it is surrounded by stacked shielding blocks (generator identification and block material TBC).",
+      "date": "2025-06",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-shielded-vessel.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "Looking down on a flanged steel vessel lid with tubes and a pressure gauge, surrounded on all sides by stacked dark blocks.",
+      "caption": "The BABY 1 L vessel inside its ring of stacked shielding blocks, June 2025 (block material TBC).",
+      "date": "2025-06",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-vessel-lid.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "Close-up of a bolted steel flange with vertical tubes, valves and a pressure gauge, with lines labelled OV, COVER and SPARGE.",
+      "caption": "The top of the BABY 1 L vessel: gas lines through the lid are labelled for the outer vessel (OV), cover gas and sparge gas, above the insulated vessel body.",
+      "date": "2025-05",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-assembled.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "A flanged steel vessel wrapped in white insulation on a bench, with tubes rising from its lid and a small panel of flow meters and gauges beside it.",
+      "caption": "BABY 1 L fully assembled on the bench, with its gas lines and flow meters alongside.",
+      "date": "2025-02",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-lid-crucible.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "A vessel lid lifted off with a dark cylindrical crucible hanging beneath it, next to the open, insulated outer vessel.",
+      "caption": "The BABY 1 L lid lifted out with the crucible attached beneath it, beside the open outer vessel.",
+      "date": "2025-02",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-gas-manifold.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "Stainless steel tubing on a black panel with two digital flow controllers and four pressure gauges labelled IV MIX, IV SAM, OV MIX and OV SAM.",
+      "caption": "The BABY 1 L gas mixing manifold, with mass flow controllers and gauges for the inner vessel (IV) and outer vessel (OV) streams (label meanings TBC).",
+      "date": "2025-01",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "flibe-glovebox.jpg",
+      "kind": "photo",
+      "experiments": [],
+      "alt": "Two connected white gloveboxes with black gloves hanging from their ports, in a lab.",
+      "caption": "The glovebox used for handling FLiBe salt (location and use TBC).",
+      "date": "2024-05",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-radiative-heater.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "Looking down into an open flanged steel vessel lined with a white cylindrical heater with vertical slots.",
+      "caption": "Inside the BABY 1 L outer vessel with the crucible removed, showing the slotted radiative heater around the crucible space (TBC).",
+      "date": "2025-02",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-flibe-setup.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "A wheeled frame with a flow panel and an insulated vessel on top, an equipment rack beside it, signs reading Caution Hot and Beryllium contained inside, and striped tape on the floor around it.",
+      "caption": "BABY 1 L set up for the FLiBe runs in October 2025, with beryllium warning signs and a taped-off area (lab location TBC).",
+      "date": "2025-10",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "baby-1l-flibe-vessel.jpg",
+      "kind": "photo",
+      "experiments": [
+        "baby-1l"
+      ],
+      "alt": "A flanged steel vessel on white insulation with gas lines and a hand-written sign reading Beryllium contained inside, do not tamper.",
+      "caption": "The BABY 1 L vessel during FLiBe setup in September 2025; FLiBe contains beryllium, so the vessel is marked.",
+      "date": "2025-09",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "flibe-shipment-drum.jpg",
+      "kind": "photo",
+      "experiments": [],
+      "alt": "A yellow plastic drum with a toxic hazard label on a hand truck in an office receiving area.",
+      "caption": "A shipment of FLiBe salt arriving at MIT in October 2022, packed in a yellow drum (5 L, per the folder name; TBC).",
+      "date": "2022-10",
+      "credit": "LIBRA team"
+    },
+    {
+      "file": "vault-lab-libra-concept.jpg",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "A photo of the Vault lab with a rendered cylindrical LIBRA tank inside a safety enclosure, labelled with the shielding walls, other experiments, the workspace and a floor plan inset.",
+      "caption": "Concept for housing LIBRA in the Vault lab: a safety enclosure inside a room with 3-foot-thick shielding walls and ceiling, reached through a shielded sliding door from a secure control room.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "libra-experiment-schematic.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Schematic of a cylindrical tank of FLiBe around a 14 MeV DT neutron source, a close-up of the gas and liquid interface, and a flowchart of the physics involved.",
+      "caption": "The LIBRA experiment: (A) a tank of FLiBe around a DT neutron source and neutron multiplier, with a sparge gas aerator; (B) tritium carried into the cover gas and permeating the inner tank wall; (C) the coupled physics, from neutronics and FLiBe chemistry to tritium transport and detection. Not to scale.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "libra-vs-other-experiments.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Log-log chart of tritons per second against neutrons per second, comparing past breeding experiments, LIBRA phases and planned blankets, with a technology readiness colour scale.",
+      "caption": "LIBRA compared with other tritium breeding experiments and planned blankets, by neutron source strength and tritium produced. LIBRA dates are as planned when the figure was made and are now out of date (TBC).",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "lib-doubling-time.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Left, a cut-away render of the ARC tokamak with its FLiBe liquid immersion blanket labelled; right, curves of fusion power on the grid over time for three blanket types.",
+      "caption": "(A) The ARC design, with the DT plasma surrounded by a FLiBe liquid immersion blanket (LIB). (B) Tritium breeding sets the best-case pace of fusion growth: modelled doubling times of 2 years for a liquid immersion blanket, 5 for an advanced blanket and 10 for a conventional one.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "libra-tbr-profile.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Neutronics results: a colour map of tritium production in a FLiBe volume around a point source, and two plots of error and tritium breeding ratio against FLiBe thickness.",
+      "caption": "LIBRA neutronics: (A) the tritium production rate through the FLiBe around the neutron source, with a 5 cm lead layer; (B, C) how the calculated error and tritium breeding ratio change with FLiBe thickness, with the LIBRA thickness marked.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "lib-blanket-thickness.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Plot of relative power density rising as blanket radial thickness falls, with outlines of EU-DEMO, ARIES-RS, ARIES-AT and ARC above.",
+      "caption": "Thinner blankets allow smaller, denser fusion devices: power density against blanket radial thickness, from EU-DEMO (about 1.5 m) to ARC (about 0.7 m). The figure credits LIBRA-type blankets with better neutron moderation, less non-breeding structure and higher thermal efficiency.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
+    },
+    {
+      "file": "lib-temperature-efficiency.png",
+      "kind": "drawing",
+      "experiments": [],
+      "alt": "Plot of relative cost of electricity falling and thermal efficiency rising with blanket temperature, with the FLiBe liquid range and the LIBRA temperature range shaded.",
+      "caption": "Hotter blankets convert heat to electricity more efficiently: relative cost of electricity and thermal efficiency against temperature, with the FLiBe liquid range and the LIBRA temperature range marked.",
+      "date": "",
+      "credit": "LIBRA team (TBC)"
     }
   ],
   "videos": [
