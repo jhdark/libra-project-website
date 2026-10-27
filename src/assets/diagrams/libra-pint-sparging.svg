@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480">
+  <!-- LIBRA-PINT sparging testbed, simplified from the CAD and the guide. Anything not yet confirmed is marked TBC. Not to scale. -->
+  <defs>
+    <marker id="pt-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1966FF"/></marker>
+    <marker id="pt-arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="dg-solid" d="M0 0 L10 5 L0 10 z"/></marker>
+  </defs>
+
+  <!-- Supply -->
+  <rect class="dg-box" x="30" y="70" width="56" height="130" rx="24"/>
+  <text x="58" y="232" text-anchor="middle">Sparge gas</text>
+  <text class="dg-note" x="58" y="252" text-anchor="middle">composition and</text>
+  <text class="dg-note" x="58" y="270" text-anchor="middle">pressure varied</text>
+
+  <!-- Vessel: flanged head with angled viewports over a cylindrical pot -->
+  <rect class="dg-salt" x="432" y="262" width="136" height="166"/>
+  <path class="dg-wall" d="M430 190 V430 H570 V190"/>
+  <rect class="dg-solid" x="390" y="176" width="220" height="14"/>
+  <rect class="dg-solid" x="390" y="160" width="220" height="14"/>
+  <path class="dg-wall" d="M450 160 V110 H550 V160"/>
+  <rect class="dg-solid" x="440" y="98" width="120" height="12"/>
+  <path class="dg-wall" d="M420 160 L380 112 M380 112 L360 128 M380 112 L404 92"/>
+  <path class="dg-wall" d="M580 160 L620 112 M620 112 L640 128 M620 112 L596 92"/>
+  <path class="dg-thin" d="M392 128 L470 240" style="stroke-dasharray:4 4"/>
+  <path class="dg-thin" d="M608 128 L530 240" style="stroke-dasharray:4 4"/>
+
+  <!-- Sparger and bubbles -->
+  <path class="dg-a" d="M86 135 H300 V60 H484 V404" marker-end="url(#pt-arrow-a)"/>
+  <circle class="dg-bubble" cx="494" cy="392" r="4"/>
+  <circle class="dg-bubble" cx="478" cy="376" r="3.5"/>
+  <circle class="dg-bubble" cx="498" cy="360" r="4.5"/>
+  <circle class="dg-bubble" cx="482" cy="340" r="3.5"/>
+  <circle class="dg-bubble" cx="500" cy="322" r="4"/>
+  <circle class="dg-bubble" cx="486" cy="302" r="3.5"/>
+  <circle class="dg-bubble" cx="498" cy="282" r="4"/>
+  <circle class="dg-bubble" cx="490" cy="268" r="3"/>
+  <path class="dg-a" d="M520 230 V60 H760" marker-end="url(#pt-arrow-a)"/>
+
+  <!-- Downstream, TBC -->
+  <rect class="dg-box" x="766" y="38" width="200" height="44" style="stroke-dasharray:6 5"/>
+  <text x="866" y="65" text-anchor="middle">Tritium measurement</text>
+  <text class="dg-note" x="866" y="104" text-anchor="middle">method TBC</text>
+
+  <!-- Labels -->
+  <text class="dg-note" x="650" y="160">Vacuum viewports</text>
+  <path class="dg-thin" d="M646 156 L622 118"/>
+  <text class="dg-note" x="350" y="290" text-anchor="end">Sparger: several designs</text>
+  <text class="dg-note" x="350" y="308" text-anchor="end">tested, built from</text>
+  <text class="dg-note" x="350" y="326" text-anchor="end">off-the-shelf parts</text>
+  <path class="dg-thin" d="M354 300 H484"/>
+  <text class="dg-note" x="650" y="300">Molten salt (type TBC),</text>
+  <text class="dg-note" x="650" y="318">temperature varied</text>
+  <path class="dg-thin" d="M646 304 H568"/>
+  <text class="dg-note" x="650" y="236">Bubbles release tritium</text>
+  <text class="dg-note" x="650" y="254">into the head space</text>
+  <path class="dg-thin" d="M646 240 L540 258"/>
+  <text class="dg-note" x="650" y="380">Heating TBC</text>
+</svg>

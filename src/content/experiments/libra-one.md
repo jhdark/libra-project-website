@@ -3,7 +3,8 @@ title: LIBRA-One
 tagline: Designed for a tritium breeding ratio above one
 summary: LIBRA-One is the largest planned stage, about 700 L of FLiBe around a 14 MeV DT neutron source with a beryllium neutron multiplier, designed to breed more tritium than its source consumes.
 status: planned
-order: 4
+order: 5
+stage: { volume: 700, image: ../../assets/stages/libra-one.png }
 needsReview: true
 facts:
   - { label: Breeder volume, value: "700 L" }
@@ -27,7 +28,7 @@ the neutron source consumes, which any self-sustaining fusion power plant
 will need. The team describes a global TBR of 1 as a world first for a
 fusion blanket experiment.
 
-LIBRA-One builds on the [BABY](../baby) and [LIBRA-Pi](../libra-pi)
+LIBRA-One builds on the [BABY 100 mL](../baby-100ml), [BABY 1 L](../baby-1l) and [LIBRA-Pi](../libra-pi)
 experiments. It replaces the earlier plan for a 500 L LIBRA in four
 independent quadrants.
 
@@ -40,6 +41,14 @@ independent quadrants.
 - A 14.1 MeV DT neutron generator at the centre of the 700 °C salt,
   protected by a vacuum insulation sleeve conceived from the thermal shield
   of the Alcator C-Mod advanced outer divertor.
+
+![Schematic of a cylindrical tank of FLiBe around a 14 MeV DT neutron source, a close-up of the gas and liquid interface, and a flowchart of the physics involved.](../../assets/photos/libra-experiment-schematic.png)
+
+*The LIBRA concept: (A) a tank of FLiBe around a DT neutron source and
+neutron multiplier, with a sparge gas aerator; (B) a liner sweep gas and a
+helium-hydrogen cover gas carrying tritium out, with tritium also permeating
+the inner tank wall; (C) the coupled physics. From the team's LIBRA overview
+(source TBC). Which of these gas streams LIBRA-One keeps is TBC.*
 
 Status: in final design (2025).
 

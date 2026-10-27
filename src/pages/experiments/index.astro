@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import ExperimentCard from '../../components/ExperimentCard.astro';
+import ExperimentRoadmap from '../../components/ExperimentRoadmap.astro';
 
 const experiments = (await getCollection('experiments')).sort((a, b) => a.data.order - b.data.order);
 ---
@@ -12,6 +13,22 @@ const experiments = (await getCollection('experiments')).sort((a, b) => a.data.o
     title="The LIBRA experiments"
     intro="Each experiment has a detailed guide covering its setup, diagnostics, how to run it, and where to find its data and analysis."
   />
+  <!-- The scale-up path, from the experiments that have a `stage` -->
+  <section class="path" aria-labelledby="path-title">
+    <div class="wrap">
+      <div class="split-head">
+        <h2 id="path-title">Scaling up</h2>
+        <p>
+          LIBRA takes a staged approach, from bench-scale experiments to
+          LIBRA-One, which is designed for a tritium breeding ratio above one.
+          Each stage builds on the experience and data of the ones before.
+        </p>
+      </div>
+      <ExperimentRoadmap experiments={experiments} />
+      <p class="credit">Renders from the team's 2025 ARPA-E Fusion Programs poster; LIBRA-PINT from its CAD model. Not to scale.</p>
+    </div>
+  </section>
+
   <section class="list">
     <div class="wrap">
       {experiments.map((e) => <ExperimentCard experiment={e} />)}
@@ -20,5 +37,9 @@ const experiments = (await getCollection('experiments')).sort((a, b) => a.data.o
 </Base>
 
 <style>
+  .path { padding-block: var(--space-2xl) var(--section-gap-s); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .path .split-head h2 { font-size: var(--text-section); }
+  .path .split-head p { color: var(--color-ink-2); }
+  .credit { margin-top: var(--space-xl); font-size: 0.875rem; color: var(--color-muted); }
   .list { padding-block: var(--space-xl) var(--section-gap); }
 </style>

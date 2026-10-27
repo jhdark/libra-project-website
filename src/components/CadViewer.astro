@@ -1,30 +1,82 @@
 ---
-const { src, alt = "3D model", poster } = Astro.props;
+// An interactive CAD model. With `cutaway`, a button in the top right swaps
+// in a second model with the front half removed, so the inside can be seen.
+interface Props {
+  src: string;
+  alt?: string;
+  poster?: string;
+  cutaway?: string;
+}
+const { src, alt = "3D model", poster, cutaway } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 <figure class="cad">
-  <model-viewer
-    src={`${base}/${src}`}
-    alt={alt}
-    poster={poster && `${base}/${poster}`}
-    camera-controls
-    auto-rotate
-    shadow-intensity="1"
-  ></model-viewer>
-  <figcaption>Drag to rotate, scroll or pinch to zoom.</figcaption>
+  <div class="stage">
+    <model-viewer
+      src={`${base}/${src}`}
+      alt={alt}
+      poster={poster && `${base}/${poster}`}
+      data-whole={`${base}/${src}`}
+      data-cutaway={cutaway && `${base}/${cutaway}`}
+      camera-controls
+      auto-rotate
+      shadow-intensity="1"
+    ></model-viewer>
+    {cutaway && (
+      <button type="button" class="btn toggle" aria-pressed="false">Cut away</button>
+    )}
+  </div>
+  <figcaption>
+    <span class="hint">Drag to rotate, scroll or pinch to zoom.</span>
+    {cutaway && <span class="cut-note" hidden>Coloured faces show where the model is cut.</span>}
+  </figcaption>
 </figure>
 
 <script>
   import "@google/model-viewer";
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // Respect a reduced-motion preference: no turntable rotation.
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (reduceMotion) {
     document.querySelectorAll("model-viewer[auto-rotate]").forEach((el) => el.removeAttribute("auto-rotate"));
   }
+
+  document.querySelectorAll<HTMLElement>("figure.cad").forEach((figure) => {
+    const viewer = figure.querySelector("model-viewer") as
+      (HTMLElement & { src: string; resetTurntableRotation(theta?: number): void; jumpCameraToGoal(): void }) | null;
+    const button = figure.querySelector<HTMLButtonElement>(".toggle");
+    const note = figure.querySelector<HTMLElement>(".cut-note");
+    if (!viewer || !button) return;
+
+    button.addEventListener("click", () => {
+      const cut = button.getAttribute("aria-pressed") !== "true";
+      button.setAttribute("aria-pressed", String(cut));
+      button.textContent = cut ? "Whole model" : "Cut away";
+      if (note) note.hidden = !cut;
+      viewer.src = (cut ? viewer.dataset.cutaway : viewer.dataset.whole) ?? viewer.src;
+      // The cut faces the front, so hold the view there instead of rotating.
+      // Auto-rotate turns the model, not the camera, so undo that turn too.
+      if (cut) {
+        viewer.removeAttribute("auto-rotate");
+        viewer.resetTurntableRotation(0);
+        viewer.setAttribute("camera-orbit", "0deg 75deg auto");
+        viewer.jumpCameraToGoal();
+      } else {
+        viewer.removeAttribute("camera-orbit");
+        if (!reduceMotion) viewer.setAttribute("auto-rotate", "");
+      }
+    });
+  });
 </script>
 
 <style>
   .cad { margin: var(--space-lg) 0; border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); }
+  .stage { position: relative; }
   model-viewer { display: block; width: 100%; height: 480px; background: var(--color-paper-2); }
   model-viewer:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -2px; }
-  figcaption { margin: 0; padding: var(--space-xs) var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: 0.875rem; color: var(--color-muted); background: var(--color-sheet); }
+  .toggle { position: absolute; top: var(--space-sm); right: var(--space-sm); min-height: 40px; padding-inline: var(--space-md); font-size: 0.9375rem; background: var(--color-sheet); }
+  .toggle:hover { background: var(--color-paper-3); }
+  .toggle[aria-pressed="true"] { background: var(--color-ink); color: var(--color-on-ink); }
+  .toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2xs) var(--space-md); margin: 0; padding: var(--space-xs) var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: 0.875rem; color: var(--color-muted); background: var(--color-sheet); }
 </style>

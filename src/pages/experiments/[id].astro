@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
@@ -9,7 +10,8 @@ import PublicationItem from '../../components/PublicationItem.astro';
 import Tbc from '../../components/Tbc.astro';
 import publications from '../../data/publications.json';
 import datasets from '../../data/datasets.json';
-import CadViewer from '../../components/CadViewer.astro'
+import CadViewer from '../../components/CadViewer.astro';
+import Diagram from '../../components/Diagram.astro';
 import { keyColour } from '../../lib/experiments';
 import Figure from '../../components/Figure.astro';
 import { photosFor } from '../../lib/media';
@@ -23,7 +25,7 @@ interface Props {
   experiment: CollectionEntry<'experiments'>;
 }
 const { experiment } = Astro.props;
-const { title, tagline, summary, status, order, facts, repos, needsReview } = experiment.data;
+const { title, tagline, summary, status, order, facts, repos, needsReview, stage } = experiment.data;
 const { Content, headings } = await render(experiment);
 const toc = headings.filter((h) => h.depth === 2);
 
@@ -40,6 +42,9 @@ const gallery = photosFor(experiment.id);
         <span class="tagline"><Tbc text={tagline} /></span>
         <StatusBadge status={status} />
       </p>
+      {stage && (
+        <Image slot="figure" src={stage.image} alt={`Render of ${title}`} widths={[240, 480, 720]} sizes="18rem" loading="eager" />
+      )}
     </PageHeader>
   </div>
 
@@ -62,7 +67,7 @@ const gallery = photosFor(experiment.id);
     )}
 
     <article class="prose prose-libra max-w-none">
-      <Content components={{ CadViewer }} />
+      <Content components={{ CadViewer, Diagram }} />
     </article>
 
     {facts.length > 0 && (

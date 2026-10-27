@@ -1,9 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 
-// Each experiment's key colour comes from the PSFC accent palette
-// (--color-key-1 to --color-key-6 in global.css), picked by its `order`, so a
-// new experiment gets one without any code change.
-const KEYS = 6;
+// Each experiment's key colour is a stop on the plasma colour map
+// (--color-key-1 to --color-key-5 in global.css), picked by its `order`, so a
+// new experiment gets one without any code change. A sixth would wrap round.
+const KEYS = 5;
 export const keyColour = (order: number) => `var(--color-key-${((Math.max(order, 1) - 1) % KEYS) + 1})`;
 
 export interface CampaignTable {

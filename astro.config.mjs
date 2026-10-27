@@ -14,4 +14,6 @@ export default defineConfig({
   base,
   vite: { plugins: [tailwindcss()] },
   integrations: [mdx()],
+  // BABY was split into BABY 100 mL and BABY 1 L; keep the old guide URL working.
+  redirects: { '/experiments/baby': `${base.replace(/\/$/, '')}/experiments/` },
 });

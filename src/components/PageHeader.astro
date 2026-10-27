@@ -1,17 +1,22 @@
 ---
 // Opening of every inner page: the title, one line beneath, and an optional
-// slot for facts that belong to the page (a status, a date).
+// slot for facts that belong to the page (a status, a date). The optional
+// "figure" slot sets an image on the right, such as an experiment's render.
 interface Props {
   title: string;
   intro?: string;
 }
 const { title, intro } = Astro.props;
+const hasFigure = Astro.slots.has('figure');
 ---
 <header class="page-header">
-  <div class="wrap">
-    <h1>{title}</h1>
-    {intro && <p class="lead">{intro}</p>}
-    <slot />
+  <div class:list={['wrap', { 'with-figure': hasFigure }]}>
+    <div class="text">
+      <h1>{title}</h1>
+      {intro && <p class="lead">{intro}</p>}
+      <slot />
+    </div>
+    {hasFigure && <div class="figure"><slot name="figure" /></div>}
   </div>
 </header>
 
@@ -19,4 +24,13 @@ const { title, intro } = Astro.props;
   .page-header { padding-block: var(--space-2xl); border-bottom: var(--rule-bar) solid var(--color-rule-2); }
   h1 { font-size: var(--text-display); line-height: 0.98; letter-spacing: -0.035em; max-width: 20ch; }
   .lead { margin-top: var(--space-lg); max-width: none; }
+
+  .with-figure { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gap-columns); align-items: end; }
+  .with-figure .lead { max-width: 65ch; }
+  .figure { display: flex; justify-content: center; align-items: flex-end; height: clamp(12rem, 22vw, 20rem); }
+  .figure :global(img) { height: 100%; width: auto; max-width: 18rem; object-fit: contain; }
+  @media (max-width: 48rem) {
+    .with-figure { grid-template-columns: minmax(0, 1fr); }
+    .figure { order: -1; justify-content: flex-start; height: 9rem; }
+  }
 </style>

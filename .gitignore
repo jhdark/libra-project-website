@@ -29,3 +29,9 @@ PSFC Branding Assets/
 
 # Team publications supplied for reference only; never commit the folder
 1 Team Publications/
+
+# Experiment folders and lab media supplied for reference only; never commit.
+# Also keeps Tailwind and Vite from scanning many GB of data on every build.
+0 BABY Experiment/
+0 LIBRA Pi/
+3 Image Video Files/

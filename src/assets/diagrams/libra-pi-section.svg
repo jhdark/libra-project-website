@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520">
+  <!-- LIBRA-Pi tank in section, from the tank assembly CAD and heater design notes. Gas lines are not yet confirmed: dashed, TBC. Not to scale. -->
+  <defs>
+    <marker id="pi-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1966FF"/></marker>
+    <marker id="pi-arrow-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E8890C"/></marker>
+    <marker id="pi-arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="dg-solid" d="M0 0 L10 5 L0 10 z"/></marker>
+    <pattern id="pi-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="dg-thin"/></pattern>
+  </defs>
+
+  <!-- Heater jacket outside the tank -->
+  <rect class="dg-thin" x="362" y="120" width="16" height="350" style="fill:url(#pi-hatch)"/>
+  <rect class="dg-thin" x="682" y="120" width="16" height="350" style="fill:url(#pi-hatch)"/>
+
+  <!-- Double wall, salt, lid -->
+  <rect class="dg-wall" x="380" y="92" width="300" height="378"/>
+  <rect class="dg-salt" x="397" y="180" width="266" height="273"/>
+  <rect class="dg-wall" x="395" y="107" width="270" height="348"/>
+  <rect class="dg-solid" x="370" y="80" width="320" height="14"/>
+  <path class="dg-thin" d="M397 180 H663" style="stroke-dasharray:4 4"/>
+  <text class="dg-note" x="340" y="186" text-anchor="end">Salt level, 70 L fill</text>
+  <path class="dg-thin" d="M344 182 H397"/>
+
+  <!-- Re-entrant heater tubes -->
+  <rect class="dg-thin" x="461" y="56" width="18" height="370" style="fill:var(--color-sheet)"/>
+  <rect class="dg-solid" x="466" y="40" width="8" height="380"/>
+  <rect class="dg-thin" x="521" y="56" width="18" height="370" style="fill:var(--color-sheet)"/>
+  <rect class="dg-solid" x="526" y="40" width="8" height="380"/>
+  <rect class="dg-thin" x="581" y="56" width="18" height="370" style="fill:var(--color-sheet)"/>
+  <rect class="dg-solid" x="586" y="40" width="8" height="380"/>
+
+  <!-- Gas lines, TBC -->
+  <path class="dg-a" d="M430 18 V150" style="stroke-dasharray:7 6" marker-end="url(#pi-arrow-a)"/>
+  <path class="dg-a" d="M630 150 V18" style="stroke-dasharray:7 6" marker-end="url(#pi-arrow-a)"/>
+  <path class="dg-b" d="M672 18 V440" style="stroke-dasharray:7 6" marker-end="url(#pi-arrow-b)"/>
+  <path class="dg-b" d="M387 440 V18" style="stroke-dasharray:7 6" marker-end="url(#pi-arrow-b)"/>
+
+  <!-- Neutron source on the inner side -->
+  <rect class="dg-box" x="130" y="262" width="180" height="46" rx="23"/>
+  <text x="220" y="290" text-anchor="middle">DT neutron source</text>
+  <text class="dg-note" x="220" y="330" text-anchor="middle">14 MeV, position TBC</text>
+  <path class="dg-thin" d="M316 270 H352" marker-end="url(#pi-arrow-k)"/>
+  <path class="dg-thin" d="M316 300 H352" marker-end="url(#pi-arrow-k)"/>
+  <text class="dg-note" x="220" y="122" text-anchor="middle">Inner side of the sector,</text>
+  <text class="dg-note" x="220" y="140" text-anchor="middle">facing the source</text>
+  <text class="dg-note" x="840" y="122" text-anchor="middle">Outer side</text>
+
+  <!-- Labels -->
+  <text class="dg-note" x="716" y="174">Heater jacket, two zones</text>
+  <path class="dg-thin" d="M712 170 H698"/>
+  <text class="dg-note" x="716" y="214">Double wall, Inconel 625</text>
+  <path class="dg-thin" d="M712 210 H680"/>
+  <text class="dg-note" x="716" y="254">Interspace between the walls</text>
+  <path class="dg-thin" d="M712 250 H676"/>
+  <text class="dg-note" x="716" y="294">Re-entrant tubes, each with</text>
+  <text class="dg-note" x="716" y="312">a 5 kW cartridge heater</text>
+  <path class="dg-thin" d="M712 290 H599"/>
+  <text class="dg-note" x="716" y="352">ClLiF salt</text>
+  <path class="dg-thin" d="M712 348 H640"/>
+
+  <!-- Legend -->
+  <path class="dg-a" d="M716 410 H746" style="stroke-dasharray:7 6"/>
+  <text class="dg-note" x="756" y="415">Cover gas over the salt (TBC)</text>
+  <path class="dg-b" d="M716 444 H746" style="stroke-dasharray:7 6"/>
+  <text class="dg-note" x="756" y="449">Interspace gas, collecting</text>
+  <text class="dg-note" x="756" y="467">permeated tritium (TBC)</text>
+  <text class="dg-note dg-muted" x="530" y="506" text-anchor="middle">Dashed lines: routes not yet confirmed</text>
+</svg>
