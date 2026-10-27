@@ -119,7 +119,12 @@ highlighted fact, remove its tags and tick it off here.
 - Run dates for runs 1 to 3 (no record in the repositories).
 
 **BABY 1 L**
-- Which vessel iteration the CAD shows.
+- Which design iteration the CAD shows. Measured from the model, its outer
+  vessel (273.1 × 210.9 mm), crucible (146.0 mm OD), conflat lid, radiative
+  furnace (about 248 mm OD) and 4.8 mm bottom plate match the paper's runs 1
+  to 4. Its five staggered 1/4 in wells, extra lid ports and lack of a
+  sparger do not. The source STEP file is not in the repository; the team
+  should say which iteration it is.
 - FLiBe operating temperature: run 3's furnace setpoint was 750 °C, but no
   salt temperature is recorded.
 - FLiBe run 4 dates.
