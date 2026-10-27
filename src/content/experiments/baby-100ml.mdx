@@ -75,10 +75,10 @@ hydrogen conditioning step did not change the result.
 | 1 | <mark>22 June 2023</mark> | Troubleshooting, no tritium detected |
 | 2 | <mark>7 August 2023</mark> | Troubleshooting, no tritium detected |
 | 3 | <mark>25 September 2023</mark> | Tritium release measured; neutron rate not measured |
-| 4 | <mark>7 November 2023</mark> | TBR 3.42 × 10⁻⁴ |
-| 5 | <mark>4 December 2023</mark> | TBR 3.57 × 10⁻⁴ |
-| 6 | <mark>23 January 2024</mark> | TBR 3.83 × 10⁻⁴ |
-| 7 | <mark>1 April 2024</mark> | Not in the paper; data in BABY-100-mL-runs |
+| 4 | 7 November 2023 | TBR 3.42 × 10⁻⁴ |
+| 5 | 5 December 2023 | TBR 3.57 × 10⁻⁴ |
+| 6 | 25 January 2024 | TBR 3.83 × 10⁻⁴ |
+| 7 | 3 April 2024 | Not in the paper; data in BABY-100-mL-runs |
 | 8 | 29 July 2024 | Not in the paper; data in BABY-100-mL-runs |
 
 The paper reports runs 1 to 6. The cumulative tritium release agreed across
@@ -86,8 +86,9 @@ runs 3 to 6 within a relative standard deviation of 12%, and the TBR across
 runs 4 to 6 within 4.7%. Runs 7 and 8 are in the
 [BABY-100-mL-runs](https://github.com/LIBRA-project/BABY-100-mL-runs)
 repository, whose scripts model two 12 hour irradiations a day apart for
-every run. <mark>The dates of runs 1 to 7 come from the team's run
-folders.</mark>
+every run. The dates are when each run's first irradiation began, from the
+run scripts, the diamond detector files and the activation foil records.
+<mark>The dates of runs 1 to 3 come from the team's run folders.</mark>
 
 TODO: what changed between runs (generators, gas, irradiation time).
 
@@ -102,6 +103,14 @@ salt; (4) it is released into the helium sweep gas or permeates the walls;
 Delaporte-Mathurin et al., [Nucl. Fusion 65 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab),
 CC BY 4.0.*
 
+<CadViewer src="models/baby_100ml_model.glb" cutaway="models/baby_100ml_cutaway.glb" alt="The BABY 100 mL set-up: the crucible on its stand between two cylindrical neutron generators on supports, with the detector box beside them" />
+
+The set-up as modelled for the paper: the crucible on its stand between the
+two neutron generators and their supports, with the diamond detector. From
+`geometry.step` in
+[insights-from-BABY-experiment-paper](https://github.com/LIBRA-project/insights-from-BABY-experiment-paper)
+(Zenodo [10.5281/zenodo.14455926](https://doi.org/10.5281/zenodo.14455926)),
+simplified for the neutronics model; the lab walls and table are left out.
 Photos of the set-up are in the "In the lab" section below.
 
 ### Breeder and containment
@@ -112,24 +121,6 @@ inside. A re-entrant heater in the centre of the crucible keeps the salt at
 700 °C, controlled from a sheathed thermocouple in the salt, and the crucible
 is wrapped in alumina wool. There is no outer vessel: tritium that permeates
 the crucible wall is released into the room.
-
-<CadViewer src="models/baby_100ml_model.glb" cutaway="models/baby_100ml_cutaway.glb" alt="BABY small-scale test tank assembly" />
-
-<mark>The small-scale test tank assembly, from the team's CAD of February 2023.
-The team has flagged that this model may not match the tank used in the
-runs: its top looks like one of the 1 L vessel iterations (TBC).</mark>
-
-### Salt dispensing
-
-<CadViewer src="models/salt_dispensing_model.glb" cutaway="models/salt_dispensing_cutaway.glb" alt="Salt dispensing system assembly" />
-
-<mark>A salt dispensing system was designed in 2023 to melt salt and pour it
-into a crucible. A clamshell furnace heats a dispensing crucible; a
-spring-loaded actuator, set with a fine adjustment screw, lifts a nickel
-rod with a graphite plunger out of the nozzle to let the molten salt flow.
-The whole assembly hangs from guide and support bars on a frame with legs.</mark>
-
-TODO: whether it was used for the BABY runs, and temperature control.
 
 ### Neutron source
 
