@@ -200,4 +200,4 @@ edge, never text colour (the pastel keys fail contrast as text).
   is limited to colour changes on hover, and the CAD viewer stops rotating
   under reduced motion.
 - Copy: British English, no em dashes, no buzzwords; TBC and TODO stay
-  visible.
+  visible, and a TODO paragraph is wrapped in `<mark>` so it shows in pink.

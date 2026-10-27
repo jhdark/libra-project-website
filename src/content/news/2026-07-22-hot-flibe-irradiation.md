@@ -13,4 +13,4 @@ in BABY 1 L. Data and analysis are being collected in
 <mark>The date is from the run's data files and neutron generator logs; the
 repository description says 21 June 2026. TBC by the team.</mark>
 
-TODO: a few sentences and a photo from the run.
+<mark>TODO: a few sentences and a photo from the run.</mark>

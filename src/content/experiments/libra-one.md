@@ -64,7 +64,7 @@ LIBRA-One keeps is TBC.*
 
 <mark>Status: in final design (2025).</mark>
 
-TODO: facility, shielding and schedule, once confirmed by the team.
+<mark>TODO: facility, shielding and schedule, once confirmed by the team.</mark>
 
 ## Modelling
 
@@ -72,8 +72,8 @@ The [LIBRA-one repository](https://github.com/LIBRA-project/LIBRA-one) holds
 the OpenMC neutronics model (`run_model.py`) and the FESTIM tritium
 transport model (`festim_model.py`) of the experiment.
 
-TODO: summarise the models and main results.
+<mark>TODO: summarise the models and main results.</mark>
 
 ## Data and analysis
 
-TODO
+<mark>TODO</mark>
