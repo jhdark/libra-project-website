@@ -46,14 +46,15 @@
   --color-on-ink-rule: oklch(36% 0.010 25);
   --color-on-ink-link: oklch(84% 0.100 332);
 
-  /* Experiment keys, from the PSFC accent palette, assigned by `order`
-     (src/lib/experiments.ts). Fills and marks only, always with an ink edge. */
-  --color-key-1: oklch(90.4% 0.186 138);      /* Aurora Green #9DFC7E */
-  --color-key-2: oklch(89.6% 0.085 214);      /* Electric Arc Aqua #98ECFF */
-  --color-key-3: oklch(79.6% 0.160 68);       /* Orange Edge #FFA630 */
-  --color-key-4: oklch(80.4% 0.107 291);      /* Hydrogen Periwinkle #BFB3FF */
-  --color-key-5: oklch(56.6% 0.239 262);      /* Industrial Blue #1966FF */
-  --color-key-6: oklch(67% 0.170 25);         /* Heated #F25757 */
+  /* Experiment keys: five even stops along matplotlib's plasma colour map,
+     assigned by `order` (src/lib/experiments.ts), so the experiments read as
+     one scale from BABY 100 mL to LIBRA-One. Fills and marks only, always
+     with an ink edge. */
+  --color-key-1: #0d0887;   /* plasma 0.00 */
+  --color-key-2: #7e03a8;   /* plasma 0.25 */
+  --color-key-3: #cc4778;   /* plasma 0.50 */
+  --color-key-4: #f89540;   /* plasma 0.75 */
+  --color-key-5: #f0f921;   /* plasma 1.00 */
 
   /* Profile link hover colours: each service's own brand colour. */
   --color-brand-github: #181717;
