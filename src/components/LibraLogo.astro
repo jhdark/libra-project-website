@@ -1,19 +1,22 @@
 ---
-// Typographic wordmark until the project has a logo (TBC). A combined
-// MIT/PSFC lockup for LIBRA can only come from PSFC communications, so the
-// centre is named beneath the wordmark in type.
+// The LIBRA logo (the LIBRA-project GitHub organisation's avatar, trimmed)
+// with the centre named beneath it in type. A combined MIT/PSFC lockup for
+// LIBRA can only come from PSFC communications.
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/libra-logo.png';
+
 interface Props {
   class?: string;
 }
 const { class: className = '' } = Astro.props;
 ---
 <span class:list={['wordmark', className]}>
-  <b>LIBRA</b>
+  <Image src={logo} alt="LIBRA" height={40} densities={[1, 2]} loading="eager" />
   <span>MIT Plasma Science and Fusion Center</span>
 </span>
 
 <style>
   .wordmark { display: grid; justify-items: start; gap: var(--space-2xs); color: var(--color-ink); }
-  b { font: 600 1.75rem/1 var(--font-display); letter-spacing: 0.06em; }
+  img { display: block; height: 40px; width: auto; }
   span span { font-size: 0.875rem; color: var(--color-muted); }
 </style>
