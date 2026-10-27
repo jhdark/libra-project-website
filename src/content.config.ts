@@ -16,8 +16,8 @@ const experiments = defineCollection({
     // GitHub repositories under github.com/LIBRA-project
     repos: z.array(z.object({ name: z.string(), description: z.string().optional() })).default([]),
     // A step on the scale-up path shown on the experiments page: breeder
-    // volume in litres and a render from src/assets/stages/.
-    stage: z.object({ volume: z.number(), image: image() }).optional(),
+    // volume in litres (left out while TBC) and a render from src/assets/stages/.
+    stage: z.object({ volume: z.number().optional(), image: image() }).optional(),
     // true while the text still needs review by the experiment lead
     needsReview: z.boolean().default(false),
   }),

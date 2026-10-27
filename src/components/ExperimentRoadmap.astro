@@ -2,11 +2,13 @@
 // The scale-up path: every experiment with a `stage` in its frontmatter, in
 // order, with its render, breeder volume and status, over a bar in the
 // experiment key colours. Render heights follow the log of the volume, so
-// 0.1 L to 700 L reads as a climb without the smallest vanishing.
+// 0.1 L to 700 L reads as a climb without the smallest vanishing. A stage
+// whose volume is TBC sits halfway between its neighbours.
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import ExperimentKey from './ExperimentKey.astro';
 import StatusBadge from './StatusBadge.astro';
+import Tbc from './Tbc.astro';
 import { keyColour } from '../lib/experiments';
 import { url } from '../lib/url';
 
@@ -17,14 +19,22 @@ const stages = Astro.props.experiments
   .filter((e) => e.data.stage)
   .sort((a, b) => a.data.order - b.data.order);
 
-const logs = stages.map((e) => Math.log10(e.data.stage!.volume));
-const [lo, hi] = [Math.min(...logs), Math.max(...logs)];
-const height = (volume: number) => 30 + (70 * (Math.log10(volume) - lo)) / (hi - lo || 1);
-const litres = (volume: number) => `${volume.toLocaleString('en-GB')} L`;
+const logs = stages.map((e) => (e.data.stage!.volume ? Math.log10(e.data.stage!.volume) : NaN));
+const known = logs.filter((l) => !Number.isNaN(l));
+const [lo, hi] = [Math.min(...known), Math.max(...known)];
+const nearest = (i: number, step: number) => {
+  for (let j = i + step; j >= 0 && j < logs.length; j += step) if (!Number.isNaN(logs[j])) return logs[j];
+  return step < 0 ? lo : hi;
+};
+const heights = logs.map((l, i) => {
+  const v = Number.isNaN(l) ? (nearest(i, -1) + nearest(i, 1)) / 2 : l;
+  return 30 + (70 * (v - lo)) / (hi - lo || 1);
+});
+const litres = (volume?: number) => (volume ? `${volume.toLocaleString('en-GB')} L` : 'Volume TBC');
 const bar = `linear-gradient(to right, ${stages.map((e) => keyColour(e.data.order)).join(', ')})`;
 ---
 <ol class="roadmap" style={`--bar: ${bar}`}>
-  {stages.map((e) => {
+  {stages.map((e, i) => {
     const { title, order, status, stage } = e.data;
     return (
       <li style={`--k: ${keyColour(order)}`}>
@@ -35,11 +45,11 @@ const bar = `linear-gradient(to right, ${stages.map((e) => keyColour(e.data.orde
               alt={`Render of ${title}`}
               widths={[160, 320, 480]}
               sizes="(min-width: 60rem) 15vw, 40vw"
-              style={`height: ${height(stage!.volume).toFixed(1)}%`}
+              style={`height: ${heights[i].toFixed(1)}%`}
             />
           </div>
           <span class="tick" aria-hidden="true"></span>
-          <span class="volume num">{litres(stage!.volume)}</span>
+          <span class="volume num"><Tbc text={litres(stage!.volume)} /></span>
           <span class="name"><ExperimentKey order={order} />{title}</span>
           <StatusBadge status={status} />
         </a>
@@ -53,7 +63,7 @@ const bar = `linear-gradient(to right, ${stages.map((e) => keyColour(e.data.orde
   /* The bar runs under all the renders, in the experiments' key colours. */
   .roadmap::after { content: ''; position: absolute; left: 0; right: 0; top: calc(var(--render-h) + var(--space-md)); height: 10px; background: var(--bar); outline: var(--rule-hair) solid var(--color-ink); outline-offset: -1px; }
   .roadmap { --render-h: 18rem; }
-  a { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2xs); color: var(--color-ink); text-decoration: none; }
+  a { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2xs); color: var(--color-ink); text-decoration: none; }
   .render { height: var(--render-h); width: 100%; display: flex; align-items: flex-end; justify-content: center; }
   .render img { width: auto; max-width: 100%; object-fit: contain; transition: transform var(--dur-micro) var(--ease-out); }
   a:hover .render img { transform: translateY(-4px); }
@@ -67,5 +77,6 @@ const bar = `linear-gradient(to right, ${stages.map((e) => keyColour(e.data.orde
     .roadmap::after { display: none; }
     .tick { display: none; }
     li { border-top: 6px solid var(--k); padding-top: var(--space-sm); }
+    a { align-items: flex-start; text-align: left; }
   }
 </style>
