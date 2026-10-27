@@ -6,7 +6,7 @@ import { z } from 'astro/zod';
 // cards and fact boxes; the body is the long-form guide.
 const experiments = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/experiments' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     tagline: z.string(),
     summary: z.string(),
@@ -15,6 +15,9 @@ const experiments = defineCollection({
     facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
     // GitHub repositories under github.com/LIBRA-project
     repos: z.array(z.object({ name: z.string(), description: z.string().optional() })).default([]),
+    // A step on the scale-up path shown on the experiments page: breeder
+    // volume in litres and a render from src/assets/stages/.
+    stage: z.object({ volume: z.number(), image: image() }).optional(),
     // true while the text still needs review by the experiment lead
     needsReview: z.boolean().default(false),
   }),

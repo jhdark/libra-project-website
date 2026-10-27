@@ -4,6 +4,7 @@ tagline: Designed for a tritium breeding ratio above one
 summary: LIBRA-One is the largest planned stage, about 700 L of FLiBe around a 14 MeV DT neutron source with a beryllium neutron multiplier, designed to breed more tritium than its source consumes.
 status: planned
 order: 5
+stage: { volume: 700, image: ../../assets/stages/libra-one.png }
 needsReview: true
 facts:
   - { label: Breeder volume, value: "700 L" }

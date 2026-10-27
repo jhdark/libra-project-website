@@ -4,6 +4,7 @@ tagline: The first BABY campaign, tritium breeding in 100 mL of molten salt
 summary: The first BABY experiments irradiated 100 mL of molten ClLiF salt with 14 MeV DT fusion neutrons and made the first global measurement of the tritium breeding ratio in a molten salt.
 status: completed
 order: 1
+stage: { volume: 0.1, image: ../../assets/stages/baby-100ml.png }
 needsReview: true
 facts:
   - { label: Breeder volume, value: "100 mL" }

@@ -4,6 +4,7 @@ tagline: Litre-scale molten salt tritium breeding, from ClLiF to FLiBe
 summary: The 1 L BABY experiments irradiate a litre of molten salt with 14 MeV DT fusion neutrons in a double-walled vessel, measuring tritium release and wall permeation, and include the first FLiBe campaign.
 status: active
 order: 2
+stage: { volume: 1, image: ../../assets/stages/baby-1l.png }
 needsReview: true
 facts:
   - { label: Breeder volume, value: "1 L" }
