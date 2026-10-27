@@ -1,73 +1,96 @@
 ---
 title: BABY 100 mL
 tagline: The first BABY campaign, tritium breeding in 100 mL of molten salt
-summary: The first BABY experiments irradiated 100 mL of molten ClLiF salt with 14 MeV DT fusion neutrons and made the first global measurement of the tritium breeding ratio in a molten salt.
+summary: The first BABY experiments irradiated 100 mL of molten ClLiF salt with 14 MeV DT fusion neutrons and measured its tritium breeding ratio directly.
 status: completed
 order: 1
 stage: { volume: 0.1, image: ../../assets/stages/baby-100ml.png }
 needsReview: true
 facts:
-  - { label: Breeder volume, value: "100 mL" }
-  - { label: Breeder, value: "ClLiF (LiCl-LiF surrogate salt)" }
+  - { label: Breeder volume, value: "100 mL (190 g)" }
+  - { label: Breeder, value: "ClLiF, eutectic 30.5% LiF, 69.5% LiCl, natural lithium" }
   - { label: Salt temperature, value: "700 °C" }
-  - { label: Neutron source, value: "Two DT neutron generators (14 MeV), about 5 × 10⁸ n/s in total" }
+  - { label: Neutron source, value: "Two sealed-tube DT generators (Thermo Fisher A-325 and P-383), about 3.9 × 10⁸ n/s in total (run 5)" }
+  - { label: Irradiation, value: "Two 12 hour periods, a day apart" }
   - { label: Tritium measurement, value: "Water bubblers and liquid scintillation counting" }
-  - { label: Neutron diagnostics, value: "Activation foils, proton recoil, diamond detector (TBC for 100 mL)" }
-  - { label: Runs, value: "3 to 8" }
-  - { label: Measured TBR, value: "3.57 × 10⁻⁴" }
+  - { label: Neutron diagnostics, value: "Niobium activation foils (NaI counting) and a diamond detector" }
+  - { label: Runs, value: "Eight; runs 1 to 6 published, TBR measured in runs 4 to 6" }
+  - { label: Measured TBR, value: "3.57 × 10⁻⁴ (run 5)" }
 repos:
   - { name: BABY-100-mL-runs, description: "Data for 100 mL runs 3 to 8" }
-  - { name: insights-from-BABY-experiment-paper, description: "Reproducible analysis for the BABY paper" }
+  - { name: insights-from-BABY-experiment-paper, description: "Data, analysis and scripts for the BABY paper" }
 ---
 
 > **Draft guide.** Section headings show the proposed structure for every
 > experiment guide. Text marked TODO needs input from the experiment team.
+> Sources: Delaporte-Mathurin et al.,
+> [Nucl. Fusion 65 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab),
+> and the BABY-100-mL-runs repository.
 
 ## Overview
 
-BABY (Build A Better Yield) is the bench-scale stage of LIBRA. A small volume
+BABY (Build A Better Yield) is the small-scale stage of LIBRA. A small volume
 of molten salt is irradiated by 14 MeV neutrons from deuterium-tritium (DT)
-neutron generators. Tritium bred in the salt is carried out by a sweep gas,
-captured in water bubblers, and counted by liquid scintillation. Comparing
-the measured tritium against neutronics predictions validates the models used
-to design breeding blankets for fusion power plants.
+neutron generators. Tritium bred in the salt is carried out by a helium sweep
+gas, captured in water bubblers, and counted by liquid scintillation. The
+measured tritium breeding ratio (TBR) is compared with a neutronics model,
+giving experimental data to validate the models used to design breeding
+blankets.
 
-BABY is the dress rehearsal for the larger LIBRA experiments. Working at
-small volumes lets the team build experience with molten salts, beryllium
-safety, and tritium and neutron detection before scaling up. The 100 mL
-experiments were the first BABY campaign. They used ClLiF, a LiCl-LiF salt
-without beryllium, as a surrogate for FLiBe.
+Working at small scale lets the team gain experience in neutron generation,
+neutron detection and tritium accountancy, and refine the plans for LIBRA,
+while keeping safety hazards low. The 100 mL experiments used ClLiF, a
+mixture of lithium fluoride and lithium chloride, as a surrogate for FLiBe:
+avoiding beryllium let the team build and troubleshoot the set-up before
+adding the safety protocols and equipment that beryllium work needs.
 
-The next stage is [BABY 1 L](../baby-1l), followed by
-[LIBRA-Pi](../libra-pi) (about 100 L) and [LIBRA-One](../libra-one) (700 L).
+The next stage is [BABY 1 L](/experiments/baby-1l), followed by
+[LIBRA-Pi](/experiments/libra-pi) (about 100 L) and
+[LIBRA-One](/experiments/libra-one) <mark>(700 L)</mark>.
 
 ## Results
 
-The 100 mL experiments made the first global measurement of the tritium
-breeding ratio (TBR) in a molten salt: 3.57 × 10⁻⁴, from 1.17 × 10¹⁰
-tritons bred for 3.35 × 10¹³ neutrons produced. The value is small because
-only about 2% of the neutrons reach the salt at this scale. The model and
-the measurement differ by about 25%, which the team attributes mainly to
-tritium permeating through the crucible walls. The results are published in
-[Nuclear Fusion 65, 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab).
+The 100 mL experiments measured a TBR of 3.57 × 10⁻⁴ in run 5: 1.17 × 10¹⁰
+tritons (21 Bq of tritium) collected for (3.35 ± 0.30) × 10¹³ neutrons over
+24 hours of irradiation. Runs 4 and 6 gave 3.42 × 10⁻⁴ and 3.83 × 10⁻⁴. The
+value is small because only about 2% of the generator neutrons reach the salt
+(a solid angle of about 0.3 sr). At this scale lithium-7, not lithium-6,
+breeds most of the tritium, since the neutrons in the crucible are fast.
+
+The measured TBR was 2.3 times lower than the OpenMC model predicted. The
+bubblers collected over 99% of the tritium in the gas, so the team's
+hypothesis is that the missing tritium permeated through the crucible walls,
+which the 1 L design tests with an outer vessel. (The later BABY 1 L paper
+quotes 3.61 × 10⁻⁴ measured and 4.71 × 10⁻⁴ modelled for 100 mL.)
+
+All the collected tritium was in insoluble forms (HT or T₂), not the soluble
+TF expected from earlier work with FLiBe and FLiNaK under pure helium. The
+team suggests the different salt chemistry as one explanation; removing the
+hydrogen conditioning step did not change the result.
 
 ## Runs
 
-| Run | Date |
-| --- | --- |
-| 1 | 22 June 2023 |
-| 2 | 7 August 2023 |
-| 3 | 25 September 2023 |
-| 4 | 7 November 2023 |
-| 5 | 4 December 2023 |
-| 6 | 23 January 2024 |
-| 7 | 1 April 2024 |
-| 8 | 29 July 2024 |
+| Run | Date | Published result |
+| --- | --- | --- |
+| 1 | <mark>22 June 2023</mark> | Troubleshooting, no tritium detected |
+| 2 | <mark>7 August 2023</mark> | Troubleshooting, no tritium detected |
+| 3 | <mark>25 September 2023</mark> | Tritium release measured; neutron rate not measured |
+| 4 | 7 November 2023 | TBR 3.42 × 10⁻⁴ |
+| 5 | 5 December 2023 | TBR 3.57 × 10⁻⁴ |
+| 6 | 25 January 2024 | TBR 3.83 × 10⁻⁴ |
+| 7 | 3 April 2024 | Not in the paper; data in BABY-100-mL-runs |
+| 8 | 29 July 2024 | Not in the paper; data in BABY-100-mL-runs |
 
-Dates are taken from the team's run folders (TBC). Runs 1 and 2 also tested
-the tritium collection; the published data set covers runs 3 to 8.
+The paper reports runs 1 to 6. The cumulative tritium release agreed across
+runs 3 to 6 within a relative standard deviation of 12%, and the TBR across
+runs 4 to 6 within 4.7%. Runs 7 and 8 are in the
+[BABY-100-mL-runs](https://github.com/LIBRA-project/BABY-100-mL-runs)
+repository, whose scripts model two 12 hour irradiations a day apart for
+every run. The dates are when each run's first irradiation began, from the
+run scripts, the diamond detector files and the activation foil records.
+<mark>The dates of runs 1 to 3 come from the team's run folders.</mark>
 
-TODO: what changed between runs (generators, gas, irradiation time).
+<mark>TODO: what changed between runs (generators, gas, irradiation time).</mark>
 
 ## Experimental setup
 
@@ -80,79 +103,88 @@ salt; (4) it is released into the helium sweep gas or permeates the walls;
 Delaporte-Mathurin et al., [Nucl. Fusion 65 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab),
 CC BY 4.0.*
 
+<CadViewer src="models/baby_100ml_model.glb" cutaway="models/baby_100ml_cutaway.glb" alt="The BABY 100 mL set-up: the crucible on its stand between two cylindrical neutron generators on supports, with the detector box beside them" />
+
+The set-up as modelled for the paper: the crucible on its stand between the
+two neutron generators and their supports, with the diamond detector. From
+`geometry.step` in
+[insights-from-BABY-experiment-paper](https://github.com/LIBRA-project/insights-from-BABY-experiment-paper)
+(Zenodo [10.5281/zenodo.14455926](https://doi.org/10.5281/zenodo.14455926)),
+simplified for the neutronics model; the lab walls and table are left out.
 Photos of the set-up are in the "In the lab" section below.
 
 ### Breeder and containment
 
-The 100 mL of salt sits in an Inconel 625 crucible inside a secondary
-container and is heated to 700 °C.
-
-<CadViewer src="models/baby_100ml_model.glb" cutaway="models/baby_100ml_cutaway.glb" alt="BABY small-scale test tank assembly" />
-
-The small-scale test tank assembly, from the team's CAD of February 2023
-(TBC: confirm this matches the tank used in the runs).
-
-### Salt dispensing
-
-<CadViewer src="models/salt_dispensing_model.glb" cutaway="models/salt_dispensing_cutaway.glb" alt="Salt dispensing system assembly" />
-
-A salt dispensing system was designed in 2023 to melt salt and pour it
-into a crucible. A clamshell furnace heats a dispensing crucible; a
-spring-loaded actuator, set with a fine adjustment screw, lifts a nickel
-rod with a graphite plunger out of the nozzle to let the molten salt flow.
-The whole assembly hangs from guide and support bars on a frame with legs.
-
-TODO: whether it was used for the BABY runs, and temperature control.
+190 g of ClLiF (the 30.5% LiF, 69.5% LiCl eutectic, with natural lithium)
+fills a 1.6 mm thick Inconel 625 crucible, 101 mm tall and 42 mm across
+inside. A re-entrant heater in the centre of the crucible keeps the salt at
+700 °C, controlled from a sheathed thermocouple in the salt, and the crucible
+is wrapped in alumina wool. There is no outer vessel: tritium that permeates
+the crucible wall is released into the room.
 
 ### Neutron source
 
-Two commercial sealed-tube DT neutron generators, one on each side of the
-crucible, provide 14 MeV neutrons at about 5 × 10⁸ neutrons per second in
-total.
+Two commercial sealed-tube DT neutron generators, a Thermo Fisher A-325 and
+a Thermo Fisher P-383, sit one on each side of the crucible, as close to it
+as they can be without exceeding their maximum operating temperatures. In
+run 5, activation foils gave 1.16 × 10⁸ neutrons per second from the A-325
+and 2.71 × 10⁸ from the P-383 (relative error 8.9%), over 24 hours of
+irradiation in two periods. The spectrum is not purely 14 MeV: DD reactions
+in the generators add neutrons of about 2 MeV.
 
-TODO: irradiation length per run, source position and shielding.
+<mark>TODO: shielding.</mark>
 
 ### Gas handling and tritium collection
 
 <Diagram name="baby-100ml-gas" alt="Diagram of the BABY 100 mL gas system. Helium from a cylinder flows into the top of the crucible, sweeps across the surface of the molten salt and leaves through the top, then passes two water bubbler vials, an oxidiser and two more vials before venting. The Inconel crucible is wrapped in alumina wool, with a re-entrant heater and a thermocouple in the salt. A DT neutron generator sits on each side. Tritium that permeates the crucible wall is not collected." caption="The BABY 100 mL gas system, simplified and not to scale. Helium sweeps across the salt surface and carries tritium to the bubblers; tritium that permeates the crucible wall is lost to the room, which the 1 L design fixes with an outer vessel. Drawn from Delaporte-Mathurin et al., Nucl. Fusion 65 026037 (2025)." />
 
-Dry, oxygen-free helium flows over the salt. The gas then passes two sets
-of 2 × 2 water bubbler vials separated by a catalytic oxidation furnace: the
-first set captures water-soluble tritium (HTO), and the furnace converts
-insoluble forms (HT, T₂) so the second set captures those too. The gas keeps
-bubbling during and after irradiation, and vials are sampled periodically.
-The minimum detectable activity is about 0.07 Bq per vial.
+Before a run the system is conditioned with 3.5% H₂ in helium, then flushed
+with pure helium, which sweeps across the top surface of the salt during the
+run. The gas then passes two water vials, which capture the soluble forms of
+tritium (HTO and TF), an oxidising furnace, which converts the insoluble forms
+(HT and T₂) to HTO, and two more vials, which capture those. Each vial holds
+10 mL of deionised water. Each vial collects about 90% of the tritium reaching
+it, so each pair collects over 99%.
 
 ## Diagnostics
 
-- **Activation foils** measured by HPGe and NaI spectroscopy give the neutron
-  fluence on the crucible.
-- **Proton recoil telescope (PRT)** and **diamond detectors** monitor the
-  neutron source in real time. TODO: confirm which were used in the 100 mL
-  runs.
-- **Liquid scintillation counting (LSC)** of bubbler samples gives tritium
-  release over time.
+- **Niobium activation foils**, on top of each generator and aligned with its
+  target plane (runs 4 to 6), give the neutron fluence. After a run they are
+  counted between two 100 mm cubic NaI scintillation detectors, through the
+  934.4 keV gamma ray from ⁹³Nb(n,2n)⁹²ᵐNb.
+- **A diamond detector** (Cividec), about 35 cm from the centre of the
+  crucible, records the neutron count rate in real time. Its efficiency was
+  not yet measured, so the foils give the absolute neutron rate.
+- **Liquid scintillation counting (LSC)** of the bubbler vials gives the
+  tritium release over time.
 
 ## Running an experiment
 
-The outline of a BABY run, as presented by the team at SOFE 2025:
+The steps of a BABY 100 mL run, as described in the paper:
 
-1. Add the breeder to the crucible and place it in its secondary container.
-2. Heat to 700 °C.
-3. Flow dry, oxygen-free gas over the salt.
-4. Irradiate with 14 MeV neutrons.
-5. Let the gas bubble through the water bubblers during and after
-   irradiation, sampling occasionally.
-6. Count the samples by liquid scintillation.
+1. Fill the crucible with the salt.
+2. Condition the system with 3.5% H₂ in helium for 4.5 hours at 30 ccm,
+   then at least 1 hour of pure helium at 20 ccm.
+3. Bring the salt to 700 °C; it takes a few hours to reach equilibrium.
+4. Irradiate with 14 MeV neutrons (24 hours in two periods in run 5).
+5. Change the bubbler vials every 12 hours until day 2, then regularly until
+   no more tritium is collected.
+6. Mix the water from each vial with 10 mL of Ultima Gold LLT scintillation
+   cocktail and count it for 2 hours on a PerkinElmer Tri-Carb 5110 TR.
 
-TODO: the detailed checklist used for the 100 mL runs.
+<mark>TODO: the detailed checklist used for the 100 mL runs.</mark>
 
 ## Data and analysis
 
+The data, analysis and post-processing scripts behind the Nuclear Fusion
+paper are in
+[insights-from-BABY-experiment-paper](https://github.com/LIBRA-project/insights-from-BABY-experiment-paper),
+archived on Zenodo ([10.5281/zenodo.14455926](https://doi.org/10.5281/zenodo.14455926)).
+The neutronics model uses OpenMC 0.14.0 with FENDL-3.1d cross sections.
+
 Data for runs 3 to 8 is in
 [BABY-100-mL-runs](https://github.com/LIBRA-project/BABY-100-mL-runs),
-archived on Zenodo. The analysis behind the Nuclear Fusion paper is in
-[insights-from-BABY-experiment-paper](https://github.com/LIBRA-project/insights-from-BABY-experiment-paper).
-
-Analysis uses [libra-toolbox](https://libra-toolbox.readthedocs.io/en/latest/),
-the shared Python package for neutron detection and tritium analysis.
+archived on Zenodo ([10.5281/zenodo.14538148](https://doi.org/10.5281/zenodo.14538148)).
+Its notebooks use
+[libra-toolbox](https://libra-toolbox.readthedocs.io/en/latest/), the shared
+Python package for neutron detection and tritium analysis.

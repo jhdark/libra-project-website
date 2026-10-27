@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import HeroVideo from '../components/HeroVideo.astro';
 import CampaignSheet from '../components/CampaignSheet.astro';
+import Tbc from '../components/Tbc.astro';
 import ExperimentLedger from '../components/ExperimentLedger.astro';
 import NewsList from '../components/NewsList.astro';
 import publications from '../data/publications.json';
@@ -31,7 +32,7 @@ const pillars = [
   },
   {
     title: 'Open science',
-    body: 'Every run has a public repository with its data and analysis, archived on Zenodo with a DOI, and analysed with our open-source libra-toolbox.',
+    body: 'Every run has a public repository with its data and analysis, built on our open-source libra-toolbox, and each release is archived on Zenodo with a DOI.',
   },
 ];
 ---
@@ -39,8 +40,8 @@ const pillars = [
 <Base>
   <HeroVideo
     title="Breeding tritium for fusion energy"
-    lead="Experiments measuring tritium breeding in molten salt blankets."
-    caption="In the lab: the tritium bubbler, a sweep gas panel, bubbler sample vials, FLiNaK salt being dispensed and salt being poured."
+    lead="Experiments measuring tritium breeding for fusion blankets, in molten salts today and lead-lithium and lithium oxide next."
+    caption="<mark>In the lab: the tritium bubbler, a sweep gas panel, bubbler sample vials, FLiNaK salt being dispensed and salt being poured.</mark>"
   />
 
   <!-- The lead experiment's campaigns -->
@@ -48,7 +49,7 @@ const pillars = [
     <div class="wrap">
       <div>
         <h2>The latest campaigns</h2>
-        <p class="lead">Each BABY run irradiates a breeder salt with DT fusion neutrons and counts the tritium it releases.</p>
+        <p class="lead">Each BABY run irradiates a breeder with DT fusion neutrons and counts the tritium it releases.</p>
       </div>
       {lead && leadCampaigns && <CampaignSheet experiment={lead} campaigns={leadCampaigns} />}
     </div>
@@ -61,17 +62,20 @@ const pillars = [
         <h2>Closing the fuel cycle</h2>
         <p class="lead">
           LIBRA (Liquid Immersion Blanket: Robust Accountancy) is a series of experiments
-          demonstrating and measuring tritium breeding in molten salt blankets.
+          demonstrating and measuring tritium breeding, in molten salts and, soon, other breeders.
         </p>
         <p class="mission">
-          The project aims to de-risk the liquid immersion blanket, a tank of molten salt around a
-          fusion plasma that breeds tritium, extracts heat and shields neutrons in one. The
-          experiments grow in stages, from 0.1 L of salt in BABY to 700 L in LIBRA-One, which is
-          designed to breed more tritium than its neutron source consumes.
+          The project addresses the open questions of the liquid immersion blanket, a tank of molten
+          salt around a fusion plasma that breeds tritium, cools the vacuum vessel and shields
+          neutrons in one. The experiments grow in stages, from 0.1 L of salt in BABY to
+          <mark>700 L in LIBRA-One</mark>, towards the project's long-term goal: a tritium breeding
+          ratio of at least one, breeding more tritium than the neutron source consumes.
+          Beyond molten salts, BABY 1 L runs with lead-lithium and lithium oxide are in
+          preparation.
         </p>
         <p class="mission">
-          LIBRA is funded by ARPA-E (OPEN 2021, award DE-AR0001542) and works with partners
-          including Commonwealth Fusion Systems and Idaho National Laboratory.
+          LIBRA is funded by ARPA-E (<mark>OPEN 2021, </mark>award DE-AR0001542)<mark> and works
+          with partners including Commonwealth Fusion Systems and Idaho National Laboratory</mark>.
         </p>
       </div>
       <ol class="pillars">
@@ -102,11 +106,11 @@ const pillars = [
           <p class="head-link"><a class="link-strong" href={url('publications')}>All publications and talks</a></p>
         </div>
         <p class="paper-type">{p.type.charAt(0).toUpperCase() + p.type.slice(1)}, <span class="num">{p.year}</span></p>
-        <h3 class="statement">{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener">{p.title}</a> : p.title}</h3>
+        <h3 class="statement">{titleHref ? <a class="title-link" href={titleHref} target="_blank" rel="noopener"><Tbc text={p.title} /></a> : <Tbc text={p.title} />}</h3>
         <div class="paper-meta">
           <div>
-            <p class="authors">{p.authors}</p>
-            <p class="venue">{p.venue}</p>
+            <p class="authors"><Tbc text={p.authors} /></p>
+            <p class="venue"><Tbc text={p.venue} /></p>
           </div>
           <ul class="paper-links">
             {others.map((l) => <li><a class="link-strong" href={linkHref(l.href)} target="_blank" rel="noopener">{l.label}</a></li>)}

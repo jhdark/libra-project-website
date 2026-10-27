@@ -1,50 +1,59 @@
 ---
 title: LIBRA-Pi
-tagline: A π-steradian sector of the LIBRA blanket
-summary: LIBRA-Pi is a tank of about 100 L of molten salt that covers π steradians around a DT neutron source, scaling the BABY experiments up to blanket-relevant salt thicknesses.
+tagline: A <mark>π-steradian</mark> sector of the LIBRA blanket
+summary: LIBRA-Pi is a tank of about 100 L of molten salt that covers a quarter of the way round a DT neutron source, scaling the BABY experiments up to blanket-relevant salt thicknesses.
 status: planned
 order: 4
 stage: { volume: 100, image: ../../assets/stages/libra-pi.png }
 needsReview: true
 facts:
-  - { label: Breeder volume, value: "About 100 L (125 L in earlier designs)" }
-  - { label: Breeder, value: "ClLiF (about 70 LiCl : 30 LiF)" }
-  - { label: Vessel, value: "Inconel 625, double-walled, alumina permeation barrier" }
+  - { label: Breeder volume, value: "About 100 L<mark> (125 L in earlier designs)</mark>" }
+  - { label: Breeder, value: "ClLiF (69.5% LiCl, 30.5% LiF)" }
+  - { label: Vessel, value: "Inconel 625, double-walled<mark>, alumina permeation barrier</mark>" }
   - { label: Tank shape, value: "90° annular sector, 15.2 cm to 43.5 cm inner radii" }
-  - { label: Heating, value: "Three 5 kW cartridge heaters and a two-zone jacket" }
-  - { label: Neutron source, value: "DT neutron generator (14 MeV)" }
-  - { label: Status, value: "Vessel fabricated; testing TBC" }
+  - { label: Heating, value: "<mark>Three 5 kW cartridge heaters and a two-zone jacket</mark>" }
+  - { label: Neutron source, value: "DT neutron generator (14 MeV); the model uses the P-383" }
+  - { label: Status, value: "<mark>Vessel fabricated; testing TBC</mark>" }
 repos:
-  - { name: libra-pie-neutronics, description: "Neutronics model for LIBRA-Pi" }
+  - { name: libra-pie-neutronics, description: "OpenMC neutronics models of the LIBRA-Pi tank" }
 ---
 
-> **Draft guide.** Drawn from the team's 2024 and 2025 posters and talks,
-> the tank assembly CAD and the heater design notes.
+> **Draft guide.** Sources: the LIBRA-Pi neutronics models in
+> [libra-pie-neutronics](https://github.com/LIBRA-project/libra-pie-neutronics)
+> and Delaporte-Mathurin et al.,
+> [Nucl. Fusion 66 076046 (2026)](https://doi.org/10.1088/1741-4326/ae6f31).
 > Sections marked TODO need input from the experiment team.
 
 ## Overview
 
-LIBRA-Pi is the step between the litre-scale [BABY 1 L](../baby-1l) experiments and
-[LIBRA-One](../libra-one). In the team's words, "the Pi tank is designed to
-cover π steradians around the point neutron source, while also resembling a
-slice of pie". It is a full-scale sector of the original four-quadrant LIBRA
-design, with a salt thickness of several 14 MeV neutron mean free paths.
+LIBRA-Pi is the step between the litre-scale [BABY 1 L](/experiments/baby-1l)
+experiments and [LIBRA-One](/experiments/libra-one), with about 100 L of salt.
+The tank is a 90° sector of an annulus around the neutron source. <mark>In the
+team's words, "the Pi tank is designed to cover π steradians around the point
+neutron source, while also resembling a slice of pie".</mark> In the team's
+neutronics models, four LIBRA-Pi tanks around one source make up the full
+LIBRA experiment.
 
-LIBRA-Pi uses ClLiF, the beryllium-free surrogate salt used in BABY, to
-study what only appears at scale:
+The salt is 28 cm thick<mark>, several mean free paths of a 14 MeV neutron</mark>. LIBRA-Pi
+uses ClLiF, the beryllium-free surrogate salt used in BABY, to study what only
+appears at scale:
 
-- how far neutrons travel through the salt (neutron path length);
-- handling a large volume of salt;
-- heating and thermal management;
-- neutron multiplication.
+- <mark>how far neutrons travel through the salt (neutron path length);</mark>
+- <mark>handling a large volume of salt;</mark>
+- <mark>heating and thermal management;</mark>
+- <mark>neutron multiplication.</mark>
+
+Its larger gas system should allow flow rates of about 400 sccm, against
+30 to 50 sccm in BABY 1 L, enough to stir the salt and move tritium release
+out of the diffusion-limited regime seen at 1 L.
 
 ## Experimental setup
 
 The tank is built from Inconel 625 with a double wall, so that tritium
-permeating through the inner wall can be measured, and a plasma-sprayed
+permeating through the inner wall can be measured<mark>, and a plasma-sprayed
 alumina coating on the outside to limit further permeation losses. Heating
 the salt to its melting point and on to 700 °C takes several days, and
-structural analysis shows the vessel stays within allowable stresses.
+structural analysis shows the vessel stays within allowable stresses.</mark>
 
 <CadViewer src="models/libra_pi_model.glb" cutaway="models/libra_pi_cutaway.glb" alt="LIBRA-Pi double-walled tank assembly" />
 
@@ -52,37 +61,41 @@ Seen from above, the salt space is a quarter of an annulus: a 90° sector
 running from 15.2 cm (6 in) to 43.5 cm (17.1 in) from the axis, with a
 floor area of about 1,230 cm².
 
-<Diagram name="libra-pi-section" alt="Section through the LIBRA-Pi tank. A double wall of Inconel 625 with an interspace between the walls, a lid, three re-entrant tubes each holding a cartridge heater down into the salt, and a heater jacket outside. The salt fills to the level of a 70 L fill. A DT neutron source sits on the inner side of the sector. Dashed lines mark gas routes not yet confirmed: cover gas over the salt, and gas in the interspace collecting tritium that permeates the inner wall." caption="LIBRA-Pi in section, simplified and not to scale, drawn from the tank CAD and the heater design notes. The gas routes are dashed because they are not yet confirmed (TBC): the team should check the cover gas and interspace lines before this is published." />
+<Diagram name="libra-pi-section" alt="Section through the LIBRA-Pi tank. A double wall of Inconel 625 with an interspace between the walls, a lid, three re-entrant tubes each holding a cartridge heater down into the salt, and a heater jacket outside. The salt fills to the level of a 70 L fill. A DT neutron source sits on the inner side of the sector. Dashed lines mark gas routes not yet confirmed: cover gas over the salt, and gas in the interspace collecting tritium that permeates the inner wall." caption="<mark>LIBRA-Pi in section, simplified and not to scale, drawn from the tank CAD and the heater design notes. The gas routes are dashed because they are not yet confirmed (TBC): the team should check the cover gas and interspace lines before this is published.</mark>" />
 
 ### Heating
 
-The salt is heated from inside and outside.
+The salt is heated from inside and outside. The neutronics model includes
+three re-entrant heater tubes through the lid.
 
-- **Cartridge heaters.** Three re-entrant tubes, 5 cm (2 in) across, drop
-  through the lid to about 7.6 cm above the floor of the tank. Each holds a 1 in
-  cartridge heater rated at 5 kW (240 V), with an Incoloy 800 sheath and a
-  type K thermocouple at the middle of its heated length. The heated length
-  (about 47 cm) was chosen so that it stays fully under the salt surface
-  with a 70 L fill, which reaches about 52 cm above the bottom of the
-  tubes. The rest of each heater (about 84 cm) is unheated, so its leads
-  sit well above the hot zone.
-- **Heater jacket.** A shaped jacket wraps the outside of the tank: two
+- <mark>**Cartridge heaters.** The three re-entrant tubes, 5 cm (2 in) across,
+  drop through the lid to about 7.6 cm above the floor of the tank. Each holds
+  a 1 in cartridge heater rated at 5 kW (240 V), with an Incoloy 800 sheath
+  and a type K thermocouple at the middle of its heated length. The heated
+  length (about 47 cm) was chosen so that it stays fully under the salt
+  surface with a 70 L fill, which reaches about 52 cm above the bottom of the
+  tubes. The rest of each heater (about 84 cm) is unheated, so its leads sit
+  well above the hot zone.</mark>
+- <mark>**Heater jacket.** A shaped jacket wraps the outside of the tank: two
   zones of about 2.4 kW each (120 V, 4.8 kW in all), with a nominal
   temperature of 500 °C and its own thermocouple per zone, faced in PTFE
-  over fibreglass insulation.
+  over fibreglass insulation.</mark>
 
-TODO: stand, neutron source position, gas handling and whether the full
-100 L or the 70 L heater design fill is the planned inventory.
+<mark>TODO: stand, neutron source position, gas handling and whether the full
+100 L or the 70 L heater design fill is the planned inventory.</mark>
 
 ## Diagnostics
 
-TODO
+<mark>TODO</mark>
 
 ## Running an experiment
 
-TODO
+<mark>TODO</mark>
 
 ## Data and analysis
 
-TODO: the [libra-pie-neutronics](https://github.com/LIBRA-project/libra-pie-neutronics)
-repository holds a neutronics model (to be confirmed by the team).
+[libra-pie-neutronics](https://github.com/LIBRA-project/libra-pie-neutronics)
+holds the OpenMC models of the tank: a base model with the P-383 generator and
+a concrete floor, scans of neutron multiplier and reflector materials and
+thicknesses, and a "revolved" model of four tanks as the full LIBRA
+experiment, with scans of salt height and thickness.

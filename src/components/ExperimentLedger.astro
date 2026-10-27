@@ -5,6 +5,7 @@ import type { CollectionEntry } from 'astro:content';
 import ExperimentKey from './ExperimentKey.astro';
 import StatusBadge from './StatusBadge.astro';
 import { url } from '../lib/url';
+import Tbc from './Tbc.astro';
 
 interface Props {
   experiments: CollectionEntry<'experiments'>[];
@@ -20,9 +21,9 @@ const { experiments } = Astro.props;
       <tr>
         <th scope="row">
           <a href={url(`experiments/${e.id}`)}><ExperimentKey order={e.data.order} />{e.data.title}</a>
-          <small>{e.data.tagline}</small>
+          <small><Tbc text={e.data.tagline} /></small>
         </th>
-        <td class="summary">{e.data.summary}</td>
+        <td class="summary"><Tbc text={e.data.summary} /></td>
         <td class="state"><StatusBadge status={e.data.status} /></td>
       </tr>
     ))}

@@ -7,11 +7,18 @@ import { url } from '../lib/url';
 interface Props {
   title?: string;
   description?: string;
+  // A review notice for the page, such as "this guide is a draft".
+  note?: string;
 }
 const {
   title,
   description = 'LIBRA: experiments advancing tritium breeding technologies for fusion energy.',
+  note,
 } = Astro.props;
+// Render the page first so the notice can say whether it holds text marked
+// as not yet verified (<mark>, see "Fact-checking" in CLAUDE.md).
+const page = await Astro.slots.render('default');
+const hasUnverified = page.includes('<mark');
 const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for fusion energy';
 ---
 <!doctype html>
@@ -39,8 +46,16 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
   </head>
   <body class="flex min-h-screen flex-col overflow-x-clip">
     <Nav />
+    {(note || hasUnverified) && (
+      <div class="review-note">
+        <p class="wrap">
+          {note}
+          {hasUnverified && <>{note && ' '}Text <mark>highlighted like this</mark> has not been verified yet.</>}
+        </p>
+      </div>
+    )}
     <main class="flex-1">
-      <slot />
+      <Fragment set:html={page} />
     </main>
     <Footer />
   </body>

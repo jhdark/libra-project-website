@@ -49,7 +49,7 @@
   <!-- Tritium collection -->
   <rect class="dg-water" x="722" y="86" width="16" height="40" rx="3"/>
   <rect class="dg-water" x="744" y="86" width="16" height="40" rx="3"/>
-  <text class="dg-note" x="741" y="146" text-anchor="middle">HTO</text>
+  <text class="dg-note" x="741" y="146" text-anchor="middle">HTO, TF</text>
   <rect class="dg-box" x="784" y="84" width="76" height="32"/>
   <text x="822" y="105" text-anchor="middle" style="font-size:13px">Oxidiser</text>
   <rect class="dg-water" x="884" y="86" width="16" height="40" rx="3"/>

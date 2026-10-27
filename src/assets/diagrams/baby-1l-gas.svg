@@ -78,7 +78,7 @@
   <text class="dg-note" x="772" y="42" text-anchor="middle">+10 sccm air</text>
   <rect class="dg-water" x="794" y="74" width="16" height="40" rx="3"/>
   <rect class="dg-water" x="816" y="74" width="16" height="40" rx="3"/>
-  <text class="dg-note" x="813" y="134" text-anchor="middle">HTO</text>
+  <text class="dg-note" x="813" y="134" text-anchor="middle">HTO, TF</text>
   <rect class="dg-box" x="846" y="72" width="62" height="32"/>
   <text x="877" y="93" text-anchor="middle" style="font-size:13px">Oxidiser</text>
   <text class="dg-note" x="877" y="124" text-anchor="middle">Pd, 450 °C</text>
@@ -99,7 +99,7 @@
   <text class="dg-note" x="772" y="284" text-anchor="middle">+10 sccm air</text>
   <rect class="dg-water" x="794" y="316" width="16" height="40" rx="3"/>
   <rect class="dg-water" x="816" y="316" width="16" height="40" rx="3"/>
-  <text class="dg-note" x="813" y="376" text-anchor="middle">HTO</text>
+  <text class="dg-note" x="813" y="376" text-anchor="middle">HTO, TF</text>
   <rect class="dg-box" x="846" y="314" width="62" height="32"/>
   <text x="877" y="335" text-anchor="middle" style="font-size:13px">Oxidiser</text>
   <text class="dg-note" x="877" y="366" text-anchor="middle">Pd, 450 °C</text>

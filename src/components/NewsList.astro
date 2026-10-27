@@ -2,6 +2,7 @@
 // News posts as dated rows under a firm rule.
 import type { CollectionEntry } from 'astro:content';
 import { url, formatDate } from '../lib/url';
+import Tbc from './Tbc.astro';
 
 interface Props {
   posts: CollectionEntry<'news'>[];
@@ -18,7 +19,7 @@ const Heading = headingLevel;
       <time datetime={n.data.date.toISOString()}>{formatDate(n.data.date)}</time>
       <div>
         <Heading><a href={url(`news/${n.id}`)}>{n.data.title}</a></Heading>
-        <p>{n.data.summary}</p>
+        <p><Tbc text={n.data.summary} /></p>
       </div>
     </li>
   ))}

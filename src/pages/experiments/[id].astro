@@ -12,7 +12,7 @@ import publications from '../../data/publications.json';
 import datasets from '../../data/datasets.json';
 import CadViewer from '../../components/CadViewer.astro';
 import Diagram from '../../components/Diagram.astro';
-import { keyColour } from '../../lib/experiments';
+import { keyColour, plainText } from '../../lib/experiments';
 import Figure from '../../components/Figure.astro';
 import { photosFor } from '../../lib/media';
 
@@ -34,7 +34,7 @@ const relatedData = datasets.items.filter((d) => d.experiment === experiment.id)
 const gallery = photosFor(experiment.id);
 ---
 
-<Base title={title} description={summary}>
+<Base title={title} description={plainText(summary)} note={needsReview ? `This guide is a draft and has not yet been reviewed by the ${title} team.` : undefined}>
   <div class="identity" style={`--k: ${keyColour(order)}`}>
     <PageHeader title={title} intro={summary}>
       <p class="meta">
@@ -47,12 +47,6 @@ const gallery = photosFor(experiment.id);
       )}
     </PageHeader>
   </div>
-
-  {needsReview && (
-    <div class="review">
-      <p class="wrap">This guide is a draft and has not yet been reviewed by the {title} team.</p>
-    </div>
-  )}
 
   <div class="wrap guide">
     {toc.length > 0 && (
@@ -108,7 +102,7 @@ const gallery = photosFor(experiment.id);
               {repos.map((r) => (
                 <li>
                   <a href={`https://github.com/LIBRA-project/${r.name}`} target="_blank" rel="noopener">{r.name}</a>
-                  {r.description && <span>{r.description}</span>}
+                  {r.description && <span><Tbc text={r.description} /></span>}
                 </li>
               ))}
             </ul>
@@ -152,8 +146,6 @@ const gallery = photosFor(experiment.id);
   .meta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
   .tagline { color: var(--color-ink-2); }
 
-  .review { background: var(--color-signal-wash); border-bottom: var(--rule-hair) solid var(--color-rule); }
-  .review p { padding-block: var(--space-sm); font-size: 0.9375rem; color: var(--color-ink); }
 
   /* Three columns: contents, the guide, key facts. The side columns stay in
      view while the guide scrolls. */

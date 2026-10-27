@@ -1,11 +1,16 @@
 ---
-// Renders a value with any "TBC" set in the muted colour, so unknowns read
-// as blanks for the team to fill rather than as facts.
+// Renders a content string with any "TBC" set in the muted colour, so unknowns
+// read as blanks for the team to fill rather than as facts, and any
+// <mark>…</mark> span highlighted as not yet verified.
 import { tbcParts } from '../lib/experiments';
 
 interface Props {
   text: string;
 }
 const { text } = Astro.props;
+const parts = tbcParts(text);
 ---
-{tbcParts(text).map((p) => (p.tbc ? <span class="tbc">{p.text}</span> : p.text))}
+{parts.map((p) => {
+  const inner = p.tbc ? <span class="tbc">{p.text}</span> : p.text;
+  return p.mark ? <mark>{inner}</mark> : inner;
+})}

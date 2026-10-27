@@ -10,6 +10,9 @@ to GitHub Pages; `site` and `base` in `astro.config.mjs` come from the
 `SITE_URL` / `BASE_PATH` env vars so the same build can target an MIT domain.
 Build internal links with `url()` from `src/lib/url.ts`, never hardcoded
 absolute paths.
+In Markdown and MDX, write internal links from the site root
+(`[BABY 1 L](/experiments/baby-1l)`); `src/lib/base-links.mjs` adds the base.
+Never use relative page links (`../baby-1l`): they break without a trailing slash.
 
 ## Writing style
 
@@ -17,6 +20,20 @@ absolute paths.
   Use a comma, colon, parentheses, or a period instead.
 - Don't invent facts about the experiments or people. Mark anything unknown as
   TBC or TODO for the team to fill in.
+
+## Fact-checking
+
+The sources of truth for facts about the experiments are the published
+papers (the BABY papers are in `public/media/papers/`) and the repositories
+of the LIBRA-project GitHub organisation, above all each run's
+`data/general.json` and `data/processed_data.json`. For people, a public
+profile or ORCID. Anything not yet checked against one of these is wrapped
+in `<mark>…</mark>`: in Markdown and MDX bodies, and inside strings in
+frontmatter and `src/data/*.json`, which `Tbc` renders. Marked text shows in
+the review pink, and any page holding some gets a notice under the nav.
+`docs/fact-check.md` records what was checked, against what, and what is
+still open. When the team confirms a marked fact, remove the tags (and update
+the log); never add a fact without either a source or a mark.
 
 ## PSFC brand
 
@@ -52,13 +69,16 @@ are here.
   copy in only the individual files the site uses. Use only what is public (posters, conference talks,
   published papers) for site copy; ARPA-E quarterly reviews and memos,
   safety and beryllium committee decks, budgets, unpublished results and
-  personal data stay off the site.
+  personal data stay off the site. Results already public in a LIBRA-project
+  GitHub repository may be shown, labelled as not yet published.
 
 ## Development
 
 Node comes from the conda env: `conda activate libra-website`. Then
 `npm install`, `npm run dev` (serves at `localhost:4321/libra-project-website/`),
-`npm run build`. There is no test suite.
+`npm run build`. There is no test suite; after a build,
+`python3 scripts/check-links.py dist /libra-project-website` checks every
+internal link (add `--external` to test outside links too).
 
 ## Architecture
 
@@ -101,7 +121,8 @@ the rules below.
 - **Dark band:** `on-ink`, `on-ink-2`, `on-ink-rule`, `on-ink-link` for text
   on an `ink` background (the homepage open data band). Any rule that paints
   a dark surface also sets its text colour.
-- **Experiment keys:** `key-1` to `key-6` from the PSFC accent palette.
+- **Experiment keys:** `key-1` to `key-5`, five even stops along
+  matplotlib's plasma colour map (dark blue to yellow).
 - **Type:** `font-display` Hanken Grotesk 600 for heads, nav and buttons
   (standing in for Neue Haas Grotesk); `font-body` Roboto Serif for reading;
   `font-mono` Roboto Mono only for figures, dates in tables, DOIs and code.
@@ -161,10 +182,10 @@ left, its line or link right, a firm rule beneath); `.num` and `.tbc`;
 
 Each experiment gets a key colour from its `order` in frontmatter
 (`keyColour()` in `src/lib/experiments.ts`: order 1 is `key-1`, and so on,
-wrapping after 6). A new experiment needs no code change. The key appears as
+wrapping after 5). A new experiment needs no code change. The key appears as
 a square beside the name in the ledger, the experiments index, the data
 table, and as a band under the guide's header. Keys are fills with a 1px ink
-edge, never text colour (the pastel keys fail contrast as text).
+edge, never text colour (the light keys fail contrast as text).
 
 ### Rules that keep it from looking generated
 
@@ -180,4 +201,4 @@ edge, never text colour (the pastel keys fail contrast as text).
   is limited to colour changes on hover, and the CAD viewer stops rotating
   under reduced motion.
 - Copy: British English, no em dashes, no buzzwords; TBC and TODO stay
-  visible.
+  visible, and a TODO paragraph is wrapped in `<mark>` so it shows in pink.

@@ -10,4 +10,4 @@ is out and archived on Zenodo
 ([10.5281/zenodo.23390926](https://doi.org/10.5281/zenodo.23390926)).
 Documentation is on [Read the Docs](https://libra-toolbox.readthedocs.io/en/latest/).
 
-TODO: highlight the main changes in this release.
+<mark>TODO: highlight the main changes in this release.</mark>

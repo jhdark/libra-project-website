@@ -5,6 +5,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import LinkIcon from './LinkIcon.astro';
 import { url } from '../lib/url';
+import Tbc from './Tbc.astro';
 
 export type PersonLinks = {
   email?: string;
@@ -58,9 +59,9 @@ const psfcIcon = url('images/brand/psfc-icon-32.png');
   )}
   <div>
     <h3>{p.name}</h3>
-    {(p.role || !p.formerly) && <p class="role">{p.role || 'Role TBC'}</p>}
-    {p.affiliation && <p class="aff">{p.affiliation}</p>}
-    {p.formerly && <p class="formerly">Formerly {p.formerly}</p>}
+    {(p.role || !p.formerly) && <p class="role"><Tbc text={p.role || 'Role TBC'} /></p>}
+    {p.affiliation && <p class="aff"><Tbc text={p.affiliation} /></p>}
+    {p.formerly && <p class="formerly"><Tbc text={`Formerly ${p.formerly}`} /></p>}
     {links.length > 0 && (
       <ul class="links">
         {links.map((k) => (

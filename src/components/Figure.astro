@@ -5,6 +5,7 @@
 import { Image } from 'astro:assets';
 import type { Photo } from '../lib/media';
 import { formatMonth } from '../lib/media';
+import Tbc from './Tbc.astro';
 
 interface Props {
   photo: Photo;
@@ -18,8 +19,8 @@ const { photo: p, sizes = '(min-width: 60rem) 33vw, 100vw', ratio = '4 / 3' } = 
     <Image src={p.image} alt={p.alt} widths={[480, 800, 1200, 1600]} sizes={sizes} loading="lazy" />
   </div>
   <figcaption>
-    {p.caption}
-    <span class="meta">{[formatMonth(p.date), p.credit].filter(Boolean).join(', ')}</span>
+    <Tbc text={p.caption} />
+    <span class="meta"><Tbc text={[formatMonth(p.date), p.credit].filter(Boolean).join(', ')} /></span>
   </figcaption>
 </figure>
 
