@@ -21,6 +21,20 @@ Never use relative page links (`../baby-1l`): they break without a trailing slas
 - Don't invent facts about the experiments or people. Mark anything unknown as
   TBC or TODO for the team to fill in.
 
+## Fact-checking
+
+The sources of truth for facts about the experiments are the published
+papers (the BABY papers are in `public/media/papers/`) and the repositories
+of the LIBRA-project GitHub organisation, above all each run's
+`data/general.json` and `data/processed_data.json`. For people, a public
+profile or ORCID. Anything not yet checked against one of these is wrapped
+in `<mark>…</mark>`: in Markdown and MDX bodies, and inside strings in
+frontmatter and `src/data/*.json`, which `Tbc` renders. Marked text shows in
+the review pink, and any page holding some gets a notice under the nav.
+`docs/fact-check.md` records what was checked, against what, and what is
+still open. When the team confirms a marked fact, remove the tags (and update
+the log); never add a fact without either a source or a mark.
+
 ## PSFC brand
 
 LIBRA is a group within the MIT Plasma Science and Fusion Center, and the site

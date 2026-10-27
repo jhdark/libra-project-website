@@ -1,49 +1,66 @@
 ---
 title: BABY 1 L
-tagline: Litre-scale molten salt tritium breeding, from ClLiF to FLiBe
-summary: The 1 L BABY experiments irradiate a litre of molten salt with 14 MeV DT fusion neutrons in a double-walled vessel, measuring tritium release and wall permeation, and include the first FLiBe campaign.
+tagline: Litre-scale tritium breeding, from ClLiF and FLiBe to lead-lithium and lithium oxide
+summary: The 1 L BABY experiments irradiate a litre of breeder with 14 MeV DT fusion neutrons, in an outer vessel that collects the tritium permeating the crucible wall. Twelve ClLiF runs were followed by the first FLiBe campaign.
 status: active
 order: 2
 stage: { volume: 1, image: ../../assets/stages/baby-1l.png }
 needsReview: true
 facts:
-  - { label: Breeder volume, value: "1 L" }
-  - { label: Breeders tested, value: "ClLiF (LiCl-LiF surrogate salt), FLiBe; LiPb and Li oxide planned (TBC)" }
-  - { label: Salt temperature, value: "About 650 °C (ClLiF); FLiBe TBC" }
-  - { label: Vessel, value: "Double-walled, collects tritium that permeates the crucible wall" }
-  - { label: Neutron source, value: "DT neutron generators (14 MeV), 10⁸ to 10⁹ n/s" }
+  - { label: Breeder volume, value: "1 L (1.88 kg of ClLiF, 1.95 kg of FLiBe)" }
+  - { label: Breeders, value: "ClLiF (12 runs), FLiBe (from November 2025); lead-lithium and lithium oxide in preparation" }
+  - { label: Salt temperature, value: "ClLiF: a minimum of 627 °C to 685 °C, depending on the run<mark>; FLiBe TBC</mark>" }
+  - { label: Vessel, value: "Inconel 625 crucible inside a 304L stainless steel outer vessel, which collects tritium that permeates the crucible wall" }
+  - { label: Neutron source, value: "Sealed-tube DT generators (Thermo Fisher A-325 and P-383, about 10⁸ n/s) and an nGen-400 (over 10⁹ n/s) from run 6" }
+  - { label: Sweep gas, value: "Helium, or helium with 1000 ppm to 3.65% H₂" }
   - { label: Tritium measurement, value: "Water bubblers and liquid scintillation counting" }
-  - { label: Neutron diagnostics, value: "Activation foils, proton recoil, diamond detector" }
-  - { label: Measured TBR, value: "About six times the 100 mL value (exact value TBC)" }
+  - { label: Neutron diagnostics, value: "Niobium and zirconium activation foils (NaI counting) and a proton recoil telescope" }
+  - { label: Measured TBR, value: "2.45 × 10⁻³ (ClLiF runs 1 to 4, weighted by fluence); modelled 2.08 × 10⁻³" }
 repos:
-  - { name: BABY-1L-run-1, description: "1 L run 1 data and analysis" }
-  - { name: BABY-1L-run-2 }
+  - { name: BABY-1L-run-1, description: "Data and analysis of BABY-1L run 1" }
+  - { name: BABY-1L-run-2, description: "Data and analysis of BABY-1L run 2" }
   - { name: BABY-1L-run-3 }
   - { name: BABY-1L-run-4 }
-  - { name: FLiBe-1L-run-1, description: "First FLiBe breeding run" }
-  - { name: FLiBe-1L-run-3, description: "Hot FLiBe irradiation, 21 June 2026" }
+  - { name: BABY-1L-run-6 }
+  - { name: BABY-1L-run-7 }
+  - { name: BABY-1L-run-8 }
+  - { name: BABY-1L-Run-9 }
+  - { name: BABY-1L-run-10 }
+  - { name: BABY-1L-run-11 }
+  - { name: BABY-1L-run-12 }
+  - { name: baby-1l-paper, description: "Data and analysis for the BABY 1 L paper" }
+  - { name: FLiBe-1L-run-1, description: "First FLiBe irradiation, solid salt" }
+  - { name: FLiBe-1L-run-2, description: "Second irradiation of solid FLiBe" }
+  - { name: FLiBe-1L-run-3, description: "First irradiation of molten FLiBe" }
   - { name: FLiBe-1L-run-4, description: "Repeat of molten FLiBe run" }
-  - { name: BABY-LiPb }
-  - { name: BABY-LiOx }
-  - { name: nGen-log-analysis, description: "Neutron generator logs for runs 7 to 11" }
-  - { name: BABY-tritium-transport, description: "OpenMC + OpenFOAM tritium transport model" }
-  - { name: baby-1l-paper, description: "Reproducible analysis for the BABY 1L paper" }
+  - { name: FLiBe-1L-paper, description: "Data and analysis for the report on the first FLiBe breeding experiment" }
+  - { name: BABY-LiPb, description: "Lead-lithium run, in preparation (OpenMC model so far)" }
+  - { name: BABY-LiOx, description: "Lithium oxide run, in preparation" }
+  - { name: nGen-log-analysis, description: "Analysis of the nGen-400 generator logs" }
+  - { name: Nursery_layout, description: "Neutronics of cross-irradiation between parallel BABY experiments in the Vault nursery" }
+  - { name: BABY-tritium-transport, description: "Tritium transport modelling in BABY 1 L with OpenMC and FESTIM" }
 ---
 
 > **Draft guide.** Section headings show the proposed structure for every
 > experiment guide. Text marked TODO needs input from the experiment team.
+> Sources: Delaporte-Mathurin et al.,
+> [Nucl. Fusion 66 076046 (2026)](https://doi.org/10.1088/1741-4326/ae6f31),
+> which reports ClLiF runs 1 to 4, and the run repositories listed below.
 
 ## Overview
 
 BABY 1 L is the second stage of BABY (Build A Better Yield), after
-[BABY 100 mL](/experiments/baby-100ml). It scales the breeder up tenfold and holds it
-in a double-walled vessel, so that tritium permeating through the crucible
-walls can be collected as well as tritium released into the sweep gas.
+[BABY 100 mL](/experiments/baby-100ml). It scales the breeder volume up
+tenfold, with better thermal and gas handling, sparging and real-time neutron
+diagnostics. The crucible sits inside an outer vessel, so that tritium
+permeating through the crucible walls is collected as well as tritium
+released into the gas above the salt.
 
-The 1 L experiments have run since autumn 2024, first with ClLiF, the
-beryllium-free surrogate salt used at 100 mL, and then with FLiBe. They lead
-to [LIBRA-Pi](/experiments/libra-pi) (about 100 L) and then
-[LIBRA-One](/experiments/libra-one) (700 L).
+The 1 L experiments have run since November 2024: twelve runs with ClLiF,
+the beryllium-free surrogate salt used at 100 mL, until August 2025, then
+FLiBe from November 2025. Runs with lead-lithium and lithium oxide are in
+preparation. They lead to [LIBRA-Pi](/experiments/libra-pi) (about 100 L)
+and then [LIBRA-One](/experiments/libra-one) <mark>(700 L)</mark>.
 
 ## Campaigns
 
@@ -51,96 +68,218 @@ to [LIBRA-Pi](/experiments/libra-pi) (about 100 L) and then
 | --- | --- | --- | --- |
 | BABY 1 L | ClLiF (LiCl-LiF) | 1 to 12 | Completed |
 | FLiBe 1 L | FLiBe | 1 to 4 | Active |
-| LiPb | Lead-lithium | TBC | TBC |
-| LiOx | Lithium oxide (TBC) | TBC | TBC |
+| LiPb | Lead-lithium | TBC | In preparation |
+| LiOx | Lithium oxide | TBC | In preparation |
+
+The published paper covers ClLiF runs 1 to 4; the later runs are in their
+repositories.
 
 ## Results
 
-The ClLiF runs measured a tritium breeding ratio about six times higher than
-at 100 mL, mostly because the larger volume of salt intercepts more of the
-neutrons (about 7% rather than 2%), in good agreement with the neutronics
-models. Adding about 1000 ppm of hydrogen to the gas sped up tritium release
-roughly tenfold (from about 60 days to 4 days in one comparison) and let the
-team see tritium permeating through the vessel walls for the first time. The
-first campaign is published in
+Across runs 1 to 4 the measured tritium breeding ratio (TBR) was
+2.45 × 10⁻³, averaged over the runs weighted by neutron fluence. That is six
+times the 100 mL value, largely because the larger volume of salt covers a
+greater solid angle around the neutron source. The OpenMC model gives
+2.08 × 10⁻³, in very good agreement.
+
+Tritium came out of the salt more slowly than at 100 mL. The release is
+limited by diffusion through the salt (a Sherwood number of about 1 in runs
+1 to 3), between 630 °C and 750 °C under helium. Bubbling helium through the
+salt with a simple sparger barely changed this.
+
+Adding hydrogen to the helium changed it a great deal. With 1000 ppm H₂ from
+the start (run 4), the run was over in four days, against 30 to 60 days with
+pure helium, which fits an isotopic exchange mechanism. Tritium permeating
+into the outer vessel stream was only detected once hydrogen was added. As at
+100 mL, more than 96% of the tritium was collected in insoluble forms (HT or
+T₂), whatever the gas, so the faster release is not explained by a change of
+speciation alone. The results are published in
 [Nuclear Fusion 66, 076046 (2026)](https://doi.org/10.1088/1741-4326/ae6f31).
 
-TODO: FLiBe 1 L results.
+The first two FLiBe runs irradiated the salt while solid; run 3, on
+22 July 2026, was the first irradiation of molten FLiBe. TODO: FLiBe results,
+once published. The analysis for a
+report on the first FLiBe experiment is in
+[FLiBe-1L-paper](https://github.com/LIBRA-project/FLiBe-1L-paper).
+
+## Runs
+
+Each run's `data/general.json` records its salt, gas, generator and purpose.
+Measured TBRs are given for the published runs, 1 to 4.
+
+| Run | Irradiated | Generator | Gas and purpose | Measured TBR |
+| --- | --- | --- | --- | --- |
+| 1 | 4 November 2024 | A-325 | Helium; first irradiation of the 1 L set-up | 2.39 × 10⁻³ |
+| 2 | 10 December 2024 | P-383 | Helium; a 24 hour irradiation for a higher fluence | 2.15 × 10⁻³ |
+| 3 | 17 March 2025 | A-325 | Helium, sparged; 1000 ppm H₂ from 4 April | 4.03 × 10⁻³ |
+| 4 | 1 and 6 May 2025 | A-325 | 1000 ppm H₂, sparged; 3.5% H₂ from 18 May | 2.58 × 10⁻³ |
+| 5 | <mark>TBC</mark> | <mark>TBC</mark> | <mark>No run repository</mark> | <mark>TBC</mark> |
+| 6 | 30 May 2025 | nGen-400 | 3.5% H₂; first run with the nGen-400 | Not yet published |
+| 7 | 3 June 2025 | nGen-400 | Back to helium after months of hydrogen | Not yet published |
+| 8 | 9 June 2025 | nGen-400 | Helium with moisture in the outer vessel; 3.5% H₂ from 12 June | Not yet published |
+| 9 | 16 June 2025 | nGen-400 | 3.5% H₂; control run for the shielding tests | Not yet published |
+| 10 | 18 June 2025 | nGen-400 | 3.5% H₂; borated phenyl laminate shielding test | Not yet published |
+| 11 | 20 June 2025 | nGen-400 | 3.5% H₂; Ricorad and 5% borated polyethylene shielding test | Not yet published |
+| 12 | 4 August 2025 | nGen-400 | 3.65% H₂; high source term in a tritium-free system | Not yet published |
+
+| FLiBe run | Irradiated | Generator | Gas and purpose | Measured TBR |
+| --- | --- | --- | --- | --- |
+| 1 | 19 November 2025 | P-383 | Helium; first, cold irradiation of FLiBe | Not yet published |
+| 2 | 10 March 2026 | nGen | Helium; cold irradiation, a replication of run 1 | Not yet published |
+| 3 | 22 July 2026 | nGen | Helium, then 3.65% H₂; first molten irradiation | Not yet published |
+| 4 | <mark>TBC</mark> | <mark>TBC</mark> | Repeat of the molten FLiBe run | Not yet published |
+
+Run 2 had a higher neutron fluence. Its heater failed mid-run and the salt
+froze before it was re-melted, which may explain its slower release. The
+high TBR in run 3 comes from a high tritium release after hydrogen was
+added, likely including tritium held up from earlier runs. From run 4 on,
+cyclotrons and other neutron sources in the MIT Vault lab may have
+cross-irradiated the salt by an amount that could not be quantified. For
+runs 9 to 11 the nGen-400 stood 1 m from the salt and 105 cm above the
+floor, to test shielding; for run 11 the outer vessel was also wrapped in
+alumina wool and fibreglass to raise the salt temperature.
 
 ## Experimental setup
 
 <CadViewer src="models/baby_1l_model.glb" cutaway="models/baby_1l_cutaway.glb" alt="BABY 1 L test assembly" />
 
-The 1 L test assembly, from the team's CAD. Photos and drawings of the
-set-up are in the "In the lab" section below.
+<mark>The 1 L test assembly, from the team's CAD. There have been several
+vessel iterations; which one this model shows is TBC.</mark> Photos and
+drawings of the set-up are in the "In the lab" section below.
 
 TODO: a principle diagram of the 1 L set-up.
 
 ### Breeder and containment
 
-The litre of salt sits in an Inconel 625 crucible inside a secondary vessel,
-heated to about 650 °C for the ClLiF runs. The secondary vessel collects the
-tritium that permeates through the crucible wall.
+1.88 kg of ClLiF, the same 30.5 mol% LiF, 69.5 mol% LiCl eutectic as at
+100 mL, made from 99.9% anhydrous LiCl (Apollo Scientific) and 99.99% LiF
+(Thermo Scientific) with natural lithium, fills a cylindrical Inconel 625
+crucible 14.6 cm across and 12.1 cm tall, with 3 mm walls. The crucible hangs
+from its gas lines inside an outer vessel of 304L stainless steel, 27.3 cm
+across and 21.1 cm tall, closed by a 2.54 cm thick conflat blank as the lid.
+Ceramic insulation plates line the bottom of the outer vessel and cover the
+crucible, and silica fabric lines its walls. The assembly sits on an epoxy
+workbench lined with kaowool.
 
-TODO: salt preparation, temperature control and the FLiBe operating
-temperature.
+### Heating
+
+A 1200 W cartridge heater (Watlow FIREROD, Incoloy 800 sheath) runs down the
+vessel axis into a copper-lined re-entrant tube, to 0.9 cm above the bottom
+of the crucible. Inside the outer vessel, a 1000 W radiative furnace
+surrounds the crucible. Each has its own PID controller. At steady state the
+heater reaches its 750 °C setpoint but the furnace reaches only 610 °C of its
+700 °C, so the salt is at least 630 °C throughout: above the 510 °C melting
+point of the eutectic, but below the 700 °C target used at 100 mL. An alarm
+cuts the cartridge heater if the top of the workbench reaches 75 °C.
+
+TODO: salt preparation and the FLiBe operating temperature.
 
 ### Neutron source
 
-Commercial sealed-tube DT neutron generators provide 14 MeV neutrons at
-10⁸ to 10⁹ neutrons per second, for irradiations of 4 to 12 hours. A newer
-Starfire generator cut a typical irradiation from 12 hours to about one
-hour.
+The first runs used two commercial sealed-tube DT neutron generators, a
+Thermo Fisher A-325 (runs 1, 3 and 4, about 0.8 to 0.95 × 10⁸ neutrons per
+second) and a Thermo Fisher P-383 (run 2 and FLiBe run 1, about
+2.6 to 2.9 × 10⁸). The generator lies under the workbench, its axis parallel
+to the bench, with a gap of under 1.3 cm, cooled by a blower and a fan. Some
+DD reactions add neutrons of about 2.45 MeV, which the activation foils do
+not count. Irradiations with these generators took about 12 hours.
 
-Runs 7 to 11, in June 2025, used the Starfire nGen-400 generator; its
-logs are analysed in
+From run 6, in May 2025, the runs used an nGen-400 generator<mark>, made by
+Starfire Industries</mark>. At 1.3 to 1.9 × 10⁹ neutrons per second it cut a
+typical irradiation to 1 to 3 hours. Under the bench, its target plane is
+5.5 cm below the epoxy plate, aligned with the vessel axis. Its logs are
+analysed in
 [nGen-log-analysis](https://github.com/LIBRA-project/nGen-log-analysis).
 
-TODO: which generator the other runs used, source position and shielding.
+TODO: source position options and shielding.
 
 ### Gas handling and tritium collection
 
 <Diagram name="baby-1l-gas" alt="Diagram of the BABY 1 L gas system. Gas from a helium or helium-hydrogen supply passes oxygen and moisture scrubbers, then two mass flow controllers. The inner vessel stream (30 sccm) enters the crucible and is either bubbled through the salt by a sparger or let in above it, then leaves through the lid. The outer vessel stream (50 sccm) enters beside the crucible, near the bottom of the outer vessel, and leaves at the lid. Each stream passes particulate filters, has 10 sccm of air added, and runs through two water bubbler vials, a palladium oxidiser at 450 °C and two more vials before venting. A DT neutron generator sits under the bench." caption="The BABY 1 L gas system, simplified and not to scale. The inner vessel stream (blue) carries tritium released from the salt; the outer vessel stream (orange) carries tritium that permeates the crucible wall. Drawn from Delaporte-Mathurin et al., Nucl. Fusion 66 076046 (2026), section 2.1.4." />
 
-Dry, oxygen-free gas (helium, or helium with a little hydrogen) flows over
-the salt and through the secondary vessel. Each gas stream then passes two
-sets of 2 × 2 water bubbler vials separated by a catalytic oxidation
-furnace: the first set captures water-soluble tritium (HTO), and the furnace
-converts insoluble forms (HT, T₂) so the second set captures those too. The
-gas keeps bubbling during and after irradiation, and vials are sampled
-periodically. The minimum detectable activity is about 0.07 Bq per vial.
+The gas, ultra-high-purity helium or 1000 ppm H₂ in helium, passes oxygen
+and moisture scrubbers and is split into two streams by mass flow
+controllers:
+
+- the **inner vessel stream** (30 sccm) passes through the crucible, either
+  as cover gas over the salt or sparged through it from a tube lowered to
+  about 1.3 cm above the bottom, and collects tritium released from the salt;
+- the **outer vessel stream** (50 sccm) sweeps the outer vessel around the
+  crucible and collects tritium that permeates the crucible wall.
+
+Each stream passes sintered particulate filters, has 10 sccm of air mixed in,
+and runs through its own bubbler: two water vials, which capture soluble
+tritium (HTO, TF), a palladium-on-alumina oxidiser at 450 °C, which converts
+insoluble forms (HT, T₂) to water, and two more vials. The system runs at
+about 3 PSIG; while vials are sampled, the gas is diverted to vent. No
+clogging from salt vapour or particles was seen.
+
+Each sample of 10 mL of bubbler water and 10 mL of Ultima Gold LLT cocktail
+is counted for 100 minutes on a PerkinElmer Tri-Carb 5110 TR. The minimum
+detectable activity is under 0.1 Bq per sample.
 
 ## Diagnostics
 
-- **Activation foils** measured by HPGe and NaI spectroscopy give the neutron
-  fluence on the crucible.
-- **Proton recoil telescope (PRT)** and **diamond detectors** monitor the
-  neutron source in real time.
+- **Activation foils** of niobium and zirconium, about 5 cm above the neutron
+  emission point on top of and below the generator tube, give the total
+  neutron fluence for each run: ⁹³Nb(n,2n)⁹²ᵐNb (threshold 8.93 MeV,
+  934 keV gamma) and ⁹⁰Zr(n,2n)⁸⁹Zr (threshold 12.1 MeV, 909 keV gamma).
+  They are counted on two 10 cm NaI detectors in a lead shield. The foils are
+  the largest source of uncertainty in the measured TBR.
+- **The proton recoil telescope (PRT)** monitors the neutron emission rate in
+  real time: a polyethylene converter foil in front of four diamond detectors
+  in a telescope, counting coincidences to reject background. It confirmed
+  the spectrum is dominated by 14 MeV DT neutrons.
 - **Liquid scintillation counting (LSC)** of bubbler samples gives tritium
   release over time.
 
+From FLiBe run 1 the foils are also counted on an HPGe detector.
+
+## Modelling
+
+The neutronics model is built in OpenMC with ENDF/B-VIII.0 nuclear data. It
+includes the vessel assembly, the generator, its lead and polyethylene
+supports, the workbench and, unlike the 100 mL model, the MIT Vault lab
+itself, which scatters neutrons back into the salt. A 0D model of tritium
+release, fitted to each run, gives the mass transport coefficients of the
+inner and outer vessel release paths.
+
 ## Running an experiment
 
-The outline of a BABY run, as presented by the team at SOFE 2025:
+The outline of a BABY 1 L run, as presented by the team at SOFE 2025 and
+recorded in the run repositories:
 
-1. Add the breeder to the crucible and place it in its secondary vessel.
-2. Heat to the operating temperature.
-3. Flow dry, oxygen-free gas through the inner and outer vessels.
-4. Irradiate with 14 MeV neutrons at 10⁸ to 10⁹ n/s for 4 to 12 hours.
+1. Fill the crucible with the breeder and hang it in the outer vessel.
+2. Heat the salt with the cartridge heater and furnace.
+3. Flow gas, cleaned of oxygen and moisture, through the inner and outer
+   vessels.
+4. Irradiate with 14 MeV neutrons, at 10⁸ to 10⁹ neutrons per second for 1
+   to 12 hours depending on the generator.
 5. Let the gas bubble through the water bubblers during and after
-   irradiation, sampling occasionally.
+   irradiation, sampling the vials from time to time.
 6. Count the samples by liquid scintillation.
 
 TODO: the detailed checklist, written so a new team member could follow it.
 
 ## Data and analysis
 
-Each run has its own GitHub repository created from a common template. Raw
-data lives in `data/` (general run information, LSC data, neutron detection
-data) and analysis notebooks in `analysis/` (OpenMC neutronics model and
-tritium transport model). Every release is archived on Zenodo with a DOI.
+Each experiment has its own version-controlled repository holding its data,
+simulation, analysis and documentation, with the analysis run in Jupyter
+notebooks and checked by continuous integration. The analysis uses
+[libra-toolbox](https://libra-toolbox.readthedocs.io/en/latest/), the
+team's open-source Python package for neutronics models, LSC data,
+activation foils, PRT data and tritium transport models. The data behind the
+paper is archived on Zenodo
+([10.5281/zenodo.17201068](https://doi.org/10.5281/zenodo.17201068)).
 
-Analysis uses [libra-toolbox](https://libra-toolbox.readthedocs.io/en/latest/),
-the shared Python package for neutron detection and tritium analysis.
+Each run repository is created from a common template,
+`libra-run-template`.
+Raw data lives in `data/`: `general.json` for the run information, with LSC
+data in `data/tritium_detection/` and neutron detection data in
+`data/neutron_detection/`. Analysis lives in `analysis/neutron/` (the OpenMC
+model and foil analysis) and `analysis/tritium/` (the tritium release model).
+Each GitHub release creates a Zenodo record with a DOI, linked to the
+[LIBRA-project community](https://zenodo.org/communities/libra-project/records). So far runs 1 to 4, FLiBe runs 1
+and 2 and the two papers have releases.
 
 TODO: how to start a new run repository from the template.

@@ -3,7 +3,7 @@
   "zenodoCommunity": "https://zenodo.org/communities/libra-project/records",
   "items": [
     { "kind": "software", "date": "2026-10-15", "doi": "10.5281/zenodo.23390926", "title": "libra-toolbox v0.10", "experiment": "" },
-    { "kind": "dataset", "date": "2025-12-16", "doi": "10.5281/zenodo.17955510", "title": "1L BABY FLiBe Run 1 Activation Foil Measurement (HPGe)", "experiment": "baby-1l" },
+    { "kind": "dataset", "date": "2025-12-16", "doi": "10.5281/zenodo.17955510", "title": "1L BABY FLiBe Run 1 Activation Foil Measurement - HPGe", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-11-26", "doi": "10.5281/zenodo.17725532", "title": "1L BABY FLiBe Run 1 NaI Activation Foil Measurement", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-11-25", "doi": "10.5281/zenodo.17715864", "title": "1L BABY FLiBe Run 1 PRT Detector Data", "experiment": "baby-1l" },
     { "kind": "software", "date": "2025-09-19", "doi": "10.5281/zenodo.17160928", "title": "BABY-1L-run-1: Release 0.6", "experiment": "baby-1l" },
@@ -12,7 +12,7 @@
     { "kind": "software", "date": "2025-09-19", "doi": "10.5281/zenodo.17160762", "title": "BABY-1L-run-4: Release 0.1", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-07-27", "doi": "10.5281/zenodo.16473161", "title": "1L BABY Run 7 Activation Foil Measurement", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-07-02", "doi": "10.5281/zenodo.15794193", "title": "1L BABY Run 6 Activation Foils Measurement", "experiment": "baby-1l" },
-    { "kind": "dataset", "date": "2025-06-02", "doi": "10.5281/zenodo.15579750", "title": "PRT data from ROSY for BABY-1L-run-6", "experiment": "baby-1l" },
+    { "kind": "dataset", "date": "2025-06-02", "doi": "10.5281/zenodo.15579750", "title": "PRT data from ROSY for BABY-1L-run-6 on 5/30/25", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-06-02", "doi": "10.5281/zenodo.15579725", "title": "BABY-1L-run-6 neutron generator data", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-05-17", "doi": "10.5281/zenodo.15447040", "title": "1L BABY Run 4B Activation Foils Measurement", "experiment": "baby-1l" },
     { "kind": "dataset", "date": "2025-05-17", "doi": "10.5281/zenodo.15447034", "title": "1L BABY Run 4A Activation Foils Measurement", "experiment": "baby-1l" },

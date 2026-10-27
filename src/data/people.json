@@ -1,5 +1,5 @@
 {
-  "_note": "Team list as of October 2026. Each entry: name, role, affiliation (only for people outside MIT; leave empty for MIT and MIT PSFC); formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo.",
+  "_note": "Team list as of October 2026. Each entry: name, role, affiliation (only for people outside MIT; leave empty for MIT and MIT PSFC); formerly (for people who have moved on: what they did on LIBRA); photo (a file in src/assets/people/); links (psfc, profile for another institution's page, website, scholar, orcid as the bare ID, github as the username, linkedin, email). Empty roles show as Role TBC. Everyone should check their own entry, including their photo. Text in <mark>…</mark> has not been verified against a public source (a profile page, ORCID or a paper).",
   "groups": [
     {
       "name": "Leadership",
@@ -7,7 +7,7 @@
       "members": [
         {
           "name": "Kevin Woller",
-          "role": "Principal research scientist, LIBRA principal investigator, and group leader for the accelerator and molten salt laboratories",
+          "role": "Principal research scientist, <mark>LIBRA principal investigator</mark>, and group leader for the accelerator and molten salt laboratories",
           "affiliation": "",
           "photo": "kevin-woller.jpg",
           "links": {
@@ -33,7 +33,7 @@
       "members": [
         {
           "name": "Weiyue Zhou",
-          "role": "Research scientist, molten salt experiments",
+          "role": "Research scientist<mark>, molten salt experiments</mark>",
           "affiliation": "",
           "photo": "weiyue-zhou.jpg",
           "links": {
@@ -42,7 +42,7 @@
         },
         {
           "name": "Stefano Segantin",
-          "role": "Research scientist",
+          "role": "<mark>Research scientist</mark>",
           "affiliation": "",
           "photo": "stefano-segantin.jpg",
           "links": {
@@ -104,7 +104,7 @@
         },
         {
           "name": "Edward Lamere",
-          "role": "MIT EHS liaison",
+          "role": "<mark>MIT EHS liaison</mark>",
           "affiliation": "",
           "links": {
             "profile": "https://ehs.mit.edu/team-members/edward-lamere-phd/"
@@ -118,7 +118,7 @@
       "members": [
         {
           "name": "Nikola Goleš",
-          "role": "PhD student, tritium speciation and release in the BABY experiments",
+          "role": "PhD student<mark>, tritium speciation and release in the BABY experiments</mark>",
           "affiliation": "",
           "links": {
             "psfc": "https://www.psfc.mit.edu/about/people/students/nikola-goles/",
@@ -139,7 +139,7 @@
         },
         {
           "name": "Collin Dunn",
-          "role": "PhD student, neutronics",
+          "role": "PhD student<mark>, neutronics</mark>",
           "affiliation": "",
           "photo": "collin-dunn.jpg",
           "links": {
@@ -149,7 +149,7 @@
         },
         {
           "name": "Emily Edwards",
-          "role": "PhD student, neutron detection",
+          "role": "<mark>PhD student, neutron detection</mark>",
           "affiliation": "",
           "photo": "emily-edwards.jpg",
           "links": {
@@ -175,7 +175,7 @@
           "name": "Dennis Whyte",
           "role": "Group chief executive officer",
           "affiliation": "UK Atomic Energy Authority",
-          "formerly": "LIBRA principal investigator and MIT PSFC faculty",
+          "formerly": "<mark>LIBRA principal investigator</mark>, and director of the MIT Plasma Science and Fusion Center",
           "links": {
             "profile": "https://www.gov.uk/government/people/dennis-whyte"
           },
@@ -183,7 +183,7 @@
         },
         {
           "name": "Ethan Peterson",
-          "role": "MIT PSFC",
+          "role": "Assistant professor of nuclear science and engineering, and group leader for neutronics",
           "affiliation": "",
           "photo": "ethan-peterson.jpg",
           "links": {
@@ -195,7 +195,7 @@
         {
           "name": "Rémi Delaporte-Mathurin",
           "role": "",
-          "affiliation": "Neutrogen Technologies",
+          "affiliation": "<mark>NeutroGen Technologies</mark>",
           "formerly": "research scientist, MIT PSFC",
           "photo": "remi-delaporte-mathurin.jpg",
           "links": {
@@ -208,7 +208,7 @@
           "name": "Samuele Meschini",
           "role": "Assistant professor",
           "affiliation": "Politecnico di Torino",
-          "formerly": "postdoc and fuel cycle modelling lead, MIT PSFC",
+          "formerly": "postdoc<mark> and fuel cycle modelling lead</mark>, MIT PSFC",
           "photo": "samuele-meschini.jpg",
           "links": {
             "profile": "https://www.polito.it/en/staff?p=033350",
@@ -220,7 +220,7 @@
         },
         {
           "name": "Davide Pettinari",
-          "role": "",
+          "role": "PhD student",
           "affiliation": "Politecnico di Torino",
           "links": {
             "profile": "https://www.polito.it/en/staff?p=055521",
@@ -244,8 +244,8 @@
         },
         {
           "name": "Toshiro Sakabe",
-          "role": "Neutron diagnostics",
-          "affiliation": "Kyoto University",
+          "role": "Postdoctoral research associate",
+          "affiliation": "Brookhaven National Laboratory",
           "links": {
             "orcid": "0000-0001-8403-0845"
           }

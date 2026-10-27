@@ -1,10 +1,10 @@
 {
-  "_note": "type is one of: article, preprint, talk, poster, thesis. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public.",
+  "_note": "type is one of: article, preprint, talk, poster, thesis. experiments lists experiment slugs (file names in src/content/experiments). Talks and posters are from public meetings, with authors and titles as on the title slides; links to slides or PDFs can be added under links once they are public. Text in <mark>…</mark> has not been confirmed from the paper, poster, slides or a public programme.",
   "items": [
     {
       "type": "article",
       "title": "BABY 1L: First Tritium Breeding Campaign Results",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
+      "authors": "R. Delaporte-Mathurin, N. Goles, C. Dunn, E. Edwards, S. Ferry, R. MacDonald, E. Peterson, D. Pettinari, S. Segantin, W. Zhou, K. B. Woller",
       "venue": "Nuclear Fusion 66, 076046 (2026)",
       "year": 2026,
       "experiments": [
@@ -66,8 +66,8 @@
       "type": "article",
       "title": "Neutronics Analysis of ClLiF: An Alternative Molten-Salt Tritium Breeder",
       "authors": "C. Dunn, B. Ebiwonjumi, S. Segantin, K. Woller, W. Zhou, E. Peterson",
-      "venue": "Fusion Science and Technology 82, 881-900 (2025), open access",
-      "year": 2025,
+      "venue": "Fusion Science and Technology 82 (4), 881-900 (2026), first published online July 2025, open access",
+      "year": 2026,
       "experiments": [
         "baby-100ml",
         "baby-1l",
@@ -83,7 +83,7 @@
     {
       "type": "article",
       "title": "Neutron Energy Distribution and Energy-Corrected Spatial Distribution Around a Sealed-Tube DT Fusion Neutron Generator",
-      "authors": "T. Sakabe, E. Edwards, A. Lanzrath, N. Goleš, J. Ball, S. Mackie, S. Segantin, K. Mukai, J. Yagi, R. Tinguely, K. Woller",
+      "authors": "T. Sakabe, E. Edwards, A. Lanzrath, N. Goleš, J. Ball, S. Mackie, S. Segantin, K. Mukai, J. Yagi, R. A. Tinguely, K. B. Woller",
       "venue": "IEEE Transactions on Plasma Science 52, 3871-3877 (2024)",
       "year": 2024,
       "experiments": [
@@ -114,8 +114,8 @@
     {
       "type": "poster",
       "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA)",
-      "authors": "N. Goleš, R. Delaporte-Mathurin, D. Pettinari, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
-      "venue": "ARPA-E Energy Innovation Summit, 7 April 2026",
+      "authors": "<mark>N. Goleš, R. Delaporte-Mathurin, D. Pettinari, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller</mark>",
+      "venue": "ARPA-E Energy Innovation Summit, <mark>7 April</mark> 2026",
       "year": 2026,
       "experiments": [
         "baby-100ml",
@@ -141,13 +141,19 @@
         "baby-1l",
         "libra-pi",
         "libra-one"
+      ],
+      "links": [
+        {
+          "label": "Slides (PDF)",
+          "href": "https://arpa-e.energy.gov/sites/default/files/2025-08/Day2_03_Woller.pdf"
+        }
       ]
     },
     {
       "type": "poster",
       "title": "Fueling the Fusion Future",
-      "authors": "N. Goleš et al. (LIBRA team)",
-      "venue": "ARPA-E Fusion Programs Annual Review Meeting, Aurora, Colorado, July 2025",
+      "authors": "<mark>N. Goleš et al. (LIBRA team)</mark>",
+      "venue": "ARPA-E Fusion Programs Annual Review Meeting, <mark>Aurora, Colorado</mark>, July 2025",
       "year": 2025,
       "experiments": [
         "baby-100ml",
@@ -164,8 +170,8 @@
     },
     {
       "type": "poster",
-      "title": "Tritium Collection and Measurement in Small-Scale Molten Salt Breeding Experiments",
-      "authors": "N. Goleš et al. (LIBRA team)",
+      "title": "Breeding tritium in your lab? Here is how to measure it",
+      "authors": "N. Goleš, on behalf of the LIBRA group at MIT PSFC",
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
@@ -199,7 +205,7 @@
     {
       "type": "poster",
       "title": "Neutron Detector and Generator Characterization for the BABY Experiment",
-      "authors": "E. Edwards et al.",
+      "authors": "E. Edwards",
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
       "experiments": [
@@ -215,7 +221,7 @@
     },
     {
       "type": "talk",
-      "title": "Tritium Speciation and Release Dynamics in Molten Salts: Insights from BABY",
+      "title": "<mark>Tritium Speciation and Release Dynamics in Molten Salts: Insights from BABY</mark>",
       "authors": "N. Goleš",
       "venue": "Tritium Focus Group, May 2025",
       "year": 2025,
@@ -227,7 +233,7 @@
     {
       "type": "talk",
       "title": "A high-fidelity open-source neutronics model for the BABY experiment",
-      "authors": "D. Pettinari, S. Segantin, C. Dunn, R. Delaporte-Mathurin, N. Goleš, E. Peterson, K. Woller, M. Zucchetti, R. Testoni",
+      "authors": "D. Pettinari, S. Segantin, C. Dunn, R. Delaporte-Mathurin, N. Goleš, E. Peterson, M. Zucchetti, R. Testoni, K. Woller",
       "venue": "Open Source Software for Fusion Energy (OSSFE 2025), 18 March 2025",
       "year": 2025,
       "experiments": [
@@ -239,7 +245,7 @@
       "type": "poster",
       "title": "Liquid Immersion Blanket: Robust Accountancy (LIBRA)",
       "authors": "N. Goleš, R. Delaporte-Mathurin, D. Pettinari, S. Segantin, C. S. Dunn, E. Edwards, W. Zhou, R. Vieira, L. Zhou, R. Leccacorvi, S. E. Ferry, E. E. Peterson, D. G. Whyte, K. B. Woller",
-      "venue": "ARPA-E Energy Innovation Summit, 17 March 2025",
+      "venue": "ARPA-E Energy Innovation Summit, <mark>17</mark> March 2025",
       "year": 2025,
       "experiments": [
         "baby-100ml",
@@ -282,7 +288,7 @@
     },
     {
       "type": "talk",
-      "title": "Radiological and thermal management for large-scale tritium breeding experiments with molten salts",
+      "title": "<mark>Radiological and thermal management for large-scale tritium breeding experiments with molten salts</mark>",
       "authors": "K. Woller",
       "venue": "Symposium on Fusion Engineering (SOFE 2025), June 2025",
       "year": 2025,
@@ -383,7 +389,7 @@
     },
     {
       "type": "talk",
-      "title": "LIBRA and the Liquid Immersion Blanket",
+      "title": "<mark>LIBRA and the Liquid Immersion Blanket</mark>",
       "authors": "K. B. Woller, on behalf of the LIBRA team",
       "venue": "ARPA-E Fusion Program Review, June 2024",
       "year": 2024,
@@ -419,7 +425,7 @@
     },
     {
       "type": "talk",
-      "title": "Fueling the emerging fusion industry: Fusion fuel cycle modeling and tritium breeder blanket technology development at the MIT PSFC",
+      "title": "<mark>Fueling the emerging fusion industry: Fusion fuel cycle modeling and tritium breeder blanket technology development at the MIT PSFC</mark>",
       "authors": "S. E. Ferry, with R. Delaporte-Mathurin, S. Meschini, E. Peterson, W. Zhou, K. Woller and the MIT LIBRA team",
       "venue": "JPP Colloquium, MIT, 2 May 2024",
       "year": 2024,
@@ -446,7 +452,7 @@
     {
       "type": "talk",
       "title": "Tritium Breeding and transport in Molten Salts under 14 MeV neutron Irradiation: Insights from the LIBRA Experiment",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, C. Weaver, K. Woller",
       "venue": "International Conference on Nuclear Materials (NuMat 2024), October 2024",
       "year": 2024,
       "experiments": [
@@ -463,7 +469,7 @@
     {
       "type": "talk",
       "title": "Advancements in Tritium Breeding: towards achieving self-sufficiency in Fusion Power Plants through Liquid Immersion Blanket Concept",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, C. Weaver, K. Woller",
       "venue": "Symposium on Fusion Technology (SOFT 2024), Dublin, September 2024",
       "year": 2024,
       "experiments": [
@@ -481,8 +487,8 @@
     {
       "type": "talk",
       "title": "Advancing Tritium Self-Sufficiency in Fusion Power Plants: Insights from the BABY Experiment",
-      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, K. Woller, C. Weaver",
-      "venue": "HWS 2024, Chamonix",
+      "authors": "R. Delaporte-Mathurin, N. Goleš, C. Dunn, E. Edwards, S. Meschini, S. Segantin, S. Ferry, E. Peterson, D. Whyte, E. Lamere, C. Weaver, K. Woller",
+      "venue": "HWS 2024, Chamonix, April 2024",
       "year": 2024,
       "experiments": [
         "baby-100ml",
@@ -530,7 +536,7 @@
     },
     {
       "type": "talk",
-      "title": "Prototype verification of tritium breeding with Liquid Immersion Blanket technology using FLiBe",
+      "title": "<mark>Prototype verification of tritium breeding with Liquid Immersion Blanket technology using FLiBe</mark>",
       "authors": "K. B. Woller, on behalf of the LIBRA team",
       "venue": "16th International Workshop on Beryllium Technology (Be-WS 16), October 2023",
       "year": 2023,
@@ -626,7 +632,7 @@
     },
     {
       "type": "talk",
-      "title": "LIBRA: Liquid immersion blanket robust accountancy",
+      "title": "<mark>LIBRA: Liquid immersion blanket robust accountancy</mark>",
       "authors": "S. E. Ferry, on behalf of the LIBRA team",
       "venue": "Tritium 2022, Bucharest, Romania, October 2022",
       "year": 2022,

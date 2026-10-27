@@ -1,5 +1,5 @@
 {
-  "_note": "Photos and drawings shown on the site. To add one: put the image in src/assets/photos/ (JPEG or PNG, long edge about 2400 px, metadata stripped) and add an entry here. experiments lists experiment slugs, or is empty for project-wide images; kind is photo or drawing (drawings are shown whole, not cropped). Videos live in public/media/video/. Credits and captions marked TBC need checking by the team.",
+  "_note": "Photos and drawings shown on the site. To add one: put the image in src/assets/photos/ (JPEG or PNG, long edge about 2400 px, metadata stripped) and add an entry here. experiments lists experiment slugs, or is empty for project-wide images; kind is photo or drawing (drawings are shown whole, not cropped). Videos live in public/media/video/. Credits and captions marked TBC need checking by the team. Captions in <mark>…</mark> have not been verified by the team or against a paper; remove the tags once checked.",
   "photos": [
     {
       "file": "baby-100ml-principle.png",
@@ -17,7 +17,7 @@
         "baby-100ml"
       ],
       "alt": "A bench-top rig of steel tubing, gauges and two horizontal cylindrical neutron generators on green supports.",
-      "caption": "The BABY 100 mL test stand in the Vault lab: the salt crucible sits between two DT neutron generators, with the sweep gas lines and bubblers around it.",
+      "caption": "<mark>The BABY 100 mL test stand in the Vault lab: the salt crucible sits between two DT neutron generators, with the sweep gas lines and bubblers around it.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -28,7 +28,7 @@
         "baby-100ml"
       ],
       "alt": "The BABY test stand seen from the front, with its gas handling panel of flow meters and valves below the generators.",
-      "caption": "The same stand from the front, with the gas handling panel below.",
+      "caption": "<mark>The same stand from the front, with the gas handling panel below.</mark>",
       "date": "2023-09",
       "credit": "LIBRA team"
     },
@@ -39,7 +39,7 @@
         "baby-100ml"
       ],
       "alt": "A rack of white-capped sample vials labelled BABY 3.",
-      "caption": "Liquid scintillation vials from BABY run 3, ready for counting.",
+      "caption": "<mark>Liquid scintillation vials from BABY run 3, ready for counting.</mark>",
       "date": "2023-10",
       "credit": "LIBRA team"
     },
@@ -51,7 +51,7 @@
         "baby-1l"
       ],
       "alt": "A beige tritium bubbler unit with a temperature display and six small vials on its front panel.",
-      "caption": "A tritium water bubbler: the sweep gas bubbles through the vials, which capture the tritium; a furnace between the two sets converts insoluble forms so both are caught.",
+      "caption": "<mark>A tritium water bubbler: the sweep gas bubbles through the vials, which capture the tritium; a furnace between the two sets converts insoluble forms so both are caught.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -59,11 +59,10 @@
       "file": "hpge-detector-shield.jpg",
       "kind": "photo",
       "experiments": [
-        "baby-100ml",
         "baby-1l"
       ],
       "alt": "A gamma detector inside an open, copper-lined cylindrical shield on a lab bench.",
-      "caption": "The HPGe gamma detector in its shield, used to read the activation foils that measure the neutron flux.",
+      "caption": "<mark>The HPGe gamma detector in its shield, used to read the activation foils that measure the neutron flux in later runs. (The published 100 mL and 1 L runs counted the foils on NaI detectors.)</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -75,7 +74,7 @@
         "baby-1l"
       ],
       "alt": "A hand holding a small gold circuit board connected to a Cividec diamond spectroscopic amplifier.",
-      "caption": "Diamond detector electronics, used to monitor the DT neutron source during runs.",
+      "caption": "<mark>Diamond detector electronics, used to monitor the DT neutron source during runs.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -95,7 +94,7 @@
         "baby-1l"
       ],
       "alt": "A cut-away CAD drawing of a cylindrical vessel with a flanged lid, an inner salt crucible and tubes entering from the top.",
-      "caption": "Cut-away of the BABY 1 L vessel: a double wall lets the team collect tritium that permeates through the crucible walls.",
+      "caption": "<mark>Cut-away of the BABY 1 L vessel: a double wall lets the team collect tritium that permeates through the crucible walls.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -106,7 +105,7 @@
         "baby-1l"
       ],
       "alt": "A wrapped cylindrical vessel inside a fume hood, connected by cables and tubing to control units on a rack.",
-      "caption": "BABY 1 L in its fume hood in the Vault lab.",
+      "caption": "<mark>BABY 1 L in its fume hood in the Vault lab.</mark>",
       "date": "2024-11",
       "credit": "LIBRA team"
     },
@@ -117,7 +116,7 @@
         "baby-1l"
       ],
       "alt": "A fume hood and cart marked with Caution Hot signs, inside a taped-off area on the lab floor.",
-      "caption": "The BABY 1 L station.",
+      "caption": "<mark>The BABY 1 L station.</mark>",
       "date": "2024-11",
       "credit": "LIBRA team"
     },
@@ -146,7 +145,7 @@
         "libra-pi"
       ],
       "alt": "CAD drawing of a tall, curved-sided tank with ports on its lid.",
-      "caption": "The LIBRA-Pi tank, a sector that covers π steradians around the neutron source.",
+      "caption": "<mark>The LIBRA-Pi tank, a sector that covers π steradians around the neutron source.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -157,7 +156,7 @@
         "libra-pi"
       ],
       "alt": "Cut-away CAD drawing of the tall LIBRA-Pi tank showing its interior and wall.",
-      "caption": "Cut-away of LIBRA-Pi.",
+      "caption": "<mark>Cut-away of LIBRA-Pi.</mark>",
       "date": "",
       "credit": "LIBRA team"
     },
@@ -168,7 +167,7 @@
         "baby-1l"
       ],
       "alt": "A lab bench with a long grey cylinder on green supports in front of a vessel boxed in by dark stacked blocks, beside an equipment rack with radiation warning signs.",
-      "caption": "BABY 1 L in the Vault lab in June 2025, during the runs with the nGen neutron generator: the generator lies on the bench in front, and the vessel behind it is surrounded by stacked shielding blocks (generator identification and block material TBC).",
+      "caption": "<mark>BABY 1 L in the Vault lab in June 2025, during the runs with the nGen neutron generator: the generator lies on the bench in front, and the vessel behind it is surrounded by stacked shielding blocks (generator identification and block material TBC).</mark>",
       "date": "2025-06",
       "credit": "LIBRA team"
     },
@@ -179,7 +178,7 @@
         "baby-1l"
       ],
       "alt": "Looking down on a flanged steel vessel lid with tubes and a pressure gauge, surrounded on all sides by stacked dark blocks.",
-      "caption": "The BABY 1 L vessel inside its ring of stacked shielding blocks, June 2025 (block material TBC).",
+      "caption": "<mark>The BABY 1 L vessel inside its ring of stacked shielding blocks, June 2025 (block material TBC).</mark>",
       "date": "2025-06",
       "credit": "LIBRA team"
     },
@@ -190,7 +189,7 @@
         "baby-1l"
       ],
       "alt": "Close-up of a bolted steel flange with vertical tubes, valves and a pressure gauge, with lines labelled OV, COVER and SPARGE.",
-      "caption": "The top of the BABY 1 L vessel: gas lines through the lid are labelled for the outer vessel (OV), cover gas and sparge gas, above the insulated vessel body.",
+      "caption": "<mark>The top of the BABY 1 L vessel: gas lines through the lid are labelled for the outer vessel (OV), cover gas and sparge gas, above the insulated vessel body.</mark>",
       "date": "2025-05",
       "credit": "LIBRA team"
     },
@@ -201,7 +200,7 @@
         "baby-1l"
       ],
       "alt": "A flanged steel vessel wrapped in white insulation on a bench, with tubes rising from its lid and a small panel of flow meters and gauges beside it.",
-      "caption": "BABY 1 L fully assembled on the bench, with its gas lines and flow meters alongside.",
+      "caption": "<mark>BABY 1 L fully assembled on the bench, with its gas lines and flow meters alongside.</mark>",
       "date": "2025-02",
       "credit": "LIBRA team"
     },
@@ -212,7 +211,7 @@
         "baby-1l"
       ],
       "alt": "A vessel lid lifted off with a dark cylindrical crucible hanging beneath it, next to the open, insulated outer vessel.",
-      "caption": "The BABY 1 L lid lifted out with the crucible attached beneath it, beside the open outer vessel.",
+      "caption": "<mark>The BABY 1 L lid lifted out with the crucible attached beneath it, beside the open outer vessel.</mark>",
       "date": "2025-02",
       "credit": "LIBRA team"
     },
@@ -223,7 +222,7 @@
         "baby-1l"
       ],
       "alt": "Stainless steel tubing on a black panel with two digital flow controllers and four pressure gauges labelled IV MIX, IV SAM, OV MIX and OV SAM.",
-      "caption": "The BABY 1 L gas mixing manifold, with mass flow controllers and gauges for the inner vessel (IV) and outer vessel (OV) streams (label meanings TBC).",
+      "caption": "<mark>The BABY 1 L gas mixing manifold, with mass flow controllers and gauges for the inner vessel (IV) and outer vessel (OV) streams (label meanings TBC).</mark>",
       "date": "2025-01",
       "credit": "LIBRA team"
     },
@@ -243,7 +242,7 @@
         "baby-1l"
       ],
       "alt": "Looking down into an open flanged steel vessel lined with a white cylindrical heater with vertical slots.",
-      "caption": "Inside the BABY 1 L outer vessel with the crucible removed, showing the slotted radiative heater around the crucible space (TBC).",
+      "caption": "<mark>Inside the BABY 1 L outer vessel with the crucible removed, showing the slotted radiative heater around the crucible space (TBC).</mark>",
       "date": "2025-02",
       "credit": "LIBRA team"
     },
@@ -254,7 +253,7 @@
         "baby-1l"
       ],
       "alt": "A wheeled frame with a flow panel and an insulated vessel on top, an equipment rack beside it, signs reading Caution Hot and Beryllium contained inside, and striped tape on the floor around it.",
-      "caption": "BABY 1 L set up for the FLiBe runs in October 2025, with beryllium warning signs and a taped-off area (lab location TBC).",
+      "caption": "<mark>BABY 1 L set up for the FLiBe runs in October 2025, with beryllium warning signs and a taped-off area (lab location TBC).</mark>",
       "date": "2025-10",
       "credit": "LIBRA team"
     },
@@ -265,7 +264,7 @@
         "baby-1l"
       ],
       "alt": "A flanged steel vessel on white insulation with gas lines and a hand-written sign reading Beryllium contained inside, do not tamper.",
-      "caption": "The BABY 1 L vessel during FLiBe setup in September 2025; FLiBe contains beryllium, so the vessel is marked.",
+      "caption": "<mark>The BABY 1 L vessel during FLiBe setup in September 2025; FLiBe contains beryllium, so the vessel is marked.</mark>",
       "date": "2025-09",
       "credit": "LIBRA team"
     },
@@ -292,9 +291,9 @@
       "kind": "drawing",
       "experiments": [],
       "alt": "Schematic of a cylindrical tank of FLiBe around a 14 MeV DT neutron source, a close-up of the gas and liquid interface, and a flowchart of the physics involved.",
-      "caption": "The LIBRA experiment: (A) a tank of FLiBe around a DT neutron source and neutron multiplier, with a sparge gas aerator; (B) tritium carried into the cover gas and permeating the inner tank wall; (C) the coupled physics, from neutronics and FLiBe chemistry to tritium transport and detection. Not to scale.",
+      "caption": "The original four-quadrant LIBRA design: (A) a DT neutron generator surrounded by a cylindrical tank of FLiBe about 1 m across, in four independent quadrants, each with its own sparging and sweep gas system; (B) tritium carried to detection by the cover gas or the liner sweep gas; (C) the coupled physics. Not to scale.",
       "date": "",
-      "credit": "LIBRA team (TBC)"
+      "credit": "Ferry et al., Fusion Sci. Technol. 79, 13-35 (2023), Fig. 3"
     },
     {
       "file": "libra-vs-other-experiments.png",
@@ -347,7 +346,7 @@
       "file": "media/video/lab-loop.mp4",
       "webm": "media/video/lab-loop.webm",
       "poster": "media/video/lab-loop-poster.jpg",
-      "caption": "Homepage loop: the tritium bubbler, a sweep gas panel, bubbler sample vials, FLiNaK being dispensed and salt being poured.",
+      "caption": "<mark>Homepage loop: the tritium bubbler, a sweep gas panel, bubbler sample vials, FLiNaK being dispensed and salt being poured.</mark>",
       "credit": "LIBRA team"
     }
   ]
