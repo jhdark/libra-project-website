@@ -28,7 +28,7 @@ the neutron source consumes, which any self-sustaining fusion power plant
 will need. The team describes a global TBR of 1 as a world first for a
 fusion blanket experiment.
 
-LIBRA-One builds on the [BABY 100 mL](../baby-100ml), [BABY 1 L](../baby-1l) and [LIBRA-Pi](../libra-pi)
+LIBRA-One builds on the [BABY 100 mL](/experiments/baby-100ml), [BABY 1 L](/experiments/baby-1l) and [LIBRA-Pi](/experiments/libra-pi)
 experiments. It replaces the earlier plan for a 500 L LIBRA in four
 independent quadrants.
 

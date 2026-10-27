@@ -10,6 +10,9 @@ to GitHub Pages; `site` and `base` in `astro.config.mjs` come from the
 `SITE_URL` / `BASE_PATH` env vars so the same build can target an MIT domain.
 Build internal links with `url()` from `src/lib/url.ts`, never hardcoded
 absolute paths.
+In Markdown and MDX, write internal links from the site root
+(`[BABY 1 L](/experiments/baby-1l)`); `src/lib/base-links.mjs` adds the base.
+Never use relative page links (`../baby-1l`): they break without a trailing slash.
 
 ## Writing style
 
@@ -58,7 +61,9 @@ are here.
 
 Node comes from the conda env: `conda activate libra-website`. Then
 `npm install`, `npm run dev` (serves at `localhost:4321/libra-project-website/`),
-`npm run build`. There is no test suite.
+`npm run build`. There is no test suite; after a build,
+`python3 scripts/check-links.py dist /libra-project-website` checks every
+internal link (add `--external` to test outside links too).
 
 ## Architecture
 
