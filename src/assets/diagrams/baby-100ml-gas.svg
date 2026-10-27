@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370">
+  <!-- BABY 100 mL gas system, after Delaporte-Mathurin et al., Nucl. Fusion 65 026037 (2025), sections 2 and 2.1. Not to scale. -->
+  <defs>
+    <marker id="b0-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1966FF"/></marker>
+    <marker id="b0-arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="dg-solid" d="M0 0 L10 5 L0 10 z"/></marker>
+    <pattern id="b0-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="dg-thin"/></pattern>
+  </defs>
+
+  <!-- Supply -->
+  <rect class="dg-box" x="30" y="110" width="56" height="130" rx="24"/>
+  <text x="58" y="272" text-anchor="middle">Helium</text>
+  <text class="dg-note" x="58" y="292" text-anchor="middle">sweep gas</text>
+
+  <!-- Crucible in its insulation, heater and thermocouple from the top -->
+  <rect class="dg-thin" x="470" y="150" width="100" height="195" style="fill:url(#b0-hatch)"/>
+  <rect class="dg-wall" x="488" y="160" width="64" height="170" style="fill:var(--color-sheet)" />
+  <rect class="dg-salt" x="490" y="232" width="60" height="96"/>
+  <rect class="dg-solid" x="516" y="96" width="8" height="226"/>
+  <path class="dg-thin" d="M505 108 V300"/>
+
+  <!-- Sweep gas over the salt and out to the bubblers -->
+  <path class="dg-a" d="M86 175 H200 V60 H496 V216" marker-end="url(#b0-arrow-a)"/>
+  <path class="dg-a" d="M540 216 V100 H982" marker-end="url(#b0-arrow-a)"/>
+
+  <!-- Labels -->
+  <text class="dg-note" x="440" y="114" text-anchor="end">Re-entrant heater</text>
+  <path class="dg-thin" d="M444 110 H516"/>
+  <text class="dg-note" x="440" y="140" text-anchor="end">Thermocouple</text>
+  <path class="dg-thin" d="M444 136 H505"/>
+  <text class="dg-note" x="440" y="178" text-anchor="end">Inconel 625 crucible</text>
+  <path class="dg-thin" d="M444 174 H488"/>
+  <text class="dg-note" x="440" y="204" text-anchor="end">Alumina wool</text>
+  <path class="dg-thin" d="M444 200 H474"/>
+  <text class="dg-note" x="440" y="230" text-anchor="end">100 mL molten ClLiF</text>
+  <path class="dg-thin" d="M444 226 L496 262"/>
+
+  <!-- Neutron sources either side -->
+  <rect class="dg-box" x="300" y="262" width="150" height="46" rx="23"/>
+  <text x="375" y="290" text-anchor="middle">DT generator</text>
+  <rect class="dg-box" x="590" y="262" width="150" height="46" rx="23"/>
+  <text x="665" y="290" text-anchor="middle">DT generator</text>
+  <text class="dg-note" x="520" y="364" text-anchor="middle">14 MeV neutrons from both sides</text>
+
+  <!-- Permeation is lost to the room -->
+  <path class="dg-tbc" d="M574 214 H612" marker-end="url(#b0-arrow-k)"/>
+  <text class="dg-note" x="620" y="210">Tritium that permeates the wall</text>
+  <text class="dg-note" x="620" y="228">is not collected</text>
+
+  <!-- Tritium collection -->
+  <rect class="dg-water" x="722" y="86" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="744" y="86" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="741" y="146" text-anchor="middle">HTO</text>
+  <rect class="dg-box" x="784" y="84" width="76" height="32"/>
+  <text x="822" y="105" text-anchor="middle" style="font-size:13px">Oxidiser</text>
+  <rect class="dg-water" x="884" y="86" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="906" y="86" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="903" y="146" text-anchor="middle">HT, T₂</text>
+  <text class="dg-note" x="990" y="76" text-anchor="end">Vent</text>
+  <text x="704" y="50">Water bubblers</text>
+  <text class="dg-note" x="704" y="70">counted by liquid scintillation</text>
+</svg>

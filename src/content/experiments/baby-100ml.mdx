@@ -51,6 +51,24 @@ the measurement differ by about 25%, which the team attributes mainly to
 tritium permeating through the crucible walls. The results are published in
 [Nuclear Fusion 65, 026037 (2025)](https://doi.org/10.1088/1741-4326/ada2ab).
 
+## Runs
+
+| Run | Date |
+| --- | --- |
+| 1 | 22 June 2023 |
+| 2 | 7 August 2023 |
+| 3 | 25 September 2023 |
+| 4 | 7 November 2023 |
+| 5 | 4 December 2023 |
+| 6 | 23 January 2024 |
+| 7 | 1 April 2024 |
+| 8 | 29 July 2024 |
+
+Dates are taken from the team's run folders (TBC). Runs 1 and 2 also tested
+the tritium collection; the published data set covers runs 3 to 8.
+
+TODO: what changed between runs (generators, gas, irradiation time).
+
 ## Experimental setup
 
 ![Diagram of BABY 100 mL: helium flows from a cylinder over a 100 mL crucible of ClLiF salt set between two neutron sources, then on to tritium collection and a liquid scintillation counter.](../../assets/photos/baby-100ml-principle.png)
@@ -69,7 +87,22 @@ Photos of the set-up are in the "In the lab" section below.
 The 100 mL of salt sits in an Inconel 625 crucible inside a secondary
 container and is heated to 700 °C.
 
-TODO: salt preparation and temperature control.
+<CadViewer src="models/baby_100ml_model.glb" cutaway="models/baby_100ml_cutaway.glb" alt="BABY small-scale test tank assembly" />
+
+The small-scale test tank assembly, from the team's CAD of February 2023
+(TBC: confirm this matches the tank used in the runs).
+
+### Salt dispensing
+
+<CadViewer src="models/salt_dispensing_model.glb" cutaway="models/salt_dispensing_cutaway.glb" alt="Salt dispensing system assembly" />
+
+A salt dispensing system was designed in 2023 to melt salt and pour it
+into a crucible. A clamshell furnace heats a dispensing crucible; a
+spring-loaded actuator, set with a fine adjustment screw, lifts a nickel
+rod with a graphite plunger out of the nozzle to let the molten salt flow.
+The whole assembly hangs from guide and support bars on a frame with legs.
+
+TODO: whether it was used for the BABY runs, and temperature control.
 
 ### Neutron source
 
@@ -80,6 +113,8 @@ total.
 TODO: irradiation length per run, source position and shielding.
 
 ### Gas handling and tritium collection
+
+<Diagram name="baby-100ml-gas" alt="Diagram of the BABY 100 mL gas system. Helium from a cylinder flows into the top of the crucible, sweeps across the surface of the molten salt and leaves through the top, then passes two water bubbler vials, an oxidiser and two more vials before venting. The Inconel crucible is wrapped in alumina wool, with a re-entrant heater and a thermocouple in the salt. A DT neutron generator sits on each side. Tritium that permeates the crucible wall is not collected." caption="The BABY 100 mL gas system, simplified and not to scale. Helium sweeps across the salt surface and carries tritium to the bubblers; tritium that permeates the crucible wall is lost to the room, which the 1 L design fixes with an outer vessel. Drawn from Delaporte-Mathurin et al., Nucl. Fusion 65 026037 (2025)." />
 
 Dry, oxygen-free helium flows over the salt. The gas then passes two sets
 of 2 × 2 water bubbler vials separated by a catalytic oxidation furnace: the

@@ -25,6 +25,7 @@ repos:
   - { name: FLiBe-1L-run-4, description: "Repeat of molten FLiBe run" }
   - { name: BABY-LiPb }
   - { name: BABY-LiOx }
+  - { name: nGen-log-analysis, description: "Neutron generator logs for runs 7 to 11" }
   - { name: BABY-tritium-transport, description: "OpenMC + OpenFOAM tritium transport model" }
   - { name: baby-1l-paper, description: "Reproducible analysis for the BABY 1L paper" }
 ---
@@ -68,7 +69,10 @@ TODO: FLiBe 1 L results.
 
 ## Experimental setup
 
-Photos and drawings of the set-up are in the "In the lab" section below.
+<CadViewer src="models/baby_1l_model.glb" cutaway="models/baby_1l_cutaway.glb" alt="BABY 1 L test assembly" />
+
+The 1 L test assembly, from the team's CAD. Photos and drawings of the
+set-up are in the "In the lab" section below.
 
 TODO: a principle diagram of the 1 L set-up.
 
@@ -88,9 +92,15 @@ Commercial sealed-tube DT neutron generators provide 14 MeV neutrons at
 Starfire generator cut a typical irradiation from 12 hours to about one
 hour.
 
-TODO: which runs used which generator, source position and shielding.
+Runs 7 to 11, in June 2025, used the Starfire nGen-400 generator; its
+logs are analysed in
+[nGen-log-analysis](https://github.com/LIBRA-project/nGen-log-analysis).
+
+TODO: which generator the other runs used, source position and shielding.
 
 ### Gas handling and tritium collection
+
+<Diagram name="baby-1l-gas" alt="Diagram of the BABY 1 L gas system. Gas from a helium or helium-hydrogen supply passes oxygen and moisture scrubbers, then two mass flow controllers. The inner vessel stream (30 sccm) enters the crucible and is either bubbled through the salt by a sparger or let in above it, then leaves through the lid. The outer vessel stream (50 sccm) enters beside the crucible, near the bottom of the outer vessel, and leaves at the lid. Each stream passes particulate filters, has 10 sccm of air added, and runs through two water bubbler vials, a palladium oxidiser at 450 °C and two more vials before venting. A DT neutron generator sits under the bench." caption="The BABY 1 L gas system, simplified and not to scale. The inner vessel stream (blue) carries tritium released from the salt; the outer vessel stream (orange) carries tritium that permeates the crucible wall. Drawn from Delaporte-Mathurin et al., Nucl. Fusion 66 076046 (2026), section 2.1.4." />
 
 Dry, oxygen-free gas (helium, or helium with a little hydrogen) flows over
 the salt and through the secondary vessel. Each gas stream then passes two

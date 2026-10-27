@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 530">
+  <!-- BABY 1 L gas system, after Delaporte-Mathurin et al., Nucl. Fusion 66 076046 (2026), section 2.1.4. Not to scale. -->
+  <defs>
+    <marker id="b1-arrow-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1966FF"/></marker>
+    <marker id="b1-arrow-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E8890C"/></marker>
+    <marker id="b1-arrow-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="dg-solid" d="M0 0 L10 5 L0 10 z"/></marker>
+    <pattern id="b1-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="dg-thin"/></pattern>
+  </defs>
+
+  <!-- Supply -->
+  <rect class="dg-box" x="30" y="63" width="56" height="130" rx="24"/>
+  <text x="58" y="225" text-anchor="middle">Gas supply</text>
+  <text class="dg-note" x="58" y="246" text-anchor="middle">He, or He with</text>
+  <text class="dg-note" x="58" y="264" text-anchor="middle">1000 ppm H₂</text>
+  <path class="dg-line" d="M86 128 H120"/>
+  <rect class="dg-box" x="120" y="106" width="96" height="44"/>
+  <text x="168" y="133" text-anchor="middle">Scrubbers</text>
+  <text class="dg-note" x="168" y="172" text-anchor="middle">O₂ and moisture</text>
+  <path class="dg-line" d="M216 128 H240 V58 H262 M240 128 H262"/>
+  <rect class="dg-box" x="262" y="38" width="86" height="40"/>
+  <text x="305" y="63" text-anchor="middle">30 sccm</text>
+  <rect class="dg-box" x="262" y="108" width="86" height="40"/>
+  <text x="305" y="133" text-anchor="middle">50 sccm</text>
+  <text class="dg-note" x="305" y="28" text-anchor="middle">Mass flow controllers</text>
+
+  <!-- Vessel assembly -->
+  <rect class="dg-wall" x="410" y="170" width="230" height="250"/>
+  <rect class="dg-solid" x="395" y="155" width="260" height="15"/>
+  <rect x="428" y="250" width="16" height="140" class="dg-thin" style="fill:url(#b1-hatch)"/>
+  <rect x="606" y="250" width="16" height="140" class="dg-thin" style="fill:url(#b1-hatch)"/>
+  <rect class="dg-salt" x="464" y="292" width="112" height="91"/>
+  <rect class="dg-wall" x="462" y="250" width="116" height="135"/>
+  <rect class="dg-solid" x="506" y="100" width="10" height="275"/>
+
+  <!-- Inner vessel stream: in through the sparger (or over the salt), out through the lid -->
+  <path class="dg-a" d="M348 58 H478 V368" marker-end="url(#b1-arrow-a)"/>
+  <circle class="dg-bubble" cx="483" cy="350" r="3.5"/>
+  <circle class="dg-bubble" cx="474" cy="334" r="3"/>
+  <circle class="dg-bubble" cx="484" cy="318" r="3.5"/>
+  <circle class="dg-bubble" cx="476" cy="302" r="3"/>
+  <path class="dg-a" d="M545 250 V88 H684" marker-end="url(#b1-arrow-a)"/>
+
+  <!-- Outer vessel stream: down beside the crucible, out at the lid -->
+  <path class="dg-b" d="M348 128 H453 V402" marker-end="url(#b1-arrow-b)"/>
+  <path class="dg-b" d="M631 155 V120 H660 V330 H684" marker-end="url(#b1-arrow-b)"/>
+
+  <!-- Labels for the vessel -->
+  <text class="dg-note" x="398" y="200" text-anchor="end">Outer vessel (OV)</text>
+  <path class="dg-thin" d="M402 196 H410"/>
+  <text class="dg-note" x="398" y="236" text-anchor="end">Cartridge heater</text>
+  <path class="dg-thin" d="M402 232 H506"/>
+  <text class="dg-note" x="398" y="284" text-anchor="end">Radiative furnace</text>
+  <path class="dg-thin" d="M402 280 H428"/>
+  <text class="dg-note" x="398" y="320" text-anchor="end">Crucible</text>
+  <path class="dg-thin" d="M402 316 H462"/>
+  <text class="dg-note" x="398" y="356" text-anchor="end">1 L molten salt</text>
+  <path class="dg-thin" d="M402 352 H448 M458 352 H470"/>
+  <text class="dg-note" x="398" y="392" text-anchor="end">Sparger, or cover gas</text>
+  <text class="dg-note" x="398" y="410" text-anchor="end">above the salt</text>
+  <path class="dg-thin" d="M402 388 L474 362"/>
+
+  <!-- Bench and neutron source -->
+  <rect class="dg-box" x="375" y="420" width="300" height="12"/>
+  <text class="dg-note" x="368" y="431" text-anchor="end">Workbench</text>
+  <rect class="dg-box" x="410" y="468" width="220" height="40" rx="20"/>
+  <text x="520" y="493" text-anchor="middle">DT neutron generator</text>
+  <path class="dg-thin" d="M470 464 V442" marker-end="url(#b1-arrow-k)"/>
+  <path class="dg-thin" d="M520 464 V442" marker-end="url(#b1-arrow-k)"/>
+  <path class="dg-thin" d="M570 464 V442" marker-end="url(#b1-arrow-k)"/>
+  <text class="dg-note" x="640" y="460">14 MeV neutrons</text>
+
+  <!-- Tritium collection, IV stream -->
+  <rect class="dg-box" x="690" y="72" width="58" height="32"/>
+  <text x="719" y="93" text-anchor="middle" style="font-size:13px">Filters</text>
+  <text class="dg-note" x="719" y="124" text-anchor="middle">15, 7, 2 µm</text>
+  <path class="dg-a" d="M748 88 H982" marker-end="url(#b1-arrow-a)"/>
+  <path class="dg-thin" d="M772 48 V82" marker-end="url(#b1-arrow-k)"/>
+  <text class="dg-note" x="772" y="42" text-anchor="middle">+10 sccm air</text>
+  <rect class="dg-water" x="794" y="74" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="816" y="74" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="813" y="134" text-anchor="middle">HTO</text>
+  <rect class="dg-box" x="846" y="72" width="62" height="32"/>
+  <text x="877" y="93" text-anchor="middle" style="font-size:13px">Oxidiser</text>
+  <text class="dg-note" x="877" y="124" text-anchor="middle">Pd, 450 °C</text>
+  <rect class="dg-water" x="926" y="74" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="948" y="74" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="945" y="134" text-anchor="middle">HT, T₂</text>
+  <text class="dg-note" x="990" y="64" text-anchor="end">Vent</text>
+  <path class="dg-a" d="M690 172 H716"/>
+  <text x="724" y="177">Inner vessel (IV) stream</text>
+  <text class="dg-note" x="724" y="197">Tritium released from the salt</text>
+
+  <!-- Tritium collection, OV stream -->
+  <rect class="dg-box" x="690" y="314" width="58" height="32"/>
+  <text x="719" y="335" text-anchor="middle" style="font-size:13px">Filter</text>
+  <text class="dg-note" x="719" y="366" text-anchor="middle">15 µm</text>
+  <path class="dg-b" d="M748 330 H982" marker-end="url(#b1-arrow-b)"/>
+  <path class="dg-thin" d="M772 290 V324" marker-end="url(#b1-arrow-k)"/>
+  <text class="dg-note" x="772" y="284" text-anchor="middle">+10 sccm air</text>
+  <rect class="dg-water" x="794" y="316" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="816" y="316" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="813" y="376" text-anchor="middle">HTO</text>
+  <rect class="dg-box" x="846" y="314" width="62" height="32"/>
+  <text x="877" y="335" text-anchor="middle" style="font-size:13px">Oxidiser</text>
+  <text class="dg-note" x="877" y="366" text-anchor="middle">Pd, 450 °C</text>
+  <rect class="dg-water" x="926" y="316" width="16" height="40" rx="3"/>
+  <rect class="dg-water" x="948" y="316" width="16" height="40" rx="3"/>
+  <text class="dg-note" x="945" y="376" text-anchor="middle">HT, T₂</text>
+  <text class="dg-note" x="990" y="306" text-anchor="end">Vent</text>
+  <path class="dg-b" d="M690 414 H716"/>
+  <text x="724" y="419">Outer vessel (OV) stream</text>
+  <text class="dg-note" x="724" y="439">Tritium that permeates the crucible</text>
+</svg>

@@ -143,8 +143,17 @@ left, its line or link right, a firm rule beneath); `.num` and `.tbc`;
   Markdown by `campaignsOf()` in `src/lib/experiments.ts`, with the active
   campaign marked in pink. The homepage shows the first active experiment
   that has one.
+- `CadViewer`: an interactive GLB model from `public/models/`; with
+  `cutaway`, a button in its top right swaps in the cut-away model.
+  `scripts/cad/` converts STEP files and makes the cut-aways.
+- `Diagram`: a line diagram from `src/assets/diagrams/*.svg`, inlined so it
+  uses the site's fonts and tokens via the `dg-*` classes. Blue lines are
+  gas carrying tritium released from the salt, orange is gas collecting
+  permeated tritium, dashed is a route not yet confirmed (TBC).
+- `PageHeader` takes an optional `figure` slot; experiment guides put their
+  stage render from the scale-up path there.
 - `PublicationItem`, `NewsList`, `PersonEntry`, `StatusBadge`, `Tbc` (sets
-  "TBC" in `muted`), `CadViewer`.
+  "TBC" in `muted`).
 
 ### How experiments get their identity
 

@@ -42,6 +42,14 @@ independent quadrants.
   protected by a vacuum insulation sleeve conceived from the thermal shield
   of the Alcator C-Mod advanced outer divertor.
 
+![Schematic of a cylindrical tank of FLiBe around a 14 MeV DT neutron source, a close-up of the gas and liquid interface, and a flowchart of the physics involved.](../../assets/photos/libra-experiment-schematic.png)
+
+*The LIBRA concept: (A) a tank of FLiBe around a DT neutron source and
+neutron multiplier, with a sparge gas aerator; (B) a liner sweep gas and a
+helium-hydrogen cover gas carrying tritium out, with tritium also permeating
+the inner tank wall; (C) the coupled physics. From the team's LIBRA overview
+(source TBC). Which of these gas streams LIBRA-One keeps is TBC.*
+
 Status: in final design (2025).
 
 TODO: facility, shielding and schedule, once confirmed by the team.
