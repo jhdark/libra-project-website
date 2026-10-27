@@ -82,46 +82,39 @@
   ],
   "Experiment keys": [
     {
-      "name": "Key 1, Aurora Green",
+      "name": "Key 1, plasma 0.00",
       "token": "--color-key-1",
-      "oklch": "oklch(90.4% 0.186 138)",
-      "hex": "#9DFC7E",
-      "use": "BABY (order 1)"
+      "oklch": "oklch(29.3% 0.188 267)",
+      "hex": "#0D0887",
+      "use": "BABY 100 mL (order 1)"
     },
     {
-      "name": "Key 2, Electric Arc Aqua",
+      "name": "Key 2, plasma 0.25",
       "token": "--color-key-2",
-      "oklch": "oklch(89.6% 0.085 214)",
-      "hex": "#98ECFF",
-      "use": "LIBRA-Pi (order 2)"
+      "oklch": "oklch(44.9% 0.221 313)",
+      "hex": "#7E03A8",
+      "use": "BABY 1 L (order 2)"
     },
     {
-      "name": "Key 3, Orange Edge",
+      "name": "Key 3, plasma 0.50",
       "token": "--color-key-3",
-      "oklch": "oklch(79.6% 0.16 68)",
-      "hex": "#FFA630",
+      "oklch": "oklch(59.4% 0.173 1)",
+      "hex": "#CC4778",
       "use": "LIBRA-Pint (order 3)"
     },
     {
-      "name": "Key 4, Hydrogen Periwinkle",
+      "name": "Key 4, plasma 0.75",
       "token": "--color-key-4",
-      "oklch": "oklch(80.4% 0.107 291)",
-      "hex": "#BFB3FF",
-      "use": "LIBRA-One (order 4)"
+      "oklch": "oklch(75.9% 0.153 58)",
+      "hex": "#F89540",
+      "use": "LIBRA-Pi (order 4)"
     },
     {
-      "name": "Key 5, Industrial Blue",
+      "name": "Key 5, plasma 1.00",
       "token": "--color-key-5",
-      "oklch": "oklch(56.6% 0.239 262)",
-      "hex": "#1966FF",
-      "use": "Order 5"
-    },
-    {
-      "name": "Key 6, Heated",
-      "token": "--color-key-6",
-      "oklch": "oklch(67% 0.17 25)",
-      "hex": "#F25757",
-      "use": "Order 6"
+      "oklch": "oklch(94.4% 0.204 112)",
+      "hex": "#F0F921",
+      "use": "LIBRA-One (order 5)"
     }
   ]
 }

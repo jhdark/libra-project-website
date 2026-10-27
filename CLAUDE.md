@@ -121,7 +121,8 @@ the rules below.
 - **Dark band:** `on-ink`, `on-ink-2`, `on-ink-rule`, `on-ink-link` for text
   on an `ink` background (the homepage open data band). Any rule that paints
   a dark surface also sets its text colour.
-- **Experiment keys:** `key-1` to `key-6` from the PSFC accent palette.
+- **Experiment keys:** `key-1` to `key-5`, five even stops along
+  matplotlib's plasma colour map (dark blue to yellow).
 - **Type:** `font-display` Hanken Grotesk 600 for heads, nav and buttons
   (standing in for Neue Haas Grotesk); `font-body` Roboto Serif for reading;
   `font-mono` Roboto Mono only for figures, dates in tables, DOIs and code.
@@ -181,10 +182,10 @@ left, its line or link right, a firm rule beneath); `.num` and `.tbc`;
 
 Each experiment gets a key colour from its `order` in frontmatter
 (`keyColour()` in `src/lib/experiments.ts`: order 1 is `key-1`, and so on,
-wrapping after 6). A new experiment needs no code change. The key appears as
+wrapping after 5). A new experiment needs no code change. The key appears as
 a square beside the name in the ledger, the experiments index, the data
 table, and as a band under the guide's header. Keys are fills with a 1px ink
-edge, never text colour (the pastel keys fail contrast as text).
+edge, never text colour (the light keys fail contrast as text).
 
 ### Rules that keep it from looking generated
 

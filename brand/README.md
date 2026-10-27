@@ -67,20 +67,21 @@ button. It is 10.9:1 on the paper, so it can carry text.
 table, the line a chart argues from, a callout edge. It is only 3.7:1 on the
 paper, so it never carries small text, and white on pink is only 4.03:1.
 
-**Experiment keys** come from the PSFC accent palette and are assigned by an
-experiment's `order`:
+**Experiment keys** are five even stops along matplotlib's plasma colour
+map, so the experiments read as one scale from the smallest to the largest.
+They are assigned by an experiment's `order`, and a sixth would wrap round
+to the first:
 
 | Order | Experiment | Colour |
 | --- | --- | --- |
-| 1 | BABY | Aurora Green `#9DFC7E` |
-| 2 | LIBRA-Pi | Electric Arc Aqua `#98ECFF` |
-| 3 | LIBRA-Pint | Orange Edge `#FFA630` |
-| 4 | LIBRA-One | Hydrogen Periwinkle `#BFB3FF` |
-| 5 | next | Industrial Blue `#1966FF` |
-| 6 | next | Heated `#F25757` |
+| 1 | BABY 100 mL | plasma 0.00 `#0D0887` |
+| 2 | BABY 1 L | plasma 0.25 `#7E03A8` |
+| 3 | LIBRA-Pint | plasma 0.50 `#CC4778` |
+| 4 | LIBRA-Pi | plasma 0.75 `#F89540` |
+| 5 | LIBRA-One | plasma 1.00 `#F0F921` |
 
 Keys are fills (a square beside the name, a band, a series in a chart),
-always with a thin ink edge, and never text colours: the pastel keys fail
+always with a thin ink edge, and never text colours: the light keys fail
 contrast on paper.
 
 ## Type
