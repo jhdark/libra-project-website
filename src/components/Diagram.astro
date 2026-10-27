@@ -18,7 +18,10 @@ if (!svg) throw new Error(`Diagram ${name}.svg is not in src/assets/diagrams/`);
 
 <style>
   .diagram { margin: var(--space-xl) 0; }
-  .sheet { padding: var(--space-md); background: var(--color-sheet); border: var(--rule-hair) solid var(--color-rule); }
+  /* Diagram colours: blue for gas carrying tritium released from the salt,
+     orange for gas collecting permeated tritium, tints for salt and water. */
+  .sheet { --dg-a: #1966FF; --dg-b: #E8890C; --dg-salt: #E4DEFF; --dg-water: #DCEBFF; padding: var(--space-md); background: var(--color-sheet); border: var(--rule-hair) solid var(--color-rule); }
+  :global(:root[data-theme='dark']) .sheet { --dg-a: #7DA2FF; --dg-b: #FFA630; --dg-salt: oklch(32% 0.060 285); --dg-water: oklch(34% 0.050 250); }
   .sheet :global(svg) { display: block; width: 100%; height: auto; }
   /* On phones the labels would be too small to read, so the sheet keeps a
      legible width and scrolls inside its frame; the page itself does not. */
@@ -33,12 +36,14 @@ if (!svg) throw new Error(`Diagram ${name}.svg is not in src/assets/diagrams/`);
   .sheet :global(.dg-line) { fill: none; stroke: var(--color-ink-2); stroke-width: 2.5; }
   .sheet :global(.dg-box) { fill: var(--color-paper); stroke: var(--color-ink); stroke-width: 1.5; }
   .sheet :global(.dg-solid) { fill: var(--color-ink-2); }
-  .sheet :global(.dg-salt) { fill: #E4DEFF; }
-  .sheet :global(.dg-water) { fill: #DCEBFF; stroke: var(--color-ink); stroke-width: 1.5; }
-  .sheet :global(.dg-a) { fill: none; stroke: #1966FF; stroke-width: 3; }
-  .sheet :global(.dg-b) { fill: none; stroke: #E8890C; stroke-width: 3; }
+  .sheet :global(.dg-salt) { fill: var(--dg-salt); }
+  .sheet :global(.dg-water) { fill: var(--dg-water); stroke: var(--color-ink); stroke-width: 1.5; }
+  .sheet :global(.dg-a) { fill: none; stroke: var(--dg-a); stroke-width: 3; }
+  .sheet :global(.dg-fill-a) { fill: var(--dg-a); }
+  .sheet :global(.dg-b) { fill: none; stroke: var(--dg-b); stroke-width: 3; }
+  .sheet :global(.dg-fill-b) { fill: var(--dg-b); }
   .sheet :global(.dg-tbc) { fill: none; stroke: var(--color-muted); stroke-width: 2.5; stroke-dasharray: 7 6; }
-  .sheet :global(.dg-bubble) { fill: var(--color-sheet); stroke: #1966FF; stroke-width: 1.5; }
+  .sheet :global(.dg-bubble) { fill: var(--color-sheet); stroke: var(--dg-a); stroke-width: 1.5; }
   .sheet :global(text) { font-family: var(--font-display); font-weight: 600; font-size: 16px; fill: var(--color-ink); }
   .sheet :global(.dg-note) { font-family: var(--font-body); font-weight: 400; font-size: 14px; fill: var(--color-ink-2); }
   .sheet :global(.dg-muted) { fill: var(--color-muted); }

@@ -80,7 +80,9 @@ Node comes from the conda env: `conda activate libra-website`. Then
 The "Lab record" direction (see `docs/design-directions/` for the
 alternatives): a LIBRA sub-brand of the PSFC identity, set like a printed lab
 record. Paper, rules and type carry the design; there are no cards, shadows,
-gradients, pills or icons. It was designed with the hallmark skill
+gradients, pills or icons (the exceptions, by choice: the GitHub mark and
+the sun and moon theme switch in the nav, and the profile link marks on
+People). It was designed with the hallmark skill
 (`.agents/skills/hallmark`, not committed); the stamp at the top of
 `global.css` records its decisions and waivers, but day-to-day edits only need
 the rules below.

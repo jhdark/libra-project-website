@@ -24,6 +24,16 @@ const fullTitle = title ? `${title} · LIBRA` : 'LIBRA · Tritium breeding for f
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta name="theme-color" content="#f7f5f0" />
+    <!-- Set the theme before the first paint: the reader's choice from the
+         toggle if saved, otherwise the system preference. -->
+    <script is:inline>
+      (() => {
+        let theme = null;
+        try { theme = localStorage.getItem('theme'); } catch {}
+        if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
   </head>
   <body class="flex min-h-screen flex-col overflow-x-clip">

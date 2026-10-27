@@ -45,6 +45,7 @@
   --color-on-ink-2: oklch(85% 0.010 75);
   --color-on-ink-rule: oklch(36% 0.010 25);
   --color-on-ink-link: oklch(84% 0.100 332);
+  --color-band: oklch(21% 0.010 25);          /* dark bands: the hero and data sections */
 
   /* Experiment keys: five even stops along matplotlib's plasma colour map,
      assigned by `order` (src/lib/experiments.ts), so the experiments read as
@@ -101,6 +102,29 @@
   --radius-control: 2px;
   --z-sticky: 200;
 }
+/* Dark theme: set by the toggle in the nav, or by the system preference when
+   the reader has not chosen (see the script in Base.astro). The bands stay
+   dark, a step below the page. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.008 60);
+  --color-paper-2: oklch(20.5% 0.009 60);
+  --color-paper-3: oklch(24.5% 0.010 60);
+  --color-sheet: oklch(21% 0.008 60);
+  --color-ink: oklch(94% 0.007 89);
+  --color-ink-2: oklch(84% 0.008 85);
+  --color-muted: oklch(70% 0.010 75);
+  --color-rule: oklch(32% 0.010 60);
+  --color-rule-2: oklch(88% 0.007 89);
+  --color-accent: oklch(72% 0.150 23);
+  --color-accent-2: oklch(78% 0.120 23);
+  --color-accent-ink: oklch(17% 0.008 60);
+  --color-focus: oklch(76% 0.160 23);
+  --color-signal-wash: oklch(28% 0.070 332);
+  --color-band: oklch(12.5% 0.008 60);
+  --color-brand-github: oklch(94% 0.007 89);
+}
+
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
 
@@ -142,8 +166,8 @@ html, body { overflow-x: clip; }
   .btn-primary:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
   .btn-primary:active { background: var(--color-ink); border-color: var(--color-ink); }
   .btn-on-ink { color: var(--color-on-ink); border-color: var(--color-on-ink); }
-  .btn-on-ink:hover { background: var(--color-on-ink); color: var(--color-ink); }
-  .btn-on-ink:active { background: var(--color-on-ink-2); color: var(--color-ink); }
+  .btn-on-ink:hover { background: var(--color-on-ink); color: var(--color-band); }
+  .btn-on-ink:active { background: var(--color-on-ink-2); color: var(--color-band); }
 
   /* The head block that opens most sections: head left, line or link right,
      a firm rule beneath. */
